@@ -5,7 +5,7 @@ import com.lakue.oburie.utils.BaseUtils.init
 import dagger.hilt.android.HiltAndroidApp
 
 @HiltAndroidApp
-class ZApplication : Application() {
+class OburieApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         init(this)

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/fragmentHome"
+        android:title="메뉴"/>
+    <item android:id="@+id/fragmentJobOffer"
+        android:title="구인"/>
+    <item android:id="@+id/fragmentConversation"
+        android:title="채팅"/>
+    <item android:id="@+id/fragmentMypage"
+        android:title="마이페이지"/>
+</menu>

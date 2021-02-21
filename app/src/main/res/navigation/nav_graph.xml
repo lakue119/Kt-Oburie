@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/fragmentHome">
+
+    <fragment
+        android:id="@+id/fragmentHome"
+        android:name="com.lakue.oburie.ui.fragment.FragmentHome"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/fragmentJobOffer"
+        android:name="com.lakue.oburie.ui.fragment.FragmentJobOffer"
+        android:label="fragment_job_offer"
+        tools:layout="@layout/fragment_job_offer" />
+    <fragment
+        android:id="@+id/fragmentConversation"
+        android:name="com.lakue.oburie.ui.fragment.FragmentConversation"
+        android:label="fragment_conversation"
+        tools:layout="@layout/fragment_conversation" />
+    <fragment
+        android:id="@+id/fragmentMypage"
+        android:name="com.lakue.oburie.ui.fragment.FragmentMypage"
+        android:label="fragment_mypage"
+        tools:layout="@layout/fragment_mypage" />
+
+</navigation>
