@@ -9,21 +9,45 @@
         android:id="@+id/fragmentHome"
         android:name="com.lakue.oburie.ui.fragment.FragmentHome"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_fragmentHome_pop"
+            app:popUpTo="@id/fragmentHome"
+            app:popUpToInclusive="true" />
+    </fragment>
     <fragment
         android:id="@+id/fragmentJobOffer"
         android:name="com.lakue.oburie.ui.fragment.FragmentJobOffer"
         android:label="fragment_job_offer"
-        tools:layout="@layout/fragment_job_offer" />
+        tools:layout="@layout/fragment_job_offer" >
+        <argument
+            android:name="code"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <action
+            android:id="@+id/action_fragmentJobOffer_pop"
+            app:popUpTo="@id/fragmentJobOffer"
+            app:popUpToInclusive="true" />
+    </fragment>
     <fragment
         android:id="@+id/fragmentConversation"
         android:name="com.lakue.oburie.ui.fragment.FragmentConversation"
         android:label="fragment_conversation"
-        tools:layout="@layout/fragment_conversation" />
+        tools:layout="@layout/fragment_conversation" >
+        <action
+            android:id="@+id/action_fragmentConversation_pop"
+            app:popUpTo="@id/fragmentConversation"
+            app:popUpToInclusive="true" />
+    </fragment>
     <fragment
         android:id="@+id/fragmentMypage"
         android:name="com.lakue.oburie.ui.fragment.FragmentMypage"
         android:label="fragment_mypage"
-        tools:layout="@layout/fragment_mypage" />
+        tools:layout="@layout/fragment_mypage" >
+        <action
+            android:id="@+id/action_fragmentMypage_pop"
+            app:popUpTo="@id/fragmentMypage"
+            app:popUpToInclusive="true" />
+    </fragment>
 
 </navigation>

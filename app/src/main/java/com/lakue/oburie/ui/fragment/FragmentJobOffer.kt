@@ -5,7 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import com.lakue.oburie.R
+import kotlinx.android.synthetic.main.fragment_job_offer.*
 
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
@@ -40,4 +42,14 @@ class FragmentJobOffer : Fragment() {
                 }
             }
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        textView.setOnClickListener {
+            Navigation.findNavController(view).navigate(R.id.action_fragmentJobOffer_pop)
+        }
+    }
+
+
 }
