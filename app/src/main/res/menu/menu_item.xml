@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@+id/fragmentHome"
+        android:icon="@drawable/selector_home"
         android:title="메뉴"/>
     <item android:id="@+id/fragmentJobOffer"
+        android:icon="@drawable/selector_search"
         android:title="구인"/>
     <item android:id="@+id/fragmentConversation"
+        android:icon="@drawable/selector_chat"
         android:title="채팅"/>
     <item android:id="@+id/fragmentMypage"
+        android:icon="@drawable/selector_mypage"
         android:title="마이페이지"/>
 </menu>
