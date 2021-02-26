@@ -1,4 +1,4 @@
-package com.lakue.oburie.ui
+package com.lakue.oburie.ui.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
