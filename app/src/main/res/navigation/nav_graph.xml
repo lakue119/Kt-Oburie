@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/fragmentHome"
-        android:name="com.lakue.oburie.ui.fragment.FragmentHome"
+        android:name="com.lakue.oburie.ui.home.FragmentHome"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
@@ -17,7 +17,7 @@
     </fragment>
     <fragment
         android:id="@+id/fragmentJobOffer"
-        android:name="com.lakue.oburie.ui.fragment.FragmentJobOffer"
+        android:name="com.lakue.oburie.ui.joboffer.FragmentJobOffer"
         android:label="fragment_job_offer"
         tools:layout="@layout/fragment_job_offer" >
         <argument
@@ -31,7 +31,7 @@
     </fragment>
     <fragment
         android:id="@+id/fragmentConversation"
-        android:name="com.lakue.oburie.ui.fragment.FragmentConversation"
+        android:name="com.lakue.oburie.ui.conversation.FragmentConversation"
         android:label="fragment_conversation"
         tools:layout="@layout/fragment_conversation" >
         <action
@@ -41,7 +41,7 @@
     </fragment>
     <fragment
         android:id="@+id/fragmentMypage"
-        android:name="com.lakue.oburie.ui.fragment.FragmentMypage"
+        android:name="com.lakue.oburie.ui.mypage.FragmentMypage"
         android:label="fragment_mypage"
         tools:layout="@layout/fragment_mypage" >
         <action

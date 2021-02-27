@@ -18,27 +18,59 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.FragmentManager
+import androidx.lifecycle.ViewModelLazy
+import androidx.lifecycle.ViewModelProvider
+import com.lakue.oburie.BR
 import com.lakue.oburie.R
 import com.lakue.oburie.listener.OnThrottleClickListener
+import io.reactivex.disposables.CompositeDisposable
+import java.lang.reflect.ParameterizedType
+import javax.inject.Inject
 
-abstract open class BaseActivity: AppCompatActivity() {
+abstract class BaseActivity<B : ViewDataBinding, VM : BaseViewModel>(
+    @LayoutRes val layoutId: Int
+) : AppCompatActivity() {
+
     var mToast: Toast? = null
     var isShowToast = false
 
-    protected inline fun <reified T : ViewDataBinding> binding(@LayoutRes resId: Int): Lazy<T> =
-        lazy { DataBindingUtil.setContentView<T>(this, resId) }
+    lateinit var binding: B
 
-    override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
-        super.onCreate(savedInstanceState, persistentState)
+    private val viewModelClass = ((javaClass.genericSuperclass as ParameterizedType?)
+        ?.actualTypeArguments
+        ?.get(1) as Class<VM>).kotlin
 
+    protected open val viewModel by ViewModelLazy(
+        viewModelClass,
+        { viewModelStore },
+        { defaultViewModelProviderFactory }
+    )
+
+    private val compositeDisposable = CompositeDisposable()
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = DataBindingUtil.setContentView(this, layoutId)
+        binding.lifecycleOwner = this
+
+        init()
         setUI()
+        setEvent()
+        setObserve()
     }
 
+    abstract fun init()
     abstract fun setUI()
+    abstract fun setEvent()
+    abstract fun setObserve()
 
+    override fun onDestroy() {
+        super.onDestroy()
+        compositeDisposable.clear()
+    }
 
     @SuppressLint("ShowToast")
-    open fun showToast(msg: String?) {
+    protected fun showToast(msg: String?) {
         if (mToast == null) {
             mToast = Toast.makeText(this, "", Toast.LENGTH_LONG)
         }
@@ -62,20 +94,37 @@ abstract open class BaseActivity: AppCompatActivity() {
             }
         }, 1500) // 0.5초 정도 딜레이를 준 후 시작
     }
-
-    open fun onKeyboardHide(editText: EditText) {
+    protected fun onKeyboardHide(editText: EditText) {
         val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
         imm.hideSoftInputFromWindow(editText.windowToken, 0)
     }
 
-    fun View.onThrottleClick(action: (v: View) -> Unit) {
+    protected fun View.onThrottleClick(action: (v: View) -> Unit) {
         val listener = View.OnClickListener { action(it) }
         setOnClickListener(OnThrottleClickListener(listener))
     }
 
-    fun View.onThrottleClick(action: (v: View) -> Unit, interval: Long) {
+    protected fun View.onThrottleClick(action: (v: View) -> Unit, interval: Long) {
         val listener = View.OnClickListener { action(it) }
         setOnClickListener(OnThrottleClickListener(listener, interval))
     }
-    fun String.toEditable(): Editable = Editable.Factory.getInstance().newEditable(this)
+
+    //null이면 ""으로 변환
+    protected fun String.ifNullEmpty(): String {
+        return if (this.isNullOrEmpty()) {
+            ""
+        } else {
+            this
+        }
+    }
+
+    protected fun String.isNullToEmpty(): String{
+        return if(this == "null"){
+            ""
+        } else {
+            this
+        }
+    }
+
+    protected fun String.toEditable(): Editable = Editable.Factory.getInstance().newEditable(this)
 }

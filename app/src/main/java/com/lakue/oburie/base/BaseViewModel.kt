@@ -16,11 +16,11 @@ abstract class BaseViewModel : ViewModel() {
         super.onCleared()
     }
 
-    protected fun showProgress() {
+    protected fun showLoading() {
         _isLoading.value = true
     }
 
-    protected fun hideProgress() {
+    protected fun hideLoading() {
         _isLoading.value = false
     }
 }

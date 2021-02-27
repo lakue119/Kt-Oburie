@@ -129,6 +129,9 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
     implementation 'com.github.bumptech.glide:okhttp3-integration:4.9.0'
 
+    //로띠
+    implementation 'com.airbnb.android:lottie:3.4.0'
+
     // GSON
     implementation 'com.google.code.gson:gson:2.8.6'
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
