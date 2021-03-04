@@ -1,6 +1,7 @@
 package com.lakue.oburie.base
 
 import android.annotation.SuppressLint
+import android.app.Activity
 import android.content.Context
 import android.os.Bundle
 import android.os.Handler
@@ -24,6 +25,9 @@ import com.lakue.oburie.BR
 import com.lakue.oburie.R
 import com.lakue.oburie.listener.OnThrottleClickListener
 import io.reactivex.disposables.CompositeDisposable
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import java.lang.reflect.ParameterizedType
 import javax.inject.Inject
 
@@ -94,14 +98,31 @@ abstract class BaseActivity<B : ViewDataBinding, VM : BaseViewModel>(
             }
         }, 1500) // 0.5초 정도 딜레이를 준 후 시작
     }
-    protected fun onKeyboardHide(editText: EditText) {
-        val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-        imm.hideSoftInputFromWindow(editText.windowToken, 0)
+//    protected fun onKeyboardHide(editText: EditText) {
+//        val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+//        imm.hideSoftInputFromWindow(editText.windowToken, 0)
+//    }
+//
+//    protected fun View.onThrottleClick(action: (v: View) -> Unit) {
+//        val listener = View.OnClickListener { action(it) }
+//        setOnClickListener(OnThrottleClickListener(listener))
+//    }
+
+    protected fun Context.showKeyboard() {
+        GlobalScope.launch {
+            delay(100)
+            (getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager).toggleSoftInput(
+                InputMethodManager.SHOW_FORCED,
+                0
+            )
+        }
     }
 
-    protected fun View.onThrottleClick(action: (v: View) -> Unit) {
-        val listener = View.OnClickListener { action(it) }
-        setOnClickListener(OnThrottleClickListener(listener))
+    protected fun Context.hideKeyboard() {
+        (getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager).toggleSoftInput(
+            InputMethodManager.HIDE_IMPLICIT_ONLY,
+            0
+        )
     }
 
     protected fun View.onThrottleClick(action: (v: View) -> Unit, interval: Long) {
@@ -118,8 +139,8 @@ abstract class BaseActivity<B : ViewDataBinding, VM : BaseViewModel>(
         }
     }
 
-    protected fun String.isNullToEmpty(): String{
-        return if(this == "null"){
+    protected fun String.isNullToEmpty(): String {
+        return if (this == "null") {
             ""
         } else {
             this
