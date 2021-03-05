@@ -3,9 +3,9 @@ package com.lakue.oburie.base
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 
-class BaseAdapter : RecyclerView.Adapter<BaseItemViewHolder>(){
+open class BaseAdapter : RecyclerView.Adapter<BaseViewHolder>(){
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseItemViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder {
         TODO("Not yet implemented")
     }
 
@@ -13,7 +13,7 @@ class BaseAdapter : RecyclerView.Adapter<BaseItemViewHolder>(){
         TODO("Not yet implemented")
     }
 
-    override fun onBindViewHolder(holder: BaseItemViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: BaseViewHolder, position: Int) {
         TODO("Not yet implemented")
     }
 

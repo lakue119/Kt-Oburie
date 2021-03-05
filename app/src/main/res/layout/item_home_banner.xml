@@ -1,14 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:lakue="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="position"
+            type="Integer" />
+
+        <variable
+            name="vm"
+            type="com.lakue.oburie.ui.home.HomeViewModel" />
+    </data>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <com.lakue.oburie.custom.RoundedImageView
-            app:rectRadius="10dp"
+            lakue:image_url="@{vm.homeData[0].toString()}"
+            lakue:rectRadius="4dp"
             android:adjustViewBounds="true"
-            android:src="@drawable/oburie_guide"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
