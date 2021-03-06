@@ -6,13 +6,14 @@ import androidx.databinding.DataBindingUtil
 import com.lakue.oburie.R
 import com.lakue.oburie.base.BaseAdapter
 import com.lakue.oburie.base.BaseViewHolder
-import com.lakue.oburie.base.BaseViewModel
-import com.lakue.oburie.databinding.ItemCategoryBinding
-import com.lakue.oburie.databinding.ItemCategoryListBinding
 import com.lakue.oburie.databinding.ItemHomeBannerBinding
-import com.lakue.oburie.databinding.ItemProfileCheckBinding
+import com.lakue.oburie.databinding.ItemHomeCategoryListBinding
+import com.lakue.oburie.databinding.ItemHomePopularBinding
+import com.lakue.oburie.databinding.ItemHomeProfileCheckBinding
 import com.lakue.oburie.model.Category
-import com.lakue.oburie.ui.home.category.CategoryAdapter
+import com.lakue.oburie.model.Profile
+import com.lakue.oburie.ui.home.category.HomeCategoryAdapter
+import com.lakue.oburie.ui.home.popular.HomePopularAdapter
 
 class HomeAdapter(val viewModel: HomeViewModel) : BaseAdapter() {
 
@@ -48,9 +49,9 @@ class HomeAdapter(val viewModel: HomeViewModel) : BaseAdapter() {
                 }
             }
             TYPE_CATEGORY -> {
-                DataBindingUtil.inflate<ItemCategoryListBinding>(
+                DataBindingUtil.inflate<ItemHomeCategoryListBinding>(
                         LayoutInflater.from(parent.context),
-                        R.layout.item_category_list,
+                        R.layout.item_home_category_list,
                         parent,
                         false
                 ).let {
@@ -58,13 +59,23 @@ class HomeAdapter(val viewModel: HomeViewModel) : BaseAdapter() {
                 }
             }
             TYPE_NO_PROFILE -> {
-                DataBindingUtil.inflate<ItemProfileCheckBinding>(
+                DataBindingUtil.inflate<ItemHomeProfileCheckBinding>(
                         LayoutInflater.from(parent.context),
-                        R.layout.item_profile_check,
+                        R.layout.item_home_profile_check,
                         parent,
                         false
                 ).let {
-                    return HomeProfileViewHolder(it)
+                    return HomeProfileCheckViewHolder(it)
+                }
+            }
+            TYPE_POPULAR -> {
+                DataBindingUtil.inflate<ItemHomePopularBinding>(
+                        LayoutInflater.from(parent.context),
+                        R.layout.item_home_popular,
+                        parent,
+                        false
+                ).let {
+                    return HomePopularProfileViewHolder(it)
                 }
             }
             else -> {
@@ -120,19 +131,30 @@ class HomeAdapter(val viewModel: HomeViewModel) : BaseAdapter() {
             }
         }
     }
-    inner class HomeCategoryListViewHolder(private val binding: ItemCategoryListBinding) : BaseViewHolder(binding.root) {
+    inner class HomeCategoryListViewHolder(private val binding: ItemHomeCategoryListBinding) : BaseViewHolder(binding.root) {
         override fun onBind(item: Any, pos: Int) {
             binding.apply {
-                var vm = item as HomeViewModel
-                var cateAdapter = CategoryAdapter(vm, vm.homeData.value?.get(pos) as ArrayList<Category>)
+                val vm = item as HomeViewModel
+                val cateAdapter = HomeCategoryAdapter(vm, vm.homeData.value?.get(pos) as ArrayList<Category>)
                 adapter = cateAdapter
             }
         }
     }
 
-    inner class HomeProfileViewHolder(private val binding: ItemProfileCheckBinding) : BaseViewHolder(binding.root) {
+    inner class HomeProfileCheckViewHolder(private val binding: ItemHomeProfileCheckBinding) : BaseViewHolder(binding.root) {
         override fun onBind(item: Any, pos: Int) {
             binding.apply {
+            }
+        }
+    }
+
+    inner class HomePopularProfileViewHolder(private val binding: ItemHomePopularBinding) : BaseViewHolder(binding.root) {
+        override fun onBind(item: Any, pos: Int) {
+            binding.apply {
+                val vm = item as HomeViewModel
+                val profileAdapter = HomePopularAdapter(vm, vm.homeData.value?.get(pos) as ArrayList<Profile>)
+                adapter = profileAdapter
+
             }
         }
     }

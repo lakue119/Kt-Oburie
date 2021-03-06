@@ -6,7 +6,9 @@ import android.util.AttributeSet
 import android.widget.ImageView
 import com.lakue.oburie.R
 
-
+/**
+ *모서리 둥근 이미지뷰 생성
+ */
 class RoundedImageView : ImageView {
     private val roundRect = RectF()
     private val maskPaint = Paint()

@@ -3,6 +3,9 @@ package com.lakue.oburie.listener
 import android.view.View
 import com.lakue.oburie.utils.LogUtil
 
+/**
+ * 중복클릭 방지 리스너
+ */
 class OnThrottleClickListener(
     private val clickListener: View.OnClickListener,
     private val interval: Long = 300

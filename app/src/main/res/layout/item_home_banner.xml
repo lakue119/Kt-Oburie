@@ -12,6 +12,8 @@
             type="com.lakue.oburie.ui.home.HomeViewModel" />
     </data>
     <LinearLayout
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
