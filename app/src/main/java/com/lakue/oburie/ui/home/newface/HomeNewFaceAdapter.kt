@@ -38,6 +38,7 @@ class HomeNewFaceAdapter(val viewModel: HomeViewModel, profile: ArrayList<Profil
         override fun onBind(item: Any, pos: Int) {
             binding.apply {
                 this.profile = item as Profile
+                this.vm = viewModel
             }
         }
     }

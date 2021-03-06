@@ -9,6 +9,10 @@
             name="profile"
             type="com.lakue.oburie.model.Profile" />
 
+        <variable
+            name="vm"
+            type="com.lakue.oburie.ui.home.HomeViewModel" />
+
     </data>
 
     <com.google.android.material.card.MaterialCardView
