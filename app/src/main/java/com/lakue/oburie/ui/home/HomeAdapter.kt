@@ -10,6 +10,7 @@ import com.lakue.oburie.databinding.*
 import com.lakue.oburie.model.Category
 import com.lakue.oburie.model.Profile
 import com.lakue.oburie.ui.home.category.HomeCategoryAdapter
+import com.lakue.oburie.ui.home.group.HomeGroupAdapter
 import com.lakue.oburie.ui.home.newface.HomeNewFaceAdapter
 import com.lakue.oburie.ui.home.popular.HomePopularAdapter
 
@@ -87,13 +88,13 @@ class HomeAdapter(val viewModel: HomeViewModel) : BaseAdapter() {
                 }
             }
             else -> {
-                DataBindingUtil.inflate<ItemHomeBannerBinding>(
+                DataBindingUtil.inflate<ItemHomeGroupListBinding>(
                         LayoutInflater.from(parent.context),
-                        R.layout.item_home_banner,
+                        R.layout.item_home_group_list,
                         parent,
                         false
                 ).let {
-                    return HomeBannerViewHolder(it)
+                    return HomeGroupProfileViewHolder(it)
                 }
             }
         }
@@ -172,6 +173,17 @@ class HomeAdapter(val viewModel: HomeViewModel) : BaseAdapter() {
             binding.apply {
                 val vm = item as HomeViewModel
                 val profileAdapter = HomeNewFaceAdapter(vm, vm.homeData.value?.get(pos) as ArrayList<Profile>)
+                adapter = profileAdapter
+
+            }
+        }
+    }
+
+    inner class HomeGroupProfileViewHolder(private val binding: ItemHomeGroupListBinding) : BaseViewHolder(binding.root) {
+        override fun onBind(item: Any, pos: Int) {
+            binding.apply {
+                val vm = item as HomeViewModel
+                val profileAdapter = HomeGroupAdapter(vm, vm.homeData.value?.get(pos) as ArrayList<Profile>)
                 adapter = profileAdapter
 
             }

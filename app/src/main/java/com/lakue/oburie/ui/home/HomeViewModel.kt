@@ -50,8 +50,8 @@ class HomeViewModel @Inject constructor(
                 Profile("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg","보컬 이재준"),
                 Profile("https://modo-phinf.pstatic.net/20160506_20/1462514893413GcmEE_JPEG/mosahvIFOQ.jpeg?type=w1100","성악 최명락"),
                 Profile("https://img1.daumcdn.net/thumb/S272x320/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FqaGuY%2FbtqD9NO22oT%2FzufXfuCiVc9M0X7bf9xDCK%2Fimg.png","성악 최명락")))
-//        sampleList.add(arrayListOf("https://www.namdongarts.kr/UpFiles/Fboard_1/IMG_7905.JPG","보컬 이재준",
-//                "https://www.namdongarts.kr/UpFiles/Fboard_1/IMG_7905.JPG","보컬 이재준"))
+        sampleList.add(arrayListOf(Profile("https://lh3.googleusercontent.com/proxy/CJyIAETW_5CaxFuVgKqk2aoFE-V9EUFf1-9LmFvjnHFsBHuYymgnH9q0NB82yGmBxe--I2NaRDDfZ1Bh5EIWydgASP8JqlTq7NDai_UFW1LSA1ze_lnShEXMKzvXHHqd","보컬 이재준"),
+                Profile("https://lh3.googleusercontent.com/proxy/snYToLMR5_qhWZU3SyJQMpeT-PlcyEUz6q50AlW3gTpJnT5KSwA0-7OOn_CCs9Jf7jEB8hJZ5dxsN2h43OiDQZXPIBceT0bK_z_3vHXZevN2","성악 최명락")))
 
         _homeData.value = sampleList
         homeAdapter.setCount(_homeData.value!!.size)
