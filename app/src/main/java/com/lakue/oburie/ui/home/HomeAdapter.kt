@@ -10,6 +10,7 @@ import com.lakue.oburie.base.BaseViewModel
 import com.lakue.oburie.databinding.ItemCategoryBinding
 import com.lakue.oburie.databinding.ItemCategoryListBinding
 import com.lakue.oburie.databinding.ItemHomeBannerBinding
+import com.lakue.oburie.databinding.ItemProfileCheckBinding
 import com.lakue.oburie.model.Category
 import com.lakue.oburie.ui.home.category.CategoryAdapter
 
@@ -54,6 +55,16 @@ class HomeAdapter(val viewModel: HomeViewModel) : BaseAdapter() {
                         false
                 ).let {
                     return HomeCategoryListViewHolder(it)
+                }
+            }
+            TYPE_NO_PROFILE -> {
+                DataBindingUtil.inflate<ItemProfileCheckBinding>(
+                        LayoutInflater.from(parent.context),
+                        R.layout.item_profile_check,
+                        parent,
+                        false
+                ).let {
+                    return HomeProfileViewHolder(it)
                 }
             }
             else -> {
@@ -115,6 +126,13 @@ class HomeAdapter(val viewModel: HomeViewModel) : BaseAdapter() {
                 var vm = item as HomeViewModel
                 var cateAdapter = CategoryAdapter(vm, vm.homeData.value?.get(pos) as ArrayList<Category>)
                 adapter = cateAdapter
+            }
+        }
+    }
+
+    inner class HomeProfileViewHolder(private val binding: ItemProfileCheckBinding) : BaseViewHolder(binding.root) {
+        override fun onBind(item: Any, pos: Int) {
+            binding.apply {
             }
         }
     }
