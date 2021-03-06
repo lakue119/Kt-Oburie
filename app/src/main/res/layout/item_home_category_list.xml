@@ -17,8 +17,8 @@
         <androidx.recyclerview.widget.RecyclerView
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
-            android:layout_marginLeft="12dp"
-            android:layout_marginRight="12dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
             setAdapter="@{adapter}"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

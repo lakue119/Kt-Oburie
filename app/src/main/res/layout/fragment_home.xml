@@ -17,6 +17,7 @@
             android:layout_height="wrap_content">
 
             <androidx.appcompat.widget.Toolbar
+                android:onClick="@{() -> vm.setData()}"
                 app:title="Oburie"
                 app:titleTextColor="@color/point_1000"
                 android:layout_width="match_parent"

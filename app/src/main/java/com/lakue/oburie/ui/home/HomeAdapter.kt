@@ -6,13 +6,11 @@ import androidx.databinding.DataBindingUtil
 import com.lakue.oburie.R
 import com.lakue.oburie.base.BaseAdapter
 import com.lakue.oburie.base.BaseViewHolder
-import com.lakue.oburie.databinding.ItemHomeBannerBinding
-import com.lakue.oburie.databinding.ItemHomeCategoryListBinding
-import com.lakue.oburie.databinding.ItemHomePopularBinding
-import com.lakue.oburie.databinding.ItemHomeProfileCheckBinding
+import com.lakue.oburie.databinding.*
 import com.lakue.oburie.model.Category
 import com.lakue.oburie.model.Profile
 import com.lakue.oburie.ui.home.category.HomeCategoryAdapter
+import com.lakue.oburie.ui.home.newface.HomeNewFaceAdapter
 import com.lakue.oburie.ui.home.popular.HomePopularAdapter
 
 class HomeAdapter(val viewModel: HomeViewModel) : BaseAdapter() {
@@ -21,7 +19,7 @@ class HomeAdapter(val viewModel: HomeViewModel) : BaseAdapter() {
     private val TYPE_CATEGORY = 1002
     private val TYPE_NO_PROFILE = 1003
     private val TYPE_POPULAR = 1004
-    private val TYPE_NEW_PEOPLE = 1005
+    private val TYPE_NEW_FACE = 1005
     private val TYPE_GROUP = 1006
 
     var dataCount = 0
@@ -69,13 +67,23 @@ class HomeAdapter(val viewModel: HomeViewModel) : BaseAdapter() {
                 }
             }
             TYPE_POPULAR -> {
-                DataBindingUtil.inflate<ItemHomePopularBinding>(
+                DataBindingUtil.inflate<ItemHomePopularListBinding>(
                         LayoutInflater.from(parent.context),
-                        R.layout.item_home_popular,
+                        R.layout.item_home_popular_list,
                         parent,
                         false
                 ).let {
                     return HomePopularProfileViewHolder(it)
+                }
+            }
+            TYPE_NEW_FACE -> {
+                DataBindingUtil.inflate<ItemHomeNewFaceListBinding>(
+                        LayoutInflater.from(parent.context),
+                        R.layout.item_home_new_face_list,
+                        parent,
+                        false
+                ).let {
+                    return HomeNewFaceProfileViewHolder(it)
                 }
             }
             else -> {
@@ -112,7 +120,7 @@ class HomeAdapter(val viewModel: HomeViewModel) : BaseAdapter() {
                 return TYPE_POPULAR
             }
             4 -> {
-                return TYPE_NEW_PEOPLE
+                return TYPE_NEW_FACE
             }
             else -> {
                 return TYPE_GROUP
@@ -148,11 +156,22 @@ class HomeAdapter(val viewModel: HomeViewModel) : BaseAdapter() {
         }
     }
 
-    inner class HomePopularProfileViewHolder(private val binding: ItemHomePopularBinding) : BaseViewHolder(binding.root) {
+    inner class HomePopularProfileViewHolder(private val binding: ItemHomePopularListBinding) : BaseViewHolder(binding.root) {
         override fun onBind(item: Any, pos: Int) {
             binding.apply {
                 val vm = item as HomeViewModel
                 val profileAdapter = HomePopularAdapter(vm, vm.homeData.value?.get(pos) as ArrayList<Profile>)
+                adapter = profileAdapter
+
+            }
+        }
+    }
+
+    inner class HomeNewFaceProfileViewHolder(private val binding: ItemHomeNewFaceListBinding) : BaseViewHolder(binding.root) {
+        override fun onBind(item: Any, pos: Int) {
+            binding.apply {
+                val vm = item as HomeViewModel
+                val profileAdapter = HomeNewFaceAdapter(vm, vm.homeData.value?.get(pos) as ArrayList<Profile>)
                 adapter = profileAdapter
 
             }

@@ -1,55 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools">
 
     <data>
+
         <variable
-            name="adapter"
-            type="com.lakue.oburie.ui.home.popular.HomePopularAdapter" />
-        <variable
-            name="position"
-            type="Integer" />
+            name="profile"
+            type="com.lakue.oburie.model.Profile" />
+
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_marginTop="16dp"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    <com.google.android.material.card.MaterialCardView
+        android:layout_margin="4dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="7dp"
+        app:cardElevation="0dp">
 
-        <TextView
-            android:layout_marginLeft="20dp"
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/applesdgothicneob"
-            android:text="@string/home_popular"
-            android:textColor="@color/black"
-            android:textSize="16dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:layout_marginRight="20dp"
-            android:textColor="@color/gray_900"
-            android:text="@string/show_all"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <androidx.recyclerview.widget.RecyclerView
-            setAdapter="@{adapter}"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            android:clipToPadding="false"
-            android:layout_marginTop="8dp"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            android:orientation="horizontal"
+            android:layout_height="wrap_content">
 
-            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+            <ImageView
+                image_url="@{profile.img}"
+                android:layout_width="144dp"
+                android:layout_height="144dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:fontFamily="@font/applesdgothicneol"
+                android:layout_width="144dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/gradation_profile_cover"
+                android:paddingLeft="12dp"
+                android:paddingTop="20dp"
+                android:paddingRight="12dp"
+                android:paddingBottom="12dp"
+                android:text="@{profile.name}"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                tool:text="성악 최명락" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
 
 </layout>

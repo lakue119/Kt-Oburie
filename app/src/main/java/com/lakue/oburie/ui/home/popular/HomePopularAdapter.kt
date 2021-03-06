@@ -7,7 +7,6 @@ import com.lakue.oburie.R
 import com.lakue.oburie.base.BaseAdapter
 import com.lakue.oburie.base.BaseViewHolder
 import com.lakue.oburie.databinding.ItemHomePopularBinding
-import com.lakue.oburie.databinding.ItemSquareProfileBinding
 import com.lakue.oburie.model.Profile
 import com.lakue.oburie.ui.home.HomeViewModel
 
@@ -16,9 +15,9 @@ class HomePopularAdapter(val viewModel: HomeViewModel, profile: ArrayList<Profil
     val profiles = profile
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder {
-        DataBindingUtil.inflate<ItemSquareProfileBinding>(
+        DataBindingUtil.inflate<ItemHomePopularBinding>(
                 LayoutInflater.from(parent.context),
-                R.layout.item_square_profile,
+                R.layout.item_home_popular,
                 parent,
                 false
         ).let {
@@ -35,7 +34,7 @@ class HomePopularAdapter(val viewModel: HomeViewModel, profile: ArrayList<Profil
     /**
      * ViewHolder
      */
-    inner class HomeProfileItemViewHolder(private val binding: ItemSquareProfileBinding) : BaseViewHolder(binding.root) {
+    inner class HomeProfileItemViewHolder(private val binding: ItemHomePopularBinding) : BaseViewHolder(binding.root) {
         override fun onBind(item: Any, pos: Int) {
             binding.apply {
                 this.profile = item as Profile
