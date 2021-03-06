@@ -1,14 +1,11 @@
 package com.lakue.oburie.ui.home
 
-import android.view.View
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.SavedStateHandle
 import com.lakue.oburie.R
-import com.lakue.oburie.adapter.HomeAdapter
 import com.lakue.oburie.base.BaseViewModel
 import com.lakue.oburie.model.Category
-import com.lakue.oburie.model.Profile
 //import com.lakue.oburie.repository.ProfileRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
@@ -37,9 +34,10 @@ class HomeViewModel @Inject constructor(
     fun sampleHomeData() {
         var sampleList = ArrayList<Any>()
         sampleList.add("https://img.fleapop.co.kr/banner/3D22B546041FA1B1614936603.jpg")
-//        sampleList.add(arrayListOf(Category(0, "", "", R.drawable.ic_violin), Category(0, "", "", R.drawable.ic_violin), Category(0, "", "", R.drawable.ic_violin)
-//                , Category(0, "", "", R.drawable.ic_violin), Category(0, "", "", R.drawable.ic_violin), Category(0, "", "", R.drawable.ic_violin)))
-//        sampleList.add(false)
+        sampleList.add(arrayListOf(Category(0, "", "", R.drawable.ic_violin), Category(0, "", "", R.drawable.ic_sexophone), Category(0, "", "", R.drawable.ic_piano)
+                , Category(0, "", "", R.drawable.ic_vacalist), Category(0, "", "", R.drawable.ic_lyre), Category(0, "", "", R.drawable.ic_taepyeongso),
+                Category(0, "", "", R.drawable.ic_drum), Category(0, "", "", R.drawable.ic_sing)))
+        sampleList.add(false)
 //        sampleList.add(arrayListOf(Profile("https://mblogthumb-phinf.pstatic.net/MjAyMDAyMDdfMTYw/MDAxNTgxMDg1NzUxMTUy.eV1iEw2gk2wt_YqPWe5F7SroOCkXJy2KFwmTDNzM0GQg.Z3Kd5MrDh07j86Vlb2OhAtcw0oVmGCMXtTDjoHyem9og.JPEG.7wayjeju/%EB%B0%B0%EC%9A%B0%ED%94%84%EB%A1%9C%ED%95%84%EC%82%AC%EC%A7%84_IMG7117.jpg?type=w800","성악 최명락"),
 //                Profile("https://mblogthumb-phinf.pstatic.net/MjAyMDAyMDdfMTYw/MDAxNTgxMDg1NzUxMTUy.eV1iEw2gk2wt_YqPWe5F7SroOCkXJy2KFwmTDNzM0GQg.Z3Kd5MrDh07j86Vlb2OhAtcw0oVmGCMXtTDjoHyem9og.JPEG.7wayjeju/%EB%B0%B0%EC%9A%B0%ED%94%84%EB%A1%9C%ED%95%84%EC%82%AC%EC%A7%84_IMG7117.jpg?type=w800","성악 최명락"),
 //                Profile("https://mblogthumb-phinf.pstatic.net/MjAyMDAyMDdfMTYw/MDAxNTgxMDg1NzUxMTUy.eV1iEw2gk2wt_YqPWe5F7SroOCkXJy2KFwmTDNzM0GQg.Z3Kd5MrDh07j86Vlb2OhAtcw0oVmGCMXtTDjoHyem9og.JPEG.7wayjeju/%EB%B0%B0%EC%9A%B0%ED%94%84%EB%A1%9C%ED%95%84%EC%82%AC%EC%A7%84_IMG7117.jpg?type=w800","성악 최명락"),

@@ -21,6 +21,13 @@ fun ImageView.setImage(
     Glide.with(context).load(url).into(this)
 }
 
+@BindingAdapter("image_icon")
+fun ImageView.setIconImage(
+        url: Int
+){
+    Glide.with(context).load(url).into(this)
+}
+
 @BindingAdapter("setAdapter")
 fun RecyclerView.setAdaper(
         adapter: RecyclerView.Adapter<*>
