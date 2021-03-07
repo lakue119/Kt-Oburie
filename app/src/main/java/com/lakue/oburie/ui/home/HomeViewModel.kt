@@ -35,6 +35,7 @@ class HomeViewModel @Inject constructor(
     fun sampleHomeData() {
         var sampleList = ArrayList<Any>()
         sampleList.add("https://wifiexpress.co.kr/wp/wp-content/uploads/2013/05/2018-%E1%84%89%E1%85%A1%E1%86%BC%E1%84%89%E1%85%A5%E1%86%AF-%E1%84%8B%E1%85%B5%E1%84%87%E1%85%A6%E1%86%AB%E1%84%90%E1%85%B3-%E1%84%87%E1%85%A2%E1%84%82%E1%85%A5-9%E1%84%8B%E1%85%AF%E1%86%AF.jpg")
+        sampleList.add(1)
         sampleList.add(arrayListOf(Category(0, "서양・현악기", "", R.drawable.ic_violin), Category(0, "서양・관악기", "", R.drawable.ic_sexophone), Category(0, "서양・건반,타악기", "", R.drawable.ic_piano)
                 , Category(0, "성악", "", R.drawable.ic_vacalist), Category(0, "국악・현악기", "", R.drawable.ic_lyre), Category(0, "국악・관악기", "", R.drawable.ic_taepyeongso),
                 Category(0, "국악・타악기", "", R.drawable.ic_drum), Category(0, "실용음악", "", R.drawable.ic_sing)))

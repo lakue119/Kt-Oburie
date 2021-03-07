@@ -4,13 +4,14 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatDialog
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.ViewModel
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
+import com.bumptech.glide.Glide
 import com.lakue.oburie.R
 import com.lakue.oburie.base.BaseActivity
 import com.lakue.oburie.databinding.ActivityMainBinding
@@ -54,22 +55,34 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>(R.layout.a
                     progressDialog!!.findViewById<RelativeLayout>(R.id.dialog_rl_review) as ViewGroup,
                     false)
             reviewBinding.profile = profile
+            reviewBinding.activity = this@MainActivity
             progressDialog!!.show()
         }
 
-        val tv_close = progressDialog!!.findViewById<TextView>(R.id.tv_close)
-        val tv_show = progressDialog!!.findViewById<TextView>(R.id.tv_show)
+        val tvClose = progressDialog!!.findViewById<TextView>(R.id.tv_close)
+        val tvShow = progressDialog!!.findViewById<TextView>(R.id.tv_show)
+        val tvName = progressDialog!!.findViewById<TextView>(R.id.tv_name)
+        val rivProfile = progressDialog!!.findViewById<ImageView>(R.id.riv_profile)
+
+        tvName?.text = "'${profile.name}'${getString(R.string.how_together_review)}"
+        rivProfile?.let { Glide.with(this@MainActivity).load(profile.img).into(it) }
 
 
-        tv_close?.onThrottleClick {
+        tvClose?.onThrottleClick {
             if (progressDialog != null) {
                 progressDialog!!.dismiss()
             }
         }
-        tv_show?.onThrottleClick {
+        tvShow?.onThrottleClick {
             if (progressDialog != null) {
                 progressDialog!!.dismiss()
             }
+        }
+    }
+
+    fun onDialogFinish(){
+        if (progressDialog != null) {
+            progressDialog!!.dismiss()
         }
     }
 }

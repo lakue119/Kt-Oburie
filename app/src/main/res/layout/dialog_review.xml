@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="profile"
+            type="com.lakue.oburie.model.Profile" />
+        <variable
+            name="activity"
+            type="com.lakue.oburie.ui.main.MainActivity" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/dialog_rl_review"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="14dp"
+            android:elevation="0dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <com.lakue.oburie.custom.RoundedImageView
+                    android:scaleType="centerCrop"
+                    android:id="@+id/riv_profile"
+                    android:layout_marginTop="24dp"
+                    image_url="@{profile.img}"
+                    app:rectRadius="100dp"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"/>
+
+                <TextView
+                    android:id="@+id/tv_name"
+                    android:fontFamily="@font/applesdgothicneoeb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="24dp"
+                    android:gravity="center"
+                    android:text="@{profile.name}"
+                    android:textColor="@color/color_dark_ffffff_000000"/>
+
+                <View
+                    android:background="@color/color_dark_111111_dddddd"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:onClick="@{() -> activity.onDialogFinish()}"
+                        android:fontFamily="@font/applesdgothicneol"
+                        android:id="@+id/tv_close"
+                        android:paddingTop="16dp"
+                        android:paddingBottom="16dp"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:textColor="@color/gray_900"
+                        android:text="@string/next_edit"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <View
+                        android:background="@color/color_dark_111111_dddddd"
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"/>
+
+                    <TextView
+                        android:onClick="@{() -> activity.onDialogFinish()}"
+                        android:fontFamily="@font/applesdgothicneob"
+                        android:id="@+id/tv_show"
+                        android:paddingTop="16dp"
+                        android:paddingBottom="16dp"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:textColor="@color/color_dark_ffffff_000000"
+                        android:text="@string/review_edit"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+    </RelativeLayout>
+
+</layout>
