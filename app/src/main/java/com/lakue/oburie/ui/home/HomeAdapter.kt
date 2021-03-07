@@ -17,11 +17,12 @@ import com.lakue.oburie.ui.home.popular.HomePopularAdapter
 class HomeAdapter(val viewModel: HomeViewModel) : BaseAdapter() {
 
     private val TYPE_BANNER = 1001
-    private val TYPE_CATEGORY = 1002
-    private val TYPE_NO_PROFILE = 1003
-    private val TYPE_POPULAR = 1004
-    private val TYPE_NEW_FACE = 1005
-    private val TYPE_GROUP = 1006
+    private val TYPE_SEARCH = 1002
+    private val TYPE_CATEGORY = 1003
+    private val TYPE_NO_PROFILE = 1004
+    private val TYPE_POPULAR = 1005
+    private val TYPE_NEW_FACE = 1006
+    private val TYPE_GROUP = 1007
 
     var dataCount = 0
 //    val myItems = ArrayList<Any>()
@@ -45,6 +46,16 @@ class HomeAdapter(val viewModel: HomeViewModel) : BaseAdapter() {
                         false
                 ).let {
                     return HomeBannerViewHolder(it)
+                }
+            }
+            TYPE_SEARCH -> {
+                DataBindingUtil.inflate<ItemHomeSearchBinding>(
+                        LayoutInflater.from(parent.context),
+                        R.layout.item_home_search,
+                        parent,
+                        false
+                ).let {
+                    return HomeSearchViewHolder(it)
                 }
             }
             TYPE_CATEGORY -> {
@@ -112,15 +123,18 @@ class HomeAdapter(val viewModel: HomeViewModel) : BaseAdapter() {
                 return TYPE_BANNER
             }
             1 -> {
-                return TYPE_CATEGORY
+                return TYPE_SEARCH
             }
             2 -> {
-                return TYPE_NO_PROFILE
+                return TYPE_CATEGORY
             }
             3 -> {
-                return TYPE_POPULAR
+                return TYPE_NO_PROFILE
             }
             4 -> {
+                return TYPE_POPULAR
+            }
+            5 -> {
                 return TYPE_NEW_FACE
             }
             else -> {
@@ -140,6 +154,15 @@ class HomeAdapter(val viewModel: HomeViewModel) : BaseAdapter() {
             }
         }
     }
+
+    inner class HomeSearchViewHolder(private val binding: ItemHomeSearchBinding) : BaseViewHolder(binding.root) {
+        override fun onBind(item: Any, pos: Int) {
+            binding.apply {
+                vm = viewModel
+            }
+        }
+    }
+
     inner class HomeCategoryListViewHolder(private val binding: ItemHomeCategoryListBinding) : BaseViewHolder(binding.root) {
         override fun onBind(item: Any, pos: Int) {
             binding.apply {
