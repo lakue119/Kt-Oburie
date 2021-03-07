@@ -26,7 +26,7 @@
             android:layout_marginLeft="20dp"
             android:fontFamily="@font/applesdgothicneoeb"
             android:text="@string/new_face"
-            android:textColor="@color/black"
+            android:textColor="@color/color_dark_ffffff_000000"
             android:textSize="16dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
