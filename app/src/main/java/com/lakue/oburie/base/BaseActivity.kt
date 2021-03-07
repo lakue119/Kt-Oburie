@@ -125,9 +125,9 @@ abstract class BaseActivity<B : ViewDataBinding, VM : BaseViewModel>(
         )
     }
 
-    protected fun View.onThrottleClick(action: (v: View) -> Unit, interval: Long) {
+    protected fun View.onThrottleClick(action: (v: View) -> Unit) {
         val listener = View.OnClickListener { action(it) }
-        setOnClickListener(OnThrottleClickListener(listener, interval))
+        setOnClickListener(OnThrottleClickListener(listener))
     }
 
     //null이면 ""으로 변환
