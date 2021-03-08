@@ -1,12 +1,6 @@
-package com.lakue.oburie.ui.home
+package com.lakue.oburie.ui.bottomnavigation.home
 
-import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import com.lakue.oburie.R
-import com.lakue.oburie.base.BaseActivity
 import com.lakue.oburie.base.BaseFragment
 import com.lakue.oburie.databinding.FragmentHomeBinding
 import dagger.hilt.android.AndroidEntryPoint

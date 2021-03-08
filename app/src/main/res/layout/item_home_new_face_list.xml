@@ -6,7 +6,7 @@
 
         <variable
             name="adapter"
-            type="com.lakue.oburie.ui.home.newface.HomeNewFaceAdapter" />
+            type="com.lakue.oburie.ui.bottomnavigation.home.newface.HomeNewFaceAdapter" />
 
         <variable
             name="position"

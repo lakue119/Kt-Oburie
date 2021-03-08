@@ -9,6 +9,10 @@
         <variable
             name="cate"
             type="com.lakue.oburie.model.Category" />
+
+        <variable
+            name="vm"
+            type="com.lakue.oburie.ui.bottomnavigation.home.HomeViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -17,6 +21,7 @@
 
 
         <com.google.android.material.card.MaterialCardView
+            android:onClick="@{() -> vm.showCategoryResult()}"
             android:theme="@style/Theme.MaterialComponents.Light"
             android:layout_margin="16dp"
             android:layout_width="match_parent"

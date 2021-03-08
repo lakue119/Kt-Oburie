@@ -1,4 +1,4 @@
-package com.lakue.oburie.ui.home.category
+package com.lakue.oburie.ui.bottomnavigation.home.category
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -8,7 +8,7 @@ import com.lakue.oburie.base.BaseAdapter
 import com.lakue.oburie.base.BaseViewHolder
 import com.lakue.oburie.databinding.ItemHomeCategoryBinding
 import com.lakue.oburie.model.Category
-import com.lakue.oburie.ui.home.HomeViewModel
+import com.lakue.oburie.ui.bottomnavigation.home.HomeViewModel
 
 class HomeCategoryAdapter(val viewModel: HomeViewModel, cate: ArrayList<Category>) : BaseAdapter() {
 
@@ -39,6 +39,7 @@ class HomeCategoryAdapter(val viewModel: HomeViewModel, cate: ArrayList<Category
             binding.apply {
                 this.cate = item as Category
                 this.position = pos
+                this.vm = viewModel
             }
         }
     }

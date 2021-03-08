@@ -1,4 +1,4 @@
-package com.lakue.oburie.ui.joboffer
+package com.lakue.oburie.ui.bottomnavigation.joboffer
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

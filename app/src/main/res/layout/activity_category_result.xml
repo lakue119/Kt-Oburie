@@ -2,6 +2,12 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="vm"
+            type="com.lakue.oburie.ui.categoryresult.CategoryResultViewModel" />
+    </data>
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -11,47 +17,87 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <androidx.appcompat.widget.Toolbar
-                app:title="Oburie"
-                app:titleTextColor="@color/point_1000"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-        </com.google.android.material.appbar.AppBarLayout>
-
-        <androidx.coordinatorlayout.widget.CoordinatorLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <com.google.android.material.appbar.AppBarLayout
+            <LinearLayout
+                android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <LinearLayout
-                    android:orientation="vertical"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_marginLeft="5dp"
+                    android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <com.lakue.oburie.custom.RoundedImageView
-                        android:adjustViewBounds="true"
-                        app:rectRadius="8dp"
-                        android:src="@drawable/oburie_guide"
-                        android:layout_width="match_parent"
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:padding="15dp"
+                        android:src="@drawable/ic_back"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginLeft="8dp"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/applesdgothicneoeb"
+                        android:textSize="18dp"
+                        android:textColor="@color/color_dark_ffffff_000000"
+                        android:text="국악"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
 
-                    <com.google.android.material.card.MaterialCardView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
+                <View
+                    android:background="@color/color_dark_000000_ffffff"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"/>
 
+                <LinearLayout
+                    android:layout_gravity="center|left"
+                    android:gravity="center"
+                    android:layout_marginLeft="18dp"
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp">
 
-                    </com.google.android.material.card.MaterialCardView>
+                    <ImageView
+                        android:tint="@color/point_1000"
+                        android:src="@drawable/ic_round_keyboard_arrow_down_24"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
 
+                    <TextView
+                        android:layout_marginLeft="4dp"
+                        android:fontFamily="@font/applesdgothicneol"
+                        android:textColor="@color/color_dark_ffffff_000000"
+                        android:textSize="18dp"
+                        android:text="서울.대구.대전"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
 
                 </LinearLayout>
 
-            </com.google.android.material.appbar.AppBarLayout>
+            </LinearLayout>
 
-        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:paddingTop="8dp"
+            android:paddingBottom="12dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:clipToPadding="false"
+            app:setAdapter="@{vm.profileAdapter}"
+            android:layout_weight="1"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"/>
+
     </LinearLayout>
 </layout>

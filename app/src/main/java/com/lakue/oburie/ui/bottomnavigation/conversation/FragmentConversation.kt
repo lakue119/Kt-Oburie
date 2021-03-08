@@ -1,4 +1,4 @@
-package com.lakue.oburie.ui.conversation
+package com.lakue.oburie.ui.bottomnavigation.conversation
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

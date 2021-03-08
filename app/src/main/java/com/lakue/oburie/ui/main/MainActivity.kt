@@ -30,7 +30,17 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>(R.layout.a
     }
 
     override fun setUI() {
-        showSuccessDialog(Profile("https://mblogthumb-phinf.pstatic.net/MjAyMDAyMDdfNTEg/MDAxNTgxMDg1ODYyMjc5.nbkCfRoTfo15xgsGlv82ZmN0wBiTGhdJCxIqC5bOCpog.3hhxLTquJPHdN_Qc5PFyFyiqpLfsNORaKAuIB2rfDfgg.JPEG.7wayjeju/%EB%B0%B0%EC%9A%B0%ED%94%84%EB%A1%9C%ED%95%84%EC%82%AC%EC%A7%84_IMG7131.jpg?type=w800","최명락"))
+        showSuccessDialog(Profile("https://mblogthumb-phinf.pstatic.net/MjAyMDAyMDdfNTEg/MDAxNTgxMDg1ODYyMjc5.nbkCfRoTfo15xgsGlv82ZmN0wBiTGhdJCxIqC5bOCpog.3hhxLTquJPHdN_Qc5PFyFyiqpLfsNORaKAuIB2rfDfgg.JPEG.7wayjeju/%EB%B0%B0%EC%9A%B0%ED%94%84%EB%A1%9C%ED%95%84%EC%82%AC%EC%A7%84_IMG7131.jpg?type=w800",
+                "최명락",
+                "PLATINUM",
+                "가야금",
+                "대전,서울,천안",
+                4.0f, 4.0f, 4.0f, 4.0f, 38,
+                arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
+                "", "", "", 100, "안녕하세용~~", "경력", "수상내역",
+                arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
+                "보컬/축가,교회, 모든행사 다뜁니다!!\n" +
+                        "잘생김에 보컬까지~"))
     }
 
     override fun setEvent() {

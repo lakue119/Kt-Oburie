@@ -9,7 +9,7 @@
 
         <variable
             name="vm"
-            type="com.lakue.oburie.ui.home.HomeViewModel" />
+            type="com.lakue.oburie.ui.bottomnavigation.home.HomeViewModel" />
     </data>
     <LinearLayout
         android:layout_marginLeft="20dp"

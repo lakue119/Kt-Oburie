@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.text.TextUtils" />
+
+        <import type="android.view.View" />
+
+        <variable
+            name="vm"
+            type="com.lakue.oburie.ui.categoryresult.CategoryResultViewModel" />
+
+        <variable
+            name="position"
+            type="Integer" />
+    </data>
+
+    <LinearLayout
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.lakue.oburie.custom.RoundedImageView
+            image_url="@{vm.profileData.get(position).img}"
+            android:scaleType="centerCrop"
+            app:rectRadius="5dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"/>
+
+        <LinearLayout
+            android:layout_gravity="center"
+            android:layout_marginLeft="8dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                tool:text="aklwjetklawejtkl"
+                android:maxLines="1"
+                android:text="@{vm.profileData.get(position).introduce}"
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/applesdgothicneob"
+                android:textColor="@color/color_dark_ffffff_000000"
+                android:textSize="16dp" />
+
+
+
+            <LinearLayout
+                android:layout_marginTop="4dp"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/applesdgothicneob"
+                    android:text="@{vm.profileData.get(position).name}"
+                    android:textColor="@color/color_dark_ffffff_000000"
+                    android:textSize="14dp"
+                    tool:text="라꾸" />
+
+                <TextView
+                    android:layout_marginLeft="4dp"
+                    android:id="@+id/textView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/applesdgothicneol"
+                    android:text="@{vm.profileData.get(position).major}"
+                    android:textColor="@color/gray_900"
+                    android:textSize="14dp"
+                    tool:text="라꾸" />
+
+                <TextView
+                    android:id="@+id/textView8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:fontFamily="@font/applesdgothicneol"
+                    android:text="@{vm.profileData.get(position).local}"
+                    android:textColor="@color/gray_900"
+                    android:textSize="14dp"
+                    tool:text="라꾸" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="4dp"
+                android:layout_gravity="center"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_review_bicstar_on"
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"/>
+
+                <TextView
+                    android:layout_marginLeft="4dp"
+                    tool:text="4.0"
+                    android:maxLines="1"
+                    android:text="@{String.valueOf(vm.profileData.get(position).reviewTotalGrade)}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/applesdgothicneob"
+                    android:textColor="@color/color_dark_ffffff_000000"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:layout_marginLeft="4dp"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/applesdgothicneol"
+                    revierCount="@{vm.profileData.get(position).reviewCount}"
+                    android:textColor="@color/color_dark_ffffff_000000"
+                    android:textSize="14dp"
+                    tool:text="(100+)" />
+
+                <View
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"/>
+                <TextView
+                    android:layout_gravity="center"
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/background_round_3"
+                    android:backgroundTint="@color/point_1000"
+                    android:fontFamily="@font/applesdgothicneoeb"
+                    android:paddingLeft="4dp"
+                    android:paddingTop="2dp"
+                    android:paddingRight="4dp"
+                    android:paddingBottom="2dp"
+                    android:textSize="12dp"
+                    android:text="@{vm.profileData.get(position).badge}"
+                    android:textColor="@color/white"
+                    android:visibility="@{TextUtils.isEmpty(vm.profileData.get(position).badge)?View.GONE:View.VISIBLE}"
+                    tool:text="QWHJRJK" />
+
+            </LinearLayout>
+
+            <TextView
+                android:maxLines="2"
+                android:layout_marginTop="4dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/applesdgothicneol"
+                android:text="@{vm.profileData.get(position).introduce}"
+                android:textColor="@color/color_dark_ffffff_000000"
+                android:textSize="14dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView5"
+                tool:text="라꾸" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</layout>

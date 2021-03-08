@@ -1,4 +1,4 @@
-package com.lakue.oburie.ui.mypage
+package com.lakue.oburie.ui.bottomnavigation.mypage
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

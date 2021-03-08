@@ -6,7 +6,7 @@
 
         <variable
             name="adapter"
-            type="com.lakue.oburie.ui.home.category.HomeCategoryAdapter" />
+            type="com.lakue.oburie.ui.bottomnavigation.home.category.HomeCategoryAdapter" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

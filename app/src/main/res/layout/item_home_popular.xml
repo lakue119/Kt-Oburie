@@ -11,7 +11,7 @@
 
         <variable
             name="vm"
-            type="com.lakue.oburie.ui.home.HomeViewModel" />
+            type="com.lakue.oburie.ui.bottomnavigation.home.HomeViewModel" />
 
     </data>
 

@@ -1,4 +1,4 @@
-package com.lakue.oburie.ui.home
+package com.lakue.oburie.ui.bottomnavigation.home
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -9,10 +9,10 @@ import com.lakue.oburie.base.BaseViewHolder
 import com.lakue.oburie.databinding.*
 import com.lakue.oburie.model.Category
 import com.lakue.oburie.model.Profile
-import com.lakue.oburie.ui.home.category.HomeCategoryAdapter
-import com.lakue.oburie.ui.home.group.HomeGroupAdapter
-import com.lakue.oburie.ui.home.newface.HomeNewFaceAdapter
-import com.lakue.oburie.ui.home.popular.HomePopularAdapter
+import com.lakue.oburie.ui.bottomnavigation.home.category.HomeCategoryAdapter
+import com.lakue.oburie.ui.bottomnavigation.home.group.HomeGroupAdapter
+import com.lakue.oburie.ui.bottomnavigation.home.newface.HomeNewFaceAdapter
+import com.lakue.oburie.ui.bottomnavigation.home.popular.HomePopularAdapter
 
 class HomeAdapter(val viewModel: HomeViewModel) : BaseAdapter() {
 
@@ -25,12 +25,7 @@ class HomeAdapter(val viewModel: HomeViewModel) : BaseAdapter() {
     private val TYPE_GROUP = 1007
 
     var dataCount = 0
-//    val myItems = ArrayList<Any>()
 
-    //    fun addItem(item: ArrayList<Any>){
-//        myItems.addAll(item)
-//        notifyDataSetChanged()
-//    }
     fun setCount(count: Int) {
         dataCount = count
         notifyDataSetChanged()

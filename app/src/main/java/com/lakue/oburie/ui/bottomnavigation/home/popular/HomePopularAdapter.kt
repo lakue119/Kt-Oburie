@@ -1,4 +1,4 @@
-package com.lakue.oburie.ui.home.popular
+package com.lakue.oburie.ui.bottomnavigation.home.popular
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -8,7 +8,7 @@ import com.lakue.oburie.base.BaseAdapter
 import com.lakue.oburie.base.BaseViewHolder
 import com.lakue.oburie.databinding.ItemHomePopularBinding
 import com.lakue.oburie.model.Profile
-import com.lakue.oburie.ui.home.HomeViewModel
+import com.lakue.oburie.ui.bottomnavigation.home.HomeViewModel
 
 class HomePopularAdapter(val viewModel: HomeViewModel, profile: ArrayList<Profile>) : BaseAdapter() {
 

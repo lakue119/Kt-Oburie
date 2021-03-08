@@ -5,7 +5,7 @@
     <data>
         <variable
             name="adapter"
-            type="com.lakue.oburie.ui.home.popular.HomePopularAdapter" />
+            type="com.lakue.oburie.ui.bottomnavigation.home.popular.HomePopularAdapter" />
         <variable
             name="position"
             type="Integer" />
