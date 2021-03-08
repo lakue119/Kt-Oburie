@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="vm"
+            type="com.lakue.oburie.ui.categoryresult.location.SelectLocationViewModel" />
+
+        <variable
+            name="position"
+            type="Integer" />
+
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_select"
+            android:textIsSelectable="true"
+            android:enabled="true"
+            android:focusable="true"
+            android:textSize="13dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:gravity="center"
+            android:fontFamily="@font/applesdgothicneob"
+            android:textColor="@color/selector_ffffff_to_000000"
+            android:text="@{vm.locationData.get(position).location}"
+            android:background="@drawable/selector_round_5_ffffff_select_fd9426"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

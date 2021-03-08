@@ -59,6 +59,7 @@
                     android:layout_height="1dp"/>
 
                 <LinearLayout
+                    android:onClick="@{() -> vm.showSelectLocation()}"
                     android:layout_gravity="center|left"
                     android:gravity="center"
                     android:layout_marginLeft="18dp"
@@ -67,7 +68,7 @@
                     android:layout_height="48dp">
 
                     <ImageView
-                        android:tint="@color/point_1000"
+                        app:tint="@color/point_1000"
                         android:src="@drawable/ic_round_keyboard_arrow_down_24"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
