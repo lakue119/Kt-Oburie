@@ -8,6 +8,10 @@
         <variable
             name="vm"
             type="com.lakue.oburie.ui.categoryresult.location.SelectLocationViewModel" />
+
+        <variable
+            name="activity"
+            type="com.lakue.oburie.ui.categoryresult.location.SelectLocationActivity" />
     </data>
 
     <LinearLayout
@@ -28,6 +32,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
+            <TextView
+                android:textSize="10dp"
+                android:textColor="@color/black"
+                android:text="@{String.valueOf(vm.locationData)}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
 
             <TextView
                 android:layout_marginLeft="20dp"
@@ -56,7 +67,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:setAdapter="@{vm.locationAdapter}"
+                app:setAdapter="@{activity.locationAdapter}"
                 app:spanCount="3" />
 
             <TextView

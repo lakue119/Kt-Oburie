@@ -13,6 +13,7 @@
 
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:onClick="@{() -> vm.onSelectLocation(position)}"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginTop="8dp"
@@ -21,10 +22,6 @@
         android:layout_height="wrap_content">
 
         <TextView
-            android:id="@+id/tv_select"
-            android:textIsSelectable="true"
-            android:enabled="true"
-            android:focusable="true"
             android:textSize="13dp"
             android:paddingTop="8dp"
             android:paddingBottom="8dp"
@@ -37,6 +34,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:isSelected="@{vm.locationData.get(position).select}"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 

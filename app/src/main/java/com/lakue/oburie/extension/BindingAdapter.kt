@@ -1,5 +1,6 @@
 package com.lakue.oburie.extension
 
+import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
@@ -53,4 +54,12 @@ fun TextView.setReviewCount(
     }
 
     this.text = "(${ConvertNumberFormat.numberFormat(reviewCount.toString().toInt(),"+")})"
+}
+
+/**
+ * View Selected
+ */
+@BindingAdapter("isSelected")
+fun View.setSelected(selectState: Boolean){
+    this.isSelected = selectState
 }
