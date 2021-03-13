@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="vm"
+            type="com.lakue.oburie.ui.userprofile.UserProfileViewModel" />
+
+        <variable
+            name="position"
+            type="Integer" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.lakue.oburie.custom.RoundedImageView
+            app:layout_constraintDimensionRatio="H,3:2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <FrameLayout
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <com.lakue.oburie.custom.RoundedImageView
+                android:src="@color/point_1000"
+                app:rectRadius="50dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"/>
+            <ImageView
+                android:layout_gravity="center"
+                app:tint="@color/white"
+                android:src="@drawable/ic_round_play_arrow_24"
+                android:layout_width="80dp"
+                android:layout_height="80dp"/>
+        </FrameLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
