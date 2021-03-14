@@ -15,6 +15,7 @@
     </data>
 
     <com.google.android.material.card.MaterialCardView
+        android:onClick="@{() -> vm.showUserDetail()}"
         android:layout_margin="12dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -22,6 +23,7 @@
         app:cardElevation="0dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -52,7 +54,8 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 tool:text="성악 최명락" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout
+            >
 
     </com.google.android.material.card.MaterialCardView>
 

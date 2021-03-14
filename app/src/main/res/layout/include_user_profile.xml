@@ -4,9 +4,10 @@
 
     <data>
         <variable
-            name="profile"
-            type="com.lakue.oburie.model.Profile" />
+            name="vm"
+            type="com.lakue.oburie.ui.userprofile.UserProfileViewModel" />
     </data>
+
     <androidx.core.widget.NestedScrollView
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         android:layout_width="match_parent"
@@ -27,11 +28,12 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:paddingLeft="8dp"
-                    android:paddingRight="8dp"
-                    android:paddingTop="4dp"
-                    android:paddingBottom="4dp"
-                    android:text="@{profile.badge}"
+                    android:paddingLeft="6dp"
+                    android:paddingRight="6dp"
+                    android:paddingTop="2dp"
+                    android:paddingBottom="2dp"
+                    android:textSize="12dp"
+                    android:text="@{vm.profileData.badge}"
                     android:fontFamily="@font/applesdgothicneob"
                     android:textColor="@color/white"
                     android:backgroundTint="@color/point_1000"
@@ -46,20 +48,20 @@
 
                 <ImageView
                     android:src="@drawable/ic_facebook"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"/>
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"/>
 
                 <ImageView
                     android:layout_marginLeft="4dp"
                     android:src="@drawable/ic_insta"
-                    android:layout_width="26dp"
-                    android:layout_height="26dp"/>
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"/>
 
                 <ImageView
                     android:layout_marginLeft="4dp"
                     android:src="@drawable/ic_youtube"
-                    android:layout_width="28dp"
-                    android:layout_height="28dp"/>
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"/>
             </LinearLayout>
 
             <TextView
@@ -67,7 +69,7 @@
                 android:fontFamily="@font/applesdgothicneoeb"
                 android:textSize="23dp"
                 android:textColor="@color/color_dark_ffffff_000000"
-                android:text="akdsfjlakewjrkl"
+                android:text="@{vm.profileData.title}"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
@@ -78,6 +80,7 @@
                 android:layout_height="wrap_content">
 
                 <com.lakue.oburie.custom.RoundedImageView
+                    image_url="@{vm.profileData.img}"
                     app:rectRadius="50dp"
                     android:src="@color/black"
                     android:layout_width="56dp"
@@ -93,15 +96,16 @@
 
                     <TextView
                         android:fontFamily="@font/applesdgothicneob"
-                        android:text="asdfsdaf"
+                        android:text="@{vm.profileData.name}"
                         android:textColor="@color/color_dark_ffffff_000000"
                         android:textSize="16dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
 
                     <TextView
+                        android:layout_marginTop="4dp"
                         android:fontFamily="@font/applesdgothicneol"
-                        android:text="asdfsdaf"
+                        android:text="@{vm.profileData.major}"
                         android:textColor="@color/gray_900"
                         android:textSize="12dp"
                         android:layout_width="wrap_content"
@@ -111,7 +115,7 @@
                 <TextView
                     android:layout_gravity="bottom"
                     android:fontFamily="@font/applesdgothicneol"
-                    android:text="조회수 : 1"
+                    viewCount="@{vm.profileData.view}"
                     android:textColor="@color/gray_900"
                     android:textSize="12dp"
                     android:layout_width="wrap_content"
@@ -119,8 +123,204 @@
 
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_marginTop="24dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <View
+                    android:background="@color/gray_d"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"/>
+
+                <LinearLayout
+                    android:layout_marginTop="24dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_weight="1"
+                        android:fontFamily="@font/applesdgothicneoeb"
+                        android:textSize="20dp"
+                        android:textColor="@color/color_dark_ffffff_000000"
+                        userReviewCount="@{vm.profileData.reviewCount}"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+
+                    <TextView
+                        android:fontFamily="@font/applesdgothicneol"
+                        android:textSize="16dp"
+                        android:textColor="@color/gray_d1"
+                        android:text="전체보기"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:fontFamily="@font/applesdgothicneob"
+                        android:textSize="80dp"
+                        android:textColor="@color/color_dark_ffffff_000000"
+                        android:text="@{String.valueOf(vm.profileData.reviewTotalGrade)}"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <View
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginRight="24dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:background="@color/gray_d"
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"/>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:gravity="center"
+                            android:layout_gravity="center"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/applesdgothicneob"
+                                android:text="만족도"
+                                android:textSize="16dp"
+                                android:textColor="@color/gray_900"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+
+                            <com.willy.ratingbar.ScaleRatingBar
+                                touchDisable="@{true}"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:clickable="false"
+                                app:reviewScore="@{vm.profileData.reviewSatisfactionGrade}"
+                                app:srb_stepSize="0.1"
+                                android:gravity="center"
+                                app:layout_constraintEnd_toStartOf="@+id/textView7"
+                                app:layout_constraintTop_toBottomOf="@+id/textView4"
+                                app:srb_clearRatingEnabled="false"
+                                app:srb_drawableEmpty="@drawable/ic_review_bicstar_off"
+                                app:srb_drawableFilled="@drawable/ic_review_bicstar_on"
+                                app:srb_isIndicator="false"
+                                app:srb_scrollable="false"
+                                app:srb_starHeight="24dp"
+                                app:srb_starPadding="3dp"
+                                app:srb_starWidth="24dp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:gravity="center"
+                            android:layout_gravity="center"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/applesdgothicneob"
+                                android:text="만족도"
+                                android:textSize="16dp"
+                                android:textColor="@color/gray_900"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+
+                            <com.willy.ratingbar.ScaleRatingBar
+                                touchDisable="@{true}"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:clickable="false"
+                                app:reviewScore="@{vm.profileData.reviewTimeObservanceGrade}"
+                                app:srb_stepSize="0.1"
+                                android:gravity="center"
+                                app:layout_constraintEnd_toStartOf="@+id/textView7"
+                                app:layout_constraintTop_toBottomOf="@+id/textView4"
+                                app:srb_clearRatingEnabled="false"
+                                app:srb_drawableEmpty="@drawable/ic_review_bicstar_off"
+                                app:srb_drawableFilled="@drawable/ic_review_bicstar_on"
+                                app:srb_isIndicator="false"
+                                app:srb_scrollable="false"
+                                app:srb_starHeight="24dp"
+                                app:srb_starPadding="3dp"
+                                app:srb_starWidth="24dp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:gravity="center"
+                            android:layout_gravity="center"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/applesdgothicneob"
+                                android:text="만족도"
+                                android:textSize="16dp"
+                                android:textColor="@color/gray_900"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+
+                            <com.willy.ratingbar.ScaleRatingBar
+                                touchDisable="@{true}"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:clickable="false"
+                                app:reviewScore="@{vm.profileData.reviewCommunicationGrade}"
+                                app:srb_stepSize="0.1"
+                                android:gravity="center"
+                                app:layout_constraintEnd_toStartOf="@+id/textView7"
+                                app:layout_constraintTop_toBottomOf="@+id/textView4"
+                                app:srb_clearRatingEnabled="false"
+                                app:srb_drawableEmpty="@drawable/ic_review_bicstar_off"
+                                app:srb_drawableFilled="@drawable/ic_review_bicstar_on"
+                                app:srb_isIndicator="false"
+                                app:srb_scrollable="false"
+                                app:srb_starHeight="24dp"
+                                app:srb_starPadding="3dp"
+                                app:srb_starWidth="24dp" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <View
+                    android:layout_marginTop="24dp"
+                    android:background="@color/gray_d"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"/>
+
+            </LinearLayout>
+
             <TextView
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="24dp"
                 android:fontFamily="@font/applesdgothicneoeb"
                 android:textSize="20dp"
                 android:textColor="@color/color_dark_ffffff_000000"
@@ -129,14 +329,22 @@
                 android:layout_height="wrap_content"/>
 
             <TextView
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp"
+                android:text="@{vm.profileData.introduce}"
                 android:layout_marginTop="8dp"
-                android:backgroundTint="@color/gray_500"
+                android:fontFamily="@font/applesdgothicneol"
+                android:textColor="@color/black"
+                android:textSize="13dp"
+                app:backgroundTint="@color/gray_500"
                 android:background="@drawable/background_round_8"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
             <TextView
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="24dp"
                 android:fontFamily="@font/applesdgothicneoeb"
                 android:textSize="20dp"
                 android:textColor="@color/color_dark_ffffff_000000"
@@ -145,14 +353,22 @@
                 android:layout_height="wrap_content"/>
 
             <TextView
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp"
+                android:text="@{vm.profileData.career}"
                 android:layout_marginTop="8dp"
-                android:backgroundTint="@color/gray_500"
+                app:backgroundTint="@color/gray_500"
+                android:fontFamily="@font/applesdgothicneol"
+                android:textColor="@color/black"
+                android:textSize="13dp"
                 android:background="@drawable/background_round_8"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
             <TextView
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="24dp"
                 android:fontFamily="@font/applesdgothicneoeb"
                 android:textSize="20dp"
                 android:textColor="@color/color_dark_ffffff_000000"
@@ -161,14 +377,22 @@
                 android:layout_height="wrap_content"/>
 
             <TextView
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp"
+                android:text="@{vm.profileData.awards}"
                 android:layout_marginTop="8dp"
                 android:backgroundTint="@color/gray_500"
+                android:fontFamily="@font/applesdgothicneol"
+                android:textColor="@color/black"
+                android:textSize="13dp"
                 android:background="@drawable/background_round_8"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
             <TextView
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="24dp"
                 android:fontFamily="@font/applesdgothicneoeb"
                 android:textSize="20dp"
                 android:textColor="@color/color_dark_ffffff_000000"
@@ -177,11 +401,15 @@
                 android:layout_height="wrap_content"/>
 
             <androidx.recyclerview.widget.RecyclerView
+                android:layout_marginTop="8dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                setAdapter="@{vm.profileVideoAdapter}"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
         </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>
+
 
 
 </layout>

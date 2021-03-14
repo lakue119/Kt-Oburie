@@ -1,12 +1,16 @@
 package com.lakue.oburie.extension
 
+import android.view.MotionEvent
 import android.view.View
+import android.view.ViewParent
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
+import androidx.viewpager2.widget.ViewPager2
 import com.bumptech.glide.Glide
 import com.lakue.oburie.utils.ConvertNumberFormat
+import com.willy.ratingbar.ScaleRatingBar
 import java.lang.StringBuilder
 
 /**
@@ -40,6 +44,18 @@ fun RecyclerView.setAdaper(
 }
 
 /**
+ * ViewPager Adapter
+ */
+@BindingAdapter("setViewPagerAdapter")
+fun ViewPager2.setViewPagerAdapter(
+        adapter: RecyclerView.Adapter<*>
+){
+    this.apply {
+        this.adapter = adapter
+    }
+}
+
+/**
  * Review Count Format
  */
 @BindingAdapter("revierCount")
@@ -63,3 +79,32 @@ fun TextView.setReviewCount(
 fun View.setSelected(selectState: Boolean){
     this.isSelected = selectState
 }
+
+/**
+ * RatingBar Touch Event Disable
+ */
+@BindingAdapter("touchDisable")
+fun ScaleRatingBar.setTouchDisable(touch: Boolean){
+    this.setOnTouchListener { p0, p1 -> touch }
+}
+
+@BindingAdapter("reviewScore")
+fun ScaleRatingBar.setReviewScore(float: Float){
+    this.rating = float
+}
+
+/**
+ * ViewCount
+ */
+@BindingAdapter("viewCount")
+fun TextView.setViewCount(count: Int){
+    this.text = "조회수 : ${ConvertNumberFormat.numberFormat(count,"")}"
+}
+
+@BindingAdapter("userReviewCount")
+fun TextView.setUserReviewCount(count: Int){
+    this.text = "리뷰(${ConvertNumberFormat.numberFormat(count,"명")})"
+}
+
+
+

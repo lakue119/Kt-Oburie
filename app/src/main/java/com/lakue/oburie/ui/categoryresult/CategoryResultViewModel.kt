@@ -6,6 +6,8 @@ import androidx.lifecycle.SavedStateHandle
 import com.lakue.oburie.base.BaseViewModel
 import com.lakue.oburie.model.Profile
 import com.lakue.oburie.ui.categoryresult.location.SelectLocationActivity.Companion.startSelectLocationActivity
+import com.lakue.oburie.ui.userprofile.UserProfileActivity
+import com.lakue.oburie.ui.userprofile.UserProfileActivity.Companion.startUserProfileActivity
 import com.lakue.oburie.utils.BaseUtils.context
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
@@ -153,6 +155,9 @@ class CategoryResultViewModel @Inject constructor(
 
     fun showSelectLocation() {
         startSelectLocationActivity(context)
+    }
+    fun showUserDetail(){
+        startUserProfileActivity(context)
     }
 
 }

@@ -9,7 +9,9 @@ import com.lakue.oburie.base.BaseActivity
 import com.lakue.oburie.databinding.ActivityCategoryResultBinding
 import com.lakue.oburie.databinding.ActivityMainBinding
 import com.lakue.oburie.ui.main.MainViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class CategoryResultActivity : BaseActivity<ActivityCategoryResultBinding, CategoryResultViewModel>(R.layout.activity_category_result) {
 
     companion object {

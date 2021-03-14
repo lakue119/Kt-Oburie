@@ -8,6 +8,7 @@ import com.lakue.oburie.base.BaseViewModel
 import com.lakue.oburie.model.Category
 import com.lakue.oburie.model.Profile
 import com.lakue.oburie.ui.categoryresult.CategoryResultActivity.Companion.startCategoryResultActivity
+import com.lakue.oburie.ui.userprofile.UserProfileActivity.Companion.startUserProfileActivity
 import com.lakue.oburie.utils.BaseUtils.context
 //import com.lakue.oburie.repository.ProfileRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -270,6 +271,10 @@ class HomeViewModel @Inject constructor(
 
     fun showCategoryResult() {
         startCategoryResultActivity(context)
+    }
+
+    fun showUserDetail(){
+        startUserProfileActivity(context)
     }
 
 }
