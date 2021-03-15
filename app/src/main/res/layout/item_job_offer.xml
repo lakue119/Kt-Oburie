@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:padding="20dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:clipToPadding="false"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_marginTop="16dp"
+                android:textSize="20dp"
+                android:textColor="@color/color_dark_ffffff_000000"
+                android:fontFamily="@font/applesdgothicneoeb"
+                android:text="oo웨딩홀 축가 급구해요!!"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_marginTop="8dp"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:text="안녕하세요!! 서울아카데미 믹윈드 앙상블입니다!\n서울 아카데미 윈드 앙상블 2차 단원 모집을 34월ㅇ1asdfasdfㅣㅏㅁ던기삼ㄷ사ㅣㅣ"
+                android:textColor="@color/color_dark_ffffff_000000"
+                android:textSize="13dp"
+                android:fontFamily="@font/applesdgothicneol"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <LinearLayout
+                android:layout_marginTop="16dp"
+                android:layout_gravity="center"
+                android:gravity="center|left"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:src="@drawable/ic_calendar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="50dp"
+                    android:textSize="15dp"
+                    android:fontFamily="@font/applesdgothicneob"
+                    android:textColor="@color/gray_999"
+                    android:text="2020.01.17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <ImageView
+                    android:src="@drawable/ic_location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:layout_marginLeft="8dp"
+                    android:textSize="15dp"
+                    android:fontFamily="@font/applesdgothicneob"
+                    android:textColor="@color/gray_999"
+                    android:text="서울 영등포구"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_marginTop="16dp"
+                android:text="0원 ~ 100,000원"
+                android:textColor="@color/point_1000"
+                android:fontFamily="@font/applesdgothicneoeb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>
