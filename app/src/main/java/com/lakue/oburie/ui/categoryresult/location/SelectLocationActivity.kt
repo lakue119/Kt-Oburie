@@ -32,7 +32,6 @@ class SelectLocationActivity : BaseActivity<ActivitySelectLocationBinding, Selec
             vm = viewModel
             activity = this@SelectLocationActivity
         }
-        locationAdapter = SelectLocationAdapter(viewModel, this@SelectLocationActivity)
     }
 
     override fun setUI() {
@@ -42,11 +41,11 @@ class SelectLocationActivity : BaseActivity<ActivitySelectLocationBinding, Selec
     }
 
     override fun setObserve() {
-        viewModel.apply{
-            locationData.observe(this@SelectLocationActivity, Observer {
-                locationAdapter.setCount(it.size)
-            })
-        }
+//        viewModel.apply{
+//            locationData.observe(this@SelectLocationActivity, Observer {
+//                locationAdapter.setCount(it.size)
+//            })
+//        }
     }
 
 }

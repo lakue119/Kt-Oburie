@@ -3,13 +3,16 @@ package com.lakue.oburie.ui.categoryresult.location
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.LifecycleRegistry
+import androidx.recyclerview.widget.RecyclerView
 import com.lakue.oburie.R
 import com.lakue.oburie.base.BaseAdapter
 import com.lakue.oburie.base.BaseViewHolder
 import com.lakue.oburie.databinding.ItemSelectLocationBinding
 
-class SelectLocationAdapter(private val viewModel: SelectLocationViewModel, val parentLifecycleOwner: LifecycleOwner) : BaseAdapter() {
+class SelectLocationAdapter(private val viewModel: SelectLocationViewModel) : BaseAdapter() {
 
     private var dataCount = 0
 
@@ -34,17 +37,42 @@ class SelectLocationAdapter(private val viewModel: SelectLocationViewModel, val 
         holder.onBind(viewModel, position)
     }
 
+    override fun onViewAttachedToWindow(holder: BaseViewHolder) {
+        super.onViewAttachedToWindow(holder)
+        (holder as SelectLocationViewHolder).onAttach()
+    }
+
+    override fun onViewDetachedFromWindow(holder: BaseViewHolder) {
+        super.onViewDetachedFromWindow(holder)
+        (holder as SelectLocationViewHolder).onDetach()
+    }
+
     /**
      * ViewHolder
      */
-    inner class SelectLocationViewHolder(private val binding: ItemSelectLocationBinding) : BaseViewHolder(binding.root) {
+    inner class SelectLocationViewHolder(private val binding: ItemSelectLocationBinding) : BaseViewHolder(binding.root), LifecycleOwner {
+
+        private val lifecycleRegistry by lazy { LifecycleRegistry(this) }
+
         override fun onBind(item: Any, pos: Int) {
             binding.apply {
-                lifecycleOwner = parentLifecycleOwner
+                lifecycleOwner = this@SelectLocationViewHolder
                 this.vm = viewModel
                 this.position = pos
             }
         }
+
+        fun onAttach() {
+            lifecycleRegistry.markState(Lifecycle.State.RESUMED)
+        }
+
+        fun onDetach() {
+            lifecycleRegistry.markState(Lifecycle.State.CREATED)
+        }
+
+        override fun getLifecycle(): Lifecycle = lifecycleRegistry
     }
+
+
 
 }

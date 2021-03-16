@@ -21,6 +21,8 @@ class SelectLocationViewModel @Inject constructor(
     private val _locationData = MutableLiveData<ArrayList<Location>>()
     val locationData: LiveData<ArrayList<Location>> = _locationData
 
+    val locationAdapter = SelectLocationAdapter(this)
+
     val arrLocation = arrayListOf(Location(0,"전국", false),
             Location(0,"강원", false),
             Location(0,"경기", false),
@@ -43,6 +45,7 @@ class SelectLocationViewModel @Inject constructor(
 
     init {
         _locationData.value = arrLocation
+        locationAdapter.setCount(locationData.value!!.size)
     }
 
     fun sampleProfileData(){
@@ -84,6 +87,7 @@ class SelectLocationViewModel @Inject constructor(
             arrLocation[pos].isSelect = !arrLocation[pos].isSelect
             _locationData.value = arrLocation
         }
+        locationAdapter.setCount(locationData.value!!.size)
     }
 
 }
