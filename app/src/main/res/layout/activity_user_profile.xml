@@ -24,7 +24,7 @@
                 android:layout_height="wrap_content">
 
                 <com.google.android.material.appbar.CollapsingToolbarLayout
-                    app:contentScrim="@color/white"
+                    app:contentScrim="@color/color_dark_000000_ffffff"
                     app:layout_scrollFlags="scroll|exitUntilCollapsed"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
@@ -66,6 +66,7 @@
                         android:layout_height="wrap_content">
 
                         <ImageView
+                            app:tint="@color/color_dark_ffffff_000000"
                             android:padding="13dp"
                             android:src="@drawable/ic_back"
                             android:layout_width="48dp"

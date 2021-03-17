@@ -56,7 +56,7 @@ fun ViewPager2.setViewPagerAdapter(
 }
 
 /**
- * Review Count Format
+ * Text Format
  */
 @BindingAdapter("revierCount")
 fun TextView.setReviewCount(
@@ -70,6 +70,18 @@ fun TextView.setReviewCount(
     }
 
     this.text = "(${ConvertNumberFormat.numberFormat(reviewCount.toString().toInt(),"+")})"
+}
+
+@BindingAdapter("minAmount","maxAmount")
+fun TextView.setAmount(
+        minAmount: Int,
+        maxAmount: Int
+){
+   if(minAmount == maxAmount){
+       this.text = "${ConvertNumberFormat.numberFormat(minAmount,"원")}"
+   } else {
+       this.text = "${ConvertNumberFormat.numberFormat(minAmount,"원")} ~ ${ConvertNumberFormat.numberFormat(maxAmount,"원")}"
+   }
 }
 
 /**

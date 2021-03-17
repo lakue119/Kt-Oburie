@@ -2,7 +2,21 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="job"
+            type="com.lakue.oburie.model.joboffer.JobOffer" />
+        <variable
+            name="vm"
+            type="com.lakue.oburie.ui.bottomnavigation.joboffer.JobOfferViewModel" />
+        <variable
+            name="pos"
+            type="Integer" />
+    </data>
     <com.google.android.material.card.MaterialCardView
+        android:elevation="0dp"
+        app:cardElevation="0dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -13,6 +27,7 @@
             android:layout_height="wrap_content">
 
             <androidx.recyclerview.widget.RecyclerView
+                android:visibility="@{vm.jobOffer.get(pos).badge.size() > 1? View.GONE: View.VISIBLE}"
                 android:orientation="horizontal"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 android:clipToPadding="false"
@@ -24,7 +39,7 @@
                 android:textSize="20dp"
                 android:textColor="@color/color_dark_ffffff_000000"
                 android:fontFamily="@font/applesdgothicneoeb"
-                android:text="oo웨딩홀 축가 급구해요!!"
+                android:text="@{vm.jobOffer.get(pos).title}"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
@@ -32,7 +47,7 @@
                 android:layout_marginTop="8dp"
                 android:maxLines="2"
                 android:ellipsize="end"
-                android:text="안녕하세요!! 서울아카데미 믹윈드 앙상블입니다!\n서울 아카데미 윈드 앙상블 2차 단원 모집을 34월ㅇ1asdfasdfㅣㅏㅁ던기삼ㄷ사ㅣㅣ"
+                android:text="@{vm.jobOffer.get(pos).content}"
                 android:textColor="@color/color_dark_ffffff_000000"
                 android:textSize="13dp"
                 android:fontFamily="@font/applesdgothicneol"
@@ -58,7 +73,7 @@
                     android:textSize="15dp"
                     android:fontFamily="@font/applesdgothicneob"
                     android:textColor="@color/gray_999"
-                    android:text="2020.01.17"
+                    android:text="@{vm.jobOffer.get(pos).startDate}"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
 
@@ -72,7 +87,7 @@
                     android:textSize="15dp"
                     android:fontFamily="@font/applesdgothicneob"
                     android:textColor="@color/gray_999"
-                    android:text="서울 영등포구"
+                    android:text="@{vm.jobOffer.get(pos).location}"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
 
@@ -80,13 +95,20 @@
 
             <TextView
                 android:layout_marginTop="16dp"
-                android:text="0원 ~ 100,000원"
+                minAmount="@{vm.jobOffer.get(pos).minAmount}"
+                maxAmount="@{vm.jobOffer.get(pos).maxAmount}"
                 android:textColor="@color/point_1000"
                 android:fontFamily="@font/applesdgothicneoeb"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
-        </LinearLayout>
 
+
+        </LinearLayout>
+        <View
+            android:layout_gravity="bottom"
+            android:background="@color/gray_d"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
     </com.google.android.material.card.MaterialCardView>
 </layout>
