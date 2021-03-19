@@ -4,6 +4,15 @@
 
     <data>
         <variable
+            name="vm"
+            type="com.lakue.oburie.ui.bottomnavigation.joboffer.JobOfferViewModel" />
+        <variable
+            name="parentPosition"
+            type="Integer" />
+        <variable
+            name="position"
+            type="Integer" />
+        <variable
             name="badge"
             type="com.lakue.oburie.model.joboffer.JobOfferBadge" />
     </data>
@@ -25,7 +34,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:text="부공연자"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 

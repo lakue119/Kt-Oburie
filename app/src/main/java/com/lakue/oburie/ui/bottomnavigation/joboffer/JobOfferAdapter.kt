@@ -8,9 +8,13 @@ import com.lakue.oburie.base.BaseAdapter
 import com.lakue.oburie.base.BaseViewHolder
 import com.lakue.oburie.databinding.ItemHomeNewFaceBinding
 import com.lakue.oburie.databinding.ItemJobOfferBinding
+import com.lakue.oburie.model.Category
 import com.lakue.oburie.model.Profile
 import com.lakue.oburie.model.joboffer.JobOffer
+import com.lakue.oburie.model.joboffer.JobOfferBadge
 import com.lakue.oburie.ui.bottomnavigation.home.HomeViewModel
+import com.lakue.oburie.ui.bottomnavigation.home.category.HomeCategoryAdapter
+import com.lakue.oburie.ui.bottomnavigation.joboffer.badge.JobOfferBadgeAdapter
 
 class JobOfferAdapter (val viewModel: JobOfferViewModel) : BaseAdapter() {
 
@@ -47,6 +51,8 @@ class JobOfferAdapter (val viewModel: JobOfferViewModel) : BaseAdapter() {
             binding.apply {
                 this.vm = viewModel
                 this.pos = adapterPosition
+                val jobOfferBadgeAdapter = JobOfferBadgeAdapter(viewModel, viewModel.jobOffer.value?.get(adapterPosition)?.badge as ArrayList<JobOfferBadge>)
+                adapter = jobOfferBadgeAdapter
             }
         }
     }
