@@ -24,14 +24,18 @@
         android:layout_height="wrap_content">
 
         <LinearLayout
-            android:padding="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="16dp"
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <androidx.recyclerview.widget.RecyclerView
+                android:layout_marginTop="8dp"
                 setAdapter="@{adapter}"
-
+                android:visibility="@{vm.jobOffer.get(pos).badge.size() > 0? View.VISIBLE: View.GONE}"
                 android:orientation="horizontal"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 android:clipToPadding="false"
@@ -40,20 +44,20 @@
 
             <TextView
                 android:layout_marginTop="16dp"
-                android:textSize="20dp"
+                android:textSize="17dp"
                 android:textColor="@color/color_dark_ffffff_000000"
                 android:fontFamily="@font/applesdgothicneoeb"
                 android:text="@{vm.jobOffer.get(pos).title}"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
             <TextView
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="12dp"
                 android:maxLines="2"
                 android:ellipsize="end"
                 android:text="@{vm.jobOffer.get(pos).content}"
                 android:textColor="@color/color_dark_ffffff_000000"
-                android:textSize="13dp"
+                android:textSize="14dp"
                 android:fontFamily="@font/applesdgothicneol"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
@@ -74,7 +78,7 @@
                 <TextView
                     android:layout_marginLeft="8dp"
                     android:layout_marginRight="50dp"
-                    android:textSize="15dp"
+                    android:textSize="11dp"
                     android:fontFamily="@font/applesdgothicneob"
                     android:textColor="@color/gray_999"
                     android:text="@{vm.jobOffer.get(pos).startDate}"
@@ -88,7 +92,7 @@
 
                 <TextView
                     android:layout_marginLeft="8dp"
-                    android:textSize="15dp"
+                    android:textSize="11dp"
                     android:fontFamily="@font/applesdgothicneob"
                     android:textColor="@color/gray_999"
                     android:text="@{vm.jobOffer.get(pos).location}"
@@ -103,16 +107,17 @@
                 maxAmount="@{vm.jobOffer.get(pos).maxAmount}"
                 android:textColor="@color/point_1000"
                 android:fontFamily="@font/applesdgothicneoeb"
+                android:textSize="11dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
-
-
         </LinearLayout>
+
         <View
             android:layout_gravity="bottom"
             android:background="@color/gray_d"
             android:layout_width="match_parent"
             android:layout_height="1dp"/>
+
     </com.google.android.material.card.MaterialCardView>
 </layout>

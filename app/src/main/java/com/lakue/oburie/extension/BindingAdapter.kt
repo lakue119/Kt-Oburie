@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewParent
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.view.isVisible
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
@@ -28,6 +29,13 @@ fun ImageView.setIconImage(
         url: Int
 ){
     Glide.with(context).load(url).into(this)
+}
+
+@BindingAdapter("hot_visible")
+fun ImageView.setHoyVisible(
+        cate: String
+){
+    this.isVisible = cate == "급구"
 }
 
 /**

@@ -17,10 +17,13 @@
             type="com.lakue.oburie.model.joboffer.JobOfferBadge" />
     </data>
     <FrameLayout
+        android:layout_marginRight="8dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
         <TextView
+            android:fontFamily="@font/applesdgothicneob"
+            android:textSize="11dp"
             android:layout_marginTop="10dp"
             android:id="@+id/textView"
             android:backgroundTint="@color/point_1000"
@@ -34,10 +37,12 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            android:text="@{badge.badgeTitle}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
         <ImageView
+            hot_visible="@{badge.badgeTitle}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_report"

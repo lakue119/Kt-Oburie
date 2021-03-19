@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.SavedStateHandle
 import com.lakue.oburie.base.BaseViewModel
 import com.lakue.oburie.model.Profile
+import com.lakue.oburie.model.UserInfo
 import com.lakue.oburie.ui.categoryresult.CategoryResultAdapter
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
@@ -23,7 +24,7 @@ class UserProfileViewModel @Inject constructor(
             "대전,서울,천안",
             5.3F, 3.2F, 4.8F, 4.3F, 38,
             arrayListOf("https://dt40dm21pj8em.cloudfront.net/uploads/froala/file/6819/1569215127116.png"),
-            "", "", "", 100, "안녕하세요 웨딩 전문 사회자\n" +
+            UserInfo(), 100, "안녕하세요 웨딩 전문 사회자\n" +
             "쇼호스트 윤익입니다 ^-^\n" +
             "\n" +
             "결혼식 700회 진행\n" +

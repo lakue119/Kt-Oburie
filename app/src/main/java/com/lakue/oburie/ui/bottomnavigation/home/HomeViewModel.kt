@@ -7,6 +7,7 @@ import com.lakue.oburie.R
 import com.lakue.oburie.base.BaseViewModel
 import com.lakue.oburie.model.Category
 import com.lakue.oburie.model.Profile
+import com.lakue.oburie.model.UserInfo
 import com.lakue.oburie.ui.categoryresult.CategoryResultActivity.Companion.startCategoryResultActivity
 import com.lakue.oburie.ui.userprofile.UserProfileActivity.Companion.startUserProfileActivity
 import com.lakue.oburie.utils.BaseUtils.context
@@ -47,7 +48,7 @@ class HomeViewModel @Inject constructor(
                 "대전,서울,천안",
                 4.0f, 4.0f, 4.0f, 4.0f, 38,
                 arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
-                "", "", "", 100, "안녕하세용~~", "경력", "수상내역",
+                UserInfo(), 100, "안녕하세용~~", "경력", "수상내역",
                 arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
         "보컬/축가,교회, 모든행사 다뜁니다!!\n" +
                 "잘생김에 보컬까지~"),
@@ -58,7 +59,7 @@ class HomeViewModel @Inject constructor(
                         "대전,서울,천안",
                         4.0f, 4.0f, 4.0f, 4.0f, 38,
                         arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
-                        "", "", "", 100, "안녕하세용~~", "경력", "수상내역",
+                        UserInfo(), 100, "안녕하세용~~", "경력", "수상내역",
                         arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
                         "보컬/축가,교회, 모든행사 다뜁니다!!\n" +
                                 "잘생김에 보컬까지~"),
@@ -68,7 +69,7 @@ class HomeViewModel @Inject constructor(
                         "대전,서울,천안",
                         4.0f, 4.0f, 4.0f, 4.0f, 38,
                         arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
-                        "", "", "", 100, "안녕하세용~~", "경력", "수상내역",
+                        UserInfo(), 100, "안녕하세용~~", "경력", "수상내역",
                         arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
                         "보컬/축가,교회, 모든행사 다뜁니다!!\n" +
                                 "잘생김에 보컬까지~"),
@@ -78,7 +79,7 @@ class HomeViewModel @Inject constructor(
                         "대전,서울,천안",
                         4.0f, 4.0f, 4.0f, 4.0f, 38,
                         arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
-                        "", "", "", 100, "안녕하세용~~", "경력", "수상내역",
+                        UserInfo(), 100, "안녕하세용~~", "경력", "수상내역",
                         arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
                         "보컬/축가,교회, 모든행사 다뜁니다!!\n" +
                                 "잘생김에 보컬까지~"),
@@ -88,7 +89,7 @@ class HomeViewModel @Inject constructor(
                         "대전,서울,천안",
                         4.0f, 4.0f, 4.0f, 4.0f, 38,
                         arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
-                        "", "", "", 100, "안녕하세용~~", "경력", "수상내역",
+                        UserInfo(), 100, "안녕하세용~~", "경력", "수상내역",
                         arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
                         "보컬/축가,교회, 모든행사 다뜁니다!!\n" +
                                 "잘생김에 보컬까지~"),
@@ -98,7 +99,7 @@ class HomeViewModel @Inject constructor(
                         "대전,서울,천안",
                         4.0f, 4.0f, 4.0f, 4.0f, 38,
                         arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
-                        "", "", "", 100, "안녕하세용~~", "경력", "수상내역",
+                        UserInfo(), 100, "안녕하세용~~", "경력", "수상내역",
                         arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
                         "보컬/축가,교회, 모든행사 다뜁니다!!\n" +
                                 "잘생김에 보컬까지~"),
@@ -108,7 +109,7 @@ class HomeViewModel @Inject constructor(
                         "대전,서울,천안",
                         4.0f, 4.0f, 4.0f, 4.0f, 38,
                         arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
-                        "", "", "", 100, "안녕하세용~~", "경력", "수상내역",
+                        UserInfo(), 100, "안녕하세용~~", "경력", "수상내역",
                         arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
                         "보컬/축가,교회, 모든행사 다뜁니다!!\n" +
                                 "잘생김에 보컬까지~")))
@@ -118,7 +119,7 @@ class HomeViewModel @Inject constructor(
                 "대전,서울,천안",
                 4.0f, 4.0f, 4.0f, 4.0f, 38,
                 arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
-                "", "", "", 100, "안녕하세용~~", "경력", "수상내역",
+                UserInfo(), 100, "안녕하세용~~", "경력", "수상내역",
                 arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
                 "보컬/축가,교회, 모든행사 다뜁니다!!\n" +
                         "잘생김에 보컬까지~"),
@@ -128,7 +129,7 @@ class HomeViewModel @Inject constructor(
                         "대전,서울,천안",
                         4.0f, 4.0f, 4.0f, 4.0f, 38,
                         arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
-                        "", "", "", 100, "안녕하세용~~", "경력", "수상내역",
+                        UserInfo(), 100, "안녕하세용~~", "경력", "수상내역",
                         arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
                         "보컬/축가,교회, 모든행사 다뜁니다!!\n" +
                                 "잘생김에 보컬까지~"),
@@ -138,7 +139,7 @@ class HomeViewModel @Inject constructor(
                         "대전,서울,천안",
                         4.0f, 4.0f, 4.0f, 4.0f, 38,
                         arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
-                        "", "", "", 100, "안녕하세용~~", "경력", "수상내역",
+                        UserInfo(), 100, "안녕하세용~~", "경력", "수상내역",
                         arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
                         "보컬/축가,교회, 모든행사 다뜁니다!!\n" +
                                 "잘생김에 보컬까지~"),
@@ -148,7 +149,7 @@ class HomeViewModel @Inject constructor(
                         "대전,서울,천안",
                         4.0f, 4.0f, 4.0f, 4.0f, 38,
                         arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
-                        "", "", "", 100, "안녕하세용~~", "경력", "수상내역",
+                        UserInfo(), 100, "안녕하세용~~", "경력", "수상내역",
                         arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
                         "보컬/축가,교회, 모든행사 다뜁니다!!\n" +
                                 "잘생김에 보컬까지~")))
@@ -158,7 +159,7 @@ class HomeViewModel @Inject constructor(
                 "대전,서울,천안",
                 4.0f, 4.0f, 4.0f, 4.0f, 38,
                 arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
-                "", "", "", 100, "안녕하세용~~", "경력", "수상내역",
+                UserInfo(), 100, "안녕하세용~~", "경력", "수상내역",
                 arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
                 "보컬/축가,교회, 모든행사 다뜁니다!!\n" +
                         "잘생김에 보컬까지~"),
@@ -168,7 +169,7 @@ class HomeViewModel @Inject constructor(
                         "대전,서울,천안",
                         4.0f, 4.0f, 4.0f, 4.0f, 38,
                         arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
-                        "", "", "", 100, "안녕하세용~~", "경력", "수상내역",
+                        UserInfo(), 100, "안녕하세용~~", "경력", "수상내역",
                         arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
                         "보컬/축가,교회, 모든행사 다뜁니다!!\n" +
                                 "잘생김에 보컬까지~")))
