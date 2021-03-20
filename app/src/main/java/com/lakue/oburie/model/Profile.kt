@@ -1,8 +1,6 @@
 package com.lakue.oburie.model
 
 data class Profile(
-        val img: String,
-        val name: String,
         val badge: String,
         val major: String,
         val local: String,

@@ -1,6 +1,9 @@
 package com.lakue.oburie.model.joboffer
 
+import com.lakue.oburie.model.UserInfo
+
 data class JobOffer(
+        var user: UserInfo,
         val badge: ArrayList<JobOfferBadge>,
         val title: String,
         val content: String,

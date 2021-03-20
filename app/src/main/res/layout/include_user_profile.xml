@@ -80,7 +80,7 @@
                 android:layout_height="wrap_content">
 
                 <com.lakue.oburie.custom.RoundedImageView
-                    image_url="@{vm.profileData.img}"
+                    image_url="@{vm.profileData.userInfo.userProfileImg}"
                     app:rectRadius="50dp"
                     android:src="@color/black"
                     android:layout_width="56dp"
@@ -96,7 +96,7 @@
 
                     <TextView
                         android:fontFamily="@font/applesdgothicneob"
-                        android:text="@{vm.profileData.name}"
+                        android:text="@{vm.profileData.userInfo.nickName}"
                         android:textColor="@color/color_dark_ffffff_000000"
                         android:textSize="16dp"
                         android:layout_width="wrap_content"

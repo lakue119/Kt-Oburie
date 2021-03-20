@@ -18,13 +18,12 @@ class UserProfileViewModel @Inject constructor(
 
 
     private val _profileData = MutableLiveData<Profile>( Profile(
-            "https://t1.daumcdn.net/cfile/tistory/99DBC7425DDD362E07", "라꾸",
             "PLATINUM",
             "가야금",
             "대전,서울,천안",
             5.3F, 3.2F, 4.8F, 4.3F, 38,
             arrayListOf("https://dt40dm21pj8em.cloudfront.net/uploads/froala/file/6819/1569215127116.png"),
-            UserInfo(), 100, "안녕하세요 웨딩 전문 사회자\n" +
+            UserInfo("라꾸","https://t1.daumcdn.net/cfile/tistory/99DBC7425DDD362E07","","","","","",""), 100, "안녕하세요 웨딩 전문 사회자\n" +
             "쇼호스트 윤익입니다 ^-^\n" +
             "\n" +
             "결혼식 700회 진행\n" +

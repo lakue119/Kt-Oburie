@@ -80,7 +80,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
             <TextView
-                android:text="@{vm.profileData.get(position).name}"
+                android:text="@{vm.profileData.get(position).userInfo.nickName}"
                 android:id="@+id/textView5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

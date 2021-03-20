@@ -25,14 +25,14 @@
 
         <LinearLayout
             android:layout_marginTop="8dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
             android:layout_marginBottom="16dp"
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <androidx.recyclerview.widget.RecyclerView
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="16dp"
                 android:layout_marginTop="8dp"
                 setAdapter="@{adapter}"
                 android:visibility="@{vm.jobOffer.get(pos).badge.size() > 0? View.VISIBLE: View.GONE}"
@@ -42,27 +42,56 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
-            <TextView
-                android:layout_marginTop="16dp"
-                android:textSize="17dp"
-                android:textColor="@color/color_dark_ffffff_000000"
-                android:fontFamily="@font/applesdgothicneoeb"
-                android:text="@{vm.jobOffer.get(pos).title}"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-            <TextView
-                android:layout_marginTop="12dp"
-                android:maxLines="2"
-                android:ellipsize="end"
-                android:text="@{vm.jobOffer.get(pos).content}"
-                android:textColor="@color/color_dark_ffffff_000000"
-                android:textSize="14dp"
-                android:fontFamily="@font/applesdgothicneol"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
 
             <LinearLayout
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.lakue.oburie.custom.RoundedImageView
+                    app:rectRadius="7dp"
+                    android:scaleType="centerCrop"
+                    image_url="@{vm.jobOffer.get(pos).user.userProfileImg}"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"/>
+
+                <LinearLayout
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="12dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:textSize="17dp"
+                        android:textColor="@color/color_dark_ffffff_000000"
+                        android:fontFamily="@font/applesdgothicneoeb"
+                        android:text="@{vm.jobOffer.get(pos).title}"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:layout_marginTop="8dp"
+                        android:maxLines="2"
+                        android:ellipsize="end"
+                        android:text="@{vm.jobOffer.get(pos).content}"
+                        android:textColor="@color/color_dark_ffffff_000000"
+                        android:textSize="14dp"
+                        android:fontFamily="@font/applesdgothicneol"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
                 android:layout_marginTop="16dp"
                 android:layout_gravity="center"
                 android:gravity="center|left"
@@ -71,6 +100,7 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
+                    app:tint="@color/color_dark_ffffff_000000"
                     android:src="@drawable/ic_calendar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
@@ -86,6 +116,7 @@
                     android:layout_height="wrap_content"/>
 
                 <ImageView
+                    app:tint="@color/color_dark_ffffff_000000"
                     android:src="@drawable/ic_location"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
@@ -102,6 +133,8 @@
             </LinearLayout>
 
             <TextView
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
                 android:layout_marginTop="16dp"
                 minAmount="@{vm.jobOffer.get(pos).minAmount}"
                 maxAmount="@{vm.jobOffer.get(pos).maxAmount}"

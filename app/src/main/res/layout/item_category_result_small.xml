@@ -35,7 +35,7 @@
             android:layout_height="wrap_content">
 
             <com.lakue.oburie.custom.RoundedImageView
-                image_url="@{vm.profileData.get(position).img}"
+                image_url="@{vm.profileData.get(position).userInfo.userProfileImg}"
                 android:scaleType="centerCrop"
                 app:rectRadius="5dp"
                 android:layout_width="100dp"
@@ -72,7 +72,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/applesdgothicneob"
-                        android:text="@{vm.profileData.get(position).name}"
+                        android:text="@{vm.profileData.get(position).userInfo.nickName}"
                         android:textColor="@color/color_dark_ffffff_000000"
                         android:textSize="14dp"
                         tool:text="라꾸" />
