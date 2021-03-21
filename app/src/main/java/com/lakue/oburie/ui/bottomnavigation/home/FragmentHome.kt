@@ -10,7 +10,7 @@ class FragmentHome : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout.f
 
     companion object {
         @JvmStatic
-        fun newInstance() =
+        fun newInstance() = 
             FragmentHome()
     }
 
