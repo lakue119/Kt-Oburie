@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:id="@+id/ll_badge"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <ImageView
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="4dp"
+                        android:src="@drawable/ic_report"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <ImageView
+                        android:src="@drawable/ic_share"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_marginTop="16dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:id="@+id/tv_title"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ll_badge"
+                    android:textSize="17dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/applesdgothicneoeb"
+                    android:text="oo웨딩홀 축가 구해요!!"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:layout_marginTop="8dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:id="@+id/tv_price"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_title"
+                    android:fontFamily="@font/applesdgothicneob"
+                    android:textSize="11dp"
+                    android:textColor="@color/point_1000"
+                    android:text="0~100000"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/tv_count"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_price"
+                    android:fontFamily="@font/applesdgothicneol"
+                    android:textColor="@color/gray_999"
+                    android:textSize="11dp"
+                    android:text="View 32   지원 0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <View
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_count"
+                    android:id="@+id/view_line1"
+                    android:background="@color/gray_d"
+                    android:layout_width="match_parent"
+                    android:layout_height="8dp"/>
+
+                <LinearLayout
+                    android:id="@+id/ll_filter"
+                    android:padding="16dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/view_line1"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:src="@drawable/ic_gender"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:fontFamily="@font/applesdgothicneob"
+                            android:textSize="11dp"
+                            android:textColor="@color/gray_900"
+                            android:text="성별 무관"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:src="@drawable/ic_traffic"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:fontFamily="@font/applesdgothicneob"
+                            android:textSize="11dp"
+                            android:textColor="@color/gray_900"
+                            android:text="교통비 포함"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_marginTop="12dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ll_filter"
+                    android:id="@+id/view_line2"
+                    android:background="@color/gray_d"
+                    android:layout_width="match_parent"
+                    android:layout_height="8dp"/>
+
+                <LinearLayout
+                    android:id="@+id/ll_info"
+                    android:padding="16dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/view_line2"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:fontFamily="@font/applesdgothicneob"
+                            android:textColor="@color/gray_900"
+                            android:textSize="11dp"
+                            android:text="진행일시"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:layout_marginTop="16dp"
+                            android:fontFamily="@font/applesdgothicneob"
+                            android:textColor="@color/gray_900"
+                            android:textSize="11dp"
+                            android:text="위치"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:layout_marginTop="16dp"
+                            android:fontFamily="@font/applesdgothicneob"
+                            android:textColor="@color/gray_900"
+                            android:textSize="11dp"
+                            android:text="필요시간"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginLeft="80dp"
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:fontFamily="@font/applesdgothicneob"
+                            android:textColor="@color/black"
+                            android:textSize="11dp"
+                            android:text="2020.01.17 / 오전 09시 00분"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:layout_marginTop="16dp"
+                            android:fontFamily="@font/applesdgothicneob"
+                            android:textColor="@color/black"
+                            android:textSize="11dp"
+                            android:text="서울 영등포구 당산동 6가 323-1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:layout_marginTop="16dp"
+                            android:fontFamily="@font/applesdgothicneob"
+                            android:textColor="@color/black"
+                            android:textSize="11dp"
+                            android:text="비상시적(전화통화만 하면 됨)"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_marginTop="12dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ll_info"
+                    android:id="@+id/view_line3"
+                    android:background="@color/gray_d"
+                    android:layout_width="match_parent"
+                    android:layout_height="8dp"/>
+
+                <TextView
+                    android:id="@+id/tv_detail_title"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view_line3"
+                    android:fontFamily="@font/applesdgothicneoeb"
+                    android:textColor="@color/black"
+                    android:textSize="13dp"
+                    android:text="상세 정보"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/tv_detail"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_detail_title"
+                    android:fontFamily="@font/applesdgothicneol"
+                    android:textColor="@color/black"
+                    android:textSize="14dp"
+                    android:text="상세 정보"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <TextView
+            android:textSize="17dp"
+            android:fontFamily="@font/applesdgothicneoeb"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:background="@color/point_1000"
+            android:textColor="@color/white"
+            android:text="지원하기"
+            android:paddingBottom="16dp"
+            android:paddingTop="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+
+</layout>

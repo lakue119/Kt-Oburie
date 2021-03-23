@@ -15,7 +15,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Oburie">
-        <activity android:name=".ui.userprofile.UserProfileActivity"></activity>
+        <activity android:name=".ui.jobofferdetail.ActivityJobOfferDetail"></activity>
+        <activity android:name=".ui.userprofile.UserProfileActivity" />
         <activity
             android:name=".ui.categoryresult.location.SelectLocationActivity"
             android:theme="@style/Transparent" />
