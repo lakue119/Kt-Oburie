@@ -8,6 +8,8 @@ import com.lakue.oburie.model.UserInfo
 import com.lakue.oburie.model.joboffer.JobOffer
 import com.lakue.oburie.model.joboffer.JobOfferBadge
 import com.lakue.oburie.ui.bottomnavigation.home.HomeAdapter
+import com.lakue.oburie.ui.jobofferdetail.ActivityJobOfferDetail.Companion.startJobOfferDetailActivity
+import com.lakue.oburie.utils.BaseUtils.context
 import javax.inject.Inject
 
 class JobOfferViewModel  @Inject constructor(
@@ -104,6 +106,10 @@ class JobOfferViewModel  @Inject constructor(
         }
         _jobOffer.value = sampleList
         jobOfferAdapter.setCount(_jobOffer.value!!.size)
+    }
+
+    fun onDetail(){
+        startJobOfferDetailActivity(context)
     }
 
 }

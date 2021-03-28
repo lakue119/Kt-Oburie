@@ -51,7 +51,7 @@ class JobOfferAdapter (val viewModel: JobOfferViewModel) : BaseAdapter() {
             binding.apply {
                 this.vm = viewModel
                 this.pos = adapterPosition
-                val jobOfferBadgeAdapter = JobOfferBadgeAdapter(viewModel, viewModel.jobOffer.value?.get(adapterPosition)?.badge as ArrayList<JobOfferBadge>)
+                val jobOfferBadgeAdapter = JobOfferBadgeAdapter(viewModel.jobOffer.value?.get(adapterPosition)?.badge as ArrayList<JobOfferBadge>)
                 adapter = jobOfferBadgeAdapter
             }
         }

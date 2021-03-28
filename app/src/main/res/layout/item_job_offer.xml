@@ -18,6 +18,7 @@
             type="com.lakue.oburie.ui.bottomnavigation.joboffer.badge.JobOfferBadgeAdapter" />
     </data>
     <com.google.android.material.card.MaterialCardView
+        android:onClick="@{() -> vm.onDetail()}"
         android:elevation="0dp"
         app:cardElevation="0dp"
         android:layout_width="match_parent"

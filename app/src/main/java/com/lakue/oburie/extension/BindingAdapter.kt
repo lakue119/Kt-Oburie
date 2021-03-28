@@ -126,5 +126,10 @@ fun TextView.setUserReviewCount(count: Int){
     this.text = "리뷰(${ConvertNumberFormat.numberFormat(count,"명")})"
 }
 
+@BindingAdapter("jobOfferViewCount", "jobOfferApplyCount")
+fun TextView.setJobOfferView(viewCount: Int, applyCount: Int){
+    this.text = "View ${ConvertNumberFormat.numberFormat(viewCount,"")}   지원 ${ConvertNumberFormat.numberFormat(applyCount,"")}"
+}
+
 
 

@@ -10,7 +10,7 @@ import com.lakue.oburie.databinding.ItemBadgeBinding
 import com.lakue.oburie.model.joboffer.JobOfferBadge
 import com.lakue.oburie.ui.bottomnavigation.joboffer.JobOfferViewModel
 
-class JobOfferBadgeAdapter (val viewModel: JobOfferViewModel, val badges: ArrayList<JobOfferBadge>) : BaseAdapter() {
+class JobOfferBadgeAdapter (val badges: ArrayList<JobOfferBadge>) : BaseAdapter() {
 
     var badge = badges
 
@@ -41,7 +41,6 @@ class JobOfferBadgeAdapter (val viewModel: JobOfferViewModel, val badges: ArrayL
     inner class JobOfferBadgeViewHolder(private val binding: ItemBadgeBinding) : BaseViewHolder(binding.root) {
         override fun onBind(item: Any, pos:Int) {
             binding.apply {
-                this.vm = viewModel
                 this.position = adapterPosition
                 badge = item as JobOfferBadge
             }
