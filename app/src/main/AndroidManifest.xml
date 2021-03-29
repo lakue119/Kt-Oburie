@@ -15,6 +15,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Oburie">
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyDh46bSu29H9jd6VHH3osix1H40RqlOa94" />
+
         <activity android:name=".ui.jobofferdetail.ActivityJobOfferDetail"></activity>
         <activity android:name=".ui.userprofile.UserProfileActivity" />
         <activity
