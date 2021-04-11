@@ -6,6 +6,7 @@ import androidx.lifecycle.SavedStateHandle
 import com.lakue.oburie.base.BaseViewModel
 import com.lakue.oburie.model.Profile
 import com.lakue.oburie.model.UserInfo
+import com.lakue.oburie.test.testCategoryResultProfile
 import com.lakue.oburie.ui.categoryresult.location.SelectLocationActivity.Companion.startSelectLocationActivity
 import com.lakue.oburie.ui.userprofile.UserProfileActivity
 import com.lakue.oburie.ui.userprofile.UserProfileActivity.Companion.startUserProfileActivity
@@ -29,136 +30,7 @@ class CategoryResultViewModel @Inject constructor(
     }
 
     fun sampleProfileData() {
-        var sampleList = arrayListOf(
-                Profile(
-                        "PLATINUM",
-                        "가야금",
-                        "대전,서울,천안",
-                        4.0f, 4.0f, 4.0f, 4.0f, 38,
-                        arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
-                        UserInfo("최명락", "https://t1.daumcdn.net/cfile/tistory/99DBC7425DDD362E07", "", "", "", "", "", ""), 100, "안녕하세용~~", "경력", "수상내역",
-                        arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
-                        "보컬/축가,교회, 모든행사 다뜁니다!!\n" +
-                                "잘생김에 보컬까지~"),
-                Profile("PLATINUM",
-                        "가야금",
-                        "대전,서울,천안",
-                        4.0f, 4.0f, 4.0f, 4.0f, 38,
-                        arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
-                        UserInfo("최명락", "https://mblogthumb-phinf.pstatic.net/MjAyMDAyMDdfOTgg/MDAxNTgxMDg1NzM0MzM4.zAEKMOTJiC1kziihr5HgN7IXe-r0VH8lniiqyG-Ds-cg.fDeO2lfE7ndU2T95t3OmEyOuQBN3mBQ28yZ6RYWdAVMg.JPEG.7wayjeju/%EB%B0%B0%EC%9A%B0%ED%94%84%EB%A1%9C%ED%95%84%EC%82%AC%EC%A7%84_IMG7116.jpg?type=w800", "", "", "", "", "", ""), 100, "안녕하세용~~", "경력", "수상내역",
-                        arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
-                        "보컬/축가,교회, 모든행사 다뜁니다!!\n" +
-                                "잘생김에 보컬까지~"),
-                Profile("PLATINUM",
-                        "가야금",
-                        "대전,서울,천안",
-                        4.0f, 4.0f, 4.0f, 4.0f, 38,
-                        arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
-                        UserInfo("최명락", "https://modo-phinf.pstatic.net/20160506_20/1462514893413GcmEE_JPEG/mosahvIFOQ.jpeg?type=w1100", "", "", "", "", "", ""), 100, "안녕하세용~~", "경력", "수상내역",
-                        arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
-                        "보컬/축가,교회, 모든행사 다뜁니다!!\n" +
-                                "잘생김에 보컬까지~"),
-                Profile("PLATINUM",
-                        "가야금",
-                        "대전,서울,천안",
-                        4.0f, 4.0f, 4.0f, 4.0f, 38,
-                        arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
-                        UserInfo("최명락", "https://img1.daumcdn.net/thumb/S272x320/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FqaGuY%2FbtqD9NO22oT%2FzufXfuCiVc9M0X7bf9xDCK%2Fimg.png", "", "", "", "", "", ""), 100, "안녕하세용~~", "경력", "수상내역",
-                        arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
-                        "보컬/축가,교회, 모든행사 다뜁니다!!\n" +
-                                "잘생김에 보컬까지~"),
-                Profile("PLATINUM",
-                        "가야금",
-                        "대전,서울,천안",
-                        4.0f, 4.0f, 4.0f, 4.0f, 38,
-                        arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
-                        UserInfo(), 100, "안녕하세용~~", "경력", "수상내역",
-                        arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
-                        "보컬/축가,교회, 모든행사 다뜁니다!!\n" +
-                                "잘생김에 보컬까지~"),
-                Profile("PLATINUM",
-                        "가야금",
-                        "대전,서울,천안",
-                        4.0f, 4.0f, 4.0f, 4.0f, 38,
-                        arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
-                        UserInfo("최명락", "https://lh3.googleusercontent.com/proxy/K843mrA6eXZ7wGbziFoSvYmIiLYumwrv9OY-9RuVWiUlrz0daolZgPoxdq-AxF07gWd7JUD_4cp1GLmT6yshGGxfBZALso-JG7_1P-2yYMLv_P2E0AhQ15YZ89dKIfJ_NQQbwasjIt-6WDT9zhHSCzCwuAcLGKtexg9D", "", "", "", "", "", ""), 100, "안녕하세용~~", "경력", "수상내역",
-                        arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
-                        "보컬/축가,교회, 모든행사 다뜁니다!!\n" +
-                                "잘생김에 보컬까지~"),
-                Profile("PLATINUM",
-                        "가야금",
-                        "대전,서울,천안",
-                        4.0f, 4.0f, 4.0f, 4.0f, 38,
-                        arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
-                        UserInfo("최명락", "https://i.pinimg.com/736x/60/e9/85/60e9857c0a7c30f253de03eedc248879.jpg", "", "", "", "", "", ""), 100, "안녕하세용~~", "경력", "수상내역",
-                        arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
-                        "보컬/축가,교회, 모든행사 다뜁니다!!\n" +
-                                "잘생김에 보컬까지~"),
-                Profile(
-                        "PLATINUM",
-                        "가야금",
-                        "대전,서울,천안",
-                        4.0f, 4.0f, 4.0f, 4.0f, 38,
-                        arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
-                        UserInfo("최명락","https://t1.daumcdn.net/cfile/tistory/99DBC7425DDD362E07", "","","","","",""), 100, "안녕하세용~~", "경력", "수상내역",
-                        arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
-                        "보컬/축가,교회, 모든행사 다뜁니다!!\n" +
-                                "잘생김에 보컬까지~"),
-                Profile("PLATINUM",
-                        "가야금",
-                        "대전,서울,천안",
-                        4.0f, 4.0f, 4.0f, 4.0f, 38,
-                        arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
-                        UserInfo("최명락","https://mblogthumb-phinf.pstatic.net/MjAyMDAyMDdfOTgg/MDAxNTgxMDg1NzM0MzM4.zAEKMOTJiC1kziihr5HgN7IXe-r0VH8lniiqyG-Ds-cg.fDeO2lfE7ndU2T95t3OmEyOuQBN3mBQ28yZ6RYWdAVMg.JPEG.7wayjeju/%EB%B0%B0%EC%9A%B0%ED%94%84%EB%A1%9C%ED%95%84%EC%82%AC%EC%A7%84_IMG7116.jpg?type=w800", "","","","","",""), 100, "안녕하세용~~", "경력", "수상내역",
-                        arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
-                        "보컬/축가,교회, 모든행사 다뜁니다!!\n" +
-                                "잘생김에 보컬까지~"),
-                Profile("PLATINUM",
-                        "가야금",
-                        "대전,서울,천안",
-                        4.0f, 4.0f, 4.0f, 4.0f, 38,
-                        arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
-                        UserInfo("최명락", "https://modo-phinf.pstatic.net/20160506_20/1462514893413GcmEE_JPEG/mosahvIFOQ.jpeg?type=w1100", "","","","","",""), 100, "안녕하세용~~", "경력", "수상내역",
-                        arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
-                        "보컬/축가,교회, 모든행사 다뜁니다!!\n" +
-                                "잘생김에 보컬까지~"),
-                Profile("PLATINUM",
-                        "가야금",
-                        "대전,서울,천안",
-                        4.0f, 4.0f, 4.0f, 4.0f, 38,
-                        arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
-                        UserInfo("최명락", "https://img1.daumcdn.net/thumb/S272x320/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FqaGuY%2FbtqD9NO22oT%2FzufXfuCiVc9M0X7bf9xDCK%2Fimg.png","","","","","",""), 100, "안녕하세용~~", "경력", "수상내역",
-                        arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
-                        "보컬/축가,교회, 모든행사 다뜁니다!!\n" +
-                                "잘생김에 보컬까지~"),
-                Profile("PLATINUM",
-                        "가야금",
-                        "대전,서울,천안",
-                        4.0f, 4.0f, 4.0f, 4.0f, 38,
-                        arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
-                        UserInfo(), 100, "안녕하세용~~", "경력", "수상내역",
-                        arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
-                        "보컬/축가,교회, 모든행사 다뜁니다!!\n" +
-                                "잘생김에 보컬까지~"),
-                Profile( "PLATINUM",
-                        "가야금",
-                        "대전,서울,천안",
-                        4.0f, 4.0f, 4.0f, 4.0f, 38,
-                        arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
-                        UserInfo("최명락", "https://lh3.googleusercontent.com/proxy/K843mrA6eXZ7wGbziFoSvYmIiLYumwrv9OY-9RuVWiUlrz0daolZgPoxdq-AxF07gWd7JUD_4cp1GLmT6yshGGxfBZALso-JG7_1P-2yYMLv_P2E0AhQ15YZ89dKIfJ_NQQbwasjIt-6WDT9zhHSCzCwuAcLGKtexg9D","","","","","",""), 100, "안녕하세용~~", "경력", "수상내역",
-                        arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
-                        "보컬/축가,교회, 모든행사 다뜁니다!!\n" +
-                                "잘생김에 보컬까지~"),
-                Profile("PLATINUM",
-                        "가야금",
-                        "대전,서울,천안",
-                        4.0f, 4.0f, 4.0f, 4.0f, 38,
-                        arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
-                        UserInfo("최명락", "https://i.pinimg.com/736x/60/e9/85/60e9857c0a7c30f253de03eedc248879.jpg", "","","","","",""), 100, "안녕하세용~~", "경력", "수상내역",
-                        arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
-                        "보컬/축가,교회, 모든행사 다뜁니다!!\n" +
-                                "잘생김에 보컬까지~")
-        )
+        var sampleList = testCategoryResultProfile
 
         _profileData.value = sampleList
         profileAdapter.setCount(_profileData.value!!.size)
