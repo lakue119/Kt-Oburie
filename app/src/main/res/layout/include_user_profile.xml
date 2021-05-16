@@ -6,6 +6,9 @@
         <variable
             name="vm"
             type="com.lakue.oburie.ui.userprofile.UserProfileViewModel" />
+        <variable
+            name="activity"
+            type="com.lakue.oburie.ui.userprofile.UserProfileActivity" />
     </data>
 
     <androidx.core.widget.NestedScrollView
@@ -151,6 +154,7 @@
 
 
                     <TextView
+                        android:onClick="@{() -> activity.showReview()}"
                         android:fontFamily="@font/applesdgothicneol"
                         android:textSize="16dp"
                         android:textColor="@color/gray_d1"

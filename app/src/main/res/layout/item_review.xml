@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="vm"
+            type="com.lakue.oburie.ui.review.ReviewListViewModel" />
+        <variable
+            name="position"
+            type="Integer" />
+        <import type="android.view.View"/>
+    </data>
+
+    <LinearLayout
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:paddingRight="16dp"
+        android:paddingLeft="16dp"
+        android:layout_marginBottom="12dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.lakue.oburie.custom.RoundedImageView
+                image_url="@{vm.review.get(position).userimg}"
+                android:scaleType="centerCrop"
+                app:rectRadius="50dp"
+                android:src="@color/black"
+                android:layout_width="48dp"
+                android:layout_height="48dp"/>
+
+            <LinearLayout
+                android:layout_marginLeft="12dp"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="@{vm.review.get(position).userName}"
+                    android:fontFamily="@font/applesdgothicneob"
+                    tools:text="라꾸"
+                    android:textColor="@color/color_dark_ffffff_000000"
+                    android:textSize="14dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <com.willy.ratingbar.ScaleRatingBar
+                    touchDisable="@{true}"
+                    android:layout_marginTop="4dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    app:srb_stepSize="0.1"
+                    reviewScore="@{Float.valueOf(vm.review.get(position).rating)}"
+                    android:gravity="center"
+                    app:layout_constraintEnd_toStartOf="@+id/textView7"
+                    app:layout_constraintTop_toBottomOf="@+id/textView4"
+                    app:srb_clearRatingEnabled="false"
+                    app:srb_drawableEmpty="@drawable/ic_review_bicstar_off"
+                    app:srb_drawableFilled="@drawable/ic_review_bicstar_on"
+                    app:srb_isIndicator="false"
+                    app:srb_scrollable="false"
+                    app:srb_starHeight="12dp"
+                    app:srb_starPadding="1dp"
+                    app:srb_starWidth="12dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_marginTop="8dp"
+            android:text="@{vm.review.get(position).comment}"
+            android:textColor="@color/color_dark_ffffff_000000"
+            android:textSize="14dp"
+            android:fontFamily="@font/applesdgothicneol"
+            tools:text="정말 좋아용"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:visibility="@{vm.review.get(position).isAnswer?View.GONE:View.VISIBLE}"
+            android:layout_marginTop="16dp"
+            android:layout_gravity="right"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:text="답글"
+            android:background="@drawable/selector_round_5_ffffff_select_fd9426"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <LinearLayout
+            android:visibility="@{vm.review.get(position).isAnswer?View.VISIBLE:View.GONE}"
+            android:background="@drawable/background_round_8"
+            android:backgroundTint="@color/gray_500"
+            android:paddingTop="8dp"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:paddingBottom="8dp"
+            android:orientation="vertical"
+            android:layout_marginTop="16dp"
+            android:layout_gravity="right"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="@{vm.review.get(position).answerName}"
+                    android:textColor="@color/color_dark_ffffff_000000"
+                    android:textSize="14dp"
+                    android:fontFamily="@font/applesdgothicneoeb"
+                    tools:text="라꾸"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:text="@{vm.review.get(position).answerDate}"
+                    android:layout_marginLeft="8dp"
+                    android:textColor="@color/gray_999"
+                    android:textSize="14dp"
+                    android:fontFamily="@font/applesdgothicneol"
+                    tools:text="2021.01.11 15:00:00"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:text="@{vm.review.get(position).answerComment}"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/color_dark_ffffff_000000"
+                android:textSize="14dp"
+                android:fontFamily="@font/applesdgothicneol"
+                tools:text="정말 좋아용"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</layout>

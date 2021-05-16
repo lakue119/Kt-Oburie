@@ -92,6 +92,13 @@ fun TextView.setAmount(
    }
 }
 
+@BindingAdapter("reviewCount")
+fun TextView.setAmount(
+    reviewCount: Int
+){
+    this.text = "${reviewCount}개의 평가"
+}
+
 /**
  * View Selected
  */

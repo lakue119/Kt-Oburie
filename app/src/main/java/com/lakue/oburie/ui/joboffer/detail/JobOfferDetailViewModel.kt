@@ -1,4 +1,4 @@
-package com.lakue.oburie.ui.jobofferdetail
+package com.lakue.oburie.ui.joboffer.detail
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

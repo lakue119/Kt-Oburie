@@ -19,11 +19,14 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.FragmentManager
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModelLazy
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.observe
 import com.lakue.oburie.BR
 import com.lakue.oburie.R
 import com.lakue.oburie.listener.OnThrottleClickListener
+import com.lakue.oburie.utils.Event
 import io.reactivex.disposables.CompositeDisposable
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
@@ -148,4 +151,11 @@ abstract class BaseActivity<B : ViewDataBinding, VM : BaseViewModel>(
     }
 
     protected fun String.toEditable(): Editable = Editable.Factory.getInstance().newEditable(this)
+
+    protected infix fun <T> LiveData<Event<T>>.eventObserve(action: (T) -> Unit) {
+        observe(this@BaseActivity) {
+            it.get(action)
+        }
+    }
+
 }

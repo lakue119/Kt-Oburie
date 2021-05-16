@@ -7,6 +7,9 @@
         <variable
             name="vm"
             type="com.lakue.oburie.ui.userprofile.UserProfileViewModel" />
+        <variable
+            name="activity"
+            type="com.lakue.oburie.ui.userprofile.UserProfileActivity" />
     </data>
 
     <LinearLayout
@@ -78,8 +81,10 @@
 
             </com.google.android.material.appbar.AppBarLayout>
 
-            <include layout="@layout/include_user_profile"
-                app:vm="@{vm}"/>
+            <include
+                layout="@layout/include_user_profile"
+                app:vm="@{vm}"
+                app:activity="@{activity}"/>
 
         </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

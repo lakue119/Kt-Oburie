@@ -10,6 +10,7 @@ import com.lakue.oburie.databinding.ActivityCategoryResultBinding
 import com.lakue.oburie.databinding.ActivityUserProfileBinding
 import com.lakue.oburie.ui.categoryresult.CategoryResultActivity
 import com.lakue.oburie.ui.categoryresult.CategoryResultViewModel
+import com.lakue.oburie.ui.review.ReviewListActivity.Companion.startReviewListActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -27,6 +28,7 @@ class UserProfileActivity : BaseActivity<ActivityUserProfileBinding, UserProfile
     override fun init() {
         binding.apply {
             vm = viewModel
+            activity = this@UserProfileActivity
         }
     }
 
@@ -37,5 +39,9 @@ class UserProfileActivity : BaseActivity<ActivityUserProfileBinding, UserProfile
     }
 
     override fun setObserve() {
+    }
+
+    fun showReview(){
+        startReviewListActivity(this@UserProfileActivity)
     }
 }

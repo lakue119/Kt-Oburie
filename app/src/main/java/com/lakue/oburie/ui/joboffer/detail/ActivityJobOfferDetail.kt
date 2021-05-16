@@ -1,4 +1,4 @@
-package com.lakue.oburie.ui.jobofferdetail
+package com.lakue.oburie.ui.joboffer.detail
 
 import android.content.Context
 import android.content.Intent
