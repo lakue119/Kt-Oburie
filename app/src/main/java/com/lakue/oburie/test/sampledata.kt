@@ -1,10 +1,7 @@
 package com.lakue.oburie.test
 
 import com.lakue.oburie.R
-import com.lakue.oburie.model.Category
-import com.lakue.oburie.model.Profile
-import com.lakue.oburie.model.Review
-import com.lakue.oburie.model.UserInfo
+import com.lakue.oburie.model.*
 import com.lakue.oburie.model.joboffer.JobOffer
 import com.lakue.oburie.model.joboffer.JobOfferBadge
 
@@ -115,7 +112,8 @@ val testPopularProfile = arrayListOf(
             "",
             ""
         ), 100, "안녕하세용~~", "경력", "수상내역",
-        arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
+        arrayListOf(
+            Videos(0,"https://www.youtube.com/watch?v=HUeLK-RQBjU","https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg")),
         "보컬/축가,교회, 모든행사 다뜁니다!!\n" +
                 "잘생김에 보컬까지~"
     ),
@@ -135,7 +133,8 @@ val testPopularProfile = arrayListOf(
             "",
             ""
         ), 100, "안녕하세용~~", "경력", "수상내역",
-        arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
+        arrayListOf(
+            Videos(0,"https://www.youtube.com/watch?v=HUeLK-RQBjU","https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg")),
         "보컬/축가,교회, 모든행사 다뜁니다!!\n" +
                 "잘생김에 보컬까지~"
     ),
@@ -155,7 +154,8 @@ val testPopularProfile = arrayListOf(
             "",
             ""
         ), 100, "안녕하세용~~", "경력", "수상내역",
-        arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
+        arrayListOf(
+            Videos(0,"https://www.youtube.com/watch?v=HUeLK-RQBjU","https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg")),
         "보컬/축가,교회, 모든행사 다뜁니다!!\n" +
                 "잘생김에 보컬까지~"
     ),
@@ -175,7 +175,8 @@ val testPopularProfile = arrayListOf(
             "",
             ""
         ), 100, "안녕하세용~~", "경력", "수상내역",
-        arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
+        arrayListOf(
+            Videos(0,"https://www.youtube.com/watch?v=HUeLK-RQBjU","https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg")),
         "보컬/축가,교회, 모든행사 다뜁니다!!\n" +
                 "잘생김에 보컬까지~"
     ),
@@ -186,7 +187,8 @@ val testPopularProfile = arrayListOf(
         4.0f, 4.0f, 4.0f, 4.0f, 38,
         arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
         UserInfo(), 100, "안녕하세용~~", "경력", "수상내역",
-        arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
+        arrayListOf(
+            Videos(0,"https://www.youtube.com/watch?v=HUeLK-RQBjU","https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg")),
         "보컬/축가,교회, 모든행사 다뜁니다!!\n" +
                 "잘생김에 보컬까지~"
     ),
@@ -206,7 +208,8 @@ val testPopularProfile = arrayListOf(
             "",
             ""
         ), 100, "안녕하세용~~", "경력", "수상내역",
-        arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
+        arrayListOf(
+            Videos(0,"https://www.youtube.com/watch?v=HUeLK-RQBjU","https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg")),
         "보컬/축가,교회, 모든행사 다뜁니다!!\n" +
                 "잘생김에 보컬까지~"
     ),
@@ -226,7 +229,8 @@ val testPopularProfile = arrayListOf(
             "",
             ""
         ), 100, "안녕하세용~~", "경력", "수상내역",
-        arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
+        arrayListOf(
+            Videos(0,"https://www.youtube.com/watch?v=HUeLK-RQBjU","https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg")),
         "보컬/축가,교회, 모든행사 다뜁니다!!\n" +
                 "잘생김에 보컬까지~"
     )
@@ -250,7 +254,8 @@ val testNewProfile = arrayListOf(
             "",
             ""
         ), 100, "안녕하세용~~", "경력", "수상내역",
-        arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
+        arrayListOf(
+            Videos(0,"https://www.youtube.com/watch?v=HUeLK-RQBjU","https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg")),
         "보컬/축가,교회, 모든행사 다뜁니다!!\n" +
                 "잘생김에 보컬까지~"
     ),
@@ -270,7 +275,8 @@ val testNewProfile = arrayListOf(
             "",
             ""
         ), 100, "안녕하세용~~", "경력", "수상내역",
-        arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
+        arrayListOf(
+            Videos(0,"https://www.youtube.com/watch?v=HUeLK-RQBjU","https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg")),
         "보컬/축가,교회, 모든행사 다뜁니다!!\n" +
                 "잘생김에 보컬까지~"
     ),
@@ -290,7 +296,8 @@ val testNewProfile = arrayListOf(
             "",
             ""
         ), 100, "안녕하세용~~", "경력", "수상내역",
-        arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
+        arrayListOf(
+            Videos(0,"https://www.youtube.com/watch?v=HUeLK-RQBjU","https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg")),
         "보컬/축가,교회, 모든행사 다뜁니다!!\n" +
                 "잘생김에 보컬까지~"
     ),
@@ -310,7 +317,8 @@ val testNewProfile = arrayListOf(
             "",
             ""
         ), 100, "안녕하세용~~", "경력", "수상내역",
-        arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
+        arrayListOf(
+            Videos(0,"https://www.youtube.com/watch?v=HUeLK-RQBjU","https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg")),
         "보컬/축가,교회, 모든행사 다뜁니다!!\n" +
                 "잘생김에 보컬까지~"
     )
@@ -333,7 +341,8 @@ val testGroupProfile = arrayListOf(
             "",
             ""
         ), 100, "안녕하세용~~", "경력", "수상내역",
-        arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
+        arrayListOf(
+            Videos(0,"https://www.youtube.com/watch?v=HUeLK-RQBjU","https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg")),
         "보컬/축가,교회, 모든행사 다뜁니다!!\n" +
                 "잘생김에 보컬까지~"
     ),
@@ -353,7 +362,8 @@ val testGroupProfile = arrayListOf(
             "",
             ""
         ), 100, "안녕하세용~~", "경력", "수상내역",
-        arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
+        arrayListOf(
+            Videos(0,"https://www.youtube.com/watch?v=HUeLK-RQBjU","https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg")),
         "보컬/축가,교회, 모든행사 다뜁니다!!\n" +
                 "잘생김에 보컬까지~"
     )
@@ -377,7 +387,8 @@ val testCategoryResultProfile = arrayListOf(
             "",
             ""
         ), 100, "안녕하세용~~", "경력", "수상내역",
-        arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
+        arrayListOf(
+            Videos(0,"https://www.youtube.com/watch?v=HUeLK-RQBjU","https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg")),
         "보컬/축가,교회, 모든행사 다뜁니다!!\n" +
                 "잘생김에 보컬까지~"
     ),
@@ -397,7 +408,8 @@ val testCategoryResultProfile = arrayListOf(
             "",
             ""
         ), 100, "안녕하세용~~", "경력", "수상내역",
-        arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
+        arrayListOf(
+            Videos(0,"https://www.youtube.com/watch?v=HUeLK-RQBjU","https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg")),
         "보컬/축가,교회, 모든행사 다뜁니다!!\n" +
                 "잘생김에 보컬까지~"
     ),
@@ -417,7 +429,8 @@ val testCategoryResultProfile = arrayListOf(
             "",
             ""
         ), 100, "안녕하세용~~", "경력", "수상내역",
-        arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
+        arrayListOf(
+            Videos(0,"https://www.youtube.com/watch?v=HUeLK-RQBjU","https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg")),
         "보컬/축가,교회, 모든행사 다뜁니다!!\n" +
                 "잘생김에 보컬까지~"
     ),
@@ -437,7 +450,8 @@ val testCategoryResultProfile = arrayListOf(
             "",
             ""
         ), 100, "안녕하세용~~", "경력", "수상내역",
-        arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
+        arrayListOf(
+            Videos(0,"https://www.youtube.com/watch?v=HUeLK-RQBjU","https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg")),
         "보컬/축가,교회, 모든행사 다뜁니다!!\n" +
                 "잘생김에 보컬까지~"
     ),
@@ -448,7 +462,8 @@ val testCategoryResultProfile = arrayListOf(
         4.0f, 4.0f, 4.0f, 4.0f, 38,
         arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
         UserInfo(), 100, "안녕하세용~~", "경력", "수상내역",
-        arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
+        arrayListOf(
+            Videos(0,"https://www.youtube.com/watch?v=HUeLK-RQBjU","https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg")),
         "보컬/축가,교회, 모든행사 다뜁니다!!\n" +
                 "잘생김에 보컬까지~"
     ),
@@ -468,7 +483,8 @@ val testCategoryResultProfile = arrayListOf(
             "",
             ""
         ), 100, "안녕하세용~~", "경력", "수상내역",
-        arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
+        arrayListOf(
+            Videos(0,"https://www.youtube.com/watch?v=HUeLK-RQBjU","https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg")),
         "보컬/축가,교회, 모든행사 다뜁니다!!\n" +
                 "잘생김에 보컬까지~"
     ),
@@ -488,7 +504,8 @@ val testCategoryResultProfile = arrayListOf(
             "",
             ""
         ), 100, "안녕하세용~~", "경력", "수상내역",
-        arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
+        arrayListOf(
+            Videos(0,"https://www.youtube.com/watch?v=HUeLK-RQBjU","https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg")),
         "보컬/축가,교회, 모든행사 다뜁니다!!\n" +
                 "잘생김에 보컬까지~"
     ),
@@ -508,7 +525,8 @@ val testCategoryResultProfile = arrayListOf(
             "",
             ""
         ), 100, "안녕하세용~~", "경력", "수상내역",
-        arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
+        arrayListOf(
+            Videos(0,"https://www.youtube.com/watch?v=HUeLK-RQBjU","https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg")),
         "보컬/축가,교회, 모든행사 다뜁니다!!\n" +
                 "잘생김에 보컬까지~"
     ),
@@ -528,7 +546,8 @@ val testCategoryResultProfile = arrayListOf(
             "",
             ""
         ), 100, "안녕하세용~~", "경력", "수상내역",
-        arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
+        arrayListOf(
+            Videos(0,"https://www.youtube.com/watch?v=HUeLK-RQBjU","https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg")),
         "보컬/축가,교회, 모든행사 다뜁니다!!\n" +
                 "잘생김에 보컬까지~"
     ),
@@ -548,7 +567,8 @@ val testCategoryResultProfile = arrayListOf(
             "",
             ""
         ), 100, "안녕하세용~~", "경력", "수상내역",
-        arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
+        arrayListOf(
+            Videos(0,"https://www.youtube.com/watch?v=HUeLK-RQBjU","https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg")),
         "보컬/축가,교회, 모든행사 다뜁니다!!\n" +
                 "잘생김에 보컬까지~"
     ),
@@ -568,7 +588,8 @@ val testCategoryResultProfile = arrayListOf(
             "",
             ""
         ), 100, "안녕하세용~~", "경력", "수상내역",
-        arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
+        arrayListOf(
+            Videos(0,"https://www.youtube.com/watch?v=HUeLK-RQBjU","https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg")),
         "보컬/축가,교회, 모든행사 다뜁니다!!\n" +
                 "잘생김에 보컬까지~"
     ),
@@ -579,7 +600,8 @@ val testCategoryResultProfile = arrayListOf(
         4.0f, 4.0f, 4.0f, 4.0f, 38,
         arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
         UserInfo(), 100, "안녕하세용~~", "경력", "수상내역",
-        arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
+        arrayListOf(
+            Videos(0,"https://www.youtube.com/watch?v=HUeLK-RQBjU","https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg")),
         "보컬/축가,교회, 모든행사 다뜁니다!!\n" +
                 "잘생김에 보컬까지~"
     ),
@@ -599,7 +621,8 @@ val testCategoryResultProfile = arrayListOf(
             "",
             ""
         ), 100, "안녕하세용~~", "경력", "수상내역",
-        arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
+        arrayListOf(
+            Videos(0,"https://www.youtube.com/watch?v=HUeLK-RQBjU","https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg")),
         "보컬/축가,교회, 모든행사 다뜁니다!!\n" +
                 "잘생김에 보컬까지~"
     ),
@@ -619,7 +642,8 @@ val testCategoryResultProfile = arrayListOf(
             "",
             ""
         ), 100, "안녕하세용~~", "경력", "수상내역",
-        arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
+        arrayListOf(
+            Videos(0,"https://www.youtube.com/watch?v=HUeLK-RQBjU","https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg")),
         "보컬/축가,교회, 모든행사 다뜁니다!!\n" +
                 "잘생김에 보컬까지~"
     )
@@ -637,10 +661,10 @@ val testuserProfileDetail = Profile(
         "https://t1.daumcdn.net/cfile/tistory/99DBC7425DDD362E07",
         "",
         "",
+        "m_lakue119",
+        "https://www.youtube.com/channel/UCc31zhnmSwJB8czlaXlFSSg",
         "",
-        "",
-        "",
-        ""
+        "100001686914696"
     ), 100, "안녕하세요 웨딩 전문 사회자\n" +
             "쇼호스트 윤익입니다 ^-^\n" +
             "\n" +
@@ -709,22 +733,23 @@ val testuserProfileDetail = Profile(
             "- 시각장애인 협회 도전골든벨 mc\n" +
             "\n" +
             "- 더존pn 기업행사 mc 등등..",
-    arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
+    arrayListOf(
+        Videos(0,"https://www.youtube.com/watch?v=HUeLK-RQBjU","https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg")),
     "보컬/축가,교회, 모든행사 다뜁니다!!\n" +
             "잘생김에 보컬까지~"
 )
 
 val testReview1 = Review(
     "https://lh3.googleusercontent.com/proxy/6mf-djVcFdvjBBopolXSe4bnKrPnaq7DKiw8AnUX6fgU9mUspk6HVpb41RfTZsA2MCKF7V1JkeQXabaeJpQvZh6-Gnej5BIjWJxjYuM5JmhQunzQ4T6sx4wU",
-    "라꾸", 5, "시간 잘지키구 좋아요!!~", "gusrua", "2021.01.03 11:11:16", "잘맞아요~", true
+    "라꾸", 5, "시간 잘지키구 좋아요!!~", "gusrua", "2021.01.03 11:11:16", "잘맞아요~", true, "2021.01.15"
 )
 
 val testReview2 = Review(
-        "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTA0MTZfMzUg%2FMDAxNjE4NTM1MzAzNDE2.JnDf4-6yRoH1J0MrkeLRymStBcJ32N6lhqMeXNZicR4g.IZCo3ArjX-viIgqluJsmIcHRx3NTjbFPFc81_herHEsg.JPEG.cksl1105%2F20210416%25A3%25DF024357.jpg&type=a340",
-        "민호", 1, "시간 드릅게안지킴 ㅡ~", "gusrua", "2021.01.03 11:11:16", "잘맞아요~", false
+    "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTA0MTZfMzUg%2FMDAxNjE4NTM1MzAzNDE2.JnDf4-6yRoH1J0MrkeLRymStBcJ32N6lhqMeXNZicR4g.IZCo3ArjX-viIgqluJsmIcHRx3NTjbFPFc81_herHEsg.JPEG.cksl1105%2F20210416%25A3%25DF024357.jpg&type=a340",
+    "민호", 1, "시간 드릅게안지킴 ㅡ~", "gusrua", "2021.01.03 11:11:16", "잘맞아요~", false, "2021.01.15"
 )
 
 val testReview3 = Review(
-        "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMDEyMjRfMjk5%2FMDAxNjA4Nzc3ODkyMjI2.iSjShJQxiU0U8FeEO7fV_2uYtCiRB37EP-6TmQ70CIUg.NG60vsuIFuvSZiXY1TKFLeb8YIp2CDKjp7jh0kcLJI8g.PNG.oscr10002%2FK-001.png&type=a340",
-        "호현", 4, "매너좋아요~~", "gusrua", "2021.01.03 11:11:16", "잘맞아요~", true
+    "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMDEyMjRfMjk5%2FMDAxNjA4Nzc3ODkyMjI2.iSjShJQxiU0U8FeEO7fV_2uYtCiRB37EP-6TmQ70CIUg.NG60vsuIFuvSZiXY1TKFLeb8YIp2CDKjp7jh0kcLJI8g.PNG.oscr10002%2FK-001.png&type=a340",
+    "호현", 4, "매너좋아요~~", "gusrua", "2021.01.03 11:11:16", "잘맞아요~", true, "2021.01.15"
 )
