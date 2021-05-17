@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <variable
+            name="vm"
+            type="com.lakue.oburie.ui.review.answer.ReviewAnswerViewModel" />
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.Toolbar
+                app:contentInsetStart="0dp"
+                app:layout_collapseMode="pin"
+                app:titleTextColor="@color/black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:padding="13dp"
+                        android:src="@drawable/ic_back"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:tint="@color/color_dark_ffffff_000000" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/applesdgothicneob"
+                        tools:text="라꾸님의 리뷰"
+                        reviewName="@{vm.review.userName}"
+                        android:textColor="@color/color_dark_ffffff_000000"
+                        android:textSize="15dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/imageView"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingRight="20dp"
+            android:paddingLeft="20dp"
+            android:paddingTop="24dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.lakue.oburie.custom.RoundedImageView
+                    image_url="@{vm.review.userimg}"
+                    android:scaleType="centerCrop"
+                    app:rectRadius="50dp"
+                    android:src="@color/black"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"/>
+
+                <LinearLayout
+                    android:layout_marginLeft="12dp"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="@{vm.review.userName}"
+                        android:fontFamily="@font/applesdgothicneob"
+                        tools:text="라꾸"
+                        android:textColor="@color/color_dark_ffffff_000000"
+                        android:textSize="14dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <LinearLayout
+                        android:gravity="center|left"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="4dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <com.willy.ratingbar.ScaleRatingBar
+                            touchDisable="@{true}"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:clickable="false"
+                            app:srb_stepSize="0.1"
+                            reviewScore="@{Float.valueOf(vm.review.rating)}"
+                            android:gravity="center"
+                            app:layout_constraintEnd_toStartOf="@+id/textView7"
+                            app:layout_constraintTop_toBottomOf="@+id/textView4"
+                            app:srb_clearRatingEnabled="false"
+                            app:srb_drawableEmpty="@drawable/ic_review_bicstar_off"
+                            app:srb_drawableFilled="@drawable/ic_review_bicstar_on"
+                            app:srb_isIndicator="false"
+                            app:srb_scrollable="false"
+                            app:srb_starHeight="12dp"
+                            app:srb_starPadding="1dp"
+                            app:srb_starWidth="12dp" />
+
+                        <TextView
+                            android:layout_marginLeft="8dp"
+                            android:text="@{vm.review.createDate}"
+                            android:textColor="@color/gray_999"
+                            android:textSize="11dp"
+                            android:fontFamily="@font/applesdgothicneol"
+                            tools:text="| 2021.01.11"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_marginTop="8dp"
+                android:text="@{vm.review.comment}"
+                android:textColor="@color/color_dark_ffffff_000000"
+                android:textSize="14dp"
+                android:fontFamily="@font/applesdgothicneol"
+                tools:text="정말 좋아용"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <EditText
+                android:padding="16dp"
+                android:gravity="top"
+                android:textColor="@color/color_dark_ffffff_000000"
+                android:textSize="14dp"
+                android:fontFamily="@font/applesdgothicneol"
+                android:hint="답글을 작성해주세요..."
+                android:background="@drawable/background_round_5_stroek_dddddd"
+                android:layout_marginTop="24dp"
+                android:minHeight="400dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_marginBottom="20dp"
+            android:paddingBottom="16dp"
+            android:paddingTop="16dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textSize="18dp"
+            android:fontFamily="@font/applesdgothicneob"
+            android:textColor="@color/white"
+            android:text="문의하기"
+            android:backgroundTint="@color/point_1000"
+            android:background="@drawable/background_round_8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+</layout>

@@ -6,7 +6,7 @@
     <data>
         <variable
             name="vm"
-            type="com.lakue.oburie.ui.review.ReviewListViewModel" />
+            type="com.lakue.oburie.ui.review.list.ReviewListViewModel" />
     </data>
 
     <LinearLayout
@@ -41,11 +41,12 @@
                         app:tint="@color/color_dark_ffffff_000000" />
 
                     <TextView
+                        reviewName="@{vm.profileData.userInfo.nickName}"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/applesdgothicneob"
                         tools:text="라꾸님의 리뷰"
-                        android:textColor="@color/black"
+                        android:textColor="@color/color_dark_ffffff_000000"
                         android:textSize="15dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -84,7 +85,7 @@
                         android:paddingBottom="16dp"
                         android:paddingLeft="24dp"
                         android:paddingRight="24dp"
-                        android:backgroundTint="@color/gray_500"
+                        android:backgroundTint="@color/color_dark_f5f5f5_222222"
                         android:background="@drawable/background_round_8"
                         android:orientation="vertical"
                         android:layout_width="match_parent"
@@ -100,7 +101,7 @@
                             <TextView
                                 android:text="@{String.valueOf(vm.profileData.reviewTotalGrade)}"
                                 android:fontFamily="@font/applesdgothicneoeb"
-                                android:textColor="@color/black"
+                                android:textColor="@color/color_dark_ffffff_000000"
                                 android:textSize="40dp"
                                 tools:text="4.9"
                                 android:layout_width="wrap_content"
@@ -135,7 +136,7 @@
                                     reviewCount="@{vm.profileData.reviewCount}"
                                     android:layout_marginTop="2dp"
                                     android:fontFamily="@font/applesdgothicneol"
-                                    android:textColor="@color/black"
+                                    android:textColor="@color/color_dark_ffffff_000000"
                                     android:textSize="14dp"
                                     tools:text="269개의 평가"
                                     android:layout_width="wrap_content"

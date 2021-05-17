@@ -1,15 +1,11 @@
-package com.lakue.oburie.ui.review
+package com.lakue.oburie.ui.review.list
 
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
 import com.lakue.oburie.R
 import com.lakue.oburie.base.BaseActivity
 import com.lakue.oburie.databinding.ActivityReviewListBinding
-import com.lakue.oburie.databinding.ActivityUserProfileBinding
-import com.lakue.oburie.ui.userprofile.UserProfileActivity
-import com.lakue.oburie.ui.userprofile.UserProfileViewModel
+import com.lakue.oburie.ui.review.answer.ReviewAnswerActivity.Companion.startReviewAnswerActivity
 
 class ReviewListActivity : BaseActivity<ActivityReviewListBinding, ReviewListViewModel>(R.layout.activity_review_list) {
 
@@ -26,6 +22,10 @@ class ReviewListActivity : BaseActivity<ActivityReviewListBinding, ReviewListVie
         binding.apply{
             vm = viewModel
         }
+
+        viewModel.apply{
+            reviewAnswerEvent eventObserve {showReviewAnswer()}
+        }
     }
 
     override fun setUI() {
@@ -35,5 +35,9 @@ class ReviewListActivity : BaseActivity<ActivityReviewListBinding, ReviewListVie
     }
 
     override fun setObserve() {
+    }
+
+    fun showReviewAnswer(){
+        startReviewAnswerActivity(this@ReviewListActivity)
     }
 }

@@ -6,7 +6,7 @@
     <data>
         <variable
             name="vm"
-            type="com.lakue.oburie.ui.review.ReviewListViewModel" />
+            type="com.lakue.oburie.ui.review.list.ReviewListViewModel" />
         <variable
             name="position"
             type="Integer" />
@@ -53,25 +53,43 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
 
-                <com.willy.ratingbar.ScaleRatingBar
-                    touchDisable="@{true}"
+                <LinearLayout
+                    android:gravity="center|left"
+                    android:layout_gravity="center"
                     android:layout_marginTop="4dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:clickable="false"
-                    app:srb_stepSize="0.1"
-                    reviewScore="@{Float.valueOf(vm.review.get(position).rating)}"
-                    android:gravity="center"
-                    app:layout_constraintEnd_toStartOf="@+id/textView7"
-                    app:layout_constraintTop_toBottomOf="@+id/textView4"
-                    app:srb_clearRatingEnabled="false"
-                    app:srb_drawableEmpty="@drawable/ic_review_bicstar_off"
-                    app:srb_drawableFilled="@drawable/ic_review_bicstar_on"
-                    app:srb_isIndicator="false"
-                    app:srb_scrollable="false"
-                    app:srb_starHeight="12dp"
-                    app:srb_starPadding="1dp"
-                    app:srb_starWidth="12dp" />
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.willy.ratingbar.ScaleRatingBar
+                        touchDisable="@{true}"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:clickable="false"
+                        app:srb_stepSize="0.1"
+                        reviewScore="@{Float.valueOf(vm.review.get(position).rating)}"
+                        android:gravity="center"
+                        app:layout_constraintEnd_toStartOf="@+id/textView7"
+                        app:layout_constraintTop_toBottomOf="@+id/textView4"
+                        app:srb_clearRatingEnabled="false"
+                        app:srb_drawableEmpty="@drawable/ic_review_bicstar_off"
+                        app:srb_drawableFilled="@drawable/ic_review_bicstar_on"
+                        app:srb_isIndicator="false"
+                        app:srb_scrollable="false"
+                        app:srb_starHeight="12dp"
+                        app:srb_starPadding="1dp"
+                        app:srb_starWidth="12dp" />
+
+                    <TextView
+                        android:layout_marginLeft="8dp"
+                        android:text="@{vm.review.get(position).createDate}"
+                        android:textColor="@color/gray_999"
+                        android:textSize="11dp"
+                        android:fontFamily="@font/applesdgothicneol"
+                        tools:text="| 2021.01.11"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
 
             </LinearLayout>
 
@@ -88,6 +106,7 @@
             android:layout_height="wrap_content"/>
 
         <TextView
+            android:onClick="@{() -> vm.showReviewAnswer(vm.review.get(position))}"
             android:visibility="@{vm.review.get(position).isAnswer?View.GONE:View.VISIBLE}"
             android:layout_marginTop="16dp"
             android:layout_gravity="right"
@@ -96,18 +115,19 @@
             android:paddingLeft="8dp"
             android:paddingRight="8dp"
             android:text="답글"
-            android:background="@drawable/selector_round_5_ffffff_select_fd9426"
+            android:textColor="@color/color_dark_ffffff_000000"
+            android:background="@drawable/background_round_5_stroek_dddddd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
         <LinearLayout
             android:visibility="@{vm.review.get(position).isAnswer?View.VISIBLE:View.GONE}"
             android:background="@drawable/background_round_8"
-            android:backgroundTint="@color/gray_500"
-            android:paddingTop="8dp"
-            android:paddingLeft="12dp"
-            android:paddingRight="12dp"
-            android:paddingBottom="8dp"
+            android:backgroundTint="@color/color_dark_f5f5f5_222222"
+            android:paddingTop="12dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingBottom="12dp"
             android:orientation="vertical"
             android:layout_marginTop="16dp"
             android:layout_gravity="right"
@@ -115,6 +135,7 @@
             android:layout_height="wrap_content">
 
             <LinearLayout
+                android:gravity="center|left"
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -132,7 +153,7 @@
                     android:text="@{vm.review.get(position).answerDate}"
                     android:layout_marginLeft="8dp"
                     android:textColor="@color/gray_999"
-                    android:textSize="14dp"
+                    android:textSize="11dp"
                     android:fontFamily="@font/applesdgothicneol"
                     tools:text="2021.01.11 15:00:00"
                     android:layout_width="wrap_content"

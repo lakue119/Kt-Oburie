@@ -1,4 +1,4 @@
-package com.lakue.oburie.ui.review
+package com.lakue.oburie.ui.review.list
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -7,8 +7,6 @@ import com.lakue.oburie.R
 import com.lakue.oburie.base.BaseAdapter
 import com.lakue.oburie.base.BaseViewHolder
 import com.lakue.oburie.databinding.ItemReviewBinding
-import com.lakue.oburie.databinding.ItemUserProfileVideoBinding
-import com.lakue.oburie.ui.userprofile.UserProfileViewModel
 
 class ReviewListAdapter (private val viewModel: ReviewListViewModel) : BaseAdapter(){
 
