@@ -19,7 +19,7 @@
 
         <com.lakue.oburie.custom.RoundedImageView
             android:scaleType="centerCrop"
-            image_url="@{vm.profileData.videos.get(position)}"
+            image_url="@{vm.profileData.videos.get(position).coverImage}"
             app:layout_constraintDimensionRatio="H,3:2"
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -37,6 +37,7 @@
             android:layout_height="wrap_content">
 
             <com.lakue.oburie.custom.RoundedImageView
+                android:onClick="@{() -> vm.onVideoDetail(vm.profileData.videos.get(position).youtubeUrl)}"
                 android:src="@color/point_1000"
                 app:rectRadius="50dp"
                 android:layout_width="100dp"

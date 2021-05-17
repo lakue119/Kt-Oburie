@@ -50,17 +50,20 @@
                     android:layout_height="1dp"/>
 
                 <ImageView
+                    android:onClick="@{() -> activity.showFaceBook(vm.profileData.userInfo.facebook)}"
                     android:src="@drawable/ic_facebook"
                     android:layout_width="20dp"
                     android:layout_height="20dp"/>
 
                 <ImageView
+                    android:onClick="@{() -> activity.showInstagram(vm.profileData.userInfo.instagram)}"
                     android:layout_marginLeft="4dp"
                     android:src="@drawable/ic_insta"
                     android:layout_width="22dp"
                     android:layout_height="22dp"/>
 
                 <ImageView
+                    android:onClick="@{() -> activity.showYoutube(vm.profileData.userInfo.youtube)}"
                     android:layout_marginLeft="4dp"
                     android:src="@drawable/ic_youtube"
                     android:layout_width="24dp"
@@ -86,11 +89,11 @@
                     image_url="@{vm.profileData.userInfo.userProfileImg}"
                     app:rectRadius="50dp"
                     android:src="@color/black"
-                    android:layout_width="56dp"
-                    android:layout_height="56dp"/>
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"/>
 
                 <LinearLayout
-                    android:layout_marginLeft="8dp"
+                    android:layout_marginLeft="12dp"
                     android:layout_weight="1"
                     android:layout_gravity="center"
                     android:orientation="vertical"
@@ -127,6 +130,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:onClick="@{() -> activity.showReview()}"
                 android:layout_marginTop="24dp"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
@@ -154,9 +158,8 @@
 
 
                     <TextView
-                        android:onClick="@{() -> activity.showReview()}"
                         android:fontFamily="@font/applesdgothicneol"
-                        android:textSize="16dp"
+                        android:textSize="14dp"
                         android:textColor="@color/gray_d1"
                         android:text="전체보기"
                         android:layout_width="wrap_content"
