@@ -171,6 +171,7 @@ class HomeAdapter(val viewModel: HomeViewModel) : BaseAdapter() {
     inner class HomeProfileCheckViewHolder(private val binding: ItemHomeProfileCheckBinding) : BaseViewHolder(binding.root) {
         override fun onBind(item: Any, pos: Int) {
             binding.apply {
+                vm = viewModel
             }
         }
     }
@@ -178,9 +179,9 @@ class HomeAdapter(val viewModel: HomeViewModel) : BaseAdapter() {
     inner class HomePopularProfileViewHolder(private val binding: ItemHomePopularListBinding) : BaseViewHolder(binding.root) {
         override fun onBind(item: Any, pos: Int) {
             binding.apply {
-                val vm = item as HomeViewModel
-                val profileAdapter = HomePopularAdapter(vm, vm.homeData.value?.get(pos) as ArrayList<Profile>)
+                val profileAdapter = HomePopularAdapter(viewModel, viewModel.homeData.value?.get(pos) as ArrayList<Profile>)
                 adapter = profileAdapter
+                vm = viewModel
 
             }
         }
@@ -189,9 +190,9 @@ class HomeAdapter(val viewModel: HomeViewModel) : BaseAdapter() {
     inner class HomeNewFaceProfileViewHolder(private val binding: ItemHomeNewFaceListBinding) : BaseViewHolder(binding.root) {
         override fun onBind(item: Any, pos: Int) {
             binding.apply {
-                val vm = item as HomeViewModel
-                val profileAdapter = HomeNewFaceAdapter(vm, vm.homeData.value?.get(pos) as ArrayList<Profile>)
+                val profileAdapter = HomeNewFaceAdapter(viewModel, viewModel.homeData.value?.get(pos) as ArrayList<Profile>)
                 adapter = profileAdapter
+                vm = viewModel
 
             }
         }
@@ -200,9 +201,9 @@ class HomeAdapter(val viewModel: HomeViewModel) : BaseAdapter() {
     inner class HomeGroupProfileViewHolder(private val binding: ItemHomeGroupListBinding) : BaseViewHolder(binding.root) {
         override fun onBind(item: Any, pos: Int) {
             binding.apply {
-                val vm = item as HomeViewModel
-                val profileAdapter = HomeGroupAdapter(vm, vm.homeData.value?.get(pos) as ArrayList<Profile>)
+                val profileAdapter = HomeGroupAdapter(viewModel, viewModel.homeData.value?.get(pos) as ArrayList<Profile>)
                 adapter = profileAdapter
+                vm = viewModel
 
             }
         }

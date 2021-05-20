@@ -15,6 +15,7 @@ import com.lakue.oburie.test.testPopularProfile
 import com.lakue.oburie.ui.categoryresult.CategoryResultActivity.Companion.startCategoryResultActivity
 import com.lakue.oburie.ui.userprofile.UserProfileActivity.Companion.startUserProfileActivity
 import com.lakue.oburie.utils.BaseUtils.context
+import com.lakue.oburie.utils.Event
 //import com.lakue.oburie.repository.ProfileRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
@@ -29,6 +30,31 @@ class HomeViewModel @Inject constructor(
     val homeData: LiveData<ArrayList<Any>> = _homeData
 
     var homeAdapter: HomeAdapter = HomeAdapter(this)
+
+
+    private val _categoryEvent = MutableLiveData<Event<String>>()
+    val categoryEvent: LiveData<Event<String>> = _categoryEvent
+
+    private val _userProfileEvent = MutableLiveData<Event<String>>()
+    val userProfileEvent: LiveData<Event<String>> = _userProfileEvent
+
+    private val _bannerEvent = MutableLiveData<Event<String>>()
+    val bannerEvent: LiveData<Event<String>> = _bannerEvent
+
+    private val _searchEvent = MutableLiveData<Event<String>>()
+    val searchEvent: LiveData<Event<String>> = _searchEvent
+
+    private val _firstProfileSettingEvent = MutableLiveData<Event<String>>()
+    val firstProfileSettingEvent: LiveData<Event<String>> = _firstProfileSettingEvent
+
+    private val _monthPopularPeopleEvent = MutableLiveData<Event<String>>()
+    val monthPopularPeopleEvent: LiveData<Event<String>> = _monthPopularPeopleEvent
+
+    private val _newPeopleEvent = MutableLiveData<Event<String>>()
+    val newPeopleEvent: LiveData<Event<String>> = _newPeopleEvent
+
+    private val _groupPeopleEvent = MutableLiveData<Event<String>>()
+    val groupPeopleEvent: LiveData<Event<String>> = _groupPeopleEvent
 
     init {
         sampleHomeData()
@@ -56,16 +82,36 @@ class HomeViewModel @Inject constructor(
     /**
      * Click Event
      */
-    fun setData() {
-//        sampleHomeData2()
+    fun onCategoryResult() {
+        _categoryEvent.value = Event("category")
     }
 
-    fun showCategoryResult() {
-        startCategoryResultActivity(context)
+    fun onUserDetail(){
+        _userProfileEvent.value = Event("profile")
     }
 
-    fun showUserDetail(){
-        startUserProfileActivity(context)
+    fun onBannerDetail(){
+        _bannerEvent.value = Event("banner")
+    }
+
+    fun onSearchList(){
+        _searchEvent.value = Event("search")
+    }
+
+    fun onSettingProfile(){
+        _firstProfileSettingEvent.value = Event("settingProfile")
+    }
+
+    fun onMonthPopularPeople(){
+        _monthPopularPeopleEvent.value = Event("monthPopular")
+    }
+
+    fun onNewPeople() {
+        _newPeopleEvent.value = Event("newPopular")
+    }
+
+    fun onGroupPeople(){
+        _groupPeopleEvent.value = Event("group")
     }
 
 }

@@ -21,7 +21,7 @@
 
 
         <com.google.android.material.card.MaterialCardView
-            android:onClick="@{() -> vm.showCategoryResult()}"
+            android:onClick="@{() -> vm.onCategoryResult()}"
             android:theme="@style/Theme.MaterialComponents.Light"
             android:layout_margin="16dp"
             android:layout_width="match_parent"

@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <data>
+        <variable
+            name="vm"
+            type="com.lakue.oburie.ui.bottomnavigation.home.HomeViewModel" />
+    </data>
 
     <LinearLayout
         android:layout_marginLeft="20dp"
@@ -19,12 +25,21 @@
             android:textColor="@color/color_dark_ffffff_000000"
             android:text="프로필" />
 
-        <ImageView
+        <com.google.android.material.card.MaterialCardView
+            android:onClick="@{() -> vm.onSettingProfile()}"
             android:layout_marginTop="16dp"
-            android:src="@drawable/profile_upload"
-            android:adjustViewBounds="true"
+            app:cardCornerRadius="7dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:src="@drawable/profile_upload"
+                android:adjustViewBounds="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </com.google.android.material.card.MaterialCardView>
+
 
     </LinearLayout>
 

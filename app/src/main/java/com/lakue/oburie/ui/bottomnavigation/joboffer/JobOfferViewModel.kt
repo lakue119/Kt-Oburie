@@ -6,7 +6,7 @@ import androidx.lifecycle.SavedStateHandle
 import com.lakue.oburie.base.BaseViewModel
 import com.lakue.oburie.model.joboffer.JobOffer
 import com.lakue.oburie.test.testJobOffer1
-import com.lakue.oburie.ui.joboffer.detail.ActivityJobOfferDetail.Companion.startJobOfferDetailActivity
+import com.lakue.oburie.ui.joboffer.detail.JobOfferDetailActivity.Companion.startJobOfferDetailActivity
 import com.lakue.oburie.utils.BaseUtils.context
 import javax.inject.Inject
 

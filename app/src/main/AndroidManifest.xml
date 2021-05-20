@@ -15,15 +15,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Oburie">
-        <activity android:name=".ui.review.answer.ReviewAnswerActivity"></activity>
+        <activity android:name=".ui.search.jobjunter.JobHunterSearchActivity"></activity>
+        <activity android:name=".ui.review.answer.ReviewAnswerActivity" />
         <activity android:name=".ui.review.list.ReviewListActivity" />
-        <activity android:name=".ui.joboffer.upload.ActivityJobOfferUpload" />
+        <activity android:name=".ui.joboffer.upload.JobOfferUploadActivity" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyDh46bSu29H9jd6VHH3osix1H40RqlOa94" />
 
-        <activity android:name=".ui.joboffer.detail.ActivityJobOfferDetail" />
+        <activity android:name=".ui.joboffer.detail.JobOfferDetailActivity" />
         <activity android:name=".ui.userprofile.UserProfileActivity" />
         <activity
             android:name=".ui.categoryresult.location.SelectLocationActivity"

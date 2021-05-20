@@ -17,7 +17,7 @@ import dagger.hilt.android.AndroidEntryPoint
 
 
 @AndroidEntryPoint
-class ActivityJobOfferDetail  : BaseActivity<ActivityJobOfferDetailBinding, JobOfferDetailViewModel>(R.layout.activity_job_offer_detail),
+class JobOfferDetailActivity  : BaseActivity<ActivityJobOfferDetailBinding, JobOfferDetailViewModel>(R.layout.activity_job_offer_detail),
     OnMapReadyCallback {
 
     lateinit var mMap: GoogleMap
@@ -26,7 +26,7 @@ class ActivityJobOfferDetail  : BaseActivity<ActivityJobOfferDetailBinding, JobO
         fun startJobOfferDetailActivity(
                 context: Context
         ) {
-            val intent = Intent(context, ActivityJobOfferDetail::class.java)
+            val intent = Intent(context, JobOfferDetailActivity::class.java)
             context.startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
         }
     }

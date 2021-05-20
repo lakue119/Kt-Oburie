@@ -6,6 +6,7 @@ import com.lakue.oburie.R
 import com.lakue.oburie.base.BaseActivity
 import com.lakue.oburie.databinding.ActivityReviewListBinding
 import com.lakue.oburie.ui.review.answer.ReviewAnswerActivity.Companion.startReviewAnswerActivity
+import com.lakue.oburie.ui.userprofile.UserProfileActivity.Companion.startUserProfileActivity
 
 class ReviewListActivity : BaseActivity<ActivityReviewListBinding, ReviewListViewModel>(R.layout.activity_review_list) {
 
@@ -25,6 +26,7 @@ class ReviewListActivity : BaseActivity<ActivityReviewListBinding, ReviewListVie
 
         viewModel.apply{
             reviewAnswerEvent eventObserve {showReviewAnswer()}
+            userProfileEvent eventObserve {showUserProfile()}
         }
     }
 
@@ -39,5 +41,9 @@ class ReviewListActivity : BaseActivity<ActivityReviewListBinding, ReviewListVie
 
     fun showReviewAnswer(){
         startReviewAnswerActivity(this@ReviewListActivity)
+    }
+
+    fun showUserProfile(){
+        startUserProfileActivity(this@ReviewListActivity)
     }
 }

@@ -14,6 +14,28 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.lakue.oburie.view.CustomBackButton
+                    android:id="@+id/imageView"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:padding="13dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/color_dark_ffffff_000000" />
+
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
         <androidx.core.widget.NestedScrollView
             android:layout_weight="1"
             android:layout_width="match_parent"
@@ -125,7 +147,7 @@
                     android:id="@+id/view_line1"
                     android:background="@color/gray_d"
                     android:layout_width="match_parent"
-                    android:layout_height="8dp"/>
+                    android:layout_height="1dp"/>
 
                 <LinearLayout
                     android:id="@+id/ll_filter"
@@ -196,7 +218,7 @@
                     android:id="@+id/view_line2"
                     android:background="@color/gray_d"
                     android:layout_width="match_parent"
-                    android:layout_height="8dp"/>
+                    android:layout_height="1dp"/>
 
                 <LinearLayout
                     android:id="@+id/ll_info"
@@ -287,7 +309,7 @@
                     android:id="@+id/view_line3"
                     android:background="@color/gray_d"
                     android:layout_width="match_parent"
-                    android:layout_height="8dp"/>
+                    android:layout_height="1dp"/>
 
                 <TextView
                     android:id="@+id/tv_detail_title"
@@ -323,18 +345,23 @@
 
         </androidx.core.widget.NestedScrollView>
 
-        <TextView
-            android:textSize="17dp"
-            android:fontFamily="@font/applesdgothicneoeb"
-            android:gravity="center"
-            android:layout_gravity="center"
-            android:background="@color/point_1000"
-            android:textColor="@color/white"
-            android:text="지원하기"
-            android:paddingBottom="16dp"
-            android:paddingTop="16dp"
+        <LinearLayout
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:background="@color/white"
+            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content">
+
+            <TextView
+                style="@style/BottomCompleteButton"
+                android:text="@string/apply"/>
+
+        </LinearLayout>
+
+
     </LinearLayout>
 
 

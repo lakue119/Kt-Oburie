@@ -11,6 +11,10 @@
         <variable
             name="position"
             type="Integer" />
+
+        <variable
+            name="vm"
+            type="com.lakue.oburie.ui.bottomnavigation.home.HomeViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -32,6 +36,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
+            android:onClick="@{() -> vm.onGroupPeople()}"
             android:fontFamily="@font/applesdgothicneob"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

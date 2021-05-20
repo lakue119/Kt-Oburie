@@ -11,18 +11,19 @@
             name="vm"
             type="com.lakue.oburie.ui.bottomnavigation.home.HomeViewModel" />
     </data>
-    <LinearLayout
+    <com.google.android.material.card.MaterialCardView
+        android:onClick="@{() -> vm.onBannerDetail()}"
+        lakue:cardCornerRadius="7dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <com.lakue.oburie.custom.RoundedImageView
+        <ImageView
             lakue:image_url="@{vm.homeData[0].toString()}"
-            lakue:rectRadius="4dp"
             android:adjustViewBounds="true"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
-    </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
 </layout>

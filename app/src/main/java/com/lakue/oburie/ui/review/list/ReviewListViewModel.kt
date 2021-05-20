@@ -14,18 +14,21 @@ import com.lakue.oburie.ui.review.list.ReviewListAdapter
 import com.lakue.oburie.utils.Event
 import javax.inject.Inject
 
-class ReviewListViewModel  @Inject constructor(
+class ReviewListViewModel @Inject constructor(
         savedStateHandle: SavedStateHandle//,
 //    private val profileRepository: ProfileRepository
-) : BaseViewModel()  {
+) : BaseViewModel() {
 
     val reviewAdapter = ReviewListAdapter(this)
 
-    private val _review = MutableLiveData<ArrayList<Review>>(arrayListOf(testReview1,testReview2,testReview3))
+    private val _review = MutableLiveData<ArrayList<Review>>(arrayListOf(testReview1, testReview2, testReview3))
     val review: LiveData<ArrayList<Review>> = _review
 
     private val _reviewAnswerEvent = MutableLiveData<Event<Review>>()
     val reviewAnswerEvent: LiveData<Event<Review>> = _reviewAnswerEvent
+
+    private val _userProfileEvent = MutableLiveData<Event<Int>>()
+    val userProfileEvent: LiveData<Event<Int>> = _userProfileEvent
 
     private val _profileData = MutableLiveData<Profile>(testuserProfileDetail)
     val profileData: LiveData<Profile> = _profileData
@@ -34,7 +37,11 @@ class ReviewListViewModel  @Inject constructor(
         reviewAdapter.dataCount = review.value!!.size
     }
 
-    fun showReviewAnswer(review: Review){
+    fun reviewAnswerEvent(review: Review) {
         _reviewAnswerEvent.value = Event(review)
+    }
+
+    fun userProfileEvent() {
+        _userProfileEvent.value = Event(1)
     }
 }

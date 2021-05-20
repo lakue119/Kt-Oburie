@@ -30,25 +30,20 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <ImageView
+                    <com.lakue.oburie.view.CustomBackButton
                         android:id="@+id/imageView"
                         android:layout_width="48dp"
                         android:layout_height="48dp"
                         android:padding="13dp"
-                        android:src="@drawable/ic_back"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         app:tint="@color/color_dark_ffffff_000000" />
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/applesdgothicneob"
+                        style="@style/HeaderTextView"
                         tools:text="라꾸님의 리뷰"
                         reviewName="@{vm.review.userName}"
-                        android:textColor="@color/color_dark_ffffff_000000"
-                        android:textSize="15dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="@+id/imageView"
@@ -169,21 +164,11 @@
         </LinearLayout>
 
         <TextView
-            android:layout_marginBottom="20dp"
-            android:paddingBottom="16dp"
-            android:paddingTop="16dp"
             android:layout_marginRight="20dp"
             android:layout_marginLeft="20dp"
-            android:gravity="center"
-            android:layout_gravity="center"
-            android:textSize="18dp"
-            android:fontFamily="@font/applesdgothicneob"
-            android:textColor="@color/white"
-            android:text="문의하기"
-            android:backgroundTint="@color/point_1000"
-            android:background="@drawable/background_round_8"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_marginBottom="20dp"
+            style="@style/BottomCompleteButton"
+            android:text="@string/reply_answer"/>
 
     </LinearLayout>
 

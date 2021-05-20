@@ -8,7 +8,7 @@ import com.lakue.oburie.databinding.ActivityJobOfferDetailBinding
 import com.lakue.oburie.databinding.ActivityJobOfferUploadBinding
 import com.lakue.oburie.ui.joboffer.detail.JobOfferDetailViewModel
 
-class ActivityJobOfferUpload: BaseActivity<ActivityJobOfferUploadBinding, JobOfferDetailViewModel>(R.layout.activity_job_offer_upload){
+class JobOfferUploadActivity: BaseActivity<ActivityJobOfferUploadBinding, JobOfferDetailViewModel>(R.layout.activity_job_offer_upload){
     override fun init() {
         TODO("Not yet implemented")
     }

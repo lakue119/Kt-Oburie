@@ -10,7 +10,10 @@ import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModelLazy
+import androidx.lifecycle.observe
+import com.lakue.oburie.utils.Event
 import java.lang.reflect.ParameterizedType
 
 abstract class BaseFragment<B : ViewDataBinding, VM : BaseViewModel>(
@@ -79,4 +82,10 @@ abstract class BaseFragment<B : ViewDataBinding, VM : BaseViewModel>(
 
     protected fun showToast(msg: String) =
         Toast.makeText(context, msg, Toast.LENGTH_SHORT).show()
+
+    protected infix fun <T> LiveData<Event<T>>.eventObserve(action: (T) -> Unit) {
+        observe(this@BaseFragment) {
+            it.get(action)
+        }
+    }
 }

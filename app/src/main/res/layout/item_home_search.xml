@@ -18,6 +18,7 @@
         android:layout_height="wrap_content">
 
         <com.google.android.material.card.MaterialCardView
+            android:onClick="@{() -> vm.onSearchList()}"
             app:cardCornerRadius="5dp"
             app:strokeWidth="1dp"
             app:strokeColor="@color/point_1000"
@@ -45,7 +46,7 @@
                     android:layout_height="wrap_content"/>
 
                 <ImageView
-                    android:tint="@color/point_1000"
+                    app:tint="@color/point_1000"
                     android:padding="12dp"
                     android:src="@drawable/ic_search_2"
                     android:layout_width="40dp"
