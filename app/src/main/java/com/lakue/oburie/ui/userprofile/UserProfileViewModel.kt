@@ -5,10 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.SavedStateHandle
 import com.lakue.oburie.base.BaseViewModel
 import com.lakue.oburie.model.Profile
-import com.lakue.oburie.model.Review
-import com.lakue.oburie.model.UserInfo
 import com.lakue.oburie.test.testuserProfileDetail
-import com.lakue.oburie.ui.categoryresult.CategoryResultAdapter
 import com.lakue.oburie.utils.Event
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject

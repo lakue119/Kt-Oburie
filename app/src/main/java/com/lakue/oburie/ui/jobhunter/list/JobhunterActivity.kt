@@ -1,24 +1,20 @@
-package com.lakue.oburie.ui.categoryresult
+package com.lakue.oburie.ui.jobhunter.list
 
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
 import com.lakue.oburie.R
 import com.lakue.oburie.base.BaseActivity
 import com.lakue.oburie.databinding.ActivityCategoryResultBinding
-import com.lakue.oburie.databinding.ActivityMainBinding
-import com.lakue.oburie.ui.main.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class CategoryResultActivity : BaseActivity<ActivityCategoryResultBinding, CategoryResultViewModel>(R.layout.activity_category_result) {
+class JobhunterActivity : BaseActivity<ActivityCategoryResultBinding, JobHunterViewModel>(R.layout.activity_category_result) {
 
     companion object {
         fun startCategoryResultActivity(
                 context: Context
         ) {
-            val intent = Intent(context, CategoryResultActivity::class.java)
+            val intent = Intent(context, JobhunterActivity::class.java)
             context.startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
         }
     }

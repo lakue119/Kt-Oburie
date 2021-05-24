@@ -1,4 +1,4 @@
-package com.lakue.oburie.ui.categoryresult
+package com.lakue.oburie.ui.jobhunter.list
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -9,7 +9,7 @@ import com.lakue.oburie.base.BaseViewHolder
 import com.lakue.oburie.databinding.ItemCategoryResultLargeBinding
 import com.lakue.oburie.databinding.ItemCategoryResultSmallBinding
 
-class CategoryResultAdapter(private val viewModel: CategoryResultViewModel) : BaseAdapter() {
+class JobHunterAdapter(private val viewModel: JobHunterViewModel) : BaseAdapter() {
 
     private val TYPE_LARGE = 1001
     private val TYPE_SMALL = 1002
@@ -66,7 +66,7 @@ class CategoryResultAdapter(private val viewModel: CategoryResultViewModel) : Ba
     inner class CategoryResultLargeViewHolder(private val binding: ItemCategoryResultLargeBinding) : BaseViewHolder(binding.root) {
         override fun onBind(item: Any, pos: Int) {
             binding.apply {
-                this.vm = item as CategoryResultViewModel
+                this.vm = item as JobHunterViewModel
                 this.position = pos
             }
         }
@@ -75,7 +75,7 @@ class CategoryResultAdapter(private val viewModel: CategoryResultViewModel) : Ba
     inner class CategoryResultSmallViewHolder(private val binding: ItemCategoryResultSmallBinding) : BaseViewHolder(binding.root) {
         override fun onBind(item: Any, pos: Int) {
             binding.apply {
-                this.vm = item as CategoryResultViewModel
+                this.vm = item as JobHunterViewModel
                 this.position = pos
             }
         }

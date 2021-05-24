@@ -28,9 +28,9 @@ class CustomBackButton @JvmOverloads constructor(
     }
 
     fun setButtonImage(){
-        this.setImageResource(R.drawable.ic_back)
-        this.setColorFilter(getColor(context, R.color.black))
-        this.setPadding(UnitConverter.dpToPx(13),UnitConverter.dpToPx(13),UnitConverter.dpToPx(13), UnitConverter.dpToPx(13))
+        this.setImageResource(R.drawable.ic_round_chevron_left_24)
+        this.setColorFilter(getColor(context, R.color.color_dark_ffffff_000000))
+        this.setPadding(0,UnitConverter.dpToPx(13),UnitConverter.dpToPx(13), UnitConverter.dpToPx(13))
     }
 
     fun getColor(context: Context, id: Int): Int {

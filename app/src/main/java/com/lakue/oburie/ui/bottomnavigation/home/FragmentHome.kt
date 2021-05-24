@@ -3,11 +3,9 @@ package com.lakue.oburie.ui.bottomnavigation.home
 import com.lakue.oburie.R
 import com.lakue.oburie.base.BaseFragment
 import com.lakue.oburie.databinding.FragmentHomeBinding
-import com.lakue.oburie.ui.categoryresult.CategoryResultActivity
-import com.lakue.oburie.ui.categoryresult.CategoryResultActivity.Companion.startCategoryResultActivity
-import com.lakue.oburie.ui.userprofile.UserProfileActivity
+import com.lakue.oburie.ui.jobhunter.list.JobhunterActivity.Companion.startCategoryResultActivity
+import com.lakue.oburie.ui.search.SearchActivity.Companion.startSearchActivity
 import com.lakue.oburie.ui.userprofile.UserProfileActivity.Companion.startUserProfileActivity
-import com.lakue.oburie.utils.BaseUtils
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -58,7 +56,7 @@ class FragmentHome : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout.f
     }
 
     fun showSearchList(){
-
+        startSearchActivity(mContext)
     }
 
     fun showSettingProfile(){

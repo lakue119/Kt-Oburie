@@ -1,4 +1,4 @@
-package com.lakue.oburie.ui.categoryresult.location
+package com.lakue.oburie.ui.jobhunter.location
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -6,8 +6,6 @@ import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.viewModelScope
 import com.lakue.oburie.base.BaseViewModel
 import com.lakue.oburie.model.Location
-import com.lakue.oburie.model.Profile
-import com.lakue.oburie.utils.LogUtil
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject

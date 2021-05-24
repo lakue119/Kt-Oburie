@@ -753,3 +753,5 @@ val testReview3 = Review(
     "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMDEyMjRfMjk5%2FMDAxNjA4Nzc3ODkyMjI2.iSjShJQxiU0U8FeEO7fV_2uYtCiRB37EP-6TmQ70CIUg.NG60vsuIFuvSZiXY1TKFLeb8YIp2CDKjp7jh0kcLJI8g.PNG.oscr10002%2FK-001.png&type=a340",
     "호현", 4, "매너좋아요~~", "gusrua", "2021.01.03 11:11:16", "잘맞아요~", true, "2021.01.15"
 )
+
+val testSearchRecomment = arrayListOf("가야금","현악기","국악기","해금","바이올린","축가","드럼","첼로","드럼펫","결혼")

@@ -7,11 +7,11 @@
 
         <variable
             name="vm"
-            type="com.lakue.oburie.ui.categoryresult.location.SelectLocationViewModel" />
+            type="com.lakue.oburie.ui.jobhunter.location.SelectLocationViewModel" />
 
         <variable
             name="activity"
-            type="com.lakue.oburie.ui.categoryresult.location.SelectLocationActivity" />
+            type="com.lakue.oburie.ui.jobhunter.location.SelectLocationActivity" />
     </data>
 
     <LinearLayout

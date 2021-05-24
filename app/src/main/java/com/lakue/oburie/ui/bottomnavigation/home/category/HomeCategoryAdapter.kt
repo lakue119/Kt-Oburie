@@ -35,7 +35,7 @@ class HomeCategoryAdapter(val viewModel: HomeViewModel, cate: ArrayList<Category
      * ViewHolder
      */
     inner class HomeCateGoryItemViewHolder(private val binding: ItemHomeCategoryBinding) : BaseViewHolder(binding.root) {
-        fun onBind(item: Any, pos: Int) {
+        override fun onBind(item: Any, pos: Int) {
             binding.apply {
                 this.cate = item as Category
                 this.position = pos

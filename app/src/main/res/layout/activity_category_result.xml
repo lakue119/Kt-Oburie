@@ -6,7 +6,7 @@
     <data>
         <variable
             name="vm"
-            type="com.lakue.oburie.ui.categoryresult.CategoryResultViewModel" />
+            type="com.lakue.oburie.ui.jobhunter.list.JobHunterViewModel" />
     </data>
     <LinearLayout
         android:orientation="vertical"
@@ -32,7 +32,6 @@
                         android:id="@+id/imageView"
                         android:layout_width="48dp"
                         android:layout_height="48dp"
-                        android:padding="13dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"

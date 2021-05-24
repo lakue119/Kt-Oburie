@@ -15,7 +15,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Oburie">
-        <activity android:name=".ui.search.jobjunter.JobHunterSearchActivity"></activity>
+        <activity android:name=".ui.jobhunter.searchlist.JobHunterSearchActivity"></activity>
+        <activity android:name=".ui.search.SearchActivity" />
         <activity android:name=".ui.review.answer.ReviewAnswerActivity" />
         <activity android:name=".ui.review.list.ReviewListActivity" />
         <activity android:name=".ui.joboffer.upload.JobOfferUploadActivity" />
@@ -27,9 +28,9 @@
         <activity android:name=".ui.joboffer.detail.JobOfferDetailActivity" />
         <activity android:name=".ui.userprofile.UserProfileActivity" />
         <activity
-            android:name=".ui.categoryresult.location.SelectLocationActivity"
+            android:name=".ui.jobhunter.location.SelectLocationActivity"
             android:theme="@style/Transparent" />
-        <activity android:name=".ui.categoryresult.CategoryResultActivity" />
+        <activity android:name=".ui.jobhunter.list.JobhunterActivity" />
         <activity android:name=".ui.main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

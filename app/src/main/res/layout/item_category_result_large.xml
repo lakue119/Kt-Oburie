@@ -11,7 +11,7 @@
 
         <variable
             name="vm"
-            type="com.lakue.oburie.ui.categoryresult.CategoryResultViewModel" />
+            type="com.lakue.oburie.ui.jobhunter.list.JobHunterViewModel" />
 
         <variable
             name="position"

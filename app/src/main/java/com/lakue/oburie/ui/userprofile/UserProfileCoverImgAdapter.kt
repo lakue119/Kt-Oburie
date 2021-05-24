@@ -9,7 +9,6 @@ import com.lakue.oburie.base.BaseViewHolder
 import com.lakue.oburie.databinding.ItemCategoryResultLargeBinding
 import com.lakue.oburie.databinding.ItemUserProfileCoverBinding
 import com.lakue.oburie.databinding.ItemUserProfileVideoBinding
-import com.lakue.oburie.ui.categoryresult.CategoryResultViewModel
 
 class UserProfileCoverImgAdapter(private val viewModel: UserProfileViewModel) : BaseAdapter() {
 
