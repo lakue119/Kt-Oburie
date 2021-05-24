@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="position"
+            type="Integer" />
+        <variable
+            name="vm"
+            type="com.lakue.oburie.ui.search.SearchViewModel" />
+    </data>
+    <LinearLayout
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        android:onClick="@{() -> vm.onSearchDetail(vm.searchRecommend.get(position))}"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="@{String.valueOf(position+1)}"
+            android:textColor="@color/color_dark_ffffff_000000"
+            android:fontFamily="@font/applesdgothicneoeb"
+            android:textSize="14dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_marginLeft="12dp"
+            android:text="@{vm.searchRecommend.get(position)}"
+            android:textColor="@color/color_dark_ffffff_000000"
+            android:fontFamily="@font/applesdgothicneol"
+            android:textSize="14dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+</layout>
