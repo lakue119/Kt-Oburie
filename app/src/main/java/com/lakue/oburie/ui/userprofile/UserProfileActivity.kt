@@ -30,7 +30,9 @@ class UserProfileActivity : BaseActivity<ActivityUserProfileBinding, UserProfile
             activity = this@UserProfileActivity
         }
 
-        viewModel.youtubeDetailEvent eventObserve {showYoutube(it)}
+        viewModel.apply {
+            youtubeDetailEvent eventObserve {showYoutube(it)}
+        }
     }
 
     override fun setUI() {

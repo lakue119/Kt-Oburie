@@ -16,6 +16,7 @@ data class Profile(
         val career: String = "",
         val awards: String = "",
         val videos: ArrayList<Videos> = arrayListOf(Videos()),
-        val title: String = ""
+        val title: String = "",
+        var isLike: Boolean = false
 
 )

@@ -30,7 +30,7 @@
         </com.google.android.material.appbar.AppBarLayout>
 
         <EditText
-            android:fontFamily="@font/applesdgothicneob"
+            android:fontFamily="@font/applesdgothicneol"
             android:textSize="15dp"
             android:textColor="@color/black"
             android:hint="@string/joboffer_title_hint"

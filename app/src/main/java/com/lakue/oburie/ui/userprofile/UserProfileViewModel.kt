@@ -16,13 +16,13 @@ class UserProfileViewModel @Inject constructor(
 //    private val profileRepository: ProfileRepository
 ) : BaseViewModel()  {
 
-
     private val _profileData = MutableLiveData<Profile>(testuserProfileDetail)
     val profileData: LiveData<Profile> = _profileData
 
 
     private val _youtubeDetailEvent = MutableLiveData<Event<String>>()
     val youtubeDetailEvent: LiveData<Event<String>> = _youtubeDetailEvent
+
 
     var profileVideoAdapter: UserProfileVideoAdapter = UserProfileVideoAdapter(this)
     var profileCoverAdapter: UserProfileCoverImgAdapter = UserProfileCoverImgAdapter(this)
@@ -34,5 +34,11 @@ class UserProfileViewModel @Inject constructor(
 
     fun onVideoDetail(youtubeUrl: String){
         _youtubeDetailEvent.value = Event(youtubeUrl)
+    }
+
+    fun onLike(){
+        val data = _profileData.value!!
+        data.isLike = !data.isLike
+        _profileData.postValue(data)
     }
 }

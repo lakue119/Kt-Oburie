@@ -30,3 +30,10 @@ fun ImageView.setHoyVisible(
 ){
     this.isVisible = cate == "급구"
 }
+
+@BindingAdapter("likeSelected")
+fun ImageView.setSelected(
+        isSelected: Boolean
+){
+    this.isSelected = isSelected
+}
