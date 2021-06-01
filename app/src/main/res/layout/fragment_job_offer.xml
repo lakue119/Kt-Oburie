@@ -80,7 +80,7 @@
 
             </com.google.android.material.appbar.AppBarLayout>
 
-            <androidx.recyclerview.widget.RecyclerView
+            <com.lakue.oburie.view.ObRecyclerView
                 android:paddingTop="20dp"
                 app:layout_behavior="@string/appbar_scrolling_view_behavior"
                 android:clipToPadding="false"

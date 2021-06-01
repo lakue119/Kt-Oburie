@@ -24,7 +24,7 @@
 
         </com.google.android.material.appbar.AppBarLayout>
 
-        <androidx.recyclerview.widget.RecyclerView
+        <com.lakue.oburie.view.ObRecyclerView
             android:paddingTop="20dp"
             android:paddingBottom="20dp"
             android:clipToPadding="false"

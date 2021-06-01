@@ -82,7 +82,7 @@
 
         </com.google.android.material.appbar.AppBarLayout>
 
-        <androidx.recyclerview.widget.RecyclerView
+        <com.lakue.oburie.view.ObRecyclerView
             android:paddingTop="8dp"
             android:paddingBottom="12dp"
             android:layout_marginLeft="20dp"
