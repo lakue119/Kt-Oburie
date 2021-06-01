@@ -109,6 +109,7 @@
                 android:layout_height="48dp"/>
 
             <TextView
+                android:onClick="@{() -> activity.onChat()}"
                 style="@style/BottomCompleteButton"
                 android:text="@string/inquiry"
                 android:layout_marginLeft="16dp" />

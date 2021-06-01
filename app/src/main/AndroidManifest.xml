@@ -15,7 +15,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Oburie">
-        <activity android:name=".ui.jobhunter.searchlist.JobHunterSearchActivity"></activity>
+        <activity android:name=".ui.chat.ChatActivity"></activity>
+        <activity android:name=".ui.jobhunter.searchlist.JobHunterSearchActivity" />
         <activity android:name=".ui.search.SearchActivity" />
         <activity android:name=".ui.review.answer.ReviewAnswerActivity" />
         <activity android:name=".ui.review.list.ReviewListActivity" />

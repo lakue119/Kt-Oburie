@@ -8,6 +8,7 @@ import android.net.Uri
 import com.lakue.oburie.R
 import com.lakue.oburie.base.BaseActivity
 import com.lakue.oburie.databinding.ActivityUserProfileBinding
+import com.lakue.oburie.ui.chat.ChatActivity.Companion.startChatActivity
 import com.lakue.oburie.ui.review.list.ReviewListActivity.Companion.startReviewListActivity
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -44,6 +45,9 @@ class UserProfileActivity : BaseActivity<ActivityUserProfileBinding, UserProfile
     override fun setObserve() {
     }
 
+    fun onChat(){
+        startChatActivity(this@UserProfileActivity)
+    }
     fun showReview(){
         startReviewListActivity(this@UserProfileActivity)
     }

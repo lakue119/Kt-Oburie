@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="chat"
+            type="com.lakue.oburie.model.Chatting" />
+    </data>
+
+    <LinearLayout
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.lakue.oburie.custom.RoundedImageView
+            android:layout_marginTop="4dp"
+            app:rectRadius="50dp"
+            android:src="@color/gray_d"
+            android:layout_width="40dp"
+            android:layout_height="40dp"/>
+
+        <LinearLayout
+            android:layout_marginLeft="16dp"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_gravity="bottom"
+                android:textColor="@color/color_dark_ffffff_000000"
+                android:fontFamily="@font/applesdgothicneol"
+                tools:text="라꾸"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_marginTop="4dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/background_f5f5f5_stroek_dddddd"
+                    android:orientation="vertical"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent">
+
+                    <fragment
+                        android:id="@+id/map"
+                        android:name="com.google.android.gms.maps.SupportMapFragment"
+                        android:layout_width="270dp"
+                        android:layout_height="170dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:context=".MapsActivity" />
+
+                    <TextView
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/applesdgothicneol"
+                        android:textSize="15dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="16dp"
+                        android:paddingTop="8dp"
+                        android:paddingRight="16dp"
+                        android:paddingBottom="8dp"
+                        tools:text="aeskrmaentmaesnmnasdfjaksdlfjaksldjklaewtjklawektjakwletjkl" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/gray_d" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:paddingLeft="16dp"
+                            android:paddingTop="8dp"
+                            android:paddingRight="8dp"
+                            android:paddingBottom="8dp">
+
+                            <TextView
+                                android:textSize="13dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginBottom="8dp"
+                                android:fontFamily="@font/applesdgothicneol"
+                                android:text="일시"
+                                android:textColor="@color/black" />
+
+                            <TextView
+                                android:textSize="13dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginBottom="8dp"
+                                android:fontFamily="@font/applesdgothicneol"
+                                android:text="시작시간"
+                                android:textColor="@color/black" />
+
+                            <TextView
+                                android:textSize="13dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginBottom="8dp"
+                                android:fontFamily="@font/applesdgothicneol"
+                                android:text="소요시간"
+                                android:textColor="@color/black" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:paddingTop="8dp"
+                            android:paddingBottom="8dp">
+
+                            <TextView
+                                android:textSize="13dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginBottom="8dp"
+                                android:fontFamily="@font/applesdgothicneol"
+                                android:text=":"
+                                android:textColor="@color/black" />
+
+                            <TextView
+                                android:textSize="13dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginBottom="8dp"
+                                android:fontFamily="@font/applesdgothicneol"
+                                android:text=":"
+                                android:textColor="@color/black" />
+
+                            <TextView
+                                android:textSize="13dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginBottom="8dp"
+                                android:fontFamily="@font/applesdgothicneol"
+                                android:text=":"
+                                android:textColor="@color/black" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:paddingLeft="8dp"
+                            android:paddingTop="8dp"
+                            android:paddingRight="16dp"
+                            android:paddingBottom="8dp">
+
+                            <TextView
+                                android:textSize="13dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginBottom="8dp"
+                                android:fontFamily="@font/applesdgothicneol"
+                                android:text="2020년 02월 13일"
+                                android:textColor="@color/black" />
+
+                            <TextView
+                                android:textSize="13dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginBottom="8dp"
+                                android:fontFamily="@font/applesdgothicneol"
+                                android:text="2020년 02월 13일"
+                                android:textColor="@color/black" />
+
+                            <TextView
+                                android:textSize="13dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginBottom="8dp"
+                                android:fontFamily="@font/applesdgothicneol"
+                                android:text="2020년 02월 13일"
+                                android:textColor="@color/black" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/gray_d" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:textSize="13dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/applesdgothicneol"
+                            android:gravity="center"
+                            android:paddingTop="16dp"
+                            android:paddingBottom="16dp"
+                            android:text="취소"
+                            android:textColor="@color/black" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/gray_d" />
+
+                        <TextView
+                            android:textSize="13dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/applesdgothicneol"
+                            android:gravity="center"
+                            android:paddingTop="16dp"
+                            android:paddingBottom="16dp"
+                            android:text="확인"
+                            android:textColor="@color/black" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:background="@color/black_op50"
+                    android:text="취소된 약속입니다."
+                    android:textSize="17dp"
+                    android:fontFamily="@font/applesdgothicneoeb"
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    android:foregroundGravity="center"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </LinearLayout>
+
+
+        <TextView
+            android:textSize="11dp"
+            android:layout_marginLeft="8dp"
+            android:layout_gravity="bottom"
+            android:textColor="@color/gray_d"
+            android:fontFamily="@font/applesdgothicneol"
+            tools:text="10:48 오전"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+</layout>

@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="chat"
+            type="com.lakue.oburie.model.Chatting" />
+    </data>
+
+    <LinearLayout
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="right"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textSize="11dp"
+            android:layout_marginRight="8dp"
+            android:layout_gravity="bottom"
+            android:textColor="@color/gray_d"
+            android:fontFamily="@font/applesdgothicneol"
+            tools:text="10:48 오전"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:background="@drawable/background_f5f5f5_stroek_dddddd"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent">
+
+                <fragment
+                    android:id="@+id/map"
+                    android:name="com.google.android.gms.maps.SupportMapFragment"
+                    android:layout_width="270dp"
+                    android:layout_height="170dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:context=".MapsActivity" />
+
+                <TextView
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/applesdgothicneol"
+                    android:textSize="15dp"
+                    tools:text="aeskrmaentmaesnmnasdfjaksdlfjaksldjklaewtjklawektjakwletjkl"
+                    android:paddingLeft="16dp"
+                    android:paddingBottom="8dp"
+                    android:paddingRight="16dp"
+                    android:paddingTop="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <View
+                    android:background="@color/gray_d"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"/>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:paddingLeft="16dp"
+                        android:paddingBottom="8dp"
+                        android:paddingRight="8dp"
+                        android:paddingTop="8dp"
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:textSize="13dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:text="일시"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/applesdgothicneol"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:textSize="13dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:text="시작시간"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/applesdgothicneol"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:textSize="13dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:text="소요시간"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/applesdgothicneol"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:paddingBottom="8dp"
+                        android:paddingTop="8dp"
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:textSize="13dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:text=":"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/applesdgothicneol"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:textSize="13dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:text=":"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/applesdgothicneol"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:textSize="13dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:text=":"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/applesdgothicneol"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:paddingLeft="8dp"
+                        android:paddingRight="16dp"
+                        android:paddingBottom="8dp"
+                        android:paddingTop="8dp"
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:textSize="13dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:text="2020년 02월 13일"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/applesdgothicneol"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:textSize="13dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:text="2020년 02월 13일"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/applesdgothicneol"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:textSize="13dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:text="2020년 02월 13일"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/applesdgothicneol"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+            <TextView
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:background="@color/black_op50"
+                android:text="취소된 약속입니다."
+                android:textSize="17dp"
+                android:fontFamily="@font/applesdgothicneoeb"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:foregroundGravity="center"
+                android:layout_width="0dp"
+                android:layout_height="0dp"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+</layout>
