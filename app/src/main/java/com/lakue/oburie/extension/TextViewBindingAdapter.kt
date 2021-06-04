@@ -1,6 +1,8 @@
 package com.lakue.oburie.extension
 
+import android.view.View
 import android.widget.TextView
+import androidx.core.view.isVisible
 import androidx.databinding.BindingAdapter
 import com.lakue.oburie.utils.ConvertNumberFormat
 import java.lang.StringBuilder
@@ -63,6 +65,34 @@ fun TextView.setJobOfferView(viewCount: Int, applyCount: Int){
 @BindingAdapter("reviewName")
 fun TextView.setReviewName(reviewName: String){
     this.text = "${reviewName}님의 리뷰"
+}
+
+@BindingAdapter("chatMapCancel")
+fun TextView.setChatMapCancel(state: String){
+    this.isVisible = state == "NORMAL"
+}
+
+@BindingAdapter("chatState","chatType")
+fun View.setChatState(state: String,type: Int){
+    when(type){
+//        "SEND" -> {
+//            this.isVisible = state == "END"
+//        }
+//        "ANSWER_DATE" -> {
+//            this.isVisible = state == "END"
+//        }
+        50 -> {
+            this.isVisible = state == "START"
+        }
+        51 -> {
+            if(state != "START"){
+                this.visibility = View.INVISIBLE
+            }
+        }
+        else -> {
+            this.isVisible = state == "END"
+        }
+    }
 }
 
 

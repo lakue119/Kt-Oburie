@@ -13,5 +13,6 @@ data class Chatting(
     val profileName: String = "",
     val lat: Double = 0.0,
     val lnt: Double = 0.0,
-    val state: String = ""
+    val state: String = "NORMAL",
+    var dateState: String = "NORMAL"
 )

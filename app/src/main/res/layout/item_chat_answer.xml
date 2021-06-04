@@ -5,11 +5,16 @@
 
     <data>
         <variable
-            name="chat"
-            type="com.lakue.oburie.model.Chatting" />
+            name="vm"
+            type="com.lakue.oburie.ui.chat.ChatViewModel" />
+        <variable
+            name="position"
+            type="Integer" />
     </data>
 
     <LinearLayout
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
         android:layout_marginTop="3dp"
         android:layout_marginBottom="3dp"
         android:orientation="horizontal"
@@ -17,7 +22,11 @@
         android:layout_height="wrap_content">
 
         <com.lakue.oburie.custom.RoundedImageView
+            chatState="@{vm.chatData.get(position).dateState}"
+            chatType="@{'3'}"
             android:layout_gravity="center"
+            android:scaleType="centerCrop"
+            image_url="@{vm.chatData.get(position).profileImg}"
             app:rectRadius="50dp"
             android:src="@color/gray_d"
             android:layout_width="40dp"
@@ -30,6 +39,9 @@
             android:layout_height="wrap_content">
 
             <TextView
+                chatState="@{vm.chatData.get(position).dateState}"
+                chatType="@{'2'}"
+                android:text="@{vm.chatData.get(position).profileName}"
                 android:layout_gravity="bottom"
                 android:textColor="@color/color_dark_ffffff_000000"
                 android:fontFamily="@font/applesdgothicneol"
@@ -47,13 +59,16 @@
                 android:background="@drawable/background_round_5"
                 android:textColor="@color/black"
                 tools:text="안녕하세요."
-                android:text="@{chat.text}"
+                android:text="@{vm.chatData.get(position).text}"
                 android:fontFamily="@font/applesdgothicneol"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
         </LinearLayout>
 
         <TextView
+            chatState="@{vm.chatData.get(position).dateState}"
+            chatType="@{'1'}"
+            android:text="@{vm.chatData.get(position).date}"
             android:textSize="11dp"
             android:layout_marginLeft="8dp"
             android:layout_gravity="bottom"
