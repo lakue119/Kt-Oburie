@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="vm"
+            type="com.lakue.oburie.ui.bottomnavigation.conversation.ConversationViewModel" />
+        <variable
+            name="pos"
+            type="Integer" />
+        <variable
+            name="adapter"
+            type="com.lakue.oburie.ui.bottomnavigation.conversation.ConversationAdapter" />
+    </data>
+    <com.google.android.material.card.MaterialCardView
+        android:onClick="@{() -> vm.onDetailEvent(vm.conversation.get(pos))}"
+        android:elevation="0dp"
+        app:cardElevation="0dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.lakue.oburie.custom.RoundedImageView
+                image_url="@{vm.conversation.get(pos).profileImg}"
+                android:layout_gravity="center"
+                android:scaleType="centerCrop"
+                app:rectRadius="50dp"
+                android:src="@color/gray_d"
+                android:layout_width="36dp"
+                android:layout_height="36dp"/>
+
+            <LinearLayout
+                android:layout_weight="1"
+                android:layout_marginLeft="8dp"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="@{vm.conversation.get(pos).profileName}"
+                        android:textSize="13dp"
+                        android:textColor="@color/color_dark_ffffff_000000"
+                        android:fontFamily="@font/applesdgothicneob"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:layout_marginLeft="8dp"
+                        android:text="@{vm.conversation.get(pos).profileMajor}"
+                        android:textSize="13dp"
+                        android:textColor="@color/gray_999"
+                        android:fontFamily="@font/applesdgothicneol"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:text="・"
+                        android:textSize="13dp"
+                        android:textColor="@color/gray_999"
+                        android:fontFamily="@font/applesdgothicneob"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:text="@{vm.conversation.get(pos).profileLocation}"
+                        android:textSize="13dp"
+                        android:textColor="@color/gray_999"
+                        android:fontFamily="@font/applesdgothicneol"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_marginTop="8dp"
+                    android:text="@{vm.conversation.get(pos).lastChatContent}"
+                    android:textSize="13dp"
+                    android:textColor="@color/color_dark_ffffff_000000"
+                    android:fontFamily="@font/applesdgothicneol"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:text="@{vm.conversation.get(pos).lastChatDate}"
+                android:textSize="11dp"
+                android:textColor="@color/gray_999"
+                android:fontFamily="@font/applesdgothicneol"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_gravity="bottom"
+            android:background="@color/gray_d"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>

@@ -37,6 +37,7 @@ abstract class BaseActivity<B : ViewDataBinding, VM : BaseViewModel>(
     var isShowToast = false
 
     lateinit var binding: B
+    var isEditTextTouchHide = true
 
     private val viewModelClass = ((javaClass.genericSuperclass as ParameterizedType?)
         ?.actualTypeArguments
@@ -154,18 +155,21 @@ abstract class BaseActivity<B : ViewDataBinding, VM : BaseViewModel>(
     }
 
     override fun dispatchTouchEvent(ev: MotionEvent): Boolean {
-        val focusView = currentFocus
-        if (focusView != null) {
-            val rect = Rect()
-            focusView.getGlobalVisibleRect(rect)
-            val x = ev.x.toInt()
-            val y = ev.y.toInt()
-            if (!rect.contains(x, y)) {
-                val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-                imm.hideSoftInputFromWindow(focusView.windowToken, 0)
-                focusView.clearFocus()
+        if(isEditTextTouchHide){
+            val focusView = currentFocus
+            if (focusView != null) {
+                val rect = Rect()
+                focusView.getGlobalVisibleRect(rect)
+                val x = ev.x.toInt()
+                val y = ev.y.toInt()
+                if (!rect.contains(x, y)) {
+                    val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+                    imm.hideSoftInputFromWindow(focusView.windowToken, 0)
+                    focusView.clearFocus()
+                }
             }
         }
+
         return super.dispatchTouchEvent(ev)
     }
 }

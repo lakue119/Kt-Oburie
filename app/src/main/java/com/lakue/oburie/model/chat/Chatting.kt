@@ -1,4 +1,4 @@
-package com.lakue.oburie.model
+package com.lakue.oburie.model.chat
 
 data class Chatting(
     val idx: Int = 0,

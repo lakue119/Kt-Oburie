@@ -37,3 +37,10 @@ fun ImageView.setSelected(
 ){
     this.isSelected = isSelected
 }
+
+@BindingAdapter("strEmptyCheck")
+fun ImageView.setEmptyCheck(
+        str: String
+){
+    this.isVisible = str.isNotEmpty()
+}

@@ -6,38 +6,43 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.lakue.oburie.R
+import com.lakue.oburie.base.BaseFragment
+import com.lakue.oburie.databinding.FragmentConversationBinding
+import com.lakue.oburie.databinding.FragmentHomeBinding
+import com.lakue.oburie.ui.bottomnavigation.home.HomeViewModel
+import com.lakue.oburie.ui.chat.ChatActivity.Companion.startChatActivity
+import dagger.hilt.android.AndroidEntryPoint
 
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-class FragmentConversation : Fragment() {
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_conversation, container, false)
-    }
+@AndroidEntryPoint
+class FragmentConversation : BaseFragment<FragmentConversationBinding, ConversationViewModel>(R.layout.fragment_conversation) {
 
     companion object {
         @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            FragmentConversation().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+        fun newInstance() =
+            FragmentConversation()
+    }
+
+    override fun init() {
+        binding.apply {
+            vm = viewModel
+        }
+        viewModel.apply{
+            detainEvent eventObserve {showChatDetail()}
+        }
+    }
+
+    override fun setUI() {
+    }
+
+    override fun setEvent() {
+    }
+
+    override fun setObserve() {
+    }
+
+    fun showChatDetail(){
+        startChatActivity(mContext)
     }
 }
+
+

@@ -20,17 +20,246 @@
         android:layout_height="match_parent">
 
         <include
+            android:id="@+id/include"
+            layout="@layout/include_header"
             app:headTitle="@{headTitle}"
-            layout="@layout/include_header"/>
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
 
         <com.lakue.oburie.view.ObRecyclerView
+            android:layout_weight="1"
+            android:id="@+id/rv_chat"
+            setAdapter="@{vm.chatAdapter}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:clipToPadding="false"
             android:paddingTop="16dp"
             android:paddingBottom="16dp"
-            setAdapter="@{vm.chatAdapter}"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintTop_toBottomOf="@+id/include"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+        <LinearLayout
+            app:layout_constraintTop_toBottomOf="@+id/obRecyclerView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/ll_edit"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:padding="10dp"
+                android:id="@+id/iv_attach"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/selector_file_add" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/background_round_15"
+                android:backgroundTint="@color/gray_e"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp">
+
+                <EditText
+                    android:text="@={vm.chatEdit}"
+                    android:id="@+id/et_chat"
+                    android:textColor="@color/black"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/transparency"
+                    android:paddingTop="6dp"
+                    android:paddingBottom="6dp"/>
+
+                <ImageView
+                    strEmptyCheck="@{vm.chatEdit}"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_round_chevron_left_24" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:visibility="gone"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:paddingTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:id="@+id/ll_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ll_edit"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:backgroundTint="#E3A896"
+                        android:background="@drawable/background_round_250"
+                        android:padding="12dp"
+                        android:src="@drawable/icon_gallery"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"/>
+
+                    <TextView
+                        android:layout_marginTop="6dp"
+                        android:text="앨범"
+                        android:textColor="@color/color_dark_ffffff_000000"
+                        android:textSize="13dp"
+                        android:fontFamily="@font/applesdgothicneol"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:backgroundTint="#AD93DC"
+                        android:background="@drawable/background_round_250"
+                        android:src="@drawable/icon_camera"
+                        android:padding="10dp"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"/>
+
+                    <TextView
+                        android:layout_marginTop="6dp"
+                        android:text="카메라"
+                        android:textColor="@color/color_dark_ffffff_000000"
+                        android:textSize="13dp"
+                        android:fontFamily="@font/applesdgothicneol"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:backgroundTint="#9BCFDF"
+                        android:background="@drawable/background_round_250"
+                        android:padding="10dp"
+                        android:src="@drawable/icon_appointment"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"/>
+
+                    <TextView
+                        android:layout_marginTop="6dp"
+                        android:text="약속잡기"
+                        android:textColor="@color/color_dark_ffffff_000000"
+                        android:textSize="13dp"
+                        android:fontFamily="@font/applesdgothicneol"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:visibility="invisible"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:backgroundTint="@color/gray_999"
+                        android:background="@drawable/background_round_250"
+                        android:src="@drawable/ic_round_chevron_left_24"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"/>
+
+                    <TextView
+                        android:layout_marginTop="6dp"
+                        android:text="앨범"
+                        android:textColor="@color/black"
+                        android:textSize="12dp"
+                        android:fontFamily="@font/applesdgothicneol"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginBottom="40dp"
+                android:visibility="invisible"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:backgroundTint="#E6977F"
+                        android:background="@drawable/background_round_250"
+                        android:padding="12dp"
+                        android:src="@drawable/icon_gallery"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"/>
+
+                    <TextView
+                        android:layout_marginTop="6dp"
+                        android:text="앨범"
+                        android:textColor="@color/color_dark_ffffff_000000"
+                        android:textSize="13dp"
+                        android:fontFamily="@font/applesdgothicneol"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
 
     </LinearLayout>
 </layout>

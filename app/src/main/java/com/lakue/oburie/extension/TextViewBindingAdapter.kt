@@ -82,15 +82,19 @@ fun View.setChatState(state: String,type: Int){
 //            this.isVisible = state == "END"
 //        }
         50 -> {
-            this.isVisible = state == "START"
+            this.isVisible = state == "START"|| state == "ALL"
         }
         51 -> {
             if(state != "START"){
-                this.visibility = View.INVISIBLE
+                if(state == "ALL"){
+                    this.visibility = View.VISIBLE
+                } else {
+                    this.visibility = View.INVISIBLE
+                }
             }
         }
         else -> {
-            this.isVisible = state == "END"
+            this.isVisible = state == "END" || state == "ALL"
         }
     }
 }

@@ -2,6 +2,8 @@ package com.lakue.oburie.test
 
 import com.lakue.oburie.R
 import com.lakue.oburie.model.*
+import com.lakue.oburie.model.chat.Chatting
+import com.lakue.oburie.model.chat.Conversation
 import com.lakue.oburie.model.joboffer.JobOffer
 import com.lakue.oburie.model.joboffer.JobOfferBadge
 
@@ -817,3 +819,11 @@ val testChatting5 = Chatting(idx = 0,
         text = "라꾸님이 확인하였습니다.",
         date = "2021-01-01",
         type = "MESSAGE")
+val testConversation1 = Conversation(
+        profileImg = "https://i.pinimg.com/474x/59/ff/5d/59ff5df692c4cd4eb2cc33d54a2f28ff.jpg",
+        profileName = "현진",
+        profileLocation = "서울",
+        profileMajor = "보컬",
+        lastChatContent = "안녕하세요~",
+        lastChatDate = "2021.01.12"
+)
