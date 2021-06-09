@@ -114,6 +114,7 @@
                 android:layout_height="wrap_content">
 
                 <LinearLayout
+                    android:onClick="@{() -> activity.showGallery()}"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:layout_gravity="center"
@@ -141,6 +142,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:onClick="@{() -> activity.showCamera()}"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:layout_gravity="center"
@@ -168,6 +170,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:onClick="@{() -> activity.showAppointment()}"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:layout_gravity="center"

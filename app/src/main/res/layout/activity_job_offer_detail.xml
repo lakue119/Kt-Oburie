@@ -345,6 +345,7 @@
         </androidx.core.widget.NestedScrollView>
 
         <LinearLayout
+            android:backgroundTint="@color/color_dark_000000_ffffff"
             android:paddingTop="8dp"
             android:paddingBottom="8dp"
             android:paddingLeft="16dp"

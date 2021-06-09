@@ -1,25 +1,52 @@
 package com.lakue.oburie.ui.chat
 
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.graphics.Rect
+import android.net.Uri
 import android.util.Log
 import android.view.MotionEvent
 import android.view.View
 import android.view.WindowManager
 import android.widget.LinearLayout
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
 import com.lakue.oburie.R
 import com.lakue.oburie.base.BaseActivity
 import com.lakue.oburie.databinding.ActivityChatBinding
 import com.lakue.oburie.listener.OnEmptyBackgroundClickListener
+import com.lakue.oburie.ui.chat.appointment.AppointmentActivity.Companion.startAppointmentActivity
+import com.lakue.oburie.utils.camera.CameraUtil
+import com.lakue.oburie.utils.camera.OnShowCameraListener
+import com.lakue.oburie.utils.camera.OnShowGalleryListener
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 class ChatActivity : BaseActivity<ActivityChatBinding, ChatViewModel>(R.layout.activity_chat) {
 
     var isShowKeyBoard = false
+    lateinit var cameraUtil: CameraUtil
+
+    private val photoLauncher =
+            registerForActivityResult(ActivityResultContracts.TakePicture()) {
+                if(it){
+//                    val intent = Intent(this@ChatActivity, ActivityUploadPrescription::class.java)
+//                    intent.putExtra("uri", photoUri.toString())
+//                    startActivity(intent)
+                }
+            }
+
+    private val albumLauncher =
+            registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+                if (result.resultCode == Activity.RESULT_OK) {
+//                    val intent = Intent(this@ChatActivity, ActivityUploadPrescription::class.java)
+//                    intent.putExtra("uri", result.data?.data.toString())
+//                    startActivity(intent)
+                }
+
+            }
 
     companion object {
         fun startChatActivity(
@@ -46,6 +73,7 @@ class ChatActivity : BaseActivity<ActivityChatBinding, ChatViewModel>(R.layout.a
             val params = LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 860)
             llContainer.layoutParams = params
         }
+        cameraUtil = CameraUtil(this)
         isEditTextTouchHide = false
         setKeyboardHeight()
     }
@@ -93,24 +121,22 @@ class ChatActivity : BaseActivity<ActivityChatBinding, ChatViewModel>(R.layout.a
                         ivAttach.isSelected = false
                     }
 
-//                    lifecycleScope.launch {
-////                        window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_NOTHING)
-//                        llContainer.visibility = View.GONE
-//                        hideKeyboard()
-////                        delay(100)
-////                        window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE)
-//                    }
                 }
             })
-//
-//            rvChat.setOnTouchListener { v, event ->
-//                binding.apply {
-//                    llContainer.isVisible = false
-//                    ivAttach.isSelected = false
-//                }
-//                hideKeyboard()
-//                dispatchTouchEvent(event)
-//            }
+
+            cameraUtil.apply{
+                setOnShowCameraListener(object : OnShowCameraListener {
+                    override fun onShowCamera(uri: Uri) {
+                        photoLauncher.launch(uri)
+                    }
+                })
+
+                setOnShowGalleryListener(object : OnShowGalleryListener {
+                    override fun onShowGallery(intent: Intent) {
+                        albumLauncher.launch(intent)
+                    }
+                })
+            }
         }
     }
 
@@ -173,6 +199,18 @@ class ChatActivity : BaseActivity<ActivityChatBinding, ChatViewModel>(R.layout.a
                 }
             }
         }
+    }
+
+    fun showCamera(){
+        cameraUtil.onShowCamera()
+    }
+
+    fun showGallery(){
+        cameraUtil.onShowCameraAlbum()
+    }
+
+    fun showAppointment(){
+        startAppointmentActivity(this@ChatActivity)
     }
 
     override fun onBackPressed() {

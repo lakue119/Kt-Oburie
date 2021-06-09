@@ -184,4 +184,11 @@ dependencies {
     //GoogleMap
     implementation 'com.google.android.gms:play-services-maps:17.0.0'
     implementation 'com.google.android.gms:play-services-location:17.0.0'
+
+    //permission
+    implementation 'com.github.getActivity:XXPermissions:11.2'
+
+    //Calendar
+    implementation 'com.applandeo:material-calendar-view:1.7.0'
+    implementation 'com.applandeo:material-calendar-view:1.9.0-rc03'
 }
