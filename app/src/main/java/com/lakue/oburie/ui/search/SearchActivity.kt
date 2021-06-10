@@ -6,6 +6,7 @@ import com.lakue.oburie.R
 import com.lakue.oburie.base.BaseActivity
 import com.lakue.oburie.databinding.ActivitySearchBinding
 import com.lakue.oburie.ui.jobhunter.searchlist.JobHunterSearchActivity.Companion.startJobHunterSearchActivity
+import com.lakue.oburie.ui.joboffer.searchlist.JobOfferSearchActivity.Companion.startJobOfferSearchActivity
 
 class SearchActivity : BaseActivity<ActivitySearchBinding, SearchViewModel>(R.layout.activity_search) {
 
@@ -46,7 +47,7 @@ class SearchActivity : BaseActivity<ActivitySearchBinding, SearchViewModel>(R.la
         if(type == "jobhunter"){
             startJobHunterSearchActivity(this@SearchActivity, keyword)
         } else {
-            startJobHunterSearchActivity(this@SearchActivity, keyword)
+            startJobOfferSearchActivity(this@SearchActivity, keyword)
         }
     }
 }

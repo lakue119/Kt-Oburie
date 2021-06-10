@@ -22,7 +22,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Oburie">
-        <activity android:name=".ui.picker.SelectPickerActivity"
+        <activity android:name=".ui.joboffer.searchlist.JobOfferSearchActivity"></activity>
+        <activity
+            android:name=".ui.picker.SelectPickerActivity"
             android:launchMode="singleTask"
             android:theme="@style/Transparent" />
         <activity android:name=".ui.login.LoginActivity" />

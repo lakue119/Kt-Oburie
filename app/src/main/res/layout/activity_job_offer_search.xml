@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="vm"
+            type="com.lakue.oburie.ui.bottomnavigation.joboffer.JobOfferViewModel" />
+        <variable
+            name="activity"
+            type="com.lakue.oburie.ui.joboffer.searchlist.JobOfferSearchActivity" />
+    </data>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.lakue.oburie.view.CustomBackButton
+                        android:backgroundTint="@color/color_dark_ffffff_000000"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"/>
+
+                    <TextView
+                        android:gravity="center|left"
+                        android:layout_gravity="center|left"
+                        android:text="@{activity.keyword}"
+                        android:textColor="@color/color_dark_ffffff_000000"
+                        android:textSize="16dp"
+                        android:fontFamily="@font/applesdgothicneol"
+                        android:background="@color/transparency"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <com.lakue.oburie.view.ObRecyclerView
+            android:paddingTop="20dp"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            android:clipToPadding="false"
+            app:setAdapter="@{vm.jobOfferAdapter}"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
+</layout>
