@@ -9,6 +9,7 @@
     <string name="facebook_app_id">4143894089014489</string>
 
     <string name="kakao_app_key">7e9f8aa3528153535f9555b4e86966c7</string>
+    <string name="kakao_native_app_key">kakao7e9f8aa3528153535f9555b4e86966c7</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -27,4 +28,17 @@
     <string name="complete">완료</string>
     <string name="find_address">주소 검색</string>
     <string name="select">선택완료</string>
+    <string name="job_offer_title">원하는 내용을 간략히 적어주세요 😄</string>
+    <string name="job_offer_title_hint">제목을 입력해주세요.(최대 50자)</string>
+    <string name="upload_need_date">필요한 날짜는 언제인가요??</string>
+    <string name="upload_start_time">시작 시간은 언제인가요??</string>
+    <string name="upload_need_time">얼마나 필요한가요??</string>
+    <string name="upload_where_meet">어디에서 만날까요??</string>
+    <string name="upload_money_offer">얼마까지 줄수있어요??</string>
+    <string name="gender_all">무관</string>
+    <string name="gender_woman">여성</string>
+    <string name="gender_man">남성</string>
+    <string name="edit_money">금액을 입력하세요.</string>
+    <string name="yes">예</string>
+    <string name="no">아니요</string>
 </resources>

@@ -4,6 +4,7 @@ import android.app.Activity
 import android.app.Application
 import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatDialog
+import com.kakao.sdk.common.KakaoSdk
 import com.lakue.oburie.utils.BaseUtils.init
 import dagger.hilt.android.HiltAndroidApp
 
@@ -15,6 +16,7 @@ class OburieApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         init(this)
+        KakaoSdk.init(this, getString(R.string.kakao_app_key))
     }
 
     fun showLoading(activity: Activity){

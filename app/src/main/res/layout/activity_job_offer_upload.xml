@@ -17,51 +17,502 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <com.google.android.material.appbar.AppBarLayout
+        <androidx.core.widget.NestedScrollView
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <include
+                    android:id="@+id/include"
+                    layout="@layout/include_header"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <TextView
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:textSize="17dp"
+                    android:textColor="@color/color_dark_ffffff_000000"
+                    android:text="@string/job_offer_title"
+                    android:fontFamily="@font/applesdgothicneoeb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <EditText
+                    android:hint="@string/job_offer_title_hint"
+                    android:maxLength="50"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp"
+                    android:paddingRight="16dp"
+                    android:paddingLeft="16dp"
+                    android:background="@drawable/background_round_5_stroek_dddddd"
+                    android:textSize="14dp"
+                    android:textColor="@color/color_dark_ffffff_000000"
+                    android:fontFamily="@font/applesdgothicneol"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <LinearLayout
+                    android:onClick="@{() -> activity.showCalendar()}"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginLeft="20dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:textSize="17dp"
+                        android:textColor="@color/color_dark_ffffff_000000"
+                        android:text="@string/upload_need_date"
+                        android:fontFamily="@font/applesdgothicneoeb"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <LinearLayout
+                        android:layout_marginTop="16dp"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            app:tint="@color/color_dark_ffffff_000000"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_calendar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:layout_marginLeft="8dp"
+                            android:textSize="14dp"
+                            android:textColor="@color/gray_d"
+                            android:text="@{vm.meetDate}"
+                            android:fontFamily="@font/applesdgothicneoeb"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="32dp"
+                    android:textSize="17dp"
+                    android:textColor="@color/color_dark_ffffff_000000"
+                    android:text="@string/upload_start_time"
+                    android:fontFamily="@font/applesdgothicneoeb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <LinearLayout
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:onClick="@{(v) -> activity.showPicker(v)}"
+                        android:tag="hour"
+                        android:layout_marginRight="8dp"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:paddingTop="12dp"
+                        android:paddingBottom="12dp"
+                        android:paddingRight="16dp"
+                        android:paddingLeft="16dp"
+                        android:background="@drawable/background_round_5_stroek_dddddd"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/tv_hour"
+                            android:layout_weight="1"
+                            android:textSize="14dp"
+                            android:textColor="@color/color_dark_ffffff_000000"
+                            android:text="시간"
+                            android:fontFamily="@font/applesdgothicneol"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        <ImageView
+                            app:tint="@color/color_dark_ffffff_000000"
+                            android:src="@drawable/ic_round_arrow_drop_down_24"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:onClick="@{(v) -> activity.showPicker(v)}"
+                        android:tag="minute"
+                        android:layout_marginLeft="8dp"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:paddingTop="12dp"
+                        android:paddingBottom="12dp"
+                        android:paddingRight="16dp"
+                        android:paddingLeft="16dp"
+                        android:background="@drawable/background_round_5_stroek_dddddd"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/tv_minute"
+                            android:layout_weight="1"
+                            android:textSize="14dp"
+                            android:textColor="@color/color_dark_ffffff_000000"
+                            android:text="분"
+                            android:fontFamily="@font/applesdgothicneol"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        <ImageView
+                            app:tint="@color/color_dark_ffffff_000000"
+                            android:src="@drawable/ic_round_arrow_drop_down_24"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="32dp"
+                    android:textSize="17dp"
+                    android:textColor="@color/color_dark_ffffff_000000"
+                    android:text="@string/upload_need_time"
+                    android:fontFamily="@font/applesdgothicneoeb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <LinearLayout
+                    android:onClick="@{(v) -> activity.showPicker(v)}"
+                    android:tag="needTime"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp"
+                    android:paddingRight="16dp"
+                    android:paddingLeft="16dp"
+                    android:background="@drawable/background_round_5_stroek_dddddd"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tv_need_time"
+                        android:layout_weight="1"
+                        android:textSize="14dp"
+                        android:textColor="@color/color_dark_ffffff_000000"
+                        android:text="시간"
+                        android:fontFamily="@font/applesdgothicneol"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <ImageView
+                        app:tint="@color/color_dark_ffffff_000000"
+                        android:src="@drawable/ic_round_arrow_drop_down_24"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="32dp"
+                    android:textSize="17dp"
+                    android:textColor="@color/color_dark_ffffff_000000"
+                    android:text="@string/upload_where_meet"
+                    android:fontFamily="@font/applesdgothicneoeb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+
+                <TextView
+                    android:layout_marginTop="8dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp"
+                    android:paddingRight="16dp"
+                    android:paddingLeft="16dp"
+                    android:background="@drawable/background_round_5_stroek_dddddd"
+                    android:textSize="14dp"
+                    android:textColor="@color/gray_999"
+                    android:text="서울특별시 영등포"
+                    android:fontFamily="@font/applesdgothicneol"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <EditText
+                    android:layout_marginTop="8dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp"
+                    android:paddingRight="16dp"
+                    android:paddingLeft="16dp"
+                    android:background="@drawable/background_round_5_stroek_dddddd"
+                    android:textSize="14dp"
+                    android:textColor="@color/color_dark_ffffff_000000"
+                    android:text="2층"
+                    android:fontFamily="@font/applesdgothicneol"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="32dp"
+                    android:textSize="17dp"
+                    android:textColor="@color/color_dark_ffffff_000000"
+                    android:text="@string/upload_money_offer"
+                    android:fontFamily="@font/applesdgothicneoeb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <LinearLayout
+                    android:layout_marginTop="16dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:hint="@string/edit_money"
+                        android:gravity="right"
+                        android:layout_weight="1"
+                        android:paddingTop="12dp"
+                        android:paddingBottom="12dp"
+                        android:paddingRight="16dp"
+                        android:paddingLeft="16dp"
+                        android:background="@drawable/background_round_5_stroek_dddddd"
+                        android:textSize="14dp"
+                        android:textColor="@color/point_1000"
+                        android:inputType="number"
+                        android:fontFamily="@font/applesdgothicneol"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:layout_marginLeft="16dp"
+                        android:textSize="17dp"
+                        android:textColor="@color/color_dark_ffffff_000000"
+                        android:text="원"
+                        android:fontFamily="@font/applesdgothicneoeb"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="32dp"
+                    android:textSize="17dp"
+                    android:textColor="@color/color_dark_ffffff_000000"
+                    android:text="원하는 성별을 골라주세요."
+                    android:fontFamily="@font/applesdgothicneoeb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <LinearLayout
+                    android:layout_marginTop="16dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        checkSelect="@{vm.gender}"
+                        android:onClick="@{(v) -> vm.setGender(v)}"
+                        android:tag="@string/gender_all"
+                        android:layout_marginRight="12dp"
+                        android:foreground="@drawable/background_round_15_stroek_dddddd"
+                        android:backgroundTint="@color/selector_000000_to_fd9426"
+                        android:background="@drawable/background_round_15"
+                        android:paddingLeft="32dp"
+                        android:paddingRight="32dp"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:fontFamily="@font/applesdgothicneol"
+                        android:textSize="14dp"
+                        android:textColor="@color/selector_ffffff_to_000000"
+                        android:text="@string/gender_all"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        checkSelect="@{vm.gender}"
+                        android:onClick="@{(v) -> vm.setGender(v)}"
+                        android:tag="@string/gender_woman"
+                        android:layout_marginRight="12dp"
+                        android:foreground="@drawable/background_round_15_stroek_dddddd"
+                        android:backgroundTint="@color/selector_000000_to_fd9426"
+                        android:background="@drawable/background_round_15"
+                        android:paddingLeft="32dp"
+                        android:paddingRight="32dp"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:fontFamily="@font/applesdgothicneol"
+                        android:textSize="14dp"
+                        android:textColor="@color/selector_ffffff_to_000000"
+                        android:text="@string/gender_woman"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        checkSelect="@{vm.gender}"
+                        android:onClick="@{(v) -> vm.setGender(v)}"
+                        android:tag="@string/gender_man"
+                        android:layout_marginRight="12dp"
+                        android:foreground="@drawable/background_round_15_stroek_dddddd"
+                        android:backgroundTint="@color/selector_000000_to_fd9426"
+                        android:background="@drawable/background_round_15"
+                        android:paddingLeft="32dp"
+                        android:paddingRight="32dp"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:fontFamily="@font/applesdgothicneol"
+                        android:textSize="14dp"
+                        android:textColor="@color/selector_ffffff_to_000000"
+                        android:text="@string/gender_man"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="32dp"
+                    android:textSize="17dp"
+                    android:textColor="@color/color_dark_ffffff_000000"
+                    android:text="교통비 지급해주나요??"
+                    android:fontFamily="@font/applesdgothicneoeb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <LinearLayout
+                    android:layout_marginTop="16dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        checkSelect="@{vm.traffic}"
+                        android:onClick="@{(v) -> vm.setTraffic(v)}"
+                        android:tag="@string/yes"
+                        android:layout_marginRight="12dp"
+                        android:foreground="@drawable/background_round_15_stroek_dddddd"
+                        android:backgroundTint="@color/selector_000000_to_fd9426"
+                        android:background="@drawable/background_round_15"
+                        android:paddingLeft="32dp"
+                        android:paddingRight="32dp"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:fontFamily="@font/applesdgothicneol"
+                        android:textSize="14dp"
+                        android:textColor="@color/selector_ffffff_to_000000"
+                        android:text="@string/yes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        checkSelect="@{vm.traffic}"
+                        android:onClick="@{(v) -> vm.setTraffic(v)}"
+                        android:tag="@string/no"
+                        android:layout_marginRight="12dp"
+                        android:foreground="@drawable/background_round_15_stroek_dddddd"
+                        android:backgroundTint="@color/selector_000000_to_fd9426"
+                        android:background="@drawable/background_round_15"
+                        android:paddingLeft="32dp"
+                        android:paddingRight="32dp"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:fontFamily="@font/applesdgothicneol"
+                        android:textSize="14dp"
+                        android:textColor="@color/selector_ffffff_to_000000"
+                        android:text="@string/no"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="32dp"
+                    android:textSize="17dp"
+                    android:textColor="@color/color_dark_ffffff_000000"
+                    android:text="자세한 내용 부탁해요~ 🙂"
+                    android:fontFamily="@font/applesdgothicneoeb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <EditText
+                    android:lineSpacingExtra="4dp"
+                    android:gravity="top"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp"
+                    android:paddingRight="16dp"
+                    android:paddingLeft="16dp"
+                    android:background="@drawable/background_round_5_stroek_dddddd"
+                    android:textSize="14dp"
+                    android:hint="상세하고 가독성 좋은 글은 많은 지원자의 관심을 가질 수 있습니다."
+                    android:textColor="@color/color_dark_ffffff_000000"
+                    android:fontFamily="@font/applesdgothicneol"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"/>
+
+            </LinearLayout>
+
+
+        </androidx.core.widget.NestedScrollView>
+
+        <LinearLayout
+            android:backgroundTint="@color/color_dark_000000_ffffff"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:background="@color/white"
+            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <androidx.appcompat.widget.Toolbar
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+            <TextView
+                style="@style/BottomCompleteButton"
+                android:text="@string/complete"/>
 
-                <com.lakue.oburie.view.CustomBackButton
-                    android:id="@+id/imageView"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:tint="@color/color_dark_ffffff_000000" />
-
-            </androidx.appcompat.widget.Toolbar>
-
-        </com.google.android.material.appbar.AppBarLayout>
-
-        <EditText
-            android:fontFamily="@font/applesdgothicneol"
-            android:textSize="15dp"
-            android:textColor="@color/black"
-            android:hint="@string/joboffer_title_hint"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
-            android:paddingTop="16dp"
-            android:paddingBottom="16dp"
-            android:background="@color/transparency"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-
-        <TextView
-            android:fontFamily="@font/applesdgothicneob"
-            android:textSize="15dp"
-            android:textColor="@color/black"
-            android:text="어디로 가면 될까요?"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
-            android:paddingTop="16dp"
-            android:paddingBottom="16dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+        </LinearLayout>
 
     </LinearLayout>
 

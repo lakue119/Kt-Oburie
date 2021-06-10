@@ -99,5 +99,9 @@ fun View.setChatState(state: String,type: Int){
     }
 }
 
+@BindingAdapter("checkSelect")
+fun TextView.checkSelect(gender: String){
+    this.isSelected = gender == this.text.toString()
+}
 
 

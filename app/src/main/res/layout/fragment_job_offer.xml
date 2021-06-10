@@ -17,11 +17,17 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.appcompat.widget.Toolbar
-            app:title="Oburie"
-            app:titleTextColor="@color/point_1000"
+        <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.Toolbar
+                app:title="Oburie"
+                app:titleTextColor="@color/point_1000"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </com.google.android.material.appbar.AppBarLayout>
 
         <androidx.coordinatorlayout.widget.CoordinatorLayout
             android:layout_weight="1"
@@ -42,7 +48,7 @@
                         android:onClick="@{() -> fragment.showSearchList()}"
                         android:layout_marginLeft="16dp"
                         android:layout_marginRight="16dp"
-                        android:layout_marginTop="16dp"
+                        android:layout_marginTop="24dp"
                         app:cardCornerRadius="5dp"
                         app:strokeWidth="1dp"
                         app:strokeColor="@color/point_1000"
@@ -85,7 +91,7 @@
             </com.google.android.material.appbar.AppBarLayout>
 
             <com.lakue.oburie.view.ObRecyclerView
-                android:paddingTop="20dp"
+                android:paddingTop="16dp"
                 app:layout_behavior="@string/appbar_scrolling_view_behavior"
                 android:clipToPadding="false"
                 app:setAdapter="@{vm.jobOfferAdapter}"

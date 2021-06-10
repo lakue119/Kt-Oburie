@@ -1,7 +1,10 @@
 package com.lakue.oburie.ui.main
 
+import android.content.pm.PackageInfo
+import android.content.pm.PackageManager
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
+import android.util.Base64
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
@@ -12,25 +15,33 @@ import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.bumptech.glide.Glide
+import com.kakao.sdk.common.util.Utility
 import com.lakue.oburie.R
 import com.lakue.oburie.base.BaseActivity
 import com.lakue.oburie.databinding.ActivityMainBinding
 import com.lakue.oburie.databinding.DialogReviewBinding
 import com.lakue.oburie.model.Profile
-import com.lakue.oburie.model.UserInfo
-import com.lakue.oburie.model.Videos
 import com.lakue.oburie.ui.login.LoginActivity.Companion.startLoginActivity
+import com.lakue.oburie.utils.LogUtil
 import com.lakue.oburie.utils.LoginData
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_main.*
+import java.security.MessageDigest
+import java.security.NoSuchAlgorithmException
 
 
 @AndroidEntryPoint
 class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>(R.layout.activity_main) {
 
     override fun init() {
-        NavigationUI.setupWithNavController(bottomNavigationView, findNavController(R.id.nav_host_fragment))
+        NavigationUI.setupWithNavController(
+            bottomNavigationView,
+            findNavController(R.id.nav_host_fragment)
+        )
         bottomNavigationView.itemIconTintList = null
+
+        getHashKey()
+
     }
 
     override fun setUI() {
@@ -70,10 +81,11 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>(R.layout.a
             progressDialog!!.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
             progressDialog!!.setContentView(R.layout.dialog_review)
             val reviewBinding: DialogReviewBinding = DataBindingUtil.inflate(
-                    LayoutInflater.from(progressDialog!!.context),
-                    R.layout.dialog_review,
-                    progressDialog!!.findViewById<RelativeLayout>(R.id.dialog_rl_review) as ViewGroup,
-                    false)
+                LayoutInflater.from(progressDialog!!.context),
+                R.layout.dialog_review,
+                progressDialog!!.findViewById<RelativeLayout>(R.id.dialog_rl_review) as ViewGroup,
+                false
+            )
             reviewBinding.profile = profile
             reviewBinding.activity = this@MainActivity
             progressDialog!!.show()
@@ -85,7 +97,9 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>(R.layout.a
         val rivProfile = progressDialog!!.findViewById<ImageView>(R.id.riv_profile)
 
         tvName?.text = "'${profile.userInfo.nickName}'${getString(R.string.how_together_review)}"
-        rivProfile?.let { Glide.with(this@MainActivity).load(profile.userInfo.userProfileImg).into(it) }
+        rivProfile?.let { Glide.with(this@MainActivity).load(profile.userInfo.userProfileImg).into(
+            it
+        ) }
 
 
         tvClose?.onThrottleClick {
@@ -105,4 +119,24 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>(R.layout.a
             progressDialog!!.dismiss()
         }
     }
+
+    private fun getHashKey() {
+        var packageInfo: PackageInfo? = null
+        try {
+            packageInfo = packageManager.getPackageInfo(packageName, PackageManager.GET_SIGNATURES)
+        } catch (e: PackageManager.NameNotFoundException) {
+            e.printStackTrace()
+        }
+        if (packageInfo == null) LogUtil.e("KeyHash", "KeyHash:null")
+        for (signature in packageInfo!!.signatures) {
+            try {
+                val md: MessageDigest = MessageDigest.getInstance("SHA")
+                md.update(signature.toByteArray())
+                LogUtil.d("KeyHash", Base64.encodeToString(md.digest(), Base64.DEFAULT))
+            } catch (e: NoSuchAlgorithmException) {
+                LogUtil.e("KeyHash", "Unable to get MessageDigest. signature=$signature", e)
+            }
+        }
+    }
+
 }

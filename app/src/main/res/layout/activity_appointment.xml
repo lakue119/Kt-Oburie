@@ -14,7 +14,6 @@
 
     <LinearLayout
         android:orientation="vertical"
-
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -46,7 +45,7 @@
                     <TextView
                         android:textSize="17dp"
                         android:textColor="@color/color_dark_ffffff_000000"
-                        android:text="필요한 날짜는 언제인가요??"
+                        android:text="@string/upload_need_date"
                         android:fontFamily="@font/applesdgothicneoeb"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
@@ -83,7 +82,7 @@
                     android:layout_marginTop="32dp"
                     android:textSize="17dp"
                     android:textColor="@color/color_dark_ffffff_000000"
-                    android:text="시작 시간은 언제인가요??"
+                    android:text="@string/upload_start_time"
                     android:fontFamily="@font/applesdgothicneoeb"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
@@ -171,7 +170,7 @@
                     android:layout_marginTop="32dp"
                     android:textSize="17dp"
                     android:textColor="@color/color_dark_ffffff_000000"
-                    android:text="얼마나 필요한가요??"
+                    android:text="@string/upload_need_time"
                     android:fontFamily="@font/applesdgothicneoeb"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
@@ -216,7 +215,7 @@
                     android:layout_marginTop="32dp"
                     android:textSize="17dp"
                     android:textColor="@color/color_dark_ffffff_000000"
-                    android:text="어디에서 만날까요??"
+                    android:text="@string/upload_where_meet"
                     android:fontFamily="@font/applesdgothicneoeb"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>

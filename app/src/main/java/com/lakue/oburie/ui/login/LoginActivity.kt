@@ -2,7 +2,6 @@ package com.lakue.oburie.ui.login
 
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.facebook.*
 import com.facebook.login.LoginManager
@@ -11,7 +10,6 @@ import com.kakao.sdk.user.model.User
 import com.lakue.oburie.R
 import com.lakue.oburie.base.BaseActivity
 import com.lakue.oburie.databinding.ActivityLoginBinding
-import com.lakue.oburie.databinding.ActivityReviewListBinding
 import com.lakue.oburie.ui.login.facebook.FacebookLogin
 import com.lakue.oburie.ui.login.facebook.FacebookLoginState
 import com.lakue.oburie.ui.login.kakao.KakaoLogin
@@ -19,8 +17,6 @@ import com.lakue.oburie.ui.login.kakao.KakaoLoginState
 import com.lakue.oburie.ui.login.naver.NaverLogin
 import com.lakue.oburie.ui.login.naver.NaverLoginState
 import com.lakue.oburie.ui.login.naver.NaverUserInfo
-import com.lakue.oburie.ui.review.answer.ReviewAnswerActivity
-import com.lakue.oburie.ui.review.list.ReviewListViewModel
 import com.lakue.oburie.utils.LogUtil
 import com.nhn.android.naverlogin.OAuthLogin
 import kotlinx.coroutines.CoroutineScope
@@ -47,6 +43,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>(R.layou
         binding.apply {
             activity = this@LoginActivity
         }
+        callbackManager = CallbackManager.Factory.create()
     }
 
     override fun setUI() {
@@ -65,6 +62,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>(R.layou
                 request = GraphRequest.newMeRequest(result.accessToken) { user, response ->
                     if (response.error != null) {
                     } else {
+                        LogUtil.d("LOGIN","facebook / ${user.toString()}")
 //                        viewModel.featureFacebookLogin(user)
                     }
                 }
@@ -94,6 +92,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>(R.layou
         KakaoLogin(this, object : KakaoLoginState {
             override fun onSuccess(user: User) {
 //                viewModel.featureKakaoLogin(user)
+                LogUtil.d("LOGIN","kakao / ${user.toString()}")
             }
 
             override fun onError(error: Throwable) {
@@ -116,6 +115,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>(R.layou
                         user_info = NaverUserInfo.getUserInfo(accessToken)
 
                         response = user_info.getJSONObject("response")
+                        LogUtil.d("LOGIN","naver / ${response.toString()}")
 //
 //                        var id = response.getString("id")
 //                        var email = response.getString("email")
