@@ -56,7 +56,7 @@ class FragmentHome : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout.f
     }
 
     fun showSearchList(){
-        startSearchActivity(mContext)
+        startSearchActivity(mContext,"jobhunter")
     }
 
     fun showSettingProfile(){

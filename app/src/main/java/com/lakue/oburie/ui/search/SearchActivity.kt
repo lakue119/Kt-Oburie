@@ -9,11 +9,15 @@ import com.lakue.oburie.ui.jobhunter.searchlist.JobHunterSearchActivity.Companio
 
 class SearchActivity : BaseActivity<ActivitySearchBinding, SearchViewModel>(R.layout.activity_search) {
 
+    val type by lazy { intent.getStringExtra("type") }
+
     companion object {
         fun startSearchActivity(
-                context: Context
+                context: Context,
+                type: String
         ) {
             val intent = Intent(context, SearchActivity::class.java)
+            intent.putExtra("type",type)
             context.startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
         }
     }
@@ -39,6 +43,10 @@ class SearchActivity : BaseActivity<ActivitySearchBinding, SearchViewModel>(R.la
     }
 
     fun showJobHunterSearchDetail(keyword: String){
-        startJobHunterSearchActivity(this@SearchActivity, keyword)
+        if(type == "jobhunter"){
+            startJobHunterSearchActivity(this@SearchActivity, keyword)
+        } else {
+            startJobHunterSearchActivity(this@SearchActivity, keyword)
+        }
     }
 }

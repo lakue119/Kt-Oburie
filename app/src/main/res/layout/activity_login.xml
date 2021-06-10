@@ -54,7 +54,7 @@
 
         <LinearLayout
             android:onClick="@{() -> activity.onNaverLogin()}"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:layout_gravity="center"
             android:gravity="center|left"
             android:layout_marginLeft="20dp"
@@ -87,7 +87,7 @@
         <LinearLayout
             android:layout_marginBottom="30dp"
             android:onClick="@{() -> activity.onFacebookLogin()}"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:layout_gravity="center"
             android:gravity="center|left"
             android:layout_marginLeft="20dp"

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="activity"
+            type="com.lakue.oburie.ui.picker.SelectPickerActivity" />
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/transparency"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_weight="1"
+                android:id="@+id/ll_exit"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                tools:ignore="Orientation" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_marginTop="18dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"
+                android:background="@drawable/background_lefttop_righttop_round15">
+
+                <ImageView
+                    android:onClick="@{() -> activity.onFinish()}"
+                    app:tint="@color/black"
+                    android:layout_marginLeft="2dp"
+                    android:id="@+id/ic_close"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_gravity="left"
+                    android:padding="5dp"
+                    android:src="@drawable/close_btn_img_black"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:fontFamily="@font/applesdgothicneob"
+                    android:textSize="18dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="18dp"
+                    android:id="@+id/tv_option"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="키를 선택해주세요."
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/btn_share_exit" />
+
+                <FrameLayout
+                    android:layout_marginTop="30dp"
+                    android:layout_marginBottom="30dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toTopOf="@+id/tv_next_step"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView16">
+
+                    <View
+                        android:layout_gravity="center"
+                        android:backgroundTint="#fff8f8"
+                        android:background="@drawable/background_round_10"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"/>
+
+                    <com.contrarywind.view.WheelView
+                        android:id="@+id/wheelView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        app:wheelview_dividerWidth="2dp" />
+
+                </FrameLayout>
+
+                <LinearLayout
+                    android:backgroundTint="@color/color_dark_000000_ffffff"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:background="@color/white"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:onClick="@{() -> activity.onSelect()}"
+                        style="@style/BottomCompleteButton"
+                        android:text="@string/select"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </LinearLayout>
+</layout>

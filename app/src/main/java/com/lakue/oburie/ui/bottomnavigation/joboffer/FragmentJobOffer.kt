@@ -9,6 +9,8 @@ import androidx.navigation.Navigation
 import com.lakue.oburie.R
 import com.lakue.oburie.base.BaseFragment
 import com.lakue.oburie.databinding.FragmentJobOfferBinding
+import com.lakue.oburie.ui.search.SearchActivity
+import com.lakue.oburie.ui.search.SearchActivity.Companion.startSearchActivity
 import kotlinx.android.synthetic.main.fragment_job_offer.*
 
 class FragmentJobOffer : BaseFragment<FragmentJobOfferBinding, JobOfferViewModel>(R.layout.fragment_job_offer) {
@@ -20,6 +22,10 @@ class FragmentJobOffer : BaseFragment<FragmentJobOfferBinding, JobOfferViewModel
     }
 
     override fun init() {
+        binding.apply{
+            vm = viewModel
+            fragment = this@FragmentJobOffer
+        }
     }
 
     override fun setUI() {
@@ -34,5 +40,8 @@ class FragmentJobOffer : BaseFragment<FragmentJobOfferBinding, JobOfferViewModel
         }
     }
 
+    fun showSearchList(){
+        startSearchActivity(mContext, "jobOffer")
+    }
 
 }

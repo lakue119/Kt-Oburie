@@ -206,4 +206,8 @@ dependencies {
 
     //네이버 로그인
     implementation 'com.naver.nid:naveridlogin-android-sdk:4.2.6'   // import from jcenter
+
+    //SelectPicker
+    implementation 'com.contrarywind:Android-PickerView:4.1.9'
+    implementation 'com.contrarywind:wheelview:4.1.0'
 }

@@ -26,4 +26,5 @@
     <string name="reply_answer">답글 작성</string>
     <string name="complete">완료</string>
     <string name="find_address">주소 검색</string>
+    <string name="select">선택완료</string>
 </resources>

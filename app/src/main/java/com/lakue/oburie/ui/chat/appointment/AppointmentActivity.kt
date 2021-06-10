@@ -2,6 +2,8 @@ package com.lakue.oburie.ui.chat.appointment
 
 import android.content.Context
 import android.content.Intent
+import android.view.View
+import androidx.activity.result.ActivityResultLauncher
 import com.applandeo.materialcalendarview.CalendarView
 import com.applandeo.materialcalendarview.DatePicker
 import com.applandeo.materialcalendarview.builders.DatePickerBuilder
@@ -9,6 +11,8 @@ import com.applandeo.materialcalendarview.listeners.OnSelectDateListener
 import com.lakue.oburie.R
 import com.lakue.oburie.base.BaseActivity
 import com.lakue.oburie.databinding.ActivityAppointmentBinding
+import com.lakue.oburie.ui.picker.SelectPickerActivity
+import com.lakue.oburie.utils.ActivityContract
 import com.lakue.oburie.utils.LogUtil
 import java.util.*
 import java.util.logging.Logger
@@ -16,6 +20,32 @@ import java.util.logging.Logger
 
 class AppointmentActivity :
     BaseActivity<ActivityAppointmentBinding, AppointmentViewModel>(R.layout.activity_appointment) {
+
+    private val selectLauncher: ActivityResultLauncher<Intent> = registerForActivityResult(
+        ActivityContract()
+    ) {
+        it?.let {
+            val type = it.getStringExtra("type")
+            val option = it.getStringExtra("option")
+
+            binding.apply {
+                when (type) {
+                    "hour" -> {
+                       tvHour.text = option
+                    }
+                    "minute" -> {
+                        tvMinute.text = option
+                    }
+                    "needTime" -> {
+                        tvNeedTime.text = option
+                    }
+
+                }
+            }
+        }.run {
+
+        }
+    }
 
     companion object {
         fun startAppointmentActivity(
@@ -57,6 +87,12 @@ class AppointmentActivity :
 
         val datePicker: DatePicker = builder.build()
         datePicker.show()
+    }
+
+    fun showPicker(view:View){
+        var intent = Intent(this@AppointmentActivity, SelectPickerActivity::class.java)
+        intent.putExtra("type", view.tag.toString())
+        selectLauncher.launch(intent)
     }
 
 }

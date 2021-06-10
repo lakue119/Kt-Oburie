@@ -7,6 +7,9 @@
         <variable
             name="vm"
             type="com.lakue.oburie.ui.bottomnavigation.joboffer.JobOfferViewModel" />
+        <variable
+            name="fragment"
+            type="com.lakue.oburie.ui.bottomnavigation.joboffer.FragmentJobOffer" />
     </data>
 
     <LinearLayout
@@ -36,6 +39,7 @@
                     android:layout_height="wrap_content">
 
                     <com.google.android.material.card.MaterialCardView
+                        android:onClick="@{() -> fragment.showSearchList()}"
                         android:layout_marginLeft="16dp"
                         android:layout_marginRight="16dp"
                         android:layout_marginTop="16dp"
