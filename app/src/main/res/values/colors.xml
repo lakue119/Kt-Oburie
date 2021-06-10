@@ -25,6 +25,10 @@
     <color name="gray_d1">#d1d1d1</color>
     <color name="gray_ef">#efefef</color>
 
+    <color name="kakao">#FEE500</color>
+    <color name="naver">#03C75A</color>
+    <color name="facebook">#1877F2</color>
+
     <color name="black_op50">#90000000</color>
 
     <color name="color_dark_ffffff_000000">#000000</color>

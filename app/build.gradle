@@ -13,7 +13,7 @@ android {
 
     defaultConfig {
         applicationId "com.lakue.oburie"
-        minSdkVersion 16
+        minSdkVersion 21
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -191,4 +191,19 @@ dependencies {
     //Calendar
     implementation 'com.applandeo:material-calendar-view:1.7.0'
     implementation 'com.applandeo:material-calendar-view:1.9.0-rc03'
+
+
+    //페이스북로그인연동
+    implementation 'com.facebook.android:facebook-core:5.9.0'
+    implementation 'com.facebook.android:facebook-login:5.9.0'
+    implementation 'com.facebook.android:facebook-share:5.9.0'
+    implementation 'com.facebook.android:facebook-places:5.9.0'
+    implementation 'com.facebook.android:facebook-messenger:5.9.0'
+    implementation 'com.facebook.android:facebook-applinks:5.9.0'
+
+    // 카카오 로그인
+    implementation "com.kakao.sdk:v2-user:2.1.0"
+
+    //네이버 로그인
+    implementation 'com.naver.nid:naveridlogin-android-sdk:4.2.6'   // import from jcenter
 }
