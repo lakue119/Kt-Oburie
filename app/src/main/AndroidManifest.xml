@@ -22,7 +22,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Oburie">
-        <activity android:name=".ui.joboffer.searchlist.JobOfferSearchActivity"></activity>
+        <activity android:name=".ui.myresume.MyResumeActivity"></activity>
+        <activity android:name=".ui.joboffer.searchlist.JobOfferSearchActivity" />
         <activity
             android:name=".ui.picker.SelectPickerActivity"
             android:launchMode="singleTask"
@@ -30,14 +31,15 @@
         <activity android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
 
-                <data android:host="oauth"
+                <data
+                    android:host="oauth"
                     android:scheme="@string/kakao_native_app_key" />
             </intent-filter>
         </activity>
-
         <activity android:name=".ui.login.LoginActivity" />
         <activity android:name=".ui.chat.appointment.AppointmentActivity" />
         <activity
@@ -83,7 +85,6 @@
         <meta-data
             android:name="com.kakao.sdk.AppKey"
             android:value="@string/kakao_app_key" />
-
     </application>
 
 </manifest>

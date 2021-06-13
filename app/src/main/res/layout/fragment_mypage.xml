@@ -153,6 +153,8 @@
                         android:layout_height="wrap_content">
 
                         <LinearLayout
+                            android:foreground="@drawable/ripple_action"
+                            android:onClick="@{() -> fragment.showMyResume()}"
                             android:layout_weight="1"
                             android:gravity="center"
                             android:layout_gravity="center"

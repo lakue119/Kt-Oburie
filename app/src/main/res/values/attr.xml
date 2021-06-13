@@ -3,4 +3,15 @@
     <declare-styleable name="RoundedImageView">
         <attr name="rectRadius" format="dimension" />
     </declare-styleable>
+
+    <declare-styleable name="TextToggleButton">
+        <attr name="toggle_text" format="string" />
+        <attr name="toggle_select_text" format="string" />
+        <attr name="toggle_is_checked" format="boolean" />
+        <attr name="toggle_backgroundColor" format="color" />
+        <attr name="toggle_selectedBackgroundColor" format="color" />
+        <attr name="toggle_is_checked" format="boolean" />
+        <attr name="toggle_text_color" format="color" />
+        <attr name="toggle_select_text_color" format="color" />
+    </declare-styleable>
 </resources>

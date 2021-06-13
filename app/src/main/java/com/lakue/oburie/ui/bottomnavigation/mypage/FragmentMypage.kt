@@ -10,6 +10,7 @@ import com.lakue.oburie.base.BaseFragment
 import com.lakue.oburie.databinding.FragmentJobOfferBinding
 import com.lakue.oburie.databinding.FragmentMypageBinding
 import com.lakue.oburie.ui.bottomnavigation.joboffer.JobOfferViewModel
+import com.lakue.oburie.ui.myresume.MyResumeActivity.Companion.startMyResumeActivity
 
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
@@ -39,5 +40,9 @@ class FragmentMypage  : BaseFragment<FragmentMypageBinding, MypageViewModel>(R.l
 
     override fun setObserve() {
 
+    }
+
+    fun showMyResume(){
+        startMyResumeActivity(mContext)
     }
 }

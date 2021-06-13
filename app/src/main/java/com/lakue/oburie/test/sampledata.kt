@@ -827,3 +827,94 @@ val testConversation1 = Conversation(
         lastChatContent = "안녕하세요~",
         lastChatDate = "2021.01.12"
 )
+
+
+val testResume = arrayListOf(
+        "개인프로필",
+        Profile(
+                "PLATINUM",
+                "가야금",
+                "대전,서울,천안",
+                4.0f, 4.0f, 4.0f, 4.0f, 38,
+                arrayListOf("https://lh3.googleusercontent.com/proxy/KL2aY40A_yYcL81Ng2CXwgt_fxu5Z07Db-SRBN_KW1X6qB7h43hMtuz69RpriNRDE6Bcg9ruzq16Y-rNUICSftJBNNUU4CKECah2n97qz-mc4gMa"),
+                UserInfo(
+                        "노래잘해영",
+                        "https://lh3.googleusercontent.com/proxy/KL2aY40A_yYcL81Ng2CXwgt_fxu5Z07Db-SRBN_KW1X6qB7h43hMtuz69RpriNRDE6Bcg9ruzq16Y-rNUICSftJBNNUU4CKECah2n97qz-mc4gMa",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                ), 100, "안녕하세용~~", "경력", "수상내역",
+                arrayListOf(
+                        Videos(0, "https://www.youtube.com/watch?v=HUeLK-RQBjU", "https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg")),
+                "보컬/축가,교회, 모든행사 다뜁니다!!\n" +
+                        "잘생김에 보컬까지~"
+        ),
+        Profile(
+                "PLATINUM",
+                "가야금",
+                "대전,서울,천안",
+                4.0f, 4.0f, 4.0f, 4.0f, 38,
+                arrayListOf("https://image.lawtimes.co.kr/images/54(5).jpg"),
+                UserInfo(
+                        "쿠팡",
+                        "https://image.lawtimes.co.kr/images/54(5).jpg",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                ), 100, "안녕하세용~~", "경력", "수상내역",
+                arrayListOf(
+                        Videos(0, "https://www.youtube.com/watch?v=HUeLK-RQBjU", "https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg")),
+                "보컬/축가,교회, 모든행사 다뜁니다!!\n" +
+                        "잘생김에 보컬까지~"
+        ),
+        "팀프로필",
+        Profile(
+                "PLATINUM",
+                "가야금",
+                "대전,서울,천안",
+                4.0f, 4.0f, 4.0f, 4.0f, 38,
+                arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
+                UserInfo(
+                        "최명락",
+                        "https://lh3.googleusercontent.com/proxy/K843mrA6eXZ7wGbziFoSvYmIiLYumwrv9OY-9RuVWiUlrz0daolZgPoxdq-AxF07gWd7JUD_4cp1GLmT6yshGGxfBZALso-JG7_1P-2yYMLv_P2E0AhQ15YZ89dKIfJ_NQQbwasjIt-6WDT9zhHSCzCwuAcLGKtexg9D",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                ), 100, "안녕하세용~~", "경력", "수상내역",
+                arrayListOf(
+                        Videos(0, "https://www.youtube.com/watch?v=HUeLK-RQBjU", "https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg")),
+                "보컬/축가,교회, 모든행사 다뜁니다!!\n" +
+                        "잘생김에 보컬까지~"
+        ),
+        Profile(
+                "PLATINUM",
+                "가야금",
+                "대전,서울,천안",
+                4.0f, 4.0f, 4.0f, 4.0f, 38,
+                arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
+                UserInfo(
+                        "최명락",
+                        "https://i.pinimg.com/736x/60/e9/85/60e9857c0a7c30f253de03eedc248879.jpg",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                ), 100, "안녕하세용~~", "경력", "수상내역",
+                arrayListOf(
+                        Videos(0, "https://www.youtube.com/watch?v=HUeLK-RQBjU", "https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg")),
+                "보컬/축가,교회, 모든행사 다뜁니다!!\n" +
+                        "잘생김에 보컬까지~"
+        )
+)
+
