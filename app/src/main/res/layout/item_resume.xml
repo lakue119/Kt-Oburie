@@ -13,6 +13,7 @@
     </data>
 
     <LinearLayout
+        android:layout_marginBottom="16dp"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -29,80 +30,99 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <com.lakue.oburie.custom.RoundedImageView
-                android:layout_marginLeft="20dp"
-                app:rectRadius="4dp"
-                android:src="@color/gray_d"
-                android:layout_width="64dp"
-                android:layout_height="64dp"/>
-
             <LinearLayout
                 android:layout_weight="1"
-                android:orientation="vertical"
-                android:layout_marginLeft="16dp"
-                android:layout_gravity="center"
-                android:layout_width="0dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <TextView
-                    android:fontFamily="@font/applesdgothicneob"
-                    android:text="테스트"
-                    android:textColor="@color/black"
-                    android:textSize="13dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                <com.lakue.oburie.custom.RoundedImageView
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="20dp"
+                    app:rectRadius="4dp"
+                    android:src="@color/gray_d"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"/>
 
-                <TextView
-                    android:layout_marginTop="4dp"
-                    android:fontFamily="@font/applesdgothicneol"
-                    android:text="테스트"
-                    android:textColor="@color/gray_999"
-                    android:textSize="12dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_marginLeft="16dp"
+                    android:layout_gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
+                    <TextView
+                        android:fontFamily="@font/applesdgothicneob"
+                        android:text="테스트"
+                        android:textColor="@color/black"
+                        android:textSize="13dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:layout_marginTop="4dp"
+                        android:fontFamily="@font/applesdgothicneol"
+                        android:text="테스트"
+                        android:textColor="@color/gray_999"
+                        android:textSize="12dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+
+                </LinearLayout>
 
             </LinearLayout>
 
 
-            <nl.bryanderidder.themedtogglebuttongroup.ThemedToggleButtonGroup
+            <LinearLayout
                 android:layout_marginRight="20dp"
-                android:layout_gravity="center"
-                app:justifyContent="center"
+                android:orientation="vertical"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
 
-                <nl.bryanderidder.themedtogglebuttongroup.ThemedButton
-                    android:id="@+id/btn1"
+                <com.lakue.oburie.view.toggle.TextToggleButton
+                    android:layout_marginBottom="20dp"
+                    app:toggle_text="비공개"
+                    app:toggle_select_text="공개"
+                    app:toggle_background_tint="@color/gray_ef"
+                    app:toggle_select_background_tint="@color/point_1000"
+                    app:toggle_background="@drawable/background_round_15"
+                    app:toggle_selectedBackground="@drawable/background_round_15"
+                    app:toggle_text_color="@color/black"
+                    app:toggle_select_text_color="@color/white"
+                    app:toggle_is_checked="false"
+                    android:paddingTop="6dp"
+                    android:paddingBottom="6dp"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"/>
+
+                <LinearLayout
+                    android:layout_gravity="right"
+                    android:orientation="horizontal"
                     android:layout_width="wrap_content"
-                    android:layout_height="38dp"
-                    app:toggle_text="5:30PM" />
+                    android:layout_height="wrap_content">
 
-            </nl.bryanderidder.themedtogglebuttongroup.ThemedToggleButtonGroup>
+                    <ImageView
+                        android:padding="8dp"
+                        android:src="@drawable/pencil"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"/>
 
-        </LinearLayout>
+                    <ImageView
+                        android:padding="8dp"
+                        android:src="@drawable/icon_profile_delete"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"/>
 
-        <LinearLayout
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="20dp"
-            android:layout_gravity="right"
-            android:orientation="horizontal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+                </LinearLayout>
 
-            <ImageView
-                android:padding="4dp"
-                android:src="@drawable/pencil"
-                android:layout_width="36dp"
-                android:layout_height="36dp"/>
+            </LinearLayout>
 
-            <ImageView
-                android:padding="4dp"
-                android:src="@drawable/icon_profile_delete"
-                android:layout_width="36dp"
-                android:layout_height="36dp"/>
+
 
         </LinearLayout>
+
+
 
     </LinearLayout>
 </layout>

@@ -8,10 +8,11 @@
         <attr name="toggle_text" format="string" />
         <attr name="toggle_select_text" format="string" />
         <attr name="toggle_is_checked" format="boolean" />
-        <attr name="toggle_backgroundColor" format="color" />
-        <attr name="toggle_selectedBackgroundColor" format="color" />
-        <attr name="toggle_is_checked" format="boolean" />
+        <attr name="toggle_background" format="reference" />
+        <attr name="toggle_selectedBackground" format="reference" />
         <attr name="toggle_text_color" format="color" />
         <attr name="toggle_select_text_color" format="color" />
+        <attr name="toggle_background_tint" format="color" />
+        <attr name="toggle_select_background_tint" format="color" />
     </declare-styleable>
 </resources>

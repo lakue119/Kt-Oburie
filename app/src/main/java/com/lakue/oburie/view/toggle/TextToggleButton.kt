@@ -1,68 +1,88 @@
 package com.lakue.oburie.view.toggle
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.res.TypedArray
 import android.util.AttributeSet
+import android.widget.Button
 import android.widget.Switch
+import android.widget.TextView
 import com.lakue.oburie.R
+import com.lakue.oburie.view.toggle.togglehelper.ITextToggleButton
+import com.lakue.oburie.view.toggle.togglehelper.ToggleButtonHelper
 
+@SuppressLint("AppCompatCustomView")
 class TextToggleButton@JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0
-): Switch(context, attrs, defStyleAttr), ITextToggleButton {
+): TextView(context, attrs, defStyleAttr), ITextToggleButton {
 
     val Tag = TextToggleButton::class.java.name
-
-    init {
-
-    }
-
-    fun initView(attrs: AttributeSet?){
-        val typeArray = context.obtainStyledAttributes(
-            attrs, R.styleable.RecyclerView
-        )
-        setTypeArray(typeArray)
-    }
-    private fun setTypeArray(typedArray: TypedArray) {
-        val text = typedArray.getString(R.styleable.TextToggleButton_toggle_text)
-    }
-
+    val helper = ToggleButtonHelper(this, attrs)
 
     override fun setText(text: String) {
+        helper.setText(text)
     }
 
     override fun getText(): String {
-        return ""
+        return helper.getText()
     }
 
     override fun getTextColor(): Int {
-        return 0
+        return helper.getTextColor()
     }
 
-    override fun toggleText(text: String) {
+    override fun setToggleText(text: String) {
+        helper.setToggleText(text)
     }
 
     override fun getToggleText(): String {
-        return ""
+        return helper.getToggleText()
+    }
+
+    override fun setToggleTextColor(color: Int) {
+        helper.setToggleTextColor(color)
+    }
+
+    override fun getToggleTextColor(): Int {
+        return helper.getToggleTextColor()
     }
 
     override fun getChecked(): Boolean {
-        return false
+        return helper.getChecked()
     }
 
-    override fun getBackground(): Int {
-        return 0
+    override fun setChecked(isChecked: Boolean) {
+        helper.setChecked(isChecked)
     }
 
-    override fun setBackground(background: Int) {
+    override fun getBackgroundColor(): Int {
+        return helper.getBackgroundColor()
     }
 
     override fun getToggleBackground(): Int {
-        return 0
+        return helper.getToggleBackground()
     }
 
     override fun setToggleBackground(background: Int) {
+        helper.setToggleBackground(background)
+    }
+
+    override fun setBackgroundTint(color: Int) {
+        helper.setBackgroundTint(color)
+    }
+
+    override fun getBackgroundTint(): Int {
+        return helper.getBackgroundTint()
+    }
+
+    override fun setToggleBackgroundTint(color: Int) {
+        helper.setToggleBackgroundTint(color)
+    }
+
+    override fun getToggleBackgroundTint(): Int {
+        return helper.getToggleBackgroundTint()
     }
 
 }
