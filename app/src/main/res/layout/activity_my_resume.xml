@@ -13,14 +13,35 @@
     </data>
 
     <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <androidx.recyclerview.widget.RecyclerView
+            android:layout_weight="1"
             setAdapter="@{vm.resumeAdapter}"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
+
+        <LinearLayout
+            android:backgroundTint="@color/color_dark_000000_ffffff"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:onClick="@{() -> activity.showResumeUpload()}"
+                android:foreground="@drawable/ripple_action"
+                style="@style/BottomCompleteButton"
+                android:text="@string/upload_profile"/>
+
+        </LinearLayout>
 
     </LinearLayout>
 </layout>

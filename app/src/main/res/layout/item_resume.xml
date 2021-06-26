@@ -103,16 +103,15 @@
                     android:layout_height="wrap_content">
 
                     <ImageView
-                        android:padding="8dp"
+                        android:layout_marginRight="8dp"
                         android:src="@drawable/pencil"
-                        android:layout_width="36dp"
-                        android:layout_height="36dp"/>
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"/>
 
                     <ImageView
-                        android:padding="8dp"
                         android:src="@drawable/icon_profile_delete"
-                        android:layout_width="36dp"
-                        android:layout_height="36dp"/>
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"/>
 
                 </LinearLayout>
 

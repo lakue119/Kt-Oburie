@@ -41,4 +41,5 @@
     <string name="edit_money">금액을 입력하세요.</string>
     <string name="yes">예</string>
     <string name="no">아니요</string>
+    <string name="upload_profile">프로필 등록</string>
 </resources>

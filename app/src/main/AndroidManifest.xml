@@ -22,7 +22,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Oburie">
-        <activity android:name=".ui.myresume.MyResumeActivity"></activity>
+        <activity android:name=".ui.myresume.upload.ResumeUploadActivity"></activity>
+        <activity android:name=".ui.myresume.MyResumeActivity" />
         <activity android:name=".ui.joboffer.searchlist.JobOfferSearchActivity" />
         <activity
             android:name=".ui.picker.SelectPickerActivity"

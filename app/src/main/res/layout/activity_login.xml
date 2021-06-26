@@ -11,113 +11,129 @@
             name="vm"
             type="com.lakue.oburie.ui.login.LoginViewModel" />
     </data>
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
+
+    <FrameLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
-
-        <View
-            android:layout_weight="1"
+        <ImageView
+            android:foreground="#E42C230A"
+            android:scaleType="centerCrop"
+            android:src="@drawable/login_background"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
+
         <LinearLayout
-            android:onClick="@{() -> activity.onKakaoLogin()}"
-            android:layout_marginTop="16dp"
-            android:layout_gravity="center"
-            android:gravity="center|left"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:backgroundTint="@color/kakao"
-            android:background="@drawable/background_round_5"
+            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
 
-            <ImageView
-                android:layout_marginLeft="12dp"
-                android:padding="13dp"
-                android:src="@drawable/kakao"
-                android:layout_width="48dp"
-                android:layout_height="48dp"/>
+            <View
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+            <LinearLayout
+                android:onClick="@{() -> activity.onKakaoLogin()}"
+                android:layout_marginTop="16dp"
+                android:layout_gravity="center"
+                android:gravity="center|left"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:backgroundTint="@color/kakao"
+                android:background="@drawable/background_round_5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-            <TextView
-                android:textColor="@color/black"
-                android:layout_marginLeft="8dp"
-                android:textSize="15dp"
-                android:fontFamily="@font/applesdgothicneob"
-                android:text="카카오톡으로 시작하기"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
 
+                <ImageView
+                    android:layout_marginLeft="12dp"
+                    android:padding="13dp"
+                    android:src="@drawable/kakao"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"/>
+
+                <TextView
+                    android:textColor="@color/black"
+                    android:layout_marginLeft="8dp"
+                    android:textSize="15dp"
+                    android:fontFamily="@font/applesdgothicneob"
+                    android:text="카카오톡으로 시작하기"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:onClick="@{() -> activity.onNaverLogin()}"
+                android:layout_marginTop="8dp"
+                android:layout_gravity="center"
+                android:gravity="center|left"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:backgroundTint="@color/naver"
+                android:background="@drawable/background_round_5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <ImageView
+                    android:padding="3dp"
+                    android:layout_marginLeft="12dp"
+                    android:src="@drawable/naver"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"/>
+
+                <TextView
+                    android:textColor="@color/white"
+                    android:layout_marginLeft="8dp"
+                    android:textSize="15dp"
+                    android:fontFamily="@font/applesdgothicneob"
+                    android:text="네이버로 시작하기"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginBottom="30dp"
+                android:onClick="@{() -> activity.onFacebookLogin()}"
+                android:layout_marginTop="8dp"
+                android:layout_gravity="center"
+                android:gravity="center|left"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:backgroundTint="@color/facebook"
+                android:background="@drawable/background_round_5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <ImageView
+                    android:padding="8dp"
+                    android:layout_marginLeft="12dp"
+                    android:src="@drawable/facebook"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"/>
+
+                <TextView
+                    android:textColor="@color/white"
+                    android:layout_marginLeft="8dp"
+                    android:textSize="15dp"
+                    android:fontFamily="@font/applesdgothicneob"
+                    android:text="페이스북으로 시작하기"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+
+            </LinearLayout>
 
         </LinearLayout>
 
-        <LinearLayout
-            android:onClick="@{() -> activity.onNaverLogin()}"
-            android:layout_marginTop="8dp"
-            android:layout_gravity="center"
-            android:gravity="center|left"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:backgroundTint="@color/naver"
-            android:background="@drawable/background_round_5"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
 
+    </FrameLayout>
 
-            <ImageView
-                android:padding="3dp"
-                android:layout_marginLeft="12dp"
-                android:src="@drawable/naver"
-                android:layout_width="48dp"
-                android:layout_height="48dp"/>
-
-            <TextView
-                android:textColor="@color/white"
-                android:layout_marginLeft="8dp"
-                android:textSize="15dp"
-                android:fontFamily="@font/applesdgothicneob"
-                android:text="네이버로 시작하기"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_marginBottom="30dp"
-            android:onClick="@{() -> activity.onFacebookLogin()}"
-            android:layout_marginTop="8dp"
-            android:layout_gravity="center"
-            android:gravity="center|left"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:backgroundTint="@color/facebook"
-            android:background="@drawable/background_round_5"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-
-            <ImageView
-                android:padding="8dp"
-                android:layout_marginLeft="12dp"
-                android:src="@drawable/facebook"
-                android:layout_width="48dp"
-                android:layout_height="48dp"/>
-
-            <TextView
-                android:textColor="@color/white"
-                android:layout_marginLeft="8dp"
-                android:textSize="15dp"
-                android:fontFamily="@font/applesdgothicneob"
-                android:text="페이스북으로 시작하기"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-
-        </LinearLayout>
-
-    </LinearLayout>
 
 </layout>

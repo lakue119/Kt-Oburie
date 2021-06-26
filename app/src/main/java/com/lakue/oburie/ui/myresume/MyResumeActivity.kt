@@ -8,6 +8,7 @@ import androidx.databinding.DataBindingUtil.setContentView
 import com.lakue.oburie.R
 import com.lakue.oburie.base.BaseActivity
 import com.lakue.oburie.databinding.ActivityMyResumeBinding
+import com.lakue.oburie.ui.myresume.upload.ResumeUploadActivity.Companion.startResumeUploadActivity
 import com.lakue.oburie.ui.review.list.ReviewListActivity
 
 class MyResumeActivity : BaseActivity<ActivityMyResumeBinding, MyResumeViewModel>(R.layout.activity_my_resume) {
@@ -37,5 +38,8 @@ class MyResumeActivity : BaseActivity<ActivityMyResumeBinding, MyResumeViewModel
     override fun setObserve() {
     }
 
+    fun showResumeUpload(){
+        startResumeUploadActivity(this)
+    }
 
 }
