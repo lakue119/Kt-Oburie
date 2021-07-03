@@ -42,4 +42,9 @@
     <string name="yes">예</string>
     <string name="no">아니요</string>
     <string name="upload_profile">프로필 등록</string>
+    <string name="upload_normal_profile">기본 정보 입력</string>
+    <string name="upload_detail_profile">상세 정보 입력</string>
+    <string name="upload_active_profile">활동 정보 입력</string>
+    <string name="normal_upload_title">기본 정보를 입력해주세요.</string>
+    <string name="regist">등록</string>
 </resources>

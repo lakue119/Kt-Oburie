@@ -19,7 +19,7 @@
 
         <include
             android:id="@+id/include"
-            app:headTitle="@{@string/upload_profile}"
+            app:headTitle="@{@string/upload_active_profile}"
             layout="@layout/include_header"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -137,7 +137,6 @@
                 </LinearLayout>
 
                 <com.google.android.material.card.MaterialCardView
-                    android:onClick="@{() -> activity.showUploadNormal()}"
                     app:cardElevation="3dp"
                     android:layout_marginTop="32dp"
                     android:layout_marginBottom="8dp"
@@ -180,7 +179,6 @@
 
 
                 <com.google.android.material.card.MaterialCardView
-                    android:onClick="@{() -> activity.showUploadDetail()}"
                     app:cardElevation="3dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginBottom="8dp"
@@ -223,7 +221,6 @@
 
 
                 <com.google.android.material.card.MaterialCardView
-                    android:onClick="@{() -> activity.showUploadActive()}"
                     app:cardElevation="3dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginBottom="8dp"

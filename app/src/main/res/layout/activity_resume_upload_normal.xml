@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="vm"
+            type="com.lakue.oburie.ui.myresume.upload.normal.ResumeUploadNormalViewModel" />
+        <variable
+            name="activity"
+            type="com.lakue.oburie.ui.myresume.upload.normal.ResumeUploadNormalActivity" />
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/include"
+            app:headTitle="@{@string/upload_normal_profile}"
+            layout="@layout/include_header"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:paddingTop="28dp"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:paddingBottom="28dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:textSize="14dp"
+                        android:text="활동명(제목)"
+                        android:textColor="@color/color_dark_ffffff_000000"
+                        android:fontFamily="@font/applesdgothicneob"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <EditText
+                        android:layout_marginTop="16dp"
+                        android:hint="활동명 입력(ex. 모든행사 보컬 다 뜁니다!!"
+                        android:paddingTop="12dp"
+                        android:paddingBottom="12dp"
+                        android:paddingRight="8dp"
+                        android:paddingLeft="8dp"
+                        android:fontFamily="@font/applesdgothicneol"
+                        android:textColor="@color/color_dark_ffffff_000000"
+                        android:textSize="14dp"
+                        android:background="@drawable/background_round_5_stroek_dddddd"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:layout_marginTop="24dp"
+                        android:textSize="14dp"
+                        android:text="전문분야를 선택해주세요."
+                        android:textColor="@color/color_dark_ffffff_000000"
+                        android:fontFamily="@font/applesdgothicneob"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <com.lakue.oburie.view.ObRecyclerView
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginRight="4dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:spanCount="4" />
+
+                    <TextView
+                        android:layout_marginTop="24dp"
+                        android:textSize="14dp"
+                        android:text="성별"
+                        android:textColor="@color/color_dark_ffffff_000000"
+                        android:fontFamily="@font/applesdgothicneob"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <LinearLayout
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="24dp"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <androidx.cardview.widget.CardView
+                            app:cardElevation="0dp"
+                            android:backgroundTint="@color/selector_fd9426_to_f8f8f8"
+                            android:background="@drawable/background_round_10"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp">
+
+                            <ImageView
+                                android:padding="12dp"
+                                android:src="@drawable/ic_man"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"/>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            app:cardElevation="0dp"
+                            android:backgroundTint="@color/selector_fd9426_to_f8f8f8"
+                            android:background="@drawable/background_round_10"
+                            android:layout_marginLeft="16dp"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp">
+
+                            <ImageView
+                                android:padding="12dp"
+                                android:src="@drawable/ic_woman"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"/>
+
+                        </androidx.cardview.widget.CardView>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:textSize="14dp"
+                        android:text="출생년도를 선택해주세요"
+                        android:textColor="@color/color_dark_ffffff_000000"
+                        android:fontFamily="@font/applesdgothicneob"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <LinearLayout
+                        android:tag="needTime"
+                        android:layout_marginTop="16dp"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:paddingTop="12dp"
+                        android:paddingBottom="12dp"
+                        android:paddingRight="16dp"
+                        android:paddingLeft="16dp"
+                        android:background="@drawable/background_round_5_stroek_dddddd"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_weight="1"
+                            android:textSize="14dp"
+                            android:textColor="@color/color_dark_ffffff_000000"
+                            android:text="출생년도"
+                            android:fontFamily="@font/applesdgothicneol"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        <ImageView
+                            app:tint="@color/color_dark_ffffff_000000"
+                            android:src="@drawable/ic_round_arrow_drop_down_24"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_marginTop="24dp"
+                        android:textSize="14dp"
+                        android:text="활동 가능한 지역을 선택해주세요. (최대 3개)"
+                        android:textColor="@color/color_dark_ffffff_000000"
+                        android:fontFamily="@font/applesdgothicneob"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <LinearLayout
+                        android:tag="needTime"
+                        android:layout_marginTop="16dp"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:paddingTop="12dp"
+                        android:paddingBottom="12dp"
+                        android:paddingRight="16dp"
+                        android:paddingLeft="16dp"
+                        android:background="@drawable/background_round_5_stroek_dddddd"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/tv_need_time"
+                            android:layout_weight="1"
+                            android:textSize="14dp"
+                            android:textColor="@color/color_dark_ffffff_000000"
+                            android:text="지역을 선택해주세요."
+                            android:fontFamily="@font/applesdgothicneol"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_marginTop="24dp"
+                        android:textSize="14dp"
+                        android:text="소개"
+                        android:textColor="@color/color_dark_ffffff_000000"
+                        android:fontFamily="@font/applesdgothicneob"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:layout_marginTop="4dp"
+                        android:textSize="12dp"
+                        android:text="당신을 섭외해야 하는 이유 3가지, 진행방식 등"
+                        android:textColor="@color/gray_900"
+                        android:fontFamily="@font/applesdgothicneol"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:background="@drawable/background_round_5_stroek_dddddd"
+                        android:fontFamily="@font/applesdgothicneol"
+                        android:gravity="top"
+                        android:hint="예) 성격, 장점, 진행방식 등"
+                        android:minHeight="200dp"
+                        android:paddingLeft="8dp"
+                        android:paddingTop="12dp"
+                        android:paddingRight="8dp"
+                        android:paddingBottom="12dp"
+                        android:textColor="@color/color_dark_ffffff_000000"
+                        android:textSize="14dp" />
+
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+
+
+        </androidx.core.widget.NestedScrollView>
+
+        <LinearLayout
+            android:backgroundTint="@color/color_dark_000000_ffffff"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:foreground="@drawable/ripple_action"
+                style="@style/BottomCompleteButton"
+                android:text="@string/regist"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>

@@ -8,6 +8,9 @@ import com.lakue.oburie.R
 import com.lakue.oburie.base.BaseActivity
 import com.lakue.oburie.databinding.ActivityResumeUploadBinding
 import com.lakue.oburie.ui.myresume.MyResumeActivity
+import com.lakue.oburie.ui.myresume.upload.active.ResumeUploadActiveActivity.Companion.startResumeUploadActiveActivity
+import com.lakue.oburie.ui.myresume.upload.detail.ResumeUploadDetailActivity.Companion.startResumeUploadDetailActivity
+import com.lakue.oburie.ui.myresume.upload.normal.ResumeUploadNormalActivity.Companion.startResumeUploadNormalActivity
 
 class ResumeUploadActivity : BaseActivity<ActivityResumeUploadBinding, ResumeUploadViewModel>(R.layout.activity_resume_upload) {
 
@@ -21,7 +24,10 @@ class ResumeUploadActivity : BaseActivity<ActivityResumeUploadBinding, ResumeUpl
     }
 
     override fun init() {
-
+        binding.apply {
+            vm = viewModel
+            activity = this@ResumeUploadActivity
+        }
     }
 
     override fun setUI() {
@@ -34,6 +40,18 @@ class ResumeUploadActivity : BaseActivity<ActivityResumeUploadBinding, ResumeUpl
 
     override fun setObserve() {
 
+    }
+
+    fun showUploadNormal(){
+        startResumeUploadNormalActivity(this@ResumeUploadActivity)
+    }
+
+    fun showUploadDetail(){
+        startResumeUploadDetailActivity(this@ResumeUploadActivity)
+    }
+
+    fun showUploadActive(){
+        startResumeUploadActiveActivity(this@ResumeUploadActivity)
     }
 
 }
