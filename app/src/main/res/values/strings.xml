@@ -47,4 +47,15 @@
     <string name="upload_active_profile">활동 정보 입력</string>
     <string name="normal_upload_title">기본 정보를 입력해주세요.</string>
     <string name="regist">등록</string>
+    <string name="upload_resume_title">활동명(제목)</string>
+    <string name="upload_resume_title_hint">활동명 입력(ex. 모든행사 보컬 다 뜁니다!!</string>
+    <string name="upload_resume_major">전문분야를 선택해주세요.</string>
+    <string name="upload_resume_gender">성별</string>
+    <string name="upload_resume_birth_year_title">출생년도를 선택해주세요</string>
+    <string name="upload_resume_birth_year">출생년도</string>
+    <string name="upload_resume_location_title">활동 가능한 지역을 선택해주세요. (최대 3개)</string>
+    <string name="upload_resume_location">지역을 선택해주세요.</string>
+    <string name="upload_resume_introduce_title">소개</string>
+    <string name="upload_resume_introduce">당신을 섭외해야 하는 이유 3가지, 진행방식 등</string>
+    <string name="upload_resume_introduce_hint">예) 성격, 장점, 진행방식 등</string>
 </resources>

@@ -22,7 +22,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Oburie">
-        <activity android:name=".ui.myresume.upload.active.ResumeUploadActiveActivity"></activity>
+        <activity android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
+            android:theme="@style/Base.Theme.AppCompat"/>
+        <activity android:name=".ui.myresume.upload.active.video.ResumeUploadActiveVideoActivity"/>
+        <activity android:name=".ui.myresume.upload.active.photo.ResumeUploadActivePhotoActivity"/>
         <activity android:name=".ui.myresume.upload.detail.ResumeUploadDetailActivity" />
         <activity android:name=".ui.myresume.upload.normal.ResumeUploadNormalActivity" />
         <activity android:name=".ui.myresume.upload.ResumeUploadActivity" />

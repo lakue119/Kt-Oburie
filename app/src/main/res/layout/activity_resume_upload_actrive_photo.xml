@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="vm"
+            type="com.lakue.oburie.ui.myresume.upload.active.photo.ResumeUploadActivePhotoViewModel" />
+        <variable
+            name="activity"
+            type="com.lakue.oburie.ui.myresume.upload.active.photo.ResumeUploadActivePhotoActivity" />
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/include"
+            app:headTitle="@{@string/upload_active_profile}"
+            layout="@layout/include_header"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:paddingTop="16dp"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:paddingBottom="28dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:textSize="14dp"
+                        android:text="전문성이 돋보이는\n사진을 등록해주세요. (0/5)"
+                        android:textColor="@color/color_dark_ffffff_000000"
+                        android:fontFamily="@font/applesdgothicneob"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:layout_marginTop="8dp"
+                        android:textSize="12dp"
+                        android:text="공연을 하는 멋진 모습이 담긴 사진을 올려주세요!\n
+첫번째 사진을 가장 중요시봐요~\n
+최소 1장, 최대 5장까지 가능해요~"
+                        android:textColor="@color/gray_900"
+                        android:fontFamily="@font/applesdgothicneol"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:onClick="@{() -> activity.showCamera()}"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:src="@drawable/icon_camera"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"/>
+
+                        <TextView
+                            android:textSize="14dp"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/applesdgothicneol"
+                            android:gravity="center"
+                            android:layout_gravity="center"
+                            android:text="카메라"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_gravity="center"
+                        android:background="@color/gray_d"
+                        android:layout_width="1dp"
+                        android:layout_height="40dp"/>
+
+                    <LinearLayout
+                        android:onClick="@{() -> activity.showGallery()}"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:src="@drawable/icon_gallery"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"/>
+
+                        <TextView
+                            android:textSize="14dp"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/applesdgothicneol"
+                            android:gravity="center"
+                            android:layout_gravity="center"
+                            android:text="앨범"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+
+
+            </LinearLayout>
+
+
+        </androidx.core.widget.NestedScrollView>
+
+        <LinearLayout
+            android:backgroundTint="@color/color_dark_000000_ffffff"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:foreground="@drawable/ripple_action"
+                style="@style/BottomCompleteButton"
+                android:text="@string/regist"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>

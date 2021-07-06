@@ -2,13 +2,11 @@ package com.lakue.oburie.ui.myresume.upload
 
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
 import com.lakue.oburie.R
 import com.lakue.oburie.base.BaseActivity
 import com.lakue.oburie.databinding.ActivityResumeUploadBinding
-import com.lakue.oburie.ui.myresume.MyResumeActivity
-import com.lakue.oburie.ui.myresume.upload.active.ResumeUploadActiveActivity.Companion.startResumeUploadActiveActivity
+import com.lakue.oburie.ui.myresume.upload.active.photo.ResumeUploadActivePhotoActivity.Companion.startResumeUploadActivePhotoActivity
+import com.lakue.oburie.ui.myresume.upload.active.video.ResumeUploadActiveVideoActivity.Companion.startResumeUploadActiveActivity
 import com.lakue.oburie.ui.myresume.upload.detail.ResumeUploadDetailActivity.Companion.startResumeUploadDetailActivity
 import com.lakue.oburie.ui.myresume.upload.normal.ResumeUploadNormalActivity.Companion.startResumeUploadNormalActivity
 
@@ -51,7 +49,7 @@ class ResumeUploadActivity : BaseActivity<ActivityResumeUploadBinding, ResumeUpl
     }
 
     fun showUploadActive(){
-        startResumeUploadActiveActivity(this@ResumeUploadActivity)
+        startResumeUploadActivePhotoActivity(this@ResumeUploadActivity)
     }
 
 }

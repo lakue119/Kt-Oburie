@@ -29,6 +29,7 @@ class CameraUtil(val context: Context) {
 
     private var onShowCameraListener: OnShowCameraListener? = null
     private var onShowGalleryListener: OnShowGalleryListener? = null
+    private var onCameraPermissionListener: OnCameraPermissionListener? = null
 
     fun setOnShowCameraListener(onShowCameraListener: OnShowCameraListener){
         this.onShowCameraListener = onShowCameraListener
@@ -36,6 +37,42 @@ class CameraUtil(val context: Context) {
 
     fun setOnShowGalleryListener(onShowGalleryListener: OnShowGalleryListener){
         this.onShowGalleryListener = onShowGalleryListener
+    }
+
+    fun setOnCameraPermissionListener(onCameraPermissionListener: OnCameraPermissionListener){
+        this.onCameraPermissionListener = onCameraPermissionListener
+    }
+
+    fun onCameraPermission(){
+        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.Q) {
+            XXPermissions.with(context)
+                .permission(Permission.READ_EXTERNAL_STORAGE)
+                .permission(Permission.CAMERA)
+                .request(object : OnPermissionCallback {
+                    override fun onGranted(permissions: MutableList<String>?, all: Boolean) {
+                        onCameraPermissionListener?.onCameraPermission()
+                    }
+
+                    override fun onDenied(permissions: MutableList<String>?, never: Boolean) {
+                        super.onDenied(permissions, never)
+
+                    }
+                })
+        } else {
+            XXPermissions.with(context)
+                .permission(Permission.MANAGE_EXTERNAL_STORAGE)
+                .permission(Permission.CAMERA)
+                .request(object : OnPermissionCallback {
+                    override fun onGranted(permissions: MutableList<String>?, all: Boolean) {
+                        onCameraPermissionListener?.onCameraPermission()
+                    }
+
+                    override fun onDenied(permissions: MutableList<String>?, never: Boolean) {
+                        super.onDenied(permissions, never)
+
+                    }
+                })
+        }
     }
 
     fun onShowCamera() {
@@ -148,6 +185,52 @@ class CameraUtil(val context: Context) {
 
                         }
                     })
+        }
+    }
+
+    fun onShowCameraCropAlbum() {
+        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.Q) {
+            XXPermissions.with(context)
+                .permission(Permission.READ_EXTERNAL_STORAGE)
+                .permission(Permission.CAMERA)
+                .request(object : OnPermissionCallback {
+                    override fun onGranted(permissions: MutableList<String>?, all: Boolean) {
+                        val intent = Intent("com.android.camera.action.CROP").apply{
+                            type = "image/*"
+//                            data = mImageCaptureUri
+                            putExtra("crop", true)
+                            putExtra("outputX", 200)
+                            putExtra("outputY", 200)
+                            putExtra("aspectX", 1)
+                            putExtra("aspectY", 1)
+                            putExtra("scale", true)
+                            putExtra("return-data", true)
+                        }
+                        onShowGalleryListener?.onShowGallery(intent)
+                    }
+
+                    override fun onDenied(permissions: MutableList<String>?, never: Boolean) {
+                        super.onDenied(permissions, never)
+
+                    }
+                })
+        } else {
+            XXPermissions.with(context)
+                .permission(Permission.MANAGE_EXTERNAL_STORAGE)
+                .permission(Permission.CAMERA)
+                .request(object : OnPermissionCallback {
+                    override fun onGranted(permissions: MutableList<String>?, all: Boolean) {
+                        val intent = Intent(Intent.ACTION_PICK)
+                        intent.type = MediaStore.Images.Media.CONTENT_TYPE
+                        intent.type = "image/*"
+                        onShowGalleryListener?.onShowGallery(intent)
+                    }
+
+                    override fun onDenied(permissions: MutableList<String>?, never: Boolean) {
+                        super.onDenied(permissions, never)
+
+                    }
+                })
         }
     }
 }

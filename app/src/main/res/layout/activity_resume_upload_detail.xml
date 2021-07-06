@@ -36,7 +36,7 @@
                 android:layout_height="wrap_content">
 
                 <LinearLayout
-                    android:paddingTop="28dp"
+                    android:paddingTop="16dp"
                     android:paddingLeft="20dp"
                     android:paddingRight="20dp"
                     android:paddingBottom="28dp"
