@@ -7,6 +7,7 @@ import com.lakue.oburie.R
 import com.lakue.oburie.base.BaseAdapter
 import com.lakue.oburie.base.BaseViewHolder
 import com.lakue.oburie.databinding.ItemHomeCategoryBinding
+import com.lakue.oburie.databinding.ItemResumeUploadPhotoBinding
 import com.lakue.oburie.model.Category
 import com.lakue.oburie.ui.myresume.upload.normal.ResumeUploadNormalViewModel
 
@@ -15,9 +16,9 @@ class ResumeUploadActivePhotoAdapter(val viewModel: ResumeUploadNormalViewModel,
     val category = cate
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder {
-        DataBindingUtil.inflate<ItemHomeCategoryBinding>(
+        DataBindingUtil.inflate<ItemResumeUploadPhotoBinding>(
             LayoutInflater.from(parent.context),
-            R.layout.item_home_category,
+            R.layout.item_resume_upload_photo,
             parent,
             false
         ).let {
@@ -34,12 +35,9 @@ class ResumeUploadActivePhotoAdapter(val viewModel: ResumeUploadNormalViewModel,
     /**
      * ViewHolder
      */
-    inner class HomeCateGoryItemViewHolder(private val binding: ItemHomeCategoryBinding) : BaseViewHolder(binding.root) {
+    inner class HomeCateGoryItemViewHolder(private val binding: ItemResumeUploadPhotoBinding) : BaseViewHolder(binding.root) {
         override fun onBind(item: Any, pos: Int) {
             binding.apply {
-                this.cate = item as Category
-                this.position = pos
-//                this.vm = viewModel
             }
         }
     }
