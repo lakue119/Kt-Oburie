@@ -42,8 +42,8 @@
                     android:layout_width="48dp"
                     android:layout_height="48dp"
                     android:layout_gravity="left"
-                    android:padding="5dp"
-                    android:src="@drawable/close_btn_img_black"
+                    android:padding="8dp"
+                    android:src="@drawable/ic_round_close_24"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 

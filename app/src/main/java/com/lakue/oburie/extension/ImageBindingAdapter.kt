@@ -1,5 +1,6 @@
 package com.lakue.oburie.extension
 
+import android.graphics.Bitmap
 import android.widget.ImageView
 import androidx.core.view.isVisible
 import androidx.databinding.BindingAdapter
@@ -22,6 +23,13 @@ fun ImageView.setIconImage(
     url: Int
 ){
     Glide.with(context).load(url).into(this)
+}
+
+@BindingAdapter("image_bitmap")
+fun ImageView.setImage(
+        bitmap: Bitmap
+){
+    Glide.with(context).load(bitmap).into(this)
 }
 
 @BindingAdapter("hot_visible")

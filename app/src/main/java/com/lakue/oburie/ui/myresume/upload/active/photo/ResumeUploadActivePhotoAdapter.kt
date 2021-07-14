@@ -1,19 +1,22 @@
 package com.lakue.oburie.ui.myresume.upload.active.photo
 
+import android.graphics.Bitmap
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import com.lakue.oburie.R
 import com.lakue.oburie.base.BaseAdapter
 import com.lakue.oburie.base.BaseViewHolder
-import com.lakue.oburie.databinding.ItemHomeCategoryBinding
 import com.lakue.oburie.databinding.ItemResumeUploadPhotoBinding
-import com.lakue.oburie.model.Category
-import com.lakue.oburie.ui.myresume.upload.normal.ResumeUploadNormalViewModel
 
-class ResumeUploadActivePhotoAdapter(val viewModel: ResumeUploadNormalViewModel, cate: ArrayList<Category>) : BaseAdapter() {
+class ResumeUploadActivePhotoAdapter() : BaseAdapter() {
 
-    val category = cate
+    var photos = ArrayList<Bitmap>()
+
+    fun addItem(photo: Bitmap){
+        photos.add(photo)
+        notifyItemInserted(photos.size-1)
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder {
         DataBindingUtil.inflate<ItemResumeUploadPhotoBinding>(
@@ -26,10 +29,10 @@ class ResumeUploadActivePhotoAdapter(val viewModel: ResumeUploadNormalViewModel,
         }
     }
 
-    override fun getItemCount() = category.size
+    override fun getItemCount() = photos.size
 
     override fun onBindViewHolder(holder: BaseViewHolder, position: Int) {
-        holder.onBind(category[position], position)
+        holder.onBind(photos[position], position)
     }
 
     /**
@@ -38,6 +41,7 @@ class ResumeUploadActivePhotoAdapter(val viewModel: ResumeUploadNormalViewModel,
     inner class HomeCateGoryItemViewHolder(private val binding: ItemResumeUploadPhotoBinding) : BaseViewHolder(binding.root) {
         override fun onBind(item: Any, pos: Int) {
             binding.apply {
+                photo = item as Bitmap
             }
         }
     }

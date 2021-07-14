@@ -24,7 +24,7 @@ class CameraUtil(val context: Context) {
     val HOME_DIRECTORY = Environment.getExternalStorageDirectory().path
     val NEW_HOME_DIRECTORY = cw.getExternalFilesDir(null)!!.path
 
-    private var tempFile: File? = null
+    internal var tempFile: File? = null
 //    lateinit var photoUri: Uri
 
     private var onShowCameraListener: OnShowCameraListener? = null

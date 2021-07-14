@@ -4,7 +4,7 @@ import android.view.View
 import android.widget.TextView
 import androidx.core.view.isVisible
 import androidx.databinding.BindingAdapter
-import com.lakue.oburie.utils.ConvertNumberFormat
+import com.lakue.oburie.utils.converter.ConvertNumberFormat
 import java.lang.StringBuilder
 
 /**
