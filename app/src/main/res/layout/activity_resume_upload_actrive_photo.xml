@@ -45,7 +45,7 @@
 
                     <TextView
                         android:textSize="14dp"
-                        android:text="전문성이 돋보이는\n사진을 등록해주세요. (0/5)"
+                        android:text="전문성이 돋보이는 사진을 등록해주세요. (0/5)"
                         android:textColor="@color/color_dark_ffffff_000000"
                         android:fontFamily="@font/applesdgothicneob"
                         android:layout_width="wrap_content"
@@ -54,9 +54,7 @@
                     <TextView
                         android:layout_marginTop="8dp"
                         android:textSize="12dp"
-                        android:text="공연을 하는 멋진 모습이 담긴 사진을 올려주세요!\n
-첫번째 사진을 가장 중요시봐요~\n
-최소 1장, 최대 5장까지 가능해요~"
+                        android:text="공연을 하는 멋진 모습이 담긴 사진을 올려주세요!\n첫번째 사진을 가장 중요시봐요~\n최소 1장, 최대 5장까지 가능해요~"
                         android:textColor="@color/gray_900"
                         android:fontFamily="@font/applesdgothicneol"
                         android:layout_width="wrap_content"
@@ -65,7 +63,6 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_marginTop="24dp"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
                     android:layout_width="match_parent"
@@ -132,7 +129,7 @@
                 </LinearLayout>
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:layout_marginTop="36dp"
+                    android:layout_marginTop="24dp"
                     android:orientation="horizontal"
                     android:padding="12dp"
                     android:clipToPadding="false"
@@ -141,10 +138,78 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
 
+                <LinearLayout
+                    android:layout_marginTop="24dp"
+                    android:paddingTop="16dp"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:paddingBottom="28dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
+                    <TextView
+                        android:textSize="14dp"
+                        android:text="활동 모습이 담긴 유투브 링크를 등록해주세요.(1/5)"
+                        android:textColor="@color/color_dark_ffffff_000000"
+                        android:fontFamily="@font/applesdgothicneob"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:layout_marginTop="8dp"
+                        android:textSize="12dp"
+                        android:text="영상이 있는 프로필의 매칭이 될 확률을 더 높여줘요~\n영상이 없어도 Skip가능해요!!"
+                        android:textColor="@color/gray_900"
+                        android:fontFamily="@font/applesdgothicneol"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+
+                    <LinearLayout
+                        android:layout_marginTop="16dp"
+                        android:background="@drawable/background_round_5_stroek_dddddd"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/etUrl"
+                            android:layout_weight="1"
+                            android:background="@color/transparency"
+                            android:hint="https://www.youtube.com/watch?v=XXXXXX"
+                            android:paddingTop="12dp"
+                            android:paddingBottom="12dp"
+                            android:paddingRight="8dp"
+                            android:paddingLeft="8dp"
+                            android:fontFamily="@font/applesdgothicneol"
+                            android:textColor="@color/color_dark_ffffff_000000"
+                            android:textSize="14dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <ImageView
+                            android:onClick="@{() -> activity.addUrl()}"
+                            android:src="@drawable/ic_round_add_24"
+                            android:paddingRight="12dp"
+                            android:layout_width="36dp"
+                            android:layout_height="match_parent"/>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:clipToPadding="false"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    android:id="@+id/rvVideos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
 
             </LinearLayout>
-
 
         </androidx.core.widget.NestedScrollView>
 

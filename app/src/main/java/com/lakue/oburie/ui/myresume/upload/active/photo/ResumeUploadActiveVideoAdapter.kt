@@ -8,40 +8,41 @@ import com.lakue.oburie.R
 import com.lakue.oburie.base.BaseAdapter
 import com.lakue.oburie.base.BaseViewHolder
 import com.lakue.oburie.databinding.ItemResumeUploadPhotoBinding
+import com.lakue.oburie.databinding.ItemResumeUploadVideoBinding
 
-class ResumeUploadActivePhotoAdapter() : BaseAdapter() {
+class ResumeUploadActiveVideoAdapter : BaseAdapter() {
 
-    var photos = ArrayList<Bitmap>()
+    var urls = ArrayList<String>()
 
-    fun addItem(photo: Bitmap){
-        photos.add(photo)
-        notifyItemInserted(photos.size-1)
+    fun addItem(url: String){
+        urls.add(url)
+        notifyItemInserted(urls.size-1)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder {
-        DataBindingUtil.inflate<ItemResumeUploadPhotoBinding>(
+        DataBindingUtil.inflate<ItemResumeUploadVideoBinding>(
             LayoutInflater.from(parent.context),
-            R.layout.item_resume_upload_photo,
+            R.layout.item_resume_upload_video,
             parent,
             false
         ).let {
-            return ResumeUploadPhotoViewHolder(it)
+            return ResumeUploadVideoViewHolder(it)
         }
     }
 
-    override fun getItemCount() = photos.size
+    override fun getItemCount() = urls.size
 
     override fun onBindViewHolder(holder: BaseViewHolder, position: Int) {
-        holder.onBind(photos[position], position)
+        holder.onBind(urls[position], position)
     }
 
     /**
      * ViewHolder
      */
-    inner class ResumeUploadPhotoViewHolder(private val binding: ItemResumeUploadPhotoBinding) : BaseViewHolder(binding.root) {
+    inner class ResumeUploadVideoViewHolder(private val binding: ItemResumeUploadVideoBinding) : BaseViewHolder(binding.root) {
         override fun onBind(item: Any, pos: Int) {
             binding.apply {
-                photo = item as Bitmap
+                url = item as String
             }
         }
     }

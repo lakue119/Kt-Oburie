@@ -10,6 +10,7 @@ import android.graphics.Matrix
 import android.media.ExifInterface
 import android.net.Uri
 import android.provider.MediaStore
+import android.widget.EditText
 import androidx.activity.result.contract.ActivityResultContracts
 import com.lakue.oburie.R
 import com.lakue.oburie.base.BaseActivity
@@ -31,6 +32,7 @@ class ResumeUploadActivePhotoActivity : BaseActivity<ActivityResumeUploadActrive
 
     lateinit var cameraUtil: CameraUtil
     val photoAdapter = ResumeUploadActivePhotoAdapter()
+    val videoAdapter = ResumeUploadActiveVideoAdapter()
     var photoUri: Uri? = null
 
     private val photoLauncher =
@@ -143,6 +145,7 @@ class ResumeUploadActivePhotoActivity : BaseActivity<ActivityResumeUploadActrive
             vm = viewModel
             activity = this@ResumeUploadActivePhotoActivity
             rvPhotos.adapter = photoAdapter
+            rvVideos.adapter = videoAdapter
         }
         cameraUtil = CameraUtil(this)
 
@@ -184,5 +187,10 @@ class ResumeUploadActivePhotoActivity : BaseActivity<ActivityResumeUploadActrive
 
     fun showGallery(){
         cameraUtil.onShowCameraCropAlbum()
+    }
+
+    fun addUrl(){
+        videoAdapter.addItem(binding.etUrl.text.toString())
+        binding.etUrl.text = "".toEditable()
     }
 }
