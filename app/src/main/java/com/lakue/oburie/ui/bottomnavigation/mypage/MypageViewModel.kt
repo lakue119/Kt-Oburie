@@ -8,4 +8,5 @@ class MypageViewModel @Inject constructor(
     savedStateHandle: SavedStateHandle//,
 //    private val profileRepository: ProfileRepository
 ) : BaseViewModel() {
+
 }
