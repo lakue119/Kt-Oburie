@@ -58,4 +58,6 @@
     <string name="upload_resume_introduce_title">소개</string>
     <string name="upload_resume_introduce">당신을 섭외해야 하는 이유 3가지, 진행방식 등</string>
     <string name="upload_resume_introduce_hint">예) 성격, 장점, 진행방식 등</string>
+
+    <string name="ob_history">오부리 내역</string>
 </resources>

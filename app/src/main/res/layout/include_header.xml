@@ -40,7 +40,7 @@
                     <TextView
                         style="@style/HeaderTextView"
                         android:text="@{headTitle}"
-                        tools:text="라꾸님의 리뷰"
+                        tools:text="Header"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="@+id/imageView"
