@@ -10,7 +10,7 @@ import com.lakue.oburie.databinding.ItemCategoryResultLargeBinding
 import com.lakue.oburie.databinding.ItemCategoryResultSmallBinding
 import com.lakue.oburie.databinding.ItemOburieHistoryBinding
 
-class OburieHistoryAdapter() : BaseAdapter() {
+class OburieHistoryAdapter(val viewModel: OburieHistoryViewModel) : BaseAdapter() {
 
     val myItems = ArrayList<Any>()
 
@@ -40,6 +40,7 @@ class OburieHistoryAdapter() : BaseAdapter() {
     inner class HistoryViewHolder(private val binding: ItemOburieHistoryBinding) : BaseViewHolder(binding.root) {
         override fun onBind(item: Any, pos: Int) {
             binding.apply {
+                vm = viewModel
             }
         }
     }
