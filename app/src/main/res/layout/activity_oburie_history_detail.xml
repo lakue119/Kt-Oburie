@@ -393,6 +393,7 @@
             android:layout_height="wrap_content">
 
             <TextView
+                android:onClick="@{() -> activity.showUserProfile()}"
                 style="@style/BottomCompleteButton"
                 android:text="@string/user_page"/>
 

@@ -8,7 +8,12 @@ import com.lakue.oburie.R
 import com.lakue.oburie.base.BaseActivity
 import com.lakue.oburie.databinding.ActivityOburieHistoryDetailBinding
 import com.lakue.oburie.ui.history.OburieHistoryActivity
+import com.lakue.oburie.ui.userprofile.UserProfileActivity
+import com.lakue.oburie.ui.userprofile.UserProfileActivity.Companion.startUserProfileActivity
+import com.lakue.oburie.utils.BaseUtils
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class OburieHistoryDetailActivity: BaseActivity<ActivityOburieHistoryDetailBinding, OburieHistoryDetailViewModel>(R.layout.activity_oburie_history_detail) {
 
     companion object {
@@ -21,7 +26,10 @@ class OburieHistoryDetailActivity: BaseActivity<ActivityOburieHistoryDetailBindi
     }
 
     override fun init() {
-
+        binding.apply {
+            vm = viewModel
+            activity = this@OburieHistoryDetailActivity
+        }
     }
 
     override fun setUI() {
@@ -34,6 +42,10 @@ class OburieHistoryDetailActivity: BaseActivity<ActivityOburieHistoryDetailBindi
 
     override fun setObserve() {
 
+    }
+
+    fun showUserProfile(){
+        startUserProfileActivity(this@OburieHistoryDetailActivity)
     }
 
 }

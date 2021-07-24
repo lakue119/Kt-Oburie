@@ -20,10 +20,6 @@ class OburieHistoryViewModel @Inject constructor(
 //    private val profileRepository: ProfileRepository
 ) : BaseViewModel() {
 
-    //마이프로필 이동 Event
-    private val _showMyProfileEvent = MutableLiveData<Event<String>>()
-    val showMyProfileEvent: LiveData<Event<String>> = _showMyProfileEvent
-
     //거래취소 Event
     private val _cancelEvent = MutableLiveData<Event<String>>()
     val cancelEvent: LiveData<Event<String>> = _cancelEvent
@@ -43,10 +39,6 @@ class OburieHistoryViewModel @Inject constructor(
     //상대페이디 이동 Event
     private val _showDetail = MutableLiveData<Event<String>>()
     val showDetail: LiveData<Event<String>> = _showDetail
-
-    fun onShowMyProfile(){
-        _showMyProfileEvent.value = Event("onShowMyProfile")
-    }
 
     fun onCancel(){
         _cancelEvent.value = Event("onCancel")

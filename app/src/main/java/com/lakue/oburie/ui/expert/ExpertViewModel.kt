@@ -1,4 +1,4 @@
-package com.lakue.oburie.ui.jobhunter.list
+package com.lakue.oburie.ui.expert
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -14,26 +14,10 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class JobHunterViewModel @Inject constructor(
+class ExpertViewModel @Inject constructor(
         savedStateHandle: SavedStateHandle//,
 //    private val profileRepository: ProfileRepository
 ) : BaseViewModel() {
-
-    private val _profileData = MutableLiveData<ArrayList<Profile>>()
-    val profileData: LiveData<ArrayList<Profile>> = _profileData
-
-    var profileAdapter: JobHunterAdapter = JobHunterAdapter(this)
-
-    init {
-        sampleProfileData()
-    }
-
-    fun sampleProfileData() {
-        var sampleList = testCategoryResultProfile
-
-        _profileData.value = sampleList
-        profileAdapter.setCount(_profileData.value!!.size)
-    }
 
     fun showSelectLocation() {
         startSelectLocationActivity(context)

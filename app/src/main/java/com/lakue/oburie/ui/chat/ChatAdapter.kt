@@ -10,9 +10,6 @@ import com.lakue.oburie.R
 import com.lakue.oburie.base.BaseAdapter
 import com.lakue.oburie.base.BaseViewHolder
 import com.lakue.oburie.databinding.*
-import com.lakue.oburie.ui.jobhunter.list.JobHunterViewModel
-import com.lakue.oburie.ui.jobhunter.location.SelectLocationAdapter
-import com.lakue.oburie.ui.jobhunter.searchlist.JobHunterSearchViewModel
 
 class ChatAdapter(private val viewModel: ChatViewModel) : BaseAdapter() {
 

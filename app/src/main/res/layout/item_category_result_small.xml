@@ -11,7 +11,11 @@
 
         <variable
             name="vm"
-            type="com.lakue.oburie.ui.jobhunter.list.JobHunterViewModel" />
+            type="com.lakue.oburie.ui.expert.ExpertViewModel" />
+
+        <variable
+            name="profile"
+            type="com.lakue.oburie.model.Profile" />
 
         <variable
             name="position"
@@ -35,7 +39,7 @@
             android:layout_height="wrap_content">
 
             <com.lakue.oburie.custom.RoundedImageView
-                image_url="@{vm.profileData.get(position).userInfo.userProfileImg}"
+                image_url="@{profile.userInfo.userProfileImg}"
                 android:scaleType="centerCrop"
                 app:rectRadius="5dp"
                 android:layout_width="100dp"
@@ -51,7 +55,7 @@
                 <TextView
                     tool:text="aklwjetklawejtkl"
                     android:maxLines="1"
-                    android:text="@{vm.profileData.get(position).introduce}"
+                    android:text="@{profile.introduce}"
                     android:id="@+id/textView4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -72,7 +76,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/applesdgothicneob"
-                        android:text="@{vm.profileData.get(position).userInfo.nickName}"
+                        android:text="@{profile.userInfo.nickName}"
                         android:textColor="@color/color_dark_ffffff_000000"
                         android:textSize="14dp"
                         tool:text="라꾸" />
@@ -83,7 +87,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/applesdgothicneol"
-                        android:text="@{vm.profileData.get(position).major}"
+                        android:text="@{profile.major}"
                         android:textColor="@color/gray_900"
                         android:textSize="14dp"
                         tool:text="라꾸" />
@@ -94,7 +98,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="4dp"
                         android:fontFamily="@font/applesdgothicneol"
-                        android:text="@{vm.profileData.get(position).local}"
+                        android:text="@{profile.local}"
                         android:textColor="@color/gray_900"
                         android:textSize="14dp"
                         tool:text="라꾸" />
@@ -118,7 +122,7 @@
                         android:layout_marginLeft="4dp"
                         tool:text="4.0"
                         android:maxLines="1"
-                        android:text="@{String.valueOf(vm.profileData.get(position).reviewTotalGrade)}"
+                        android:text="@{String.valueOf(profile.reviewTotalGrade)}"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/applesdgothicneob"
@@ -131,7 +135,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/applesdgothicneol"
-                        revierCount="@{vm.profileData.get(position).reviewCount}"
+                        revierCount="@{profile.reviewCount}"
                         android:textColor="@color/color_dark_ffffff_000000"
                         android:textSize="14dp"
                         tool:text="(100+)" />
@@ -153,9 +157,9 @@
                         android:paddingRight="4dp"
                         android:paddingBottom="2dp"
                         android:textSize="12dp"
-                        android:text="@{vm.profileData.get(position).badge}"
+                        android:text="@{profile.badge}"
                         android:textColor="@color/white"
-                        android:visibility="@{TextUtils.isEmpty(vm.profileData.get(position).badge)?View.GONE:View.VISIBLE}"
+                        android:visibility="@{TextUtils.isEmpty(profile.badge)?View.GONE:View.VISIBLE}"
                         tool:text="QWHJRJK" />
 
                 </LinearLayout>
@@ -166,7 +170,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/applesdgothicneol"
-                    android:text="@{vm.profileData.get(position).introduce}"
+                    android:text="@{profile.introduce}"
                     android:textColor="@color/color_dark_ffffff_000000"
                     android:textSize="14dp"
                     app:layout_constraintStart_toStartOf="parent"

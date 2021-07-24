@@ -147,12 +147,14 @@
                     android:layout_height="wrap_content">
 
                     <LinearLayout
-                        android:layout_marginTop="16dp"
+                        android:layout_marginTop="8dp"
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
                         <LinearLayout
+                            android:paddingTop="8dp"
+                            android:paddingBottom="8dp"
                             android:foreground="@drawable/ripple_action"
                             android:onClick="@{() -> fragment.showMyResume()}"
                             android:layout_weight="1"
@@ -179,6 +181,9 @@
                         </LinearLayout>
 
                         <LinearLayout
+                            android:paddingTop="8dp"
+                            android:paddingBottom="8dp"
+                            android:foreground="@drawable/ripple_action"
                             android:onClick="@{() -> fragment.showHistory()}"
                             android:layout_weight="1"
                             android:gravity="center"
@@ -204,6 +209,10 @@
                         </LinearLayout>
 
                         <LinearLayout
+                            android:paddingTop="8dp"
+                            android:paddingBottom="8dp"
+                            android:foreground="@drawable/ripple_action"
+                            android:onClick="@{() -> fragment.showLikeExpert()}"
                             android:layout_weight="1"
                             android:gravity="center"
                             android:layout_gravity="center"
@@ -229,6 +238,10 @@
                         </LinearLayout>
 
                         <LinearLayout
+                            android:paddingTop="8dp"
+                            android:paddingBottom="8dp"
+                            android:foreground="@drawable/ripple_action"
+                            android:onClick="@{() -> fragment.showMyJobOffer()}"
                             android:layout_weight="1"
                             android:gravity="center"
                             android:layout_gravity="center"
@@ -255,12 +268,16 @@
                     </LinearLayout>
 
                     <LinearLayout
-                        android:layout_marginTop="24dp"
+                        android:layout_marginTop="8dp"
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
                         <LinearLayout
+                            android:onClick="@{() -> fragment.showMyReview()}"
+                            android:paddingTop="8dp"
+                            android:paddingBottom="8dp"
+                            android:foreground="@drawable/ripple_action"
                             android:layout_weight="1"
                             android:gravity="center"
                             android:layout_gravity="center"
@@ -285,6 +302,10 @@
                         </LinearLayout>
 
                         <LinearLayout
+                            android:onClick="@{() -> fragment.showNotice()}"
+                            android:paddingTop="8dp"
+                            android:paddingBottom="8dp"
+                            android:foreground="@drawable/ripple_action"
                             android:layout_weight="1"
                             android:gravity="center"
                             android:layout_gravity="center"
@@ -309,6 +330,10 @@
                         </LinearLayout>
 
                         <LinearLayout
+                            android:onClick="@{() -> fragment.showFAQ()}"
+                            android:paddingTop="8dp"
+                            android:paddingBottom="8dp"
+                            android:foreground="@drawable/ripple_action"
                             android:layout_weight="1"
                             android:gravity="center"
                             android:layout_gravity="center"
@@ -333,6 +358,10 @@
                         </LinearLayout>
 
                         <LinearLayout
+                            android:onClick="@{() -> fragment.showShare()}"
+                            android:paddingTop="8dp"
+                            android:paddingBottom="8dp"
+                            android:foreground="@drawable/ripple_action"
                             android:layout_weight="1"
                             android:gravity="center"
                             android:layout_gravity="center"
@@ -360,12 +389,16 @@
                     </LinearLayout>
 
                     <LinearLayout
-                        android:layout_marginTop="24dp"
+                        android:layout_marginTop="8dp"
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
                         <LinearLayout
+                            android:onClick="@{() -> fragment.showProfileSetting()}"
+                            android:paddingTop="8dp"
+                            android:paddingBottom="8dp"
+                            android:foreground="@drawable/ripple_action"
                             android:layout_weight="1"
                             android:gravity="center"
                             android:layout_gravity="center"
@@ -390,6 +423,10 @@
                         </LinearLayout>
 
                         <LinearLayout
+                            android:onClick="@{() -> fragment.showAppSetting()}"
+                            android:paddingTop="8dp"
+                            android:paddingBottom="8dp"
+                            android:foreground="@drawable/ripple_action"
                             android:layout_weight="1"
                             android:gravity="center"
                             android:layout_gravity="center"
@@ -415,6 +452,10 @@
                         </LinearLayout>
 
                         <LinearLayout
+                            android:onClick="@{() -> fragment.showGuide()}"
+                            android:paddingTop="8dp"
+                            android:paddingBottom="8dp"
+                            android:foreground="@drawable/ripple_action"
                             android:layout_weight="1"
                             android:gravity="center"
                             android:layout_gravity="center"
@@ -439,6 +480,10 @@
                         </LinearLayout>
 
                         <LinearLayout
+                            android:onClick="@{() -> fragment.showOburieCenter()}"
+                            android:paddingTop="8dp"
+                            android:paddingBottom="8dp"
+                            android:foreground="@drawable/ripple_action"
                             android:layout_weight="1"
                             android:gravity="center"
                             android:layout_gravity="center"

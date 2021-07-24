@@ -8,8 +8,10 @@ import com.lakue.oburie.model.Review
 import com.lakue.oburie.test.testReview1
 import com.lakue.oburie.test.testReview2
 import com.lakue.oburie.test.testReview3
+import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
+@HiltViewModel
 class ReviewAnswerViewModel  @Inject constructor(
     savedStateHandle: SavedStateHandle//,
 //    private val profileRepository: ProfileRepository

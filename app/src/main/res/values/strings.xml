@@ -61,4 +61,6 @@
 
     <string name="ob_history">오부리 내역</string>
     <string name="user_page">상대페이지</string>
+    <string name="write_review">리뷰 작성</string>
+    <string name="like_expert">찜한 전문가</string>
 </resources>

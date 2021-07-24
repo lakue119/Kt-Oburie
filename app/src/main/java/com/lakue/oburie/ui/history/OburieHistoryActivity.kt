@@ -7,7 +7,11 @@ import android.os.Bundle
 import com.lakue.oburie.R
 import com.lakue.oburie.base.BaseActivity
 import com.lakue.oburie.databinding.ActivityOburieHistoryBinding
+import com.lakue.oburie.ui.history.detail.OburieHistoryDetailActivity.Companion.startOburieHistoryDetailActivity
 import com.lakue.oburie.ui.jobhunter.location.SelectLocationActivity
+import com.lakue.oburie.ui.review.write.WriteReviewActivity.Companion.startWriteReviewActivity
+import com.lakue.oburie.ui.userprofile.UserProfileActivity
+import com.lakue.oburie.ui.userprofile.UserProfileActivity.Companion.startUserProfileActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -34,13 +38,12 @@ class OburieHistoryActivity : BaseActivity<ActivityOburieHistoryBinding, OburieH
             rvHistory.adapter = historyAdapter
         }
 
-        viewModel.apply{
-            showMyProfileEvent eventObserve {showToast(it)}
-            cancelEvent eventObserve {showToast(it)}
-            confiemEvent eventObserve {showToast(it)}
-            editReviewEvent eventObserve {showToast(it)}
-            showUserPageEvent eventObserve {showToast(it)}
-            showDetail eventObserve {showToast(it)}
+        viewModel.apply {
+            cancelEvent eventObserve { showToast(it) }
+            confiemEvent eventObserve { showToast(it) }
+            editReviewEvent eventObserve { startWriteReviewActivity(this@OburieHistoryActivity) }
+            showUserPageEvent eventObserve { startUserProfileActivity(this@OburieHistoryActivity) }
+            showDetail eventObserve { startOburieHistoryDetailActivity(this@OburieHistoryActivity) }
         }
 
     }

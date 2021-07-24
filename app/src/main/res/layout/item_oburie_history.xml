@@ -45,7 +45,7 @@
                 android:layout_height="wrap_content">
 
                 <com.lakue.oburie.custom.RoundedImageView
-                    android:onClick="@{() -> vm.onShowMyProfile()}"
+                    android:onClick="@{() -> vm.onShowUserProfile()}"
                     app:rectRadius="50dp"
                     android:src="@color/point_1000"
                     android:layout_width="42dp"

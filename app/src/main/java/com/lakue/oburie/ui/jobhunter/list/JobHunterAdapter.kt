@@ -1,5 +1,6 @@
 package com.lakue.oburie.ui.jobhunter.list
 
+import android.provider.ContactsContract
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
@@ -8,16 +9,18 @@ import com.lakue.oburie.base.BaseAdapter
 import com.lakue.oburie.base.BaseViewHolder
 import com.lakue.oburie.databinding.ItemCategoryResultLargeBinding
 import com.lakue.oburie.databinding.ItemCategoryResultSmallBinding
+import com.lakue.oburie.model.Profile
+import com.lakue.oburie.ui.expert.ExpertViewModel
 
-class JobHunterAdapter(private val viewModel: JobHunterViewModel) : BaseAdapter() {
+class JobHunterAdapter(private val viewModel: ExpertViewModel) : BaseAdapter() {
 
     private val TYPE_LARGE = 1001
     private val TYPE_SMALL = 1002
 
-    var dataCount = 0
+    val myItems = ArrayList<Profile>()
 
-    fun setCount(count: Int) {
-        dataCount = count
+    fun addItem(item: ArrayList<Profile>){
+        myItems.addAll(item)
         notifyDataSetChanged()
     }
 
@@ -46,10 +49,10 @@ class JobHunterAdapter(private val viewModel: JobHunterViewModel) : BaseAdapter(
         }
     }
 
-    override fun getItemCount() = dataCount
+    override fun getItemCount() = myItems.size
 
     override fun onBindViewHolder(holder: BaseViewHolder, position: Int) {
-        holder.onBind(viewModel, position)
+        holder.onBind(myItems[position], position)
     }
 
     override fun getItemViewType(position: Int): Int {
@@ -66,7 +69,8 @@ class JobHunterAdapter(private val viewModel: JobHunterViewModel) : BaseAdapter(
     inner class CategoryResultLargeViewHolder(private val binding: ItemCategoryResultLargeBinding) : BaseViewHolder(binding.root) {
         override fun onBind(item: Any, pos: Int) {
             binding.apply {
-                this.vm = item as JobHunterViewModel
+                this.vm = viewModel
+                this.profile = item as Profile
                 this.position = pos
             }
         }
@@ -75,7 +79,8 @@ class JobHunterAdapter(private val viewModel: JobHunterViewModel) : BaseAdapter(
     inner class CategoryResultSmallViewHolder(private val binding: ItemCategoryResultSmallBinding) : BaseViewHolder(binding.root) {
         override fun onBind(item: Any, pos: Int) {
             binding.apply {
-                this.vm = item as JobHunterViewModel
+                this.vm = viewModel
+                this.profile = item as Profile
                 this.position = pos
             }
         }

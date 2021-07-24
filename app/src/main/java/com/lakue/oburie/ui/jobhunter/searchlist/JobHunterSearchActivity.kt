@@ -2,19 +2,20 @@ package com.lakue.oburie.ui.jobhunter.searchlist
 
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
 import com.lakue.oburie.R
 import com.lakue.oburie.base.BaseActivity
-import com.lakue.oburie.databinding.ActivityCategoryResultBinding
 import com.lakue.oburie.databinding.ActivityJobHunterSearchBinding
-import com.lakue.oburie.ui.jobhunter.list.JobHunterViewModel
+import com.lakue.oburie.test.testCategoryResultProfile
+import com.lakue.oburie.ui.expert.ExpertViewModel
+import com.lakue.oburie.ui.jobhunter.list.JobHunterAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class JobHunterSearchActivity : BaseActivity<ActivityJobHunterSearchBinding, JobHunterViewModel>(R.layout.activity_job_hunter_search) {
+class JobHunterSearchActivity : BaseActivity<ActivityJobHunterSearchBinding, ExpertViewModel>(R.layout.activity_job_hunter_search) {
 
     val keyword by lazy { "'${intent.getStringExtra("keyword")}'에 대한 검색결과" }
+
+    lateinit var profileAdapter: JobHunterSearchAdapter
 
     companion object {
         fun startJobHunterSearchActivity(
@@ -28,10 +29,18 @@ class JobHunterSearchActivity : BaseActivity<ActivityJobHunterSearchBinding, Job
     }
 
     override fun init() {
+        profileAdapter = JobHunterSearchAdapter(viewModel)
         binding.apply {
             vm = viewModel
             activity = this@JobHunterSearchActivity
         }
+        setData()
+    }
+
+    fun setData(){
+        var sampleList = testCategoryResultProfile
+
+        profileAdapter.addItem(sampleList)
     }
 
 

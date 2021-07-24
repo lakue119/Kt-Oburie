@@ -6,7 +6,7 @@
     <data>
         <variable
             name="vm"
-            type="com.lakue.oburie.ui.jobhunter.list.JobHunterViewModel" />
+            type="com.lakue.oburie.ui.expert.ExpertViewModel" />
         <variable
             name="activity"
             type="com.lakue.oburie.ui.jobhunter.searchlist.JobHunterSearchActivity" />
@@ -89,7 +89,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:clipToPadding="false"
-            app:setAdapter="@{vm.profileAdapter}"
+            app:setAdapter="@{activity.profileAdapter}"
             android:layout_weight="1"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             android:layout_width="match_parent"

@@ -10,7 +10,9 @@ import com.lakue.oburie.databinding.ActivityReviewAnswerBinding
 import com.lakue.oburie.databinding.ActivityReviewListBinding
 import com.lakue.oburie.ui.review.list.ReviewListActivity
 import com.lakue.oburie.ui.review.list.ReviewListViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class ReviewAnswerActivity : BaseActivity<ActivityReviewAnswerBinding, ReviewAnswerViewModel>(R.layout.activity_review_answer) {
 
     companion object {
