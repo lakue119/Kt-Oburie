@@ -13,7 +13,7 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class OburieHistoryActivity : BaseActivity<ActivityOburieHistoryBinding, OburieHistoryViewModel>(R.layout.activity_oburie_history) {
 
-    val historyAdapter = OburieHistoryAdapter()
+    lateinit var historyAdapter: OburieHistoryAdapter
 
     companion object {
         fun startOburieHistoryActivity(
@@ -25,11 +25,24 @@ class OburieHistoryActivity : BaseActivity<ActivityOburieHistoryBinding, OburieH
     }
 
     override fun init() {
+
+        historyAdapter = OburieHistoryAdapter(viewModel)
+
         binding.apply {
             vm = viewModel
             activity = this@OburieHistoryActivity
             rvHistory.adapter = historyAdapter
         }
+
+        viewModel.apply{
+            showMyProfileEvent eventObserve {showToast(it)}
+            cancelEvent eventObserve {showToast(it)}
+            confiemEvent eventObserve {showToast(it)}
+            editReviewEvent eventObserve {showToast(it)}
+            showUserPageEvent eventObserve {showToast(it)}
+            showDetail eventObserve {showToast(it)}
+        }
+
     }
 
     override fun setUI() {
