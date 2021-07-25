@@ -7,6 +7,9 @@
         <variable
             name="vm"
             type="com.lakue.oburie.ui.history.OburieHistoryViewModel" />
+        <variable
+            name="history"
+            type="com.lakue.oburie.model.history.History" />
     </data>
 
     <androidx.cardview.widget.CardView
@@ -28,6 +31,7 @@
             android:layout_height="match_parent">
 
             <TextView
+                android:text="@{history.state}"
                 android:layout_marginLeft="5dp"
                 android:textColor="@color/point_1000"
                 android:textSize="14dp"
@@ -45,6 +49,7 @@
                 android:layout_height="wrap_content">
 
                 <com.lakue.oburie.custom.RoundedImageView
+                    image_url="@{history.jobOffer.user.userProfileImg}"
                     android:onClick="@{() -> vm.onShowUserProfile()}"
                     app:rectRadius="50dp"
                     android:src="@drawable/default_icon"
@@ -58,17 +63,19 @@
                     android:layout_height="wrap_content">
 
                     <TextView
+                        android:text="@{history.jobOffer.title}"
                         tools:text="[가야금] 내일 공연할 가야금 1명 급구합니다!!! 제발 와주…"
-                        android:textSize="12dp"
+                        android:textSize="14dp"
                         android:maxLines="1"
                         android:ellipsize="end"
                         android:textColor="@color/color_dark_ffffff_000000"
-                        android:fontFamily="@font/applesdgothicneol"
+                        android:fontFamily="@font/applesdgothicneob"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"/>
 
                     <TextView
-                        android:layout_marginTop="2dp"
+                        android:text="@{history.jobOffer.location}"
+                        android:layout_marginTop="8dp"
                         tools:text="서울 영등포구 당산동 6가 323-1"
                         android:textSize="12dp"
                         android:maxLines="1"
@@ -80,6 +87,7 @@
 
 
                     <TextView
+                        android:text="@{history.jobOffer.startDate + history.jobOffer.startTime}"
                         android:layout_marginTop="2dp"
                         tools:text="2020.01.17 / 오전 09시 00분"
                         android:textSize="12dp"
@@ -112,6 +120,8 @@
                         android:layout_height="wrap_content">
 
                         <TextView
+                            android:foreground="@drawable/ripple_action"
+                            stateVisible="@{history.state}"
                             android:onClick="@{() -> vm.onCancel()}"
                             android:layout_marginLeft="5dp"
                             android:layout_marginRight="5dp"
@@ -129,6 +139,8 @@
                             android:layout_height="wrap_content"/>
 
                         <TextView
+                            android:foreground="@drawable/ripple_action"
+                            stateVisible="@{history.state}"
                             android:onClick="@{() -> vm.onConfirm()}"
                             android:layout_marginLeft="5dp"
                             android:layout_marginRight="5dp"
@@ -146,6 +158,8 @@
                             android:layout_height="wrap_content"/>
 
                         <TextView
+                            android:foreground="@drawable/ripple_action"
+                            stateVisible="@{history.state}"
                             android:onClick="@{() -> vm.onEditReview()}"
                             android:layout_marginLeft="5dp"
                             android:layout_marginRight="5dp"
@@ -163,6 +177,8 @@
                             android:layout_height="wrap_content"/>
 
                         <TextView
+                            android:foreground="@drawable/ripple_action"
+                            stateVisible="@{history.state}"
                             android:onClick="@{() -> vm.onShowUserProfile()}"
                             android:layout_marginLeft="5dp"
                             android:layout_marginRight="5dp"
@@ -180,6 +196,8 @@
                             android:layout_height="wrap_content"/>
 
                         <TextView
+                            android:foreground="@drawable/ripple_action"
+                            stateVisible="@{history.state}"
                             android:onClick="@{() -> vm.onShowDetail()}"
                             android:layout_marginLeft="5dp"
                             android:layout_marginRight="5dp"
@@ -203,6 +221,7 @@
             </LinearLayout>
 
             <TextView
+                stateText="@{history.state}"
                 android:layout_marginTop="12dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"

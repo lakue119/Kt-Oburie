@@ -8,6 +8,7 @@ import com.lakue.oburie.model.joboffer.JobOffer
 import com.lakue.oburie.test.testJobOffer1
 import com.lakue.oburie.ui.joboffer.detail.JobOfferDetailActivity.Companion.startJobOfferDetailActivity
 import com.lakue.oburie.utils.BaseUtils.context
+import com.lakue.oburie.utils.Event
 import javax.inject.Inject
 
 class JobOfferViewModel  @Inject constructor(
@@ -21,6 +22,13 @@ class JobOfferViewModel  @Inject constructor(
     val banner = ""
 
     var jobOfferAdapter: JobOfferAdapter = JobOfferAdapter(this)
+
+
+    private val _jobOfferDetailEvent = MutableLiveData<Event<String>>()
+    val jobOfferDetailEvent: LiveData<Event<String>> = _jobOfferDetailEvent
+
+    private val _userProfileDetailEvent = MutableLiveData<Event<String>>()
+    val userProfileDetailEvent: LiveData<Event<String>> = _userProfileDetailEvent
 
     init {
         sampleHomeData()
@@ -37,7 +45,11 @@ class JobOfferViewModel  @Inject constructor(
     }
 
     fun onDetail(){
-        startJobOfferDetailActivity(context)
+        _jobOfferDetailEvent.value = Event("")
+    }
+
+    fun onProfileDetail(){
+        _userProfileDetailEvent.value = Event("")
     }
 
 }

@@ -10,11 +10,17 @@ import com.lakue.oburie.databinding.ItemCategoryResultLargeBinding
 import com.lakue.oburie.databinding.ItemProfileLargeBinding
 import com.lakue.oburie.databinding.ItemUserProfileCoverBinding
 import com.lakue.oburie.databinding.ItemUserProfileVideoBinding
+import com.lakue.oburie.model.Profile
 import com.lakue.oburie.ui.userprofile.UserProfileViewModel
 
 class UserInfoProfileAdapter(private val viewModel: UserInfoViewModel) : BaseAdapter() {
 
-    var dataCount = 0
+    val myItems = ArrayList<Profile>()
+
+    fun addItem(item: ArrayList<Profile>){
+        myItems.addAll(item)
+        notifyDataSetChanged()
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder {
         DataBindingUtil.inflate<ItemProfileLargeBinding>(
@@ -27,16 +33,17 @@ class UserInfoProfileAdapter(private val viewModel: UserInfoViewModel) : BaseAda
         }
     }
 
-    override fun getItemCount() = dataCount
+    override fun getItemCount() = myItems.size
 
     override fun onBindViewHolder(holder: BaseViewHolder, position: Int) {
-        (holder as UserInfoProfileViewHolder).onBind(viewModel, position)
+        (holder as UserInfoProfileViewHolder).onBind(myItems[position], position)
     }
 
     inner class UserInfoProfileViewHolder(private val binding: ItemProfileLargeBinding) : BaseViewHolder(binding.root) {
         override fun onBind(item: Any, pos: Int) {
             binding.apply {
-                this.vm = item as UserInfoViewModel
+                this.vm = viewModel
+                this.profile = item as Profile
                 this.position = pos
             }
         }

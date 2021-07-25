@@ -3,12 +3,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <variable
+            name="history"
+            type="com.lakue.oburie.model.history.History" />
+        <variable
+            name="vm"
+            type="com.lakue.oburie.ui.joboffer.mine.MyJobOfferViewModel" />
+    </data>
     <LinearLayout
+        android:layout_marginTop="16dp"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <TextView
+            android:text="@{history.state}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/applesdgothicneoeb"
@@ -31,6 +41,7 @@
                 android:padding="16dp">
 
                 <TextView
+                    android:text="@{history.jobOffer.title}"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/applesdgothicneoeb"
@@ -39,6 +50,7 @@
                     tools:text="oo웨딩홀 축가 급구해요!!" />
 
                 <TextView
+                    android:text="@{history.jobOffer.content}"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
@@ -65,13 +77,14 @@
                         app:tint="@color/color_dark_ffffff_000000" />
 
                     <TextView
+                        android:text="@{history.jobOffer.startDate}"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"
                         android:layout_marginRight="50dp"
                         android:fontFamily="@font/applesdgothicneob"
                         android:textColor="@color/gray_999"
-                        android:textSize="11dp"
+                        android:textSize="12dp"
                         tools:text="2020.01.17" />
 
                     <ImageView
@@ -81,23 +94,26 @@
                         app:tint="@color/color_dark_ffffff_000000" />
 
                     <TextView
+                        android:text="@{history.jobOffer.location}"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"
                         android:fontFamily="@font/applesdgothicneob"
                         android:textColor="@color/gray_999"
-                        android:textSize="11dp"
+                        android:textSize="12dp"
                         tools:text="서울 영등포구" />
 
                 </LinearLayout>
 
                 <TextView
+                    toMin="@{history.jobOffer.minAmount}"
+                    fromMax="@{history.jobOffer.maxAmount}"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
                     android:fontFamily="@font/applesdgothicneob"
                     android:textColor="@color/point_1000"
-                    android:textSize="11dp"
+                    android:textSize="12dp"
                     tools:text="0원 ~ 100,000원" />
 
                 <LinearLayout
@@ -112,14 +128,15 @@
                         android:fontFamily="@font/applesdgothicneob"
                         android:text="주공연자 : "
                         android:textColor="@color/gray_999"
-                        android:textSize="11dp" />
+                        android:textSize="12dp" />
 
                     <TextView
+                        android:text="@{history.jobOffer.mainPerFormer}"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/applesdgothicneob"
                         android:textColor="@color/gray_999"
-                        android:textSize="11dp"
+                        android:textSize="12dp"
                         tools:text="라꾸" />
 
                 </LinearLayout>
@@ -136,14 +153,15 @@
                         android:fontFamily="@font/applesdgothicneob"
                         android:text="부공연자 : "
                         android:textColor="@color/gray_999"
-                        android:textSize="11dp" />
+                        android:textSize="12dp" />
 
                     <TextView
+                        android:text="@{history.jobOffer.supportPerFormer}"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/applesdgothicneob"
                         android:textColor="@color/gray_999"
-                        android:textSize="11dp"
+                        android:textSize="12dp"
                         tools:text="라꾸" />
 
                 </LinearLayout>
@@ -160,14 +178,15 @@
                         android:fontFamily="@font/applesdgothicneob"
                         android:text="작성일자 : "
                         android:textColor="@color/gray_999"
-                        android:textSize="11dp" />
+                        android:textSize="12dp" />
 
                     <TextView
+                        android:text="@{history.jobOffer.createDate}"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/applesdgothicneob"
                         android:textColor="@color/gray_999"
-                        android:textSize="11dp"
+                        android:textSize="12dp"
                         tools:text="20.03.11 17:35" />
 
                 </LinearLayout>
@@ -193,7 +212,7 @@
                         android:fontFamily="@font/applesdgothicneol"
                         android:text="끌어올리기"
                         android:textColor="@color/point_1000"
-                        android:textSize="11dp" />
+                        android:textSize="13dp" />
 
 
                     <TextView
@@ -211,7 +230,7 @@
                         android:fontFamily="@font/applesdgothicneol"
                         android:text="수정"
                         android:textColor="@color/point_1000"
-                        android:textSize="11dp" />
+                        android:textSize="13dp" />
 
 
                     <TextView
@@ -227,7 +246,7 @@
                         android:fontFamily="@font/applesdgothicneol"
                         android:text="삭제"
                         android:textColor="@color/point_1000"
-                        android:textSize="11dp" />
+                        android:textSize="13dp" />
 
                 </LinearLayout>
 

@@ -7,6 +7,8 @@ import android.os.Bundle
 import com.lakue.oburie.R
 import com.lakue.oburie.base.BaseActivity
 import com.lakue.oburie.databinding.ActivityOburieHistoryBinding
+import com.lakue.oburie.model.history.History
+import com.lakue.oburie.test.testHistory
 import com.lakue.oburie.ui.history.detail.OburieHistoryDetailActivity.Companion.startOburieHistoryDetailActivity
 import com.lakue.oburie.ui.jobhunter.location.SelectLocationActivity
 import com.lakue.oburie.ui.review.write.WriteReviewActivity.Companion.startWriteReviewActivity
@@ -18,6 +20,8 @@ import dagger.hilt.android.AndroidEntryPoint
 class OburieHistoryActivity : BaseActivity<ActivityOburieHistoryBinding, OburieHistoryViewModel>(R.layout.activity_oburie_history) {
 
     lateinit var historyAdapter: OburieHistoryAdapter
+
+    val testHis = testHistory
 
     companion object {
         fun startOburieHistoryActivity(
@@ -49,12 +53,7 @@ class OburieHistoryActivity : BaseActivity<ActivityOburieHistoryBinding, OburieH
     }
 
     override fun setUI() {
-        historyAdapter.addItem(1)
-        historyAdapter.addItem(1)
-        historyAdapter.addItem(1)
-        historyAdapter.addItem(1)
-        historyAdapter.addItem(1)
-        historyAdapter.addItem(1)
+        historyAdapter.addItem(testHis)
     }
 
     override fun setEvent() {

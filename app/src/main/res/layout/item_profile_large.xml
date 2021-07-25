@@ -9,12 +9,21 @@
         <variable
             name="vm"
             type="com.lakue.oburie.ui.userprofile.info.UserInfoViewModel" />
+        <variable
+            name="profile"
+            type="com.lakue.oburie.model.Profile" />
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
-        <ImageView
+        <com.lakue.oburie.custom.RoundedImageView
+            android:onClick="@{() -> vm.onProfile()}"
+            app:rectRadius="4dp"
+            android:scaleType="centerCrop"
+            image_url="@{profile.coverImgs.get(0)}"
             app:layout_constraintDimensionRatio="H,3:2"
             android:layout_width="match_parent"
             android:layout_height="0dp"

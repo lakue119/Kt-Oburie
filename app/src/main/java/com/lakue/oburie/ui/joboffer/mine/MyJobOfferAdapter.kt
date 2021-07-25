@@ -11,6 +11,7 @@ import com.lakue.oburie.databinding.ItemCategoryResultSmallBinding
 import com.lakue.oburie.databinding.ItemMyJobOfferBinding
 import com.lakue.oburie.databinding.ItemMyJobOfferTextBinding
 import com.lakue.oburie.model.Profile
+import com.lakue.oburie.model.history.History
 import com.lakue.oburie.ui.expert.ExpertViewModel
 
 class MyJobOfferAdapter(private val viewModel: MyJobOfferViewModel) : BaseAdapter() {
@@ -18,9 +19,9 @@ class MyJobOfferAdapter(private val viewModel: MyJobOfferViewModel) : BaseAdapte
     private val TYPE_TEXT = 1001
     private val TYPE_POST = 1002
 
-    val myItems = ArrayList<Profile>()
+    val myItems = ArrayList<History>()
 
-    fun addItem(item: ArrayList<Profile>){
+    fun addItem(item: ArrayList<History>){
         myItems.addAll(item)
         notifyDataSetChanged()
     }
@@ -80,9 +81,8 @@ class MyJobOfferAdapter(private val viewModel: MyJobOfferViewModel) : BaseAdapte
     inner class MyJobOfferViewHolder(private val binding: ItemMyJobOfferBinding) : BaseViewHolder(binding.root) {
         override fun onBind(item: Any, pos: Int) {
             binding.apply {
-//                this.vm = viewModel
-//                this.profile = item as Profile
-//                this.position = pos
+                this.vm = viewModel
+                this.history = item as History
             }
         }
     }

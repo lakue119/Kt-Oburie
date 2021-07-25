@@ -105,3 +105,49 @@ fun TextView.checkSelect(gender: String){
 }
 
 
+@BindingAdapter("stateVisible")
+fun TextView.stateVisible(state: String){
+    when(state){
+        "거래중" -> {
+            visibility = if(text == "거래 취소" || text == "거래 확정" || text == "상세보기"){
+                View.VISIBLE
+            } else {
+                View.GONE
+            }
+        }
+        "거래 취소" -> {
+            visibility = if(text == "상대페이지" || text == "상세보기"){
+                View.VISIBLE
+            } else {
+                View.GONE
+            }
+        }
+        "거래 완료" -> {
+            visibility = if(text == "리뷰남기기" || text == "상대페이지" || text == "상세보기"){
+                View.VISIBLE
+            } else {
+                View.GONE
+            }
+        }
+    }
+}
+
+@BindingAdapter("stateText")
+fun TextView.stateText(state: String){
+    when(state){
+        "거래중" -> {
+            text = "거래 취소는 최소 공연 3일전에 취소하실 수 있습니다."
+        }
+        "거래 취소" -> {
+            visibility = View.GONE
+        }
+        "거래 완료" -> {
+            text = "리뷴는 공연 종료 후 7일 이내 작성하실 수 있습니다."
+        }
+    }
+}
+
+@BindingAdapter("toMin", "fromMax")
+fun TextView.convertMinMax(min: Int, max: Int){
+    text = "${ConvertNumberFormat.numberFormat(min, "원")} ~ ${ConvertNumberFormat.numberFormat(max, "원")}"
+}

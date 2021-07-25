@@ -27,6 +27,9 @@ class ConversationViewModel @Inject constructor(
     private val _detainEvent = MutableLiveData<Event<Conversation>>()
     val detainEvent: LiveData<Event<Conversation>> = _detainEvent
 
+    private val _userProfileDetailEvent = MutableLiveData<Event<String>>()
+    val userProfileDetailEvent: LiveData<Event<String>> = _userProfileDetailEvent
+
     var conversationAdapter: ConversationAdapter = ConversationAdapter(this)
 
     init {
@@ -46,6 +49,10 @@ class ConversationViewModel @Inject constructor(
 
     fun onDetailEvent(item: Conversation){
         _detainEvent.value = Event(item)
+    }
+
+    fun onProfileDetail(){
+        _userProfileDetailEvent.value = Event("")
     }
 
 }

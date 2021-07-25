@@ -20,6 +20,7 @@
         <variable
             name="position"
             type="Integer" />
+
     </data>
 
     <com.google.android.material.card.MaterialCardView
@@ -31,7 +32,6 @@
         app:cardCornerRadius="7dp"
         app:cardElevation="0dp">
 
-
         <LinearLayout
             android:gravity="center"
             android:orientation="horizontal"
@@ -39,7 +39,7 @@
             android:layout_height="wrap_content">
 
             <com.lakue.oburie.custom.RoundedImageView
-                image_url="@{profile.userInfo.userProfileImg}"
+                image_url="@{profile.coverImgs.get(0)}"
                 android:scaleType="centerCrop"
                 app:rectRadius="5dp"
                 android:layout_width="100dp"

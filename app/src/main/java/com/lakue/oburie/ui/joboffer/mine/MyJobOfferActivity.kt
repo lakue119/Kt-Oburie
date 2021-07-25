@@ -7,13 +7,18 @@ import android.os.Bundle
 import com.lakue.oburie.R
 import com.lakue.oburie.base.BaseActivity
 import com.lakue.oburie.databinding.ActivityMyJobOfferBinding
+import com.lakue.oburie.model.history.History
 import com.lakue.oburie.test.testCategoryResultProfile
+import com.lakue.oburie.test.testHistory
+import com.lakue.oburie.test.testMyJobOfferSample
 import com.lakue.oburie.ui.jobhunter.list.JobHunterAdapter
 import com.lakue.oburie.ui.jobhunter.list.JobhunterActivity
 
 class MyJobOfferActivity : BaseActivity<ActivityMyJobOfferBinding, MyJobOfferViewModel>(R.layout.activity_my_job_offer) {
 
     lateinit var myJobOfferAdapter: MyJobOfferAdapter
+
+    val testMyJobOffer = testMyJobOfferSample
 
     companion object {
         fun startMyJobOfferActivity(
@@ -34,9 +39,8 @@ class MyJobOfferActivity : BaseActivity<ActivityMyJobOfferBinding, MyJobOfferVie
     }
 
     fun setData(){
-        var sampleList = testCategoryResultProfile
-
-        myJobOfferAdapter.addItem(sampleList)
+        myJobOfferAdapter.addItem(arrayListOf(History()))
+        myJobOfferAdapter.addItem(testMyJobOffer)
     }
 
     override fun setUI() {

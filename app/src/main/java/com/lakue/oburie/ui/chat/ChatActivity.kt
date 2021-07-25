@@ -18,6 +18,8 @@ import com.lakue.oburie.base.BaseActivity
 import com.lakue.oburie.databinding.ActivityChatBinding
 import com.lakue.oburie.listener.OnEmptyBackgroundClickListener
 import com.lakue.oburie.ui.chat.appointment.AppointmentActivity.Companion.startAppointmentActivity
+import com.lakue.oburie.ui.userprofile.info.UserInfoActivity
+import com.lakue.oburie.ui.userprofile.info.UserInfoActivity.Companion.startUserInfoActivity
 import com.lakue.oburie.utils.camera.CameraUtil
 import com.lakue.oburie.utils.camera.OnShowCameraListener
 import com.lakue.oburie.utils.camera.OnShowGalleryListener
@@ -72,6 +74,9 @@ class ChatActivity : BaseActivity<ActivityChatBinding, ChatViewModel>(R.layout.a
             headTitle = "'라꾸'님과의 대화"
             val params = LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 860)
             llContainer.layoutParams = params
+        }
+        viewModel.apply{
+            userProfileDetailEvent eventObserve {showUserProfileDetail()}
         }
         cameraUtil = CameraUtil(this)
         isEditTextTouchHide = false
@@ -211,6 +216,10 @@ class ChatActivity : BaseActivity<ActivityChatBinding, ChatViewModel>(R.layout.a
 
     fun showAppointment(){
         startAppointmentActivity(this@ChatActivity)
+    }
+
+    private fun showUserProfileDetail() {
+        startUserInfoActivity(this@ChatActivity)
     }
 
     override fun onBackPressed() {

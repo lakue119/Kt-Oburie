@@ -31,6 +31,7 @@
             android:layout_height="wrap_content">
 
             <com.lakue.oburie.custom.RoundedImageView
+                android:onClick="@{() -> vm.onProfileDetail()}"
                 image_url="@{vm.conversation.get(pos).profileImg}"
                 android:layout_gravity="center"
                 android:scaleType="centerCrop"

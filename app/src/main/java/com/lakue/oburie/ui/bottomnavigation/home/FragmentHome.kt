@@ -4,6 +4,7 @@ import com.lakue.oburie.R
 import com.lakue.oburie.base.BaseFragment
 import com.lakue.oburie.databinding.FragmentHomeBinding
 import com.lakue.oburie.ui.jobhunter.list.JobhunterActivity.Companion.startCategoryResultActivity
+import com.lakue.oburie.ui.myresume.upload.ResumeUploadActivity.Companion.startResumeUploadActivity
 import com.lakue.oburie.ui.search.SearchActivity.Companion.startSearchActivity
 import com.lakue.oburie.ui.userprofile.UserProfileActivity.Companion.startUserProfileActivity
 import dagger.hilt.android.AndroidEntryPoint
@@ -60,7 +61,7 @@ class FragmentHome : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout.f
     }
 
     fun showSettingProfile(){
-
+        startResumeUploadActivity(mContext)
     }
 
     fun showMonthPopularPeople(){

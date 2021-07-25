@@ -16,4 +16,10 @@ class UserInfoViewModel @Inject constructor(
 //    private val profileRepository: ProfileRepository
 ) : BaseViewModel()  {
 
+    private val _profileDetailEvent = MutableLiveData<Event<String>>()
+    val profileDetailEvent: LiveData<Event<String>> = _profileDetailEvent
+
+    fun onProfile(){
+        _profileDetailEvent.value = Event("")
+    }
 }

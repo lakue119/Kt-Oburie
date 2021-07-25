@@ -53,6 +53,7 @@
                 android:layout_height="wrap_content">
 
                 <com.lakue.oburie.custom.RoundedImageView
+                    android:onClick="@{() -> vm.onProfileDetail()}"
                     app:rectRadius="7dp"
                     android:scaleType="centerCrop"
                     image_url="@{vm.jobOffer.get(pos).user.userProfileImg}"

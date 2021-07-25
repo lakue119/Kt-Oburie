@@ -11,10 +11,12 @@ import com.lakue.oburie.databinding.FragmentConversationBinding
 import com.lakue.oburie.databinding.FragmentHomeBinding
 import com.lakue.oburie.ui.bottomnavigation.home.HomeViewModel
 import com.lakue.oburie.ui.chat.ChatActivity.Companion.startChatActivity
+import com.lakue.oburie.ui.userprofile.info.UserInfoActivity.Companion.startUserInfoActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class FragmentConversation : BaseFragment<FragmentConversationBinding, ConversationViewModel>(R.layout.fragment_conversation) {
+class FragmentConversation :
+    BaseFragment<FragmentConversationBinding, ConversationViewModel>(R.layout.fragment_conversation) {
 
     companion object {
         @JvmStatic
@@ -26,8 +28,9 @@ class FragmentConversation : BaseFragment<FragmentConversationBinding, Conversat
         binding.apply {
             vm = viewModel
         }
-        viewModel.apply{
-            detainEvent eventObserve {showChatDetail()}
+        viewModel.apply {
+            detainEvent eventObserve { showChatDetail() }
+            userProfileDetailEvent eventObserve { showUserProfileDetail() }
         }
     }
 
@@ -40,8 +43,12 @@ class FragmentConversation : BaseFragment<FragmentConversationBinding, Conversat
     override fun setObserve() {
     }
 
-    fun showChatDetail(){
+    private fun showChatDetail() {
         startChatActivity(mContext)
+    }
+
+    private fun showUserProfileDetail() {
+        startUserInfoActivity(mContext)
     }
 }
 

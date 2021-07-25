@@ -28,7 +28,7 @@
             android:layout_height="wrap_content">
 
             <ImageView
-                image_url="@{profile.userInfo.userProfileImg}"
+                image_url="@{profile.coverImgs.get(0)}"
                 android:layout_width="288dp"
                 android:layout_height="172dp"
                 android:scaleType="centerCrop"

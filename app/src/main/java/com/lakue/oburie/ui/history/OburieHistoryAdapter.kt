@@ -9,13 +9,15 @@ import com.lakue.oburie.base.BaseViewHolder
 import com.lakue.oburie.databinding.ItemCategoryResultLargeBinding
 import com.lakue.oburie.databinding.ItemCategoryResultSmallBinding
 import com.lakue.oburie.databinding.ItemOburieHistoryBinding
+import com.lakue.oburie.model.history.History
 
 class OburieHistoryAdapter(val viewModel: OburieHistoryViewModel) : BaseAdapter() {
 
-    val myItems = ArrayList<Any>()
+    val myItems = ArrayList<History>()
 
-    fun addItem(item: Any){
-        myItems.add(item)
+    fun addItem(item: ArrayList<History>){
+        myItems.addAll(item)
+        notifyDataSetChanged()
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder {
         DataBindingUtil.inflate<ItemOburieHistoryBinding>(
@@ -41,6 +43,7 @@ class OburieHistoryAdapter(val viewModel: OburieHistoryViewModel) : BaseAdapter(
         override fun onBind(item: Any, pos: Int) {
             binding.apply {
                 vm = viewModel
+                history = item as History
             }
         }
     }

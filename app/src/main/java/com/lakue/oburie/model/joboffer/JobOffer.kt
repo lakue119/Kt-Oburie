@@ -18,5 +18,8 @@ data class JobOffer(
         val isSupportTransportation: Boolean = false,
         val needTime: String = "",
         val lat: Double = 0.0,
-        val lnt: Double = 0.0
+        val lnt: Double = 0.0,
+        val mainPerFormer: String = "",
+        val supportPerFormer: String = "",
+        val createDate: String = ""
 )

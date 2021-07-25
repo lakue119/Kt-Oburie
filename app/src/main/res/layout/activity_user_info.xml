@@ -16,6 +16,10 @@
             name="vm"
             type="com.lakue.oburie.ui.userprofile.info.UserInfoViewModel" />
 
+        <variable
+            name="info"
+            type="com.lakue.oburie.model.UserInfo" />
+
     </data>
 
     <LinearLayout
@@ -50,6 +54,7 @@
                     android:layout_height="wrap_content">
 
                     <com.lakue.oburie.custom.RoundedImageView
+                        image_url="@{info.userProfileImg}"
                         app:rectRadius="8dp"
                         android:adjustViewBounds="true"
                         android:src="@drawable/default_icon"
@@ -69,26 +74,29 @@
                             android:layout_height="wrap_content">
 
                             <TextView
+                                android:text="@{info.nickName}"
                                 android:layout_weight="1"
                                 android:fontFamily="@font/applesdgothicneob"
                                 android:textSize="15dp"
                                 android:textColor="@color/color_dark_ffffff_000000"
-                                android:text="라꾸"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"/>
 
                             <ImageView
+                                android:onClick="@{() -> activity.showFaceBook(info.facebook)}"
                                 android:src="@drawable/ic_facebook"
                                 android:layout_width="20dp"
                                 android:layout_height="20dp"/>
 
                             <ImageView
+                                android:onClick="@{() -> activity.showInstagram(info.instagram)}"
                                 android:layout_marginLeft="4dp"
                                 android:src="@drawable/ic_insta"
                                 android:layout_width="22dp"
                                 android:layout_height="22dp"/>
 
                             <ImageView
+                                android:onClick="@{() -> activity.showYoutube(info.youtube)}"
                                 android:layout_marginLeft="4dp"
                                 android:src="@drawable/ic_youtube"
                                 android:layout_width="24dp"
@@ -97,11 +105,11 @@
                         </LinearLayout>
 
                         <TextView
+                            android:text="@{info.introduct}"
                             android:layout_marginTop="12dp"
                             android:fontFamily="@font/applesdgothicneol"
                             android:textSize="14dp"
                             android:textColor="@color/color_dark_ffffff_000000"
-                            android:text="게시글 수정은 글 작성일로부터 일주일 이내로 수정이 가능합니다.\n \n 게시글 삭제는 현재 거래 진행중인 상태일 경우 수정, 삭제가 불가능합니다."
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"/>
 

@@ -22,6 +22,7 @@
         android:layout_height="wrap_content">
 
         <com.lakue.oburie.custom.RoundedImageView
+            android:onClick="@{() -> vm.onProfileDetail()}"
             chatState="@{vm.chatData.get(position).dateState}"
             chatType="@{'3'}"
             android:layout_gravity="center"

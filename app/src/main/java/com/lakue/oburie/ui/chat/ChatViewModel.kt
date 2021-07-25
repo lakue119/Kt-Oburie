@@ -9,6 +9,7 @@ import com.lakue.oburie.test.*
 import com.lakue.oburie.ui.jobhunter.location.SelectLocationActivity
 import com.lakue.oburie.ui.userprofile.UserProfileActivity
 import com.lakue.oburie.utils.BaseUtils
+import com.lakue.oburie.utils.Event
 import javax.inject.Inject
 
 class ChatViewModel @Inject constructor(
@@ -20,6 +21,9 @@ class ChatViewModel @Inject constructor(
     val chatData: LiveData<ArrayList<Chatting>> = _chatData
 
     val chatEdit = MutableLiveData<String>("")
+
+    private val _userProfileDetailEvent = MutableLiveData<Event<String>>()
+    val userProfileDetailEvent: LiveData<Event<String>> = _userProfileDetailEvent
 
     var chatAdapter: ChatAdapter = ChatAdapter(this)
 
@@ -37,6 +41,10 @@ class ChatViewModel @Inject constructor(
         _chatData.value = chatArray
 
         chatAdapter.setCount(_chatData.value!!.size)
+    }
+
+    fun onProfileDetail(){
+        _userProfileDetailEvent.value = Event("")
     }
 
     fun showSelectLocation() {
