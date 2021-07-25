@@ -9,6 +9,7 @@ import com.lakue.oburie.R
 import com.lakue.oburie.base.BaseFragment
 import com.lakue.oburie.databinding.FragmentJobOfferBinding
 import com.lakue.oburie.databinding.FragmentMypageBinding
+import com.lakue.oburie.ui.app.setting.AppSettingActivity.Companion.startAppSettingActivity
 import com.lakue.oburie.ui.bottomnavigation.joboffer.JobOfferViewModel
 import com.lakue.oburie.ui.expert.like.LikeExpertActivity.Companion.startLikeExpertActivity
 import com.lakue.oburie.ui.history.OburieHistoryActivity.Companion.startOburieHistoryActivity
@@ -84,7 +85,7 @@ class FragmentMypage  : BaseFragment<FragmentMypageBinding, MypageViewModel>(R.l
     }
 
     fun showAppSetting(){
-
+        startAppSettingActivity(mContext)
     }
 
     fun showGuide(){

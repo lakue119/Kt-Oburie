@@ -23,6 +23,8 @@ class UserProfileViewModel @Inject constructor(
     private val _youtubeDetailEvent = MutableLiveData<Event<String>>()
     val youtubeDetailEvent: LiveData<Event<String>> = _youtubeDetailEvent
 
+    private val _profileDetailEvent = MutableLiveData<Event<String>>()
+    val profileDetailEvent: LiveData<Event<String>> = _profileDetailEvent
 
     var profileVideoAdapter: UserProfileVideoAdapter = UserProfileVideoAdapter(this)
     var profileCoverAdapter: UserProfileCoverImgAdapter = UserProfileCoverImgAdapter(this)
@@ -40,5 +42,9 @@ class UserProfileViewModel @Inject constructor(
         val data = _profileData.value!!
         data.isLike = !data.isLike
         _profileData.postValue(data)
+    }
+
+    fun onProfileDetail(){
+        _profileDetailEvent.value = Event("")
     }
 }

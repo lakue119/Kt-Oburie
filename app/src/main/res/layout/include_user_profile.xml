@@ -86,6 +86,7 @@
                 android:layout_height="wrap_content">
 
                 <com.lakue.oburie.custom.RoundedImageView
+                    android:onClick="@{() -> vm.onProfileDetail()}"
                     image_url="@{vm.profileData.userInfo.userProfileImg}"
                     app:rectRadius="50dp"
                     android:src="@drawable/default_icon"

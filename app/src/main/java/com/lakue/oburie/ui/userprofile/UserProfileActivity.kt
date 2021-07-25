@@ -10,6 +10,7 @@ import com.lakue.oburie.base.BaseActivity
 import com.lakue.oburie.databinding.ActivityUserProfileBinding
 import com.lakue.oburie.ui.chat.ChatActivity.Companion.startChatActivity
 import com.lakue.oburie.ui.review.list.ReviewListActivity.Companion.startReviewListActivity
+import com.lakue.oburie.ui.userprofile.info.UserInfoActivity.Companion.startUserInfoActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 
@@ -33,6 +34,7 @@ class UserProfileActivity : BaseActivity<ActivityUserProfileBinding, UserProfile
 
         viewModel.apply {
             youtubeDetailEvent eventObserve {showYoutube(it)}
+            profileDetailEvent eventObserve {showProfileDetail()}
         }
     }
 
@@ -94,5 +96,9 @@ class UserProfileActivity : BaseActivity<ActivityUserProfileBinding, UserProfile
                 )
             )
         }
+    }
+
+    fun showProfileDetail(){
+        startUserInfoActivity(this@UserProfileActivity)
     }
 }

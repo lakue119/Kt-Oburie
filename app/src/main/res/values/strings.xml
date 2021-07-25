@@ -58,6 +58,7 @@
     <string name="upload_resume_introduce_title">소개</string>
     <string name="upload_resume_introduce">당신을 섭외해야 하는 이유 3가지, 진행방식 등</string>
     <string name="upload_resume_introduce_hint">예) 성격, 장점, 진행방식 등</string>
+    <string name="my_job_offer_text">게시글 수정은 글 작성일로부터 일주일 이내로 수정이 가능합니다.\n \n 게시글 삭제는 현재 거래 진행중인 상태일 경우 수정, 삭제가 불가능합니다.\n \n 끌어올리긴느 글 하나당 한번씩만 가능합니다.\n \n * 부공연자구할때 해당)\n 취소하고 거래완료처리버튼 : 부공연자를 구할 필요성을 느끼지 못했을 때 미리 거래를 완료처리하는 버튼입니다.</string>
 
     <string name="ob_history">오부리 내역</string>
     <string name="user_page">상대페이지</string>
@@ -65,5 +66,5 @@
     <string name="like_expert">찜한 전문가</string>
     <string name="my_jobhunter">나의 게시물</string>
     <string name="user_info_setting">유저정보 수정</string>
-    <string name="my_job_offer_text">게시글 수정은 글 작성일로부터 일주일 이내로 수정이 가능합니다.\n \n 게시글 삭제는 현재 거래 진행중인 상태일 경우 수정, 삭제가 불가능합니다.\n \n 끌어올리긴느 글 하나당 한번씩만 가능합니다.\n \n * 부공연자구할때 해당)\n 취소하고 거래완료처리버튼 : 부공연자를 구할 필요성을 느끼지 못했을 때 미리 거래를 완료처리하는 버튼입니다.</string>
+    <string name="setting">설정</string>
 </resources>

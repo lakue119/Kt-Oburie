@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="headerTitle"
+            type="String" />
+
+        <variable
+            name="activity"
+            type="com.lakue.oburie.ui.userprofile.info.UserInfoActivity" />
+
+        <variable
+            name="vm"
+            type="com.lakue.oburie.ui.userprofile.info.UserInfoViewModel" />
+
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/include"
+            app:headTitle="@{headerTitle}"
+            layout="@layout/include_header"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:paddingTop="20dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:paddingBottom="24dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.lakue.oburie.custom.RoundedImageView
+                        app:rectRadius="8dp"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/default_icon"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"/>
+
+                    <LinearLayout
+                        android:layout_marginLeft="16dp"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_weight="1"
+                                android:fontFamily="@font/applesdgothicneob"
+                                android:textSize="15dp"
+                                android:textColor="@color/color_dark_ffffff_000000"
+                                android:text="라꾸"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+
+                            <ImageView
+                                android:src="@drawable/ic_facebook"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"/>
+
+                            <ImageView
+                                android:layout_marginLeft="4dp"
+                                android:src="@drawable/ic_insta"
+                                android:layout_width="22dp"
+                                android:layout_height="22dp"/>
+
+                            <ImageView
+                                android:layout_marginLeft="4dp"
+                                android:src="@drawable/ic_youtube"
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"/>
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_marginTop="12dp"
+                            android:fontFamily="@font/applesdgothicneol"
+                            android:textSize="14dp"
+                            android:textColor="@color/color_dark_ffffff_000000"
+                            android:text="게시글 수정은 글 작성일로부터 일주일 이내로 수정이 가능합니다.\n \n 게시글 삭제는 현재 거래 진행중인 상태일 경우 수정, 삭제가 불가능합니다."
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginTop="24dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:textColor="@color/color_dark_ffffff_000000"
+                            android:fontFamily="@font/applesdgothicneob"
+                            android:textSize="17dp"
+                            android:text="등급"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:layout_marginTop="8dp"
+                            android:textColor="@color/point_1000"
+                            android:fontFamily="@font/applesdgothicneob"
+                            android:textSize="18dp"
+                            android:text="PLATINUM"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:background="@color/gray_d"
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"/>
+
+                    <LinearLayout
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:textColor="@color/color_dark_ffffff_000000"
+                            android:fontFamily="@font/applesdgothicneob"
+                            android:textSize="17dp"
+                            android:text="거래완료"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:layout_marginTop="8dp"
+                            android:textColor="@color/point_1000"
+                            android:fontFamily="@font/applesdgothicneob"
+                            android:textSize="18dp"
+                            android:text="1건"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+                <TextView
+                    android:layout_marginTop="40dp"
+                    android:textColor="@color/color_dark_ffffff_000000"
+                    android:fontFamily="@font/applesdgothicneob"
+                    android:textSize="17dp"
+                    android:text="라꾸님의 프로필"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <com.lakue.oburie.view.ObRecyclerView
+                    android:layout_marginTop="8dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    setAdapter="@{activity.userInfoProfileAdapter}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </LinearLayout>
+
+</layout>

@@ -303,7 +303,7 @@
                         </LinearLayout>
 
                         <LinearLayout
-                            android:onClick="@{() -> fragment.showNotice()}"
+                            android:onClick="@{() -> fragment.showGuide()}"
                             android:paddingTop="8dp"
                             android:paddingBottom="8dp"
                             android:foreground="@drawable/ripple_action"
@@ -315,7 +315,7 @@
                             android:layout_height="wrap_content">
 
                             <ImageView
-                                android:src="@drawable/ic_notice"
+                                android:src="@drawable/ic_guide"
                                 android:layout_width="30dp"
                                 android:layout_height="30dp"/>
 
@@ -324,14 +324,15 @@
                                 android:textColor="@color/color_dark_ffffff_000000"
                                 android:fontFamily="@font/applesdgothicneol"
                                 android:textSize="12dp"
-                                android:text="공지사항"
+                                android:text="사용설명서"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"/>
 
                         </LinearLayout>
+
 
                         <LinearLayout
-                            android:onClick="@{() -> fragment.showFAQ()}"
+                            android:onClick="@{() -> fragment.showOburieCenter()}"
                             android:paddingTop="8dp"
                             android:paddingBottom="8dp"
                             android:foreground="@drawable/ripple_action"
@@ -343,7 +344,7 @@
                             android:layout_height="wrap_content">
 
                             <ImageView
-                                android:src="@drawable/ic_faq"
+                                android:src="@drawable/ic_bell"
                                 android:layout_width="30dp"
                                 android:layout_height="30dp"/>
 
@@ -352,11 +353,12 @@
                                 android:textColor="@color/color_dark_ffffff_000000"
                                 android:fontFamily="@font/applesdgothicneol"
                                 android:textSize="12dp"
-                                android:text="FAQ"
+                                android:text="알림"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"/>
 
                         </LinearLayout>
+
 
                         <LinearLayout
                             android:onClick="@{() -> fragment.showShare()}"
@@ -452,8 +454,10 @@
 
                         </LinearLayout>
 
+
                         <LinearLayout
-                            android:onClick="@{() -> fragment.showGuide()}"
+                            android:visibility="invisible"
+                            android:onClick="@{() -> fragment.showNotice()}"
                             android:paddingTop="8dp"
                             android:paddingBottom="8dp"
                             android:foreground="@drawable/ripple_action"
@@ -465,7 +469,7 @@
                             android:layout_height="wrap_content">
 
                             <ImageView
-                                android:src="@drawable/ic_guide"
+                                android:src="@drawable/ic_notice"
                                 android:layout_width="30dp"
                                 android:layout_height="30dp"/>
 
@@ -474,14 +478,16 @@
                                 android:textColor="@color/color_dark_ffffff_000000"
                                 android:fontFamily="@font/applesdgothicneol"
                                 android:textSize="12dp"
-                                android:text="사용설명서"
+                                android:text="공지사항"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"/>
 
                         </LinearLayout>
 
+
                         <LinearLayout
-                            android:onClick="@{() -> fragment.showOburieCenter()}"
+                            android:visibility="invisible"
+                            android:onClick="@{() -> fragment.showFAQ()}"
                             android:paddingTop="8dp"
                             android:paddingBottom="8dp"
                             android:foreground="@drawable/ripple_action"
@@ -493,8 +499,7 @@
                             android:layout_height="wrap_content">
 
                             <ImageView
-                                app:tint="@color/color_dark_ffffff_000000"
-                                android:src="@drawable/ic_cnter"
+                                android:src="@drawable/ic_faq"
                                 android:layout_width="30dp"
                                 android:layout_height="30dp"/>
 
@@ -503,7 +508,7 @@
                                 android:textColor="@color/color_dark_ffffff_000000"
                                 android:fontFamily="@font/applesdgothicneol"
                                 android:textSize="12dp"
-                                android:text="고객센터"
+                                android:text="FAQ"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"/>
 
