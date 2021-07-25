@@ -22,7 +22,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Oburie">
-        <activity android:name=".ui.userinfo.UserInfoSettingActivity"></activity>
+        <activity android:name=".ui.app.setting.AppSettingActivity"></activity>
+        <activity android:name=".ui.userinfo.UserInfoSettingActivity" />
         <activity android:name=".ui.joboffer.mine.MyJobOfferActivity" />
         <activity android:name=".ui.expert.like.LikeExpertActivity" />
         <activity android:name=".ui.review.write.WriteReviewActivity" />
