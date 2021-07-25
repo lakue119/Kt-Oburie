@@ -40,7 +40,7 @@
                 <com.lakue.oburie.custom.RoundedImageView
                     android:scaleType="centerCrop"
                     app:rectRadius="8dp"
-                    android:src="@color/black"
+                    android:src="@drawable/default_icon"
                     android:layout_width="100dp"
                     android:layout_height="100dp"/>
 

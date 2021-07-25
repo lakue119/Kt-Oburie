@@ -74,7 +74,7 @@
                     image_url="@{vm.review.userimg}"
                     android:scaleType="centerCrop"
                     app:rectRadius="50dp"
-                    android:src="@color/black"
+                    android:src="@drawable/default_icon"
                     android:layout_width="48dp"
                     android:layout_height="48dp"/>
 

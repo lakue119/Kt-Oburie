@@ -322,6 +322,48 @@ val testNewProfile = arrayListOf(
                         Videos(0, "https://www.youtube.com/watch?v=HUeLK-RQBjU", "https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg")),
                 "보컬/축가,교회, 모든행사 다뜁니다!!\n" +
                         "잘생김에 보컬까지~"
+        ),
+        Profile(
+                "PLATINUM",
+                "가야금",
+                "대전,서울,천안",
+                4.0f, 4.0f, 4.0f, 4.0f, 38,
+                arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
+                UserInfo(
+                        "저돌적인피망",
+                        "https://img1.daumcdn.net/thumb/S272x320/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FqaGuY%2FbtqD9NO22oT%2FzufXfuCiVc9M0X7bf9xDCK%2Fimg.png",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                ), 100, "안녕하세용~~", "경력", "수상내역",
+                arrayListOf(
+                        Videos(0, "https://www.youtube.com/watch?v=HUeLK-RQBjU", "https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg")),
+                "보컬/축가,교회, 모든행사 다뜁니다!!\n" +
+                        "잘생김에 보컬까지~"
+        ),
+        Profile(
+                "PLATINUM",
+                "가야금",
+                "대전,서울,천안",
+                4.0f, 4.0f, 4.0f, 4.0f, 38,
+                arrayListOf("https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg"),
+                UserInfo(
+                        "저돌적인피망",
+                        "https://img1.daumcdn.net/thumb/S272x320/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FqaGuY%2FbtqD9NO22oT%2FzufXfuCiVc9M0X7bf9xDCK%2Fimg.png",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                ), 100, "안녕하세용~~", "경력", "수상내역",
+                arrayListOf(
+                        Videos(0, "https://www.youtube.com/watch?v=HUeLK-RQBjU", "https://cdn.imweb.me/upload/S20170720597014723fac6/5989c7725e109.jpg")),
+                "보컬/축가,교회, 모든행사 다뜁니다!!\n" +
+                        "잘생김에 보컬까지~"
         )
 )
 

@@ -55,6 +55,7 @@
                 <TextView
                     tool:text="aklwjetklawejtkl"
                     android:maxLines="1"
+                    android:ellipsize="end"
                     android:text="@{profile.introduce}"
                     android:id="@+id/textView4"
                     android:layout_width="wrap_content"
@@ -166,6 +167,7 @@
 
                 <TextView
                     android:maxLines="2"
+                    android:ellipsize="end"
                     android:layout_marginTop="4dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

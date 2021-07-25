@@ -51,7 +51,8 @@
                     <com.lakue.oburie.custom.RoundedImageView
                         android:layout_gravity="center"
                         app:rectRadius="50dp"
-                        android:src="@color/color_dark_ffffff_000000"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/default_icon"
                         android:layout_width="80dp"
                         android:layout_height="80dp"/>
 
@@ -174,7 +175,7 @@
                                 android:textColor="@color/color_dark_ffffff_000000"
                                 android:fontFamily="@font/applesdgothicneol"
                                 android:textSize="12dp"
-                                android:text="나의이력서"
+                                android:text="프로필"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"/>
 
@@ -416,7 +417,7 @@
                                 android:textColor="@color/color_dark_ffffff_000000"
                                 android:fontFamily="@font/applesdgothicneol"
                                 android:textSize="12dp"
-                                android:text="프로필편집"
+                                android:text="정보수정"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"/>
 
@@ -445,7 +446,7 @@
                                 android:textColor="@color/color_dark_ffffff_000000"
                                 android:fontFamily="@font/applesdgothicneol"
                                 android:textSize="12dp"
-                                android:text="앱 설정"
+                                android:text="앱설정"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"/>
 
@@ -551,7 +552,7 @@
 
                             <com.lakue.oburie.custom.RoundedImageView
                                 app:rectRadius="50dp"
-                                android:src="@color/color_dark_ffffff_000000"
+                                android:src="@drawable/default_icon"
                                 android:layout_width="48dp"
                                 android:layout_height="48dp"/>
 

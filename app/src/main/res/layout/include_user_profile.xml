@@ -88,7 +88,7 @@
                 <com.lakue.oburie.custom.RoundedImageView
                     image_url="@{vm.profileData.userInfo.userProfileImg}"
                     app:rectRadius="50dp"
-                    android:src="@color/black"
+                    android:src="@drawable/default_icon"
                     android:layout_width="48dp"
                     android:layout_height="48dp"/>
 
