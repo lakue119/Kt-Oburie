@@ -13,8 +13,10 @@ import com.lakue.oburie.databinding.ActivitySearchBinding
 import com.lakue.oburie.databinding.ActivitySelectPickerBinding
 import com.lakue.oburie.ui.chat.appointment.AppointmentActivity
 import com.lakue.oburie.ui.search.SearchViewModel
+import dagger.hilt.android.AndroidEntryPoint
 import java.util.ArrayList
 
+@AndroidEntryPoint
 class SelectPickerActivity : BaseActivity<ActivitySelectPickerBinding, SelectPickerViewModel>(R.layout.activity_select_picker) {
 
     private val type by lazy { intent.getStringExtra("type")}

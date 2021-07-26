@@ -9,8 +9,10 @@ import com.lakue.oburie.test.testJobOffer1
 import com.lakue.oburie.ui.joboffer.detail.JobOfferDetailActivity.Companion.startJobOfferDetailActivity
 import com.lakue.oburie.utils.BaseUtils.context
 import com.lakue.oburie.utils.Event
+import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
+@HiltViewModel
 class JobOfferViewModel  @Inject constructor(
         savedStateHandle: SavedStateHandle//,
 //    private val profileRepository: ProfileRepository

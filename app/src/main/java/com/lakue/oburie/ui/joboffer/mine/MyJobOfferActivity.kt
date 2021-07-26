@@ -13,7 +13,9 @@ import com.lakue.oburie.test.testHistory
 import com.lakue.oburie.test.testMyJobOfferSample
 import com.lakue.oburie.ui.jobhunter.list.JobHunterAdapter
 import com.lakue.oburie.ui.jobhunter.list.JobhunterActivity
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MyJobOfferActivity : BaseActivity<ActivityMyJobOfferBinding, MyJobOfferViewModel>(R.layout.activity_my_job_offer) {
 
     lateinit var myJobOfferAdapter: MyJobOfferAdapter

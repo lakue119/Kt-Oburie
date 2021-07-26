@@ -7,7 +7,9 @@ import com.lakue.oburie.base.BaseActivity
 import com.lakue.oburie.databinding.ActivitySearchBinding
 import com.lakue.oburie.ui.jobhunter.searchlist.JobHunterSearchActivity.Companion.startJobHunterSearchActivity
 import com.lakue.oburie.ui.joboffer.searchlist.JobOfferSearchActivity.Companion.startJobOfferSearchActivity
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class SearchActivity : BaseActivity<ActivitySearchBinding, SearchViewModel>(R.layout.activity_search) {
 
     val type by lazy { intent.getStringExtra("type") }

@@ -16,8 +16,10 @@ import com.lakue.oburie.ui.search.SearchActivity
 import com.lakue.oburie.ui.search.SearchActivity.Companion.startSearchActivity
 import com.lakue.oburie.ui.userprofile.info.UserInfoActivity.Companion.startUserInfoActivity
 import com.lakue.oburie.utils.BaseUtils
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_job_offer.*
 
+@AndroidEntryPoint
 class FragmentJobOffer :
     BaseFragment<FragmentJobOfferBinding, JobOfferViewModel>(R.layout.fragment_job_offer) {
 

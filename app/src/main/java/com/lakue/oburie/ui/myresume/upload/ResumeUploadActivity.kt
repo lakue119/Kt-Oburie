@@ -9,7 +9,9 @@ import com.lakue.oburie.ui.myresume.upload.active.photo.ResumeUploadActivePhotoA
 import com.lakue.oburie.ui.myresume.upload.active.video.ResumeUploadActiveVideoActivity.Companion.startResumeUploadActiveActivity
 import com.lakue.oburie.ui.myresume.upload.detail.ResumeUploadDetailActivity.Companion.startResumeUploadDetailActivity
 import com.lakue.oburie.ui.myresume.upload.normal.ResumeUploadNormalActivity.Companion.startResumeUploadNormalActivity
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class ResumeUploadActivity : BaseActivity<ActivityResumeUploadBinding, ResumeUploadViewModel>(R.layout.activity_resume_upload) {
 
     companion object {

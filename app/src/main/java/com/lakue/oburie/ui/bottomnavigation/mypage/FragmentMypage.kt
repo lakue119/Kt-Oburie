@@ -17,10 +17,12 @@ import com.lakue.oburie.ui.joboffer.mine.MyJobOfferActivity.Companion.startMyJob
 import com.lakue.oburie.ui.myresume.MyResumeActivity.Companion.startMyResumeActivity
 import com.lakue.oburie.ui.review.list.ReviewListActivity.Companion.startReviewListActivity
 import com.lakue.oburie.ui.userinfo.UserInfoSettingActivity.Companion.startUserInfoSettingActivity
+import dagger.hilt.android.AndroidEntryPoint
 
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
+@AndroidEntryPoint
 class FragmentMypage  : BaseFragment<FragmentMypageBinding, MypageViewModel>(R.layout.fragment_mypage) {
 
     companion object {

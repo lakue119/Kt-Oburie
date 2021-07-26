@@ -23,11 +23,13 @@ import com.lakue.oburie.utils.camera.OnShowCameraListener
 import com.lakue.oburie.utils.camera.OnShowGalleryListener
 import com.theartofdev.edmodo.cropper.CropImage
 import com.theartofdev.edmodo.cropper.CropImageView
+import dagger.hilt.android.AndroidEntryPoint
 import java.io.ByteArrayOutputStream
 import java.io.File
 import java.io.IOException
 
 
+@AndroidEntryPoint
 class ResumeUploadActivePhotoActivity : BaseActivity<ActivityResumeUploadActrivePhotoBinding, ResumeUploadActivePhotoViewModel>(R.layout.activity_resume_upload_actrive_photo) {
 
     lateinit var cameraUtil: CameraUtil

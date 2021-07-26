@@ -4,8 +4,10 @@ import android.view.View
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.SavedStateHandle
 import com.lakue.oburie.base.BaseViewModel
+import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
+@HiltViewModel
 class JobOfferUploadViewModel @Inject constructor(
     savedStateHandle: SavedStateHandle//,
 //    private val profileRepository: ProfileRepository

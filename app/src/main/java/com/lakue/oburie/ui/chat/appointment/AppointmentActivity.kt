@@ -14,10 +14,12 @@ import com.lakue.oburie.databinding.ActivityAppointmentBinding
 import com.lakue.oburie.ui.picker.SelectPickerActivity
 import com.lakue.oburie.utils.ActivityContract
 import com.lakue.oburie.utils.LogUtil
+import dagger.hilt.android.AndroidEntryPoint
 import java.util.*
 import java.util.logging.Logger
 
 
+@AndroidEntryPoint
 class AppointmentActivity :
     BaseActivity<ActivityAppointmentBinding, AppointmentViewModel>(R.layout.activity_appointment) {
 

@@ -5,7 +5,9 @@ import android.content.Intent
 import com.lakue.oburie.R
 import com.lakue.oburie.base.BaseActivity
 import com.lakue.oburie.databinding.ActivityResumeUploadActriveVideoBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class ResumeUploadActiveVideoActivity : BaseActivity<ActivityResumeUploadActriveVideoBinding, ResumeUploadActiveVideoViewModel>(R.layout.activity_resume_upload_actrive_video) {
 
     companion object {

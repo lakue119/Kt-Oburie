@@ -18,8 +18,10 @@ import com.lakue.oburie.ui.joboffer.detail.JobOfferDetailViewModel
 import com.lakue.oburie.ui.joboffer.searchlist.JobOfferSearchActivity
 import com.lakue.oburie.ui.picker.SelectPickerActivity
 import com.lakue.oburie.utils.ActivityContract
+import dagger.hilt.android.AndroidEntryPoint
 import java.util.*
 
+@AndroidEntryPoint
 class JobOfferUploadActivity: BaseActivity<ActivityJobOfferUploadBinding, JobOfferUploadViewModel>(R.layout.activity_job_offer_upload){
 
     private val selectLauncher: ActivityResultLauncher<Intent> = registerForActivityResult(

@@ -10,7 +10,9 @@ import com.lakue.oburie.base.BaseActivity
 import com.lakue.oburie.databinding.ActivityMyResumeBinding
 import com.lakue.oburie.ui.myresume.upload.ResumeUploadActivity.Companion.startResumeUploadActivity
 import com.lakue.oburie.ui.review.list.ReviewListActivity
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MyResumeActivity : BaseActivity<ActivityMyResumeBinding, MyResumeViewModel>(R.layout.activity_my_resume) {
 
     companion object {

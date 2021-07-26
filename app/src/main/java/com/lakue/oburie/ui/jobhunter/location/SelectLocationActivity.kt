@@ -5,7 +5,9 @@ import android.content.Intent
 import com.lakue.oburie.R
 import com.lakue.oburie.base.BaseActivity
 import com.lakue.oburie.databinding.ActivitySelectLocationBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class SelectLocationActivity : BaseActivity<ActivitySelectLocationBinding, SelectLocationViewModel>(R.layout.activity_select_location) {
 
 

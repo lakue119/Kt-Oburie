@@ -8,8 +8,10 @@ import com.lakue.oburie.model.UserInfo
 import com.lakue.oburie.model.joboffer.JobOffer
 import com.lakue.oburie.model.joboffer.JobOfferBadge
 import com.lakue.oburie.ui.bottomnavigation.joboffer.badge.JobOfferBadgeAdapter
+import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
+@HiltViewModel
 class JobOfferDetailViewModel @Inject constructor(
         savedStateHandle: SavedStateHandle//,
 //    private val profileRepository: ProfileRepository

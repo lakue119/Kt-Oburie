@@ -12,8 +12,10 @@ import com.lakue.oburie.test.testReview3
 import com.lakue.oburie.test.testuserProfileDetail
 import com.lakue.oburie.ui.review.list.ReviewListAdapter
 import com.lakue.oburie.utils.Event
+import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
+@HiltViewModel
 class ReviewListViewModel @Inject constructor(
         savedStateHandle: SavedStateHandle//,
 //    private val profileRepository: ProfileRepository

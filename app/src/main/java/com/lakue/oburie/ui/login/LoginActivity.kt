@@ -19,12 +19,14 @@ import com.lakue.oburie.ui.login.naver.NaverLoginState
 import com.lakue.oburie.ui.login.naver.NaverUserInfo
 import com.lakue.oburie.utils.LogUtil
 import com.nhn.android.naverlogin.OAuthLogin
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import org.json.JSONObject
 
+@AndroidEntryPoint
 class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>(R.layout.activity_login) {
 
     lateinit var callbackManager: CallbackManager

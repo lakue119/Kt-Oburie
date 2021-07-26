@@ -23,9 +23,11 @@ import com.lakue.oburie.ui.userprofile.info.UserInfoActivity.Companion.startUser
 import com.lakue.oburie.utils.camera.CameraUtil
 import com.lakue.oburie.utils.camera.OnShowCameraListener
 import com.lakue.oburie.utils.camera.OnShowGalleryListener
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
+@AndroidEntryPoint
 class ChatActivity : BaseActivity<ActivityChatBinding, ChatViewModel>(R.layout.activity_chat) {
 
     var isShowKeyBoard = false

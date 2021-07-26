@@ -10,8 +10,10 @@ import com.lakue.oburie.ui.jobhunter.location.SelectLocationActivity
 import com.lakue.oburie.ui.userprofile.UserProfileActivity
 import com.lakue.oburie.utils.BaseUtils
 import com.lakue.oburie.utils.Event
+import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
+@HiltViewModel
 class ChatViewModel @Inject constructor(
     savedStateHandle: SavedStateHandle//,
 //    private val profileRepository: ProfileRepository

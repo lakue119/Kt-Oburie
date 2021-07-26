@@ -8,7 +8,9 @@ import com.lakue.oburie.R
 import com.lakue.oburie.base.BaseActivity
 import com.lakue.oburie.databinding.ActivityResumeUploadDetailBinding
 import com.lakue.oburie.ui.myresume.upload.ResumeUploadActivity
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class ResumeUploadDetailActivity: BaseActivity<ActivityResumeUploadDetailBinding, ResumeUploadDetailViewModel>(R.layout.activity_resume_upload_detail) {
 
     companion object {
