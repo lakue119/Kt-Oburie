@@ -3,6 +3,7 @@ package com.lakue.oburie.ui.login
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import androidx.lifecycle.Observer
 import com.facebook.*
 import com.facebook.login.LoginManager
 import com.facebook.login.LoginResult
@@ -18,6 +19,7 @@ import com.lakue.oburie.ui.login.naver.NaverLogin
 import com.lakue.oburie.ui.login.naver.NaverLoginState
 import com.lakue.oburie.ui.login.naver.NaverUserInfo
 import com.lakue.oburie.utils.LogUtil
+import com.lakue.oburie.utils.loading.Status
 import com.nhn.android.naverlogin.OAuthLogin
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
@@ -55,6 +57,27 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>(R.layou
     }
 
     override fun setObserve() {
+        viewModel.apply{
+            loginCheck.observe(this@LoginActivity, {
+                when(it.status){
+                    Status.ERROR -> {
+                        showToast("${it.data.toString()}")
+                    }
+                    Status.LOADING -> {
+                        showToast("${it.data.toString()}")
+                    }
+                    Status.NETWORK_ERROR -> {
+                        showToast("NETWORK_ERROR")
+                    }
+                    Status.SUCCESS -> {
+                        showToast("${it.data.toString()}")
+                    }
+                    Status.TIMEOUT_ERROR -> {
+                        showToast("TIMEOUT_ERROR")
+                    }
+                }
+            })
+        }
     }
 
     fun onFacebookLogin() {
@@ -65,7 +88,9 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>(R.layou
                     if (response.error != null) {
                     } else {
                         LogUtil.d("LOGIN","facebook / ${user.toString()}")
-//                        viewModel.featureFacebookLogin(user)
+                        val id = user.getString("id")
+                        viewModel.fetchLoginCheck(id, LoginType.LOGIN_FACEBOOK.type)
+//                        viewModel.fetchLoginCheck(user.g)
                     }
                 }
                 val parameters = Bundle()
@@ -95,6 +120,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>(R.layou
             override fun onSuccess(user: User) {
 //                viewModel.featureKakaoLogin(user)
                 LogUtil.d("LOGIN","kakao / ${user.toString()}")
+                viewModel.fetchLoginCheck(user.id.toString(), LoginType.LOGIN_KAKAO.type)
             }
 
             override fun onError(error: Throwable) {
@@ -119,9 +145,9 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>(R.layou
                         response = user_info.getJSONObject("response")
                         LogUtil.d("LOGIN","naver / ${response.toString()}")
 //
-//                        var id = response.getString("id")
-//                        var email = response.getString("email")
-//                        var name = response.getString("name")
+                        var id = response.getString("id")
+                        viewModel.fetchLoginCheck(id, LoginType.LOGIN_NAVER.type)
+
 //
 //                        Logger.i("alkwjrklwrl", "id : $id")
 //                        Logger.i("alkwjrklwrl", "email : $email")

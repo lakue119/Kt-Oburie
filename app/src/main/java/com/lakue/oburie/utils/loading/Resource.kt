@@ -16,6 +16,14 @@ data class Resource<out T>(val status: Status, val data: T?, val message: String
             return Resource(Status.LOADING, data, null)
         }
 
+        fun <T> timeoutError(): Resource<T> {
+            return Resource(Status.TIMEOUT_ERROR, null, null)
+        }
+
+        fun <T> networtError(): Resource<T> {
+            return Resource(Status.NETWORK_ERROR, null, null)
+        }
+
     }
 
 }

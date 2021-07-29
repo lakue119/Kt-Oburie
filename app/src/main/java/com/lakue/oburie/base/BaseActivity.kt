@@ -90,12 +90,12 @@ abstract class BaseActivity<B : ViewDataBinding, VM : BaseViewModel>(
         mToast?.view = layout
         mToast?.show()
         isShowToast = true
-        Handler().postDelayed({ //여기에 딜레이 후 시작할 작업들을 입력
-            if (isShowToast) {
-                mToast?.cancel()
-                isShowToast = false
-            }
-        }, 1500) // 0.5초 정도 딜레이를 준 후 시작
+//        Handler().postDelayed({ //여기에 딜레이 후 시작할 작업들을 입력
+//            if (isShowToast) {
+//                mToast?.cancel()
+//                isShowToast = false
+//            }
+//        }, 1500) // 0.5초 정도 딜레이를 준 후 시작
     }
 //    protected fun onKeyboardHide(editText: EditText) {
 //        val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
