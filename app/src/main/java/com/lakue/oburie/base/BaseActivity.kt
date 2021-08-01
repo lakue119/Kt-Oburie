@@ -3,9 +3,10 @@ package com.lakue.oburie.base
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Context
+import android.graphics.Color
 import android.graphics.Rect
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
-import android.os.Handler
 import android.text.Editable
 import android.view.MotionEvent
 import android.view.View
@@ -15,6 +16,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDialog
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.LiveData
@@ -38,6 +40,8 @@ abstract class BaseActivity<B : ViewDataBinding, VM : BaseViewModel>(
 
     lateinit var binding: B
     var isEditTextTouchHide = true
+
+    var loadingDialog: AppCompatDialog? = null
 
     private val viewModelClass = ((javaClass.genericSuperclass as ParameterizedType?)
         ?.actualTypeArguments
@@ -171,5 +175,29 @@ abstract class BaseActivity<B : ViewDataBinding, VM : BaseViewModel>(
         }
 
         return super.dispatchTouchEvent(ev)
+    }
+
+    fun showLoading(){
+        if(this == null || this.isFinishing){
+            return
+        }
+
+        if(loadingDialog != null && loadingDialog?.isShowing!!){
+
+        } else {
+            loadingDialog = AppCompatDialog(this)
+            loadingDialog?.apply{
+                setCancelable(false)
+                window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+                setContentView(R.layout.progress_loading)
+                show()
+            }
+        }
+    }
+
+    fun hideLoading(){
+        if(loadingDialog != null && loadingDialog?.isShowing!!){
+            loadingDialog?.dismiss()
+        }
     }
 }

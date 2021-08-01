@@ -8,6 +8,7 @@ import com.facebook.*
 import com.facebook.login.LoginManager
 import com.facebook.login.LoginResult
 import com.kakao.sdk.user.model.User
+import com.lakue.oburie.OburieApplication
 import com.lakue.oburie.R
 import com.lakue.oburie.base.BaseActivity
 import com.lakue.oburie.databinding.ActivityLoginBinding
@@ -67,12 +68,15 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>(R.layou
                         showToast("${it.data.toString()}")
                     }
                     Status.NETWORK_ERROR -> {
+                        hideLoading()
                         showToast("NETWORK_ERROR")
                     }
                     Status.SUCCESS -> {
+                        hideLoading()
                         showToast("${it.data.toString()}")
                     }
                     Status.TIMEOUT_ERROR -> {
+                        hideLoading()
                         showToast("TIMEOUT_ERROR")
                     }
                 }
@@ -89,6 +93,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>(R.layou
                     } else {
                         LogUtil.d("LOGIN","facebook / ${user.toString()}")
                         val id = user.getString("id")
+                        showLoading()
                         viewModel.fetchLoginCheck(id, LoginType.LOGIN_FACEBOOK.type)
 //                        viewModel.fetchLoginCheck(user.g)
                     }
@@ -120,6 +125,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>(R.layou
             override fun onSuccess(user: User) {
 //                viewModel.featureKakaoLogin(user)
                 LogUtil.d("LOGIN","kakao / ${user.toString()}")
+                showLoading()
                 viewModel.fetchLoginCheck(user.id.toString(), LoginType.LOGIN_KAKAO.type)
             }
 
@@ -146,6 +152,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>(R.layou
                         LogUtil.d("LOGIN","naver / ${response.toString()}")
 //
                         var id = response.getString("id")
+                        showLoading()
                         viewModel.fetchLoginCheck(id, LoginType.LOGIN_NAVER.type)
 
 //

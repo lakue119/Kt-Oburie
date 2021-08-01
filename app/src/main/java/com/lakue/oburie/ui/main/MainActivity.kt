@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatDialog
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
@@ -20,6 +21,7 @@ import com.lakue.oburie.R
 import com.lakue.oburie.base.BaseActivity
 import com.lakue.oburie.databinding.ActivityMainBinding
 import com.lakue.oburie.databinding.DialogReviewBinding
+import com.lakue.oburie.fcm.FcmManager
 import com.lakue.oburie.model.Profile
 import com.lakue.oburie.ui.login.LoginActivity.Companion.startLoginActivity
 import com.lakue.oburie.utils.LogUtil
@@ -41,7 +43,7 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>(R.layout.a
         bottomNavigationView.itemIconTintList = null
 
         getHashKey()
-
+        getFcmToken()
     }
 
     override fun setUI() {
@@ -137,6 +139,14 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>(R.layout.a
                 LogUtil.e("KeyHash", "Unable to get MessageDigest. signature=$signature", e)
             }
         }
+    }
+
+    private fun getFcmToken(){
+        FcmManager.getFcmToken(object :FcmManager.OnEventListener{
+            override fun onSuccess(token: String) {
+                LogUtil.i("QWLKRJQKWLR0",token)
+            }
+        })
     }
 
 }

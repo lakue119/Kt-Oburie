@@ -209,6 +209,8 @@ dependencies {
     //파이어베이스 연동
     implementation platform('com.google.firebase:firebase-bom:28.3.0')
     implementation 'com.google.firebase:firebase-analytics-ktx'
+    implementation 'com.google.firebase:firebase-messaging'
+    implementation 'com.google.firebase:firebase-messaging-directboot:20.2.0'
 
     //페이스북로그인연동
     implementation 'com.facebook.android:facebook-core:5.9.0'
@@ -234,4 +236,6 @@ dependencies {
 
     //이미지 크롭
     implementation 'com.theartofdev.edmodo:android-image-cropper:2.8.0'
+
+    implementation 'androidx.work:work-runtime:2.5.0'
 }
