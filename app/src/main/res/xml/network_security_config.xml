@@ -3,6 +3,8 @@
     <domain-config cleartextTrafficPermitted="true">
         <domain includeSubdomains="true">125.187.58.117</domain>
         <domain includeSubdomains="true">192.168.0.3</domain>
+        <domain includeSubdomains="true">ebookfrenzy.com</domain>
+        <domain includeSubdomains="true">postcode.map.daum.net</domain>
     </domain-config>
 </network-security-config>
 

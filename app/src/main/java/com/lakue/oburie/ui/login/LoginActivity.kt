@@ -1,8 +1,14 @@
 package com.lakue.oburie.ui.login
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
+import android.view.LayoutInflater
+import androidx.appcompat.app.AppCompatDialog
+import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import com.facebook.*
 import com.facebook.login.LoginManager
@@ -12,6 +18,7 @@ import com.lakue.oburie.OburieApplication
 import com.lakue.oburie.R
 import com.lakue.oburie.base.BaseActivity
 import com.lakue.oburie.databinding.ActivityLoginBinding
+import com.lakue.oburie.databinding.DialogJoinBinding
 import com.lakue.oburie.ui.login.facebook.FacebookLogin
 import com.lakue.oburie.ui.login.facebook.FacebookLoginState
 import com.lakue.oburie.ui.login.kakao.KakaoLogin
@@ -19,6 +26,7 @@ import com.lakue.oburie.ui.login.kakao.KakaoLoginState
 import com.lakue.oburie.ui.login.naver.NaverLogin
 import com.lakue.oburie.ui.login.naver.NaverLoginState
 import com.lakue.oburie.ui.login.naver.NaverUserInfo
+import com.lakue.oburie.ui.main.MainActivity
 import com.lakue.oburie.utils.LogUtil
 import com.lakue.oburie.utils.loading.Status
 import com.nhn.android.naverlogin.OAuthLogin
@@ -33,6 +41,8 @@ import org.json.JSONObject
 class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>(R.layout.activity_login) {
 
     lateinit var callbackManager: CallbackManager
+
+    var loginDialog: AppCompatDialog? = null
 
     companion object {
         fun startLoginActivity(
@@ -73,7 +83,53 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>(R.layou
                     }
                     Status.SUCCESS -> {
                         hideLoading()
-                        showToast("${it.data.toString()}")
+                        if(it.data!!.result){
+                                if(it.data!!.data){
+                                    //TODO 기존 회원 로그인 성공 - 메인화면으로 이동
+                                    val intent = Intent(this@LoginActivity, MainActivity::class.java)
+                                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET)
+                                    startActivity(intent)
+                                } else{
+                                    //TODO 신규 회원 가입
+                                    onShowJoin()
+                                }
+                            onShowJoin()
+                        } else {
+                            showToast("${it.data.fail.message}")
+                        }
+//                        showToast("${it.data.toString()}")
+                    }
+                    Status.TIMEOUT_ERROR -> {
+                        hideLoading()
+                        showToast("TIMEOUT_ERROR")
+                    }
+                }
+            })
+
+            join.observe(this@LoginActivity, {
+                when(it.status){
+                    Status.ERROR -> {
+                        hideLoading()
+                    }
+                    Status.LOADING -> {
+                        hideLoading()
+                    }
+                    Status.NETWORK_ERROR -> {
+                        hideLoading()
+                        showToast("NETWORK_ERROR")
+                    }
+                    Status.SUCCESS -> {
+                        hideLoading()
+                        if(it.data!!.result){
+                            //TODO 기존 회원 로그인 성공 - 메인화면으로 이동
+                            val intent = Intent(this@LoginActivity, MainActivity::class.java)
+                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET)
+                            startActivity(intent)
+                        } else {
+                            //TODO 신규 회원 가입
+                            showToast("${it.data.fail.message}")
+                        }
+
                     }
                     Status.TIMEOUT_ERROR -> {
                         hideLoading()
@@ -195,4 +251,35 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>(R.layou
         }
     }
 
+    @SuppressLint("MissingPermission")
+    fun onShowJoin() {
+
+        if (loginDialog == null) {
+            loginDialog = AppCompatDialog(this@LoginActivity)
+        }
+
+        val binding = DataBindingUtil.inflate<DialogJoinBinding>(LayoutInflater.from(this@LoginActivity), R.layout.dialog_join, null, false)
+        loginDialog?.apply {
+            window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+            setCancelable(false)
+            setContentView(binding.root)
+            show()
+        }
+
+        binding.apply {
+            activity = this@LoginActivity
+            vm = viewModel
+        }
+
+    }
+
+    fun onLoginClose(){
+        if (loginDialog != null) {
+            loginDialog!!.dismiss()
+        }
+    }
+
+    fun onLogin(){
+        viewModel.fetchJoin()
+    }
 }

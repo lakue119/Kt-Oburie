@@ -24,7 +24,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Oburie">
-        <activity android:name=".ui.userprofile.info.UserInfoActivity"></activity>
+        <activity android:name=".ui.location.search.LocationSearchActivity"></activity>
+        <activity android:name=".ui.userprofile.info.UserInfoActivity" />
         <activity android:name=".ui.app.setting.AppSettingActivity" />
         <activity android:name=".ui.userinfo.UserInfoSettingActivity" />
         <activity android:name=".ui.joboffer.mine.MyJobOfferActivity" />
@@ -106,8 +107,8 @@
 
         <service
             android:name=".fcm.FcmMessagingService"
-            android:exported="false"
-            android:directBootAware="true">
+            android:directBootAware="true"
+            android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
@@ -119,7 +120,6 @@
         <meta-data
             android:name="firebase_analytics_collection_enabled"
             android:value="false" />
-
     </application>
 
 </manifest>

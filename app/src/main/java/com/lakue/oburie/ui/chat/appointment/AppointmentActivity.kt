@@ -11,6 +11,7 @@ import com.applandeo.materialcalendarview.listeners.OnSelectDateListener
 import com.lakue.oburie.R
 import com.lakue.oburie.base.BaseActivity
 import com.lakue.oburie.databinding.ActivityAppointmentBinding
+import com.lakue.oburie.ui.location.search.LocationSearchActivity.Companion.startLocationSearchActivity
 import com.lakue.oburie.ui.picker.SelectPickerActivity
 import com.lakue.oburie.utils.ActivityContract
 import com.lakue.oburie.utils.LogUtil
@@ -95,6 +96,10 @@ class AppointmentActivity :
         var intent = Intent(this@AppointmentActivity, SelectPickerActivity::class.java)
         intent.putExtra("type", view.tag.toString())
         selectLauncher.launch(intent)
+    }
+
+    fun showLocationSearch(){
+        startLocationSearchActivity(this@AppointmentActivity)
     }
 
 }

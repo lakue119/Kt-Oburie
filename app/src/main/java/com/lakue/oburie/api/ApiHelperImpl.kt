@@ -1,7 +1,9 @@
 package com.lakue.oburie.api
 
+import com.lakue.oburie.model.retrofit.login.ResponseJoin
 import com.lakue.oburie.model.retrofit.login.ResponseJoinCheck
 import retrofit2.Response
+import java.util.HashMap
 import javax.inject.Inject
 
 class ApiHelperImpl @Inject constructor(
@@ -10,4 +12,6 @@ class ApiHelperImpl @Inject constructor(
     override suspend fun getLoginCheck(id: String, type: String): Response<ResponseJoinCheck> =
         apiService.getLoginCheck(id,type)
 
+    override suspend fun postJoin(parameters: HashMap<String, Any>): Response<ResponseJoin> =
+        apiService.postJoin(parameters)
 }

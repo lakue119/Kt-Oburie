@@ -1,4 +1,4 @@
-package com.lakue.oburie.ui.login
+package com.lakue.oburie.ui.location.search
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -16,7 +16,7 @@ import java.net.SocketTimeoutException
 import javax.inject.Inject
 
 @HiltViewModel
-class LoginViewModel  @Inject constructor(
+class LocationSearchViewModel  @Inject constructor(
     savedStateHandle: SavedStateHandle,
     private val repository: LoginRepository
 ) : BaseViewModel() {

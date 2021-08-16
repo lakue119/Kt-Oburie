@@ -1,5 +1,6 @@
 package com.lakue.oburie.ui.main
 
+import android.content.Intent
 import android.content.pm.PackageInfo
 import android.content.pm.PackageManager
 import android.graphics.Color
@@ -44,6 +45,11 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>(R.layout.a
 
         getHashKey()
         getFcmToken()
+    }
+
+    override fun onNewIntent(intent: Intent?) {
+        super.onNewIntent(intent)
+//        viewModel.fetchPayRequest()
     }
 
     override fun setUI() {
