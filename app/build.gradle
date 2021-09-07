@@ -32,6 +32,7 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             buildConfigField 'boolean', 'IS_FREE', "true"
+            buildConfigField "String", "BASE_URL", '"http://192.168.0.3:8080/"'
         }
 
         debug{
@@ -40,6 +41,7 @@ android {
             aaptOptions.cruncherEnabled = false
             ext.alwaysUpdateBuildld = false
             buildConfigField 'boolean', 'IS_FREE', "true"
+            buildConfigField "String", "BASE_URL", '"http://192.168.0.3:8080/"'
         }
     }
 
