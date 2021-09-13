@@ -238,7 +238,7 @@
                         android:background="@drawable/background_round_5_stroek_dddddd"
                         android:textSize="14dp"
                         android:textColor="@color/gray_999"
-                        android:text="18457"
+                        android:text="@{vm.addressNum}"
                         android:fontFamily="@font/applesdgothicneol"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"/>
@@ -272,7 +272,7 @@
                     android:background="@drawable/background_round_5_stroek_dddddd"
                     android:textSize="14dp"
                     android:textColor="@color/gray_999"
-                    android:text="서울특별시 영등포"
+                    android:text="@{vm.address}"
                     android:fontFamily="@font/applesdgothicneol"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>

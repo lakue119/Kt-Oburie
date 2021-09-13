@@ -56,30 +56,4 @@ class LocationSearchViewModel  @Inject constructor(
         }
     }
 
-    fun fetchJoin(){
-        val map = HashMap<String, Any>()
-        map["social_id"] = loginId
-        map["social_type"] = loginType
-        map["nickname"] = liveName.value!!
-        map["grade"] = ""
-
-        viewModelScope.launch {
-            if(NetworkHelper.isNetworkConnected()){
-                try{
-                    repository.postJoin(map).let { response ->
-                        if(response.isSuccessful){
-                            val data = Resource.success(response.body()).data
-                            _join.postValue(Resource.success(response.body()))
-                        } else {
-                            _join.postValue(Resource.error("ERROR CODE: ${response.code()}\n${response.message()}", null))
-                        }
-                    }
-                } catch (e: SocketTimeoutException){
-                    _join.postValue(Resource.timeoutError())
-                }
-            } else {
-                _join.postValue(Resource.networtError())
-            }
-        }
-    }
 }

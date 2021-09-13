@@ -61,7 +61,6 @@ class LoginViewModel  @Inject constructor(
         map["social_id"] = loginId
         map["social_type"] = loginType
         map["nickname"] = liveName.value!!
-        map["grade"] = ""
 
         viewModelScope.launch {
             if(NetworkHelper.isNetworkConnected()){
@@ -82,4 +81,6 @@ class LoginViewModel  @Inject constructor(
             }
         }
     }
+
+
 }

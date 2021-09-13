@@ -11,7 +11,7 @@ import com.applandeo.materialcalendarview.listeners.OnSelectDateListener
 import com.lakue.oburie.R
 import com.lakue.oburie.base.BaseActivity
 import com.lakue.oburie.databinding.ActivityAppointmentBinding
-import com.lakue.oburie.ui.location.search.LocationSearchActivity.Companion.startLocationSearchActivity
+import com.lakue.oburie.ui.location.search.LocationSearchActivity
 import com.lakue.oburie.ui.picker.SelectPickerActivity
 import com.lakue.oburie.utils.ActivityContract
 import com.lakue.oburie.utils.LogUtil
@@ -45,6 +45,18 @@ class AppointmentActivity :
 
                 }
             }
+        }.run {
+
+        }
+    }
+
+    private val addressLauncher: ActivityResultLauncher<Intent> = registerForActivityResult(
+        ActivityContract()
+    ) {
+        it?.let {
+            val addressNum = it.getStringExtra("address_num")
+            val address = it.getStringExtra("address")
+            viewModel.setAddress(addressNum!!, address!!)
         }.run {
 
         }
@@ -99,7 +111,8 @@ class AppointmentActivity :
     }
 
     fun showLocationSearch(){
-        startLocationSearchActivity(this@AppointmentActivity)
+        val intent = Intent(this@AppointmentActivity, LocationSearchActivity::class.java)
+        addressLauncher.launch(intent)
     }
 
 }

@@ -1,32 +1,44 @@
 package com.lakue.oburie.ui.location.search
 
+import android.app.Activity
 import android.app.Dialog
 import android.content.Context
 import android.content.Intent
 import android.os.Build
+import android.os.Handler
+import android.os.Looper
 import android.os.Message
 import android.view.View
 import android.view.WindowManager
+import android.webkit.JavascriptInterface
 import android.webkit.WebChromeClient
 import android.webkit.WebSettings
 import android.webkit.WebView
 import android.webkit.WebView.WebViewTransport
+import com.lakue.oburie.BuildConfig
 import com.lakue.oburie.R
 import com.lakue.oburie.base.BaseActivity
 import com.lakue.oburie.databinding.ActivityLocationSearchBinding
 import com.lakue.oburie.listener.OnLimitFinishListener
-import com.lakue.oburie.utils.BaseUtils.context
+import com.lakue.oburie.utils.LogUtil
 import com.lakue.oburie.utils.WebViewClientClass
 
 
-class LocationSearchActivity  : BaseActivity<ActivityLocationSearchBinding, LocationSearchViewModel>(R.layout.activity_location_search) {
+class LocationSearchActivity :
+    BaseActivity<ActivityLocationSearchBinding, LocationSearchViewModel>(R.layout.activity_location_search) {
 
-    val link = "https://192.168.0.3:8443/home.html"
-//    val link = "https://fleapop.co.kr/api/daum/address/and"
+    val link = "${BuildConfig.BASE_URL}viewport.html"
+    val KEY_NAME = "OburieApp"
+
+    private var handler: Handler? = null
+
+    var addressNum = ""
+    var address1 = ""
+    var address2 = ""
 
     companion object {
         fun startLocationSearchActivity(
-                context: Context
+            context: Context
         ) {
             val intent = Intent(context, LocationSearchActivity::class.java)
             context.startActivity(intent)
@@ -37,17 +49,10 @@ class LocationSearchActivity  : BaseActivity<ActivityLocationSearchBinding, Loca
         binding.apply {
             lifecycleOwner = this@LocationSearchActivity
         }
+        handler = Handler(Looper.getMainLooper())
     }
 
     override fun setUI() {
-        if (Build.VERSION.SDK_INT >= 19) {
-            binding.webView.setLayerType(View.LAYER_TYPE_HARDWARE, null)
-        } else {
-            binding.webView.setLayerType(WebView.LAYER_TYPE_SOFTWARE, null)
-        }
-        window.setFlags(
-                WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED,
-                WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED)
         binding.apply {
             webView.apply {
                 settings.apply {
@@ -65,16 +70,20 @@ class LocationSearchActivity  : BaseActivity<ActivityLocationSearchBinding, Loca
                     loadsImagesAutomatically = true
                     mixedContentMode = WebSettings.MIXED_CONTENT_ALWAYS_ALLOW
                     setLayerType(View.LAYER_TYPE_HARDWARE, null)
-
                 }
-
+                addJavascriptInterface(AddressBridge(), KEY_NAME)
                 webViewClient = WebViewClientClass
                 WebViewClientClass.onSetFinishListener(OnLimitFinishListener {
                     binding.webView.visibility = View.VISIBLE
                 })
 
-                webChromeClient = object :WebChromeClient() {
-                    override fun onCreateWindow(view: WebView?, isDialog: Boolean, isUserGesture: Boolean, resultMsg: Message?): Boolean {
+                webChromeClient = object : WebChromeClient() {
+                    override fun onCreateWindow(
+                        view: WebView?,
+                        isDialog: Boolean,
+                        isUserGesture: Boolean,
+                        resultMsg: Message?
+                    ): Boolean {
                         val newWebView = WebView(this@LocationSearchActivity)
                         newWebView.settings.javaScriptEnabled = true
                         val dialog = Dialog(this@LocationSearchActivity).apply {
@@ -108,5 +117,24 @@ class LocationSearchActivity  : BaseActivity<ActivityLocationSearchBinding, Loca
 
     override fun setObserve() {
 
+    }
+
+    //웹뷰에서 가져온 주소 데이터 처리
+    private inner class AddressBridge {
+        @JavascriptInterface
+        fun setAddress(arg1: String, arg2: String, arg3: String) {
+            handler!!.post {
+                addressNum = arg1
+                address1 = arg2
+                address2 = arg3
+
+                LogUtil.d("QWRLKJ", "$addressNum / $address1 / $address2")
+                val resultIntent = Intent()
+                resultIntent.putExtra("address_num", addressNum)
+                resultIntent.putExtra("address", address1 + address2)
+                setResult(Activity.RESULT_OK, resultIntent)
+                finish()
+            }
+        }
     }
 }

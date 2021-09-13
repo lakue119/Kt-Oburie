@@ -1,9 +1,12 @@
 package com.lakue.oburie.model.retrofit.login
 
+import com.google.gson.annotations.SerializedName
+
 data class ResponseJoinData(
-    val user_id: Long = 0,
-    val social_id: String = "",
-    val social_type: String = "",
-    val nickname: String = "",
-    val grade: String = ""
+    @SerializedName("is_join") val isJoin: Boolean = false,
+    @SerializedName("user_id") val userId: Long = 0,
+    @SerializedName("social_id") val socialId: String = "",
+    @SerializedName("social_type") val socialType: String = "",
+    @SerializedName("nickname") val nickName: String = "",
+    @SerializedName("grade") val grade: String = ""
 )

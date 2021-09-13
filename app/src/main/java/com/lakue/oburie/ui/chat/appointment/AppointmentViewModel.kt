@@ -13,5 +13,11 @@ class AppointmentViewModel @Inject constructor(
 ) : BaseViewModel()  {
 
     val meetDate = MutableLiveData<String>("날짜를 선택해주세요.")
+    val addressNum = MutableLiveData<String>("")
+    val address = MutableLiveData<String>("")
 
+    fun setAddress(addressNum: String, address: String){
+        this.addressNum.postValue(addressNum)
+        this.address.postValue(address)
+    }
 }

@@ -72,6 +72,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>(R.layou
             loginCheck.observe(this@LoginActivity, {
                 when(it.status){
                     Status.ERROR -> {
+                        hideLoading()
                         showToast("${it.data.toString()}")
                     }
                     Status.LOADING -> {
@@ -84,7 +85,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>(R.layou
                     Status.SUCCESS -> {
                         hideLoading()
                         if(it.data!!.result){
-                                if(it.data!!.data){
+                                if(it.data!!.data.isJoin){
                                     //TODO 기존 회원 로그인 성공 - 메인화면으로 이동
                                     val intent = Intent(this@LoginActivity, MainActivity::class.java)
                                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET)
@@ -141,6 +142,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>(R.layou
     }
 
     fun onFacebookLogin() {
+        showLoading()
         FacebookLogin(this, callbackManager, object : FacebookLoginState {
             override fun onSuccess(result: LoginResult) {
                 val request: GraphRequest
@@ -149,7 +151,6 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>(R.layou
                     } else {
                         LogUtil.d("LOGIN","facebook / ${user.toString()}")
                         val id = user.getString("id")
-                        showLoading()
                         viewModel.fetchLoginCheck(id, LoginType.LOGIN_FACEBOOK.type)
 //                        viewModel.fetchLoginCheck(user.g)
                     }
@@ -161,6 +162,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>(R.layou
             }
 
             override fun onError(error: FacebookException) {
+                hideLoading()
                 if (error is FacebookAuthorizationException) {
                     showToast("기존 아이디를 로그아웃합니다.")
                     if (AccessToken.getCurrentAccessToken() != null) {
@@ -171,21 +173,23 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>(R.layou
             }
 
             override fun onCancel() {
+                hideLoading()
                 showToast("페이스북 로그인을 취소하였습니다.")
             }
         })
     }
 
     fun onKakaoLogin() {
+        showLoading()
         KakaoLogin(this, object : KakaoLoginState {
             override fun onSuccess(user: User) {
 //                viewModel.featureKakaoLogin(user)
                 LogUtil.d("LOGIN","kakao / ${user.toString()}")
-                showLoading()
                 viewModel.fetchLoginCheck(user.id.toString(), LoginType.LOGIN_KAKAO.type)
             }
 
             override fun onError(error: Throwable) {
+                hideLoading()
                 showToast("카카오톡에 로그인 후 사용해주세요.")
                 LogUtil.e("KakaoLogin", "사용자 정보 요청 실패", error)
             }
@@ -194,6 +198,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>(R.layou
     }
 
     fun onNaverLogin() {
+        showLoading()
         NaverLogin(this, object : NaverLoginState {
             override fun onSuccess(result: OAuthLogin) {
                 val accessToken = result.getAccessToken(this@LoginActivity)
@@ -208,7 +213,6 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>(R.layou
                         LogUtil.d("LOGIN","naver / ${response.toString()}")
 //
                         var id = response.getString("id")
-                        showLoading()
                         viewModel.fetchLoginCheck(id, LoginType.LOGIN_NAVER.type)
 
 //
@@ -235,6 +239,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>(R.layou
                 val errorDesc = error.getLastErrorDesc(this@LoginActivity)
                 LogUtil.i("KLQJWRLKQJWRLKJWQR", "errorCode : $errorCode")
                 LogUtil.i("KLQJWRLKQJWRLKJWQR", "errorDesc : $errorDesc")
+                hideLoading()
             }
 
         })

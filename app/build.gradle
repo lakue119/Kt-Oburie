@@ -21,6 +21,10 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
+
+        configurations.all {
+            resolutionStrategy { force 'androidx.core:core-ktx:1.6.0' }
+        }
     }
 
     repositories {
@@ -32,7 +36,7 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             buildConfigField 'boolean', 'IS_FREE', "true"
-            buildConfigField "String", "BASE_URL", '"http://192.168.0.3:8080/"'
+            buildConfigField "String", "BASE_URL", '"https://www.oburie.com/"'
         }
 
         debug{
@@ -41,7 +45,7 @@ android {
             aaptOptions.cruncherEnabled = false
             ext.alwaysUpdateBuildld = false
             buildConfigField 'boolean', 'IS_FREE', "true"
-            buildConfigField "String", "BASE_URL", '"http://192.168.0.3:8080/"'
+            buildConfigField "String", "BASE_URL", '"http://192.168.0.3:8080"'
         }
     }
 
@@ -52,7 +56,7 @@ android {
             versionCode 1
             versionName "1.0.0"
             buildConfigField 'boolean', 'IS_FREE', "true"
-            buildConfigField "String", "BASE_URL", '"http://192.168.0.3:8080/"'
+            buildConfigField "String", "BASE_URL", '"https://www.oburie.com/"'
         }
 
         paid {
@@ -60,7 +64,7 @@ android {
             versionCode 2
             versionName "1.0.1"
             buildConfigField 'boolean', 'IS_FREE', "false"
-            buildConfigField "String", "BASE_URL", '"http://192.168.0.3:8080/"'
+            buildConfigField "String", "BASE_URL", '"https://www.oburie.com/"'
         }
     }
 
@@ -240,4 +244,7 @@ dependencies {
     implementation 'com.theartofdev.edmodo:android-image-cropper:2.8.0'
 
     implementation 'androidx.work:work-runtime:2.5.0'
+
+    implementation 'com.facebook.stetho:stetho:1.5.1'
+    implementation 'com.facebook.stetho:stetho-okhttp3:1.5.1'
 }

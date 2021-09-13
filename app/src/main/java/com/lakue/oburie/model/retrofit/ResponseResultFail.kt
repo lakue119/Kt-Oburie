@@ -1,7 +1,9 @@
 package com.lakue.oburie.model.retrofit
 
+import com.google.gson.annotations.SerializedName
+
 data class ResponseResultFail(
-    val status: String = "",
-    val code: String = "",
-    val message: String = ""
+    @SerializedName("status") val status: String = "",
+    @SerializedName("code") val code: String = "",
+    @SerializedName("message") val message: String = ""
 )
