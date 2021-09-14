@@ -81,7 +81,7 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:onClick="@{() -> activity.onLoginClose()}"
+                            android:onClick="@{() -> activity.onJoinClose()}"
                             android:id="@+id/tv_close"
                             android:paddingTop="12dp"
                             android:paddingBottom="12dp"

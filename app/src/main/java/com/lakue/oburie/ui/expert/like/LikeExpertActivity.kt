@@ -44,15 +44,4 @@ class LikeExpertActivity : BaseActivity<ActivityLikeExpertBinding, ExpertViewMod
         profileAdapter.addItem(sampleList)
     }
 
-    override fun setUI() {
-
-    }
-
-    override fun setEvent() {
-
-    }
-
-    override fun setObserve() {
-
-    }
 }

@@ -9,12 +9,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatDialog
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.Observer
 import com.facebook.*
 import com.facebook.login.LoginManager
 import com.facebook.login.LoginResult
 import com.kakao.sdk.user.model.User
-import com.lakue.oburie.OburieApplication
 import com.lakue.oburie.R
 import com.lakue.oburie.base.BaseActivity
 import com.lakue.oburie.databinding.ActivityLoginBinding
@@ -42,7 +40,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>(R.layou
 
     lateinit var callbackManager: CallbackManager
 
-    var loginDialog: AppCompatDialog? = null
+    var joinDialog: AppCompatDialog? = null
 
     companion object {
         fun startLoginActivity(
@@ -52,7 +50,6 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>(R.layou
             context.startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
         }
     }
-
 
     override fun init() {
         binding.apply {
@@ -86,15 +83,15 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>(R.layou
                         hideLoading()
                         if(it.data!!.result){
                                 if(it.data!!.data.isJoin){
-                                    //TODO 기존 회원 로그인 성공 - 메인화면으로 이동
+                                    //기존 회원 로그인 성공 - 메인화면으로 이동
+                                    setPref(it.data.data)
                                     val intent = Intent(this@LoginActivity, MainActivity::class.java)
-                                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET)
                                     startActivity(intent)
+                                    finish()
                                 } else{
-                                    //TODO 신규 회원 가입
+                                    //신규 회원 가입
                                     onShowJoin()
                                 }
-                            onShowJoin()
                         } else {
                             showToast("${it.data.fail.message}")
                         }
@@ -110,12 +107,15 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>(R.layou
             join.observe(this@LoginActivity, {
                 when(it.status){
                     Status.ERROR -> {
+                        onJoinClose()
                         hideLoading()
                     }
                     Status.LOADING -> {
+                        onJoinClose()
                         hideLoading()
                     }
                     Status.NETWORK_ERROR -> {
+                        onJoinClose()
                         hideLoading()
                         showToast("NETWORK_ERROR")
                     }
@@ -123,9 +123,11 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>(R.layou
                         hideLoading()
                         if(it.data!!.result){
                             //TODO 기존 회원 로그인 성공 - 메인화면으로 이동
+                            onJoinClose()
+                            setPref(it.data.data)
                             val intent = Intent(this@LoginActivity, MainActivity::class.java)
-                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET)
                             startActivity(intent)
+                            finish()
                         } else {
                             //TODO 신규 회원 가입
                             showToast("${it.data.fail.message}")
@@ -133,6 +135,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>(R.layou
 
                     }
                     Status.TIMEOUT_ERROR -> {
+                        onJoinClose()
                         hideLoading()
                         showToast("TIMEOUT_ERROR")
                     }
@@ -259,12 +262,12 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>(R.layou
     @SuppressLint("MissingPermission")
     fun onShowJoin() {
 
-        if (loginDialog == null) {
-            loginDialog = AppCompatDialog(this@LoginActivity)
+        if (joinDialog == null) {
+            joinDialog = AppCompatDialog(this@LoginActivity)
         }
 
         val binding = DataBindingUtil.inflate<DialogJoinBinding>(LayoutInflater.from(this@LoginActivity), R.layout.dialog_join, null, false)
-        loginDialog?.apply {
+        joinDialog?.apply {
             window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
             setCancelable(false)
             setContentView(binding.root)
@@ -278,9 +281,9 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>(R.layou
 
     }
 
-    fun onLoginClose(){
-        if (loginDialog != null) {
-            loginDialog!!.dismiss()
+    fun onJoinClose(){
+        if (joinDialog != null) {
+            joinDialog!!.dismiss()
         }
     }
 

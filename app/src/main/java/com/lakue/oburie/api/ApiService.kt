@@ -15,15 +15,6 @@ interface ApiService {
     ): Response<ResponseJoinCheck>
 
     @FormUrlEncoded
-    @Headers(
-        "Content-Type: application/json",
-        "Accept: application/json",
-        "bearer: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NDR9.Ztir8nvZ4jGAOdnqCm177hrQ0w-_TYBomuwydpXZm60",
-        "Transfer-Encoding: chunked",
-        "Date: Mon, 13 Sep 2021 13:53:23 GMT",
-        "Keep-Alive: timeout=60",
-        "Connection: keep-alive"
-    )
     @POST("/user")
     suspend fun postJoin(@FieldMap parameters: HashMap<String, Any>): Response<ResponseJoin>
 

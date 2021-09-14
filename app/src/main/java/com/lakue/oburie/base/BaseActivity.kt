@@ -56,6 +56,7 @@ abstract class BaseActivity<B : ViewDataBinding, VM : BaseViewModel>(
     private val compositeDisposable = CompositeDisposable()
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        initTheme()
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, layoutId)
         binding.lifecycleOwner = this
@@ -66,10 +67,25 @@ abstract class BaseActivity<B : ViewDataBinding, VM : BaseViewModel>(
         setObserve()
     }
 
-    abstract fun init()
-    abstract fun setUI()
-    abstract fun setEvent()
-    abstract fun setObserve()
+    protected open fun initTheme(){
+
+    }
+
+    protected open fun init(){
+
+    }
+
+    protected open fun setUI(){
+
+    }
+
+    protected open fun setEvent(){
+
+    }
+
+    protected open fun setObserve(){
+
+    }
 
     override fun onDestroy() {
         super.onDestroy()

@@ -7,6 +7,8 @@ import androidx.lifecycle.viewModelScope
 import com.lakue.oburie.base.BaseViewModel
 import com.lakue.oburie.model.retrofit.login.ResponseJoin
 import com.lakue.oburie.model.retrofit.login.ResponseJoinCheck
+import com.lakue.oburie.model.retrofit.login.ResponseJoinData
+import com.lakue.oburie.pref.PrefManager
 import com.lakue.oburie.repository.LoginRepository
 import com.lakue.oburie.utils.NetworkHelper
 import com.lakue.oburie.utils.loading.Resource
@@ -18,7 +20,8 @@ import javax.inject.Inject
 @HiltViewModel
 class LoginViewModel  @Inject constructor(
     savedStateHandle: SavedStateHandle,
-    private val repository: LoginRepository
+    private val repository: LoginRepository,
+    val prefManager: PrefManager
 ) : BaseViewModel() {
 
     private val _loginCheck = MutableLiveData<Resource<ResponseJoinCheck>>()
@@ -82,5 +85,10 @@ class LoginViewModel  @Inject constructor(
         }
     }
 
+    fun setPref(loginData: ResponseJoinData){
+        prefManager.userId = loginData.userId.toString()
+        prefManager.userToken = loginData.token
+        prefManager.deviceId = "101"
+    }
 
 }

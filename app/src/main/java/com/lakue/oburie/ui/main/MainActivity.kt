@@ -1,5 +1,6 @@
 package com.lakue.oburie.ui.main
 
+import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageInfo
 import android.content.pm.PackageManager
@@ -11,30 +12,45 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatDialog
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.bumptech.glide.Glide
-import com.kakao.sdk.common.util.Utility
+import com.lakue.oburie.OburieApplication
 import com.lakue.oburie.R
 import com.lakue.oburie.base.BaseActivity
 import com.lakue.oburie.databinding.ActivityMainBinding
 import com.lakue.oburie.databinding.DialogReviewBinding
 import com.lakue.oburie.fcm.FcmManager
 import com.lakue.oburie.model.Profile
+import com.lakue.oburie.pref.PrefManager
+import com.lakue.oburie.ui.history.OburieHistoryActivity
 import com.lakue.oburie.ui.login.LoginActivity.Companion.startLoginActivity
+import com.lakue.oburie.ui.splash.SplashActivity
 import com.lakue.oburie.utils.LogUtil
 import com.lakue.oburie.utils.LoginData
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import java.security.MessageDigest
 import java.security.NoSuchAlgorithmException
+import java.util.logging.Handler
 
 
 @AndroidEntryPoint
 class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>(R.layout.activity_main) {
+
+    companion object {
+        fun startMainActivity(
+            context: Context
+        ) {
+            val intent = Intent(context, MainActivity::class.java)
+            context.startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
+        }
+    }
 
     override fun init() {
         NavigationUI.setupWithNavController(
@@ -53,10 +69,6 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>(R.layout.a
     }
 
     override fun setUI() {
-
-        if(LoginData.userId == null){
-            startLoginActivity(this@MainActivity)
-        }
 
 //        showSuccessDialog(Profile(
 //                "PLATINUM",
@@ -148,9 +160,9 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>(R.layout.a
     }
 
     private fun getFcmToken(){
-        FcmManager.getFcmToken(object :FcmManager.OnEventListener{
+        FcmManager.getFcmToken(object : FcmManager.OnEventListener {
             override fun onSuccess(token: String) {
-                LogUtil.i("QWLKRJQKWLR0",token)
+                LogUtil.i("QWLKRJQKWLR0", token)
             }
         })
     }

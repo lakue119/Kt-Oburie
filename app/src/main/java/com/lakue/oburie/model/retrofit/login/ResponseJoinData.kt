@@ -8,5 +8,6 @@ data class ResponseJoinData(
     @SerializedName("social_id") val socialId: String = "",
     @SerializedName("social_type") val socialType: String = "",
     @SerializedName("nickname") val nickName: String = "",
-    @SerializedName("grade") val grade: String = ""
+    @SerializedName("grade") val grade: String = "",
+    @SerializedName("token") val token: String = ""
 )
