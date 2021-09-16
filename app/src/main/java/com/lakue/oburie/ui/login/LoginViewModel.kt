@@ -9,7 +9,7 @@ import com.lakue.oburie.model.retrofit.login.ResponseJoin
 import com.lakue.oburie.model.retrofit.login.ResponseJoinCheck
 import com.lakue.oburie.model.retrofit.login.ResponseJoinData
 import com.lakue.oburie.pref.PrefManager
-import com.lakue.oburie.repository.LoginRepository
+import com.lakue.oburie.repository.RetrofitRepository
 import com.lakue.oburie.utils.NetworkHelper
 import com.lakue.oburie.utils.loading.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -19,9 +19,9 @@ import javax.inject.Inject
 
 @HiltViewModel
 class LoginViewModel  @Inject constructor(
-    savedStateHandle: SavedStateHandle,
-    private val repository: LoginRepository,
-    val prefManager: PrefManager
+        savedStateHandle: SavedStateHandle,
+        private val repository: RetrofitRepository,
+        val prefManager: PrefManager
 ) : BaseViewModel() {
 
     private val _loginCheck = MutableLiveData<Resource<ResponseJoinCheck>>()

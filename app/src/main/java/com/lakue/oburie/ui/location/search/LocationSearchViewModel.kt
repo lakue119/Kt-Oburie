@@ -7,7 +7,7 @@ import androidx.lifecycle.viewModelScope
 import com.lakue.oburie.base.BaseViewModel
 import com.lakue.oburie.model.retrofit.login.ResponseJoin
 import com.lakue.oburie.model.retrofit.login.ResponseJoinCheck
-import com.lakue.oburie.repository.LoginRepository
+import com.lakue.oburie.repository.RetrofitRepository
 import com.lakue.oburie.utils.NetworkHelper
 import com.lakue.oburie.utils.loading.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -18,7 +18,7 @@ import javax.inject.Inject
 @HiltViewModel
 class LocationSearchViewModel  @Inject constructor(
     savedStateHandle: SavedStateHandle,
-    private val repository: LoginRepository
+    private val repository: RetrofitRepository
 ) : BaseViewModel() {
 
     private val _loginCheck = MutableLiveData<Resource<ResponseJoinCheck>>()

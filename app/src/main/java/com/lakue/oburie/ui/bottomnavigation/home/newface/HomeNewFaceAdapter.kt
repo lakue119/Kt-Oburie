@@ -8,9 +8,10 @@ import com.lakue.oburie.base.BaseAdapter
 import com.lakue.oburie.base.BaseViewHolder
 import com.lakue.oburie.databinding.ItemHomeNewFaceBinding
 import com.lakue.oburie.model.Profile
+import com.lakue.oburie.model.retrofit.home.ResponseHomeProfile
 import com.lakue.oburie.ui.bottomnavigation.home.HomeViewModel
 
-class HomeNewFaceAdapter(val viewModel: HomeViewModel, profile: ArrayList<Profile>) : BaseAdapter() {
+class HomeNewFaceAdapter(val viewModel: HomeViewModel, profile: List<ResponseHomeProfile>) : BaseAdapter() {
 
     val profiles = profile
 
@@ -37,7 +38,7 @@ class HomeNewFaceAdapter(val viewModel: HomeViewModel, profile: ArrayList<Profil
     inner class HomeNewFaceItemViewHolder(private val binding: ItemHomeNewFaceBinding) : BaseViewHolder(binding.root) {
         override fun onBind(item: Any, pos: Int) {
             binding.apply {
-                this.profile = item as Profile
+                this.profile = item as ResponseHomeProfile
                 this.vm = viewModel
             }
         }

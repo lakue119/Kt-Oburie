@@ -3,6 +3,7 @@ package com.lakue.oburie.ui.splash
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import com.facebook.stetho.common.LogUtil
 import com.lakue.oburie.R
 import com.lakue.oburie.base.BaseActivity
 import com.lakue.oburie.databinding.ActivityMainBinding
@@ -16,6 +17,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class SplashActivity : BaseActivity<ActivitySplashBinding, SplashViewModel>(R.layout.activity_splash) {
 
     override fun init() {
+        LogUtil.i("LoginData","${viewModel.getLoginData().toString()}")
         Handler().postDelayed({
             if(viewModel.isLogin()){
                 startMainActivity(this@SplashActivity)
@@ -23,8 +25,7 @@ class SplashActivity : BaseActivity<ActivitySplashBinding, SplashViewModel>(R.la
                 startLoginActivity(this@SplashActivity)
             }
             finish()
-        },3000)
-
+        },1000)
 
     }
 

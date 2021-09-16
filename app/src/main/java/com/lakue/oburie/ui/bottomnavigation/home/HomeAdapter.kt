@@ -9,6 +9,7 @@ import com.lakue.oburie.base.BaseViewHolder
 import com.lakue.oburie.databinding.*
 import com.lakue.oburie.model.Category
 import com.lakue.oburie.model.Profile
+import com.lakue.oburie.model.retrofit.home.*
 import com.lakue.oburie.ui.bottomnavigation.home.category.HomeCategoryAdapter
 import com.lakue.oburie.ui.bottomnavigation.home.group.HomeGroupAdapter
 import com.lakue.oburie.ui.bottomnavigation.home.newface.HomeNewFaceAdapter
@@ -24,10 +25,15 @@ class HomeAdapter(val viewModel: HomeViewModel) : BaseAdapter() {
     private val TYPE_NEW_FACE = 1006
     private val TYPE_GROUP = 1007
 
-    var dataCount = 0
+    val myItems = ArrayList<Any>()
 
-    fun setCount(count: Int) {
-        dataCount = count
+//    fun setCount(count: Int) {
+//        dataCount = count
+//        notifyDataSetChanged()
+//    }
+
+    fun addItems(items: ArrayList<Any>){
+        myItems.addAll(items)
         notifyDataSetChanged()
     }
 
@@ -106,35 +112,55 @@ class HomeAdapter(val viewModel: HomeViewModel) : BaseAdapter() {
         }
     }
 
-    override fun getItemCount() = dataCount
+    override fun getItemCount() = myItems.size
 
     override fun onBindViewHolder(holder: BaseViewHolder, position: Int) {
-        holder.onBind(viewModel, position)
+        holder.onBind(myItems[position], position)
     }
 
     override fun getItemViewType(position: Int): Int {
-        when (position) {
-            0 -> {
-                return TYPE_BANNER
+        when (myItems[position]) {
+            is ResponseHomePopularity -> {return TYPE_POPULAR}
+            is ResponseHomeNewface -> {return TYPE_NEW_FACE}
+            is ResponseHomeTeamProfile -> {return TYPE_GROUP}
+//            is ResponseHomeBanner -> {return TYPE_BANNER}
+            is Boolean -> {return TYPE_NO_PROFILE}
+            is String -> {return TYPE_SEARCH}
+            is List<*> -> {
+                return try{
+                    if((this.myItems[position] as List<ResponseHomeBanner>).get(0) is ResponseHomeBanner){
+                        TYPE_BANNER
+                    } else {
+                        TYPE_CATEGORY
+                    }
+                } catch (e: ClassCastException){
+                    TYPE_CATEGORY
+                }
+
             }
-            1 -> {
-                return TYPE_SEARCH
-            }
-            2 -> {
-                return TYPE_CATEGORY
-            }
-            3 -> {
-                return TYPE_NO_PROFILE
-            }
-            4 -> {
-                return TYPE_POPULAR
-            }
-            5 -> {
-                return TYPE_NEW_FACE
-            }
-            else -> {
-                return TYPE_GROUP
-            }
+            else -> {return TYPE_GROUP}
+//            else -> {return TYPE_CATEGORY}
+//            0 -> {
+//                return TYPE_BANNER
+//            }
+//            1 -> {
+//                return TYPE_SEARCH
+//            }
+//            2 -> {
+//                return TYPE_CATEGORY
+//            }
+//            3 -> {
+//                return TYPE_NO_PROFILE
+//            }
+//            4 -> {
+//                return TYPE_POPULAR
+//            }
+//            5 -> {
+//                return TYPE_NEW_FACE
+//            }
+//            else -> {
+//                return TYPE_GROUP
+//            }
         }
     }
 
@@ -142,9 +168,11 @@ class HomeAdapter(val viewModel: HomeViewModel) : BaseAdapter() {
      * ViewHolder
      */
     inner class HomeBannerViewHolder(private val binding: ItemHomeBannerBinding) : BaseViewHolder(binding.root) {
-        override fun onBind(vm: Any, pos: Int) {
+        override fun onBind(item: Any, pos: Int) {
             binding.apply {
-                this.vm = vm as HomeViewModel
+                val data = item as List<ResponseHomeBanner>
+                this.banner = data[0]
+                this.vm = viewModel
                 this.position = pos
             }
         }
@@ -161,8 +189,8 @@ class HomeAdapter(val viewModel: HomeViewModel) : BaseAdapter() {
     inner class HomeCategoryListViewHolder(private val binding: ItemHomeCategoryListBinding) : BaseViewHolder(binding.root) {
         override fun onBind(item: Any, pos: Int) {
             binding.apply {
-                val vm = item as HomeViewModel
-                val cateAdapter = HomeCategoryAdapter(vm, vm.homeData.value?.get(pos) as ArrayList<Category>)
+                val data = item as List<ResponseHomeCategory>
+                val cateAdapter = HomeCategoryAdapter(viewModel, data)
                 adapter = cateAdapter
             }
         }
@@ -179,7 +207,8 @@ class HomeAdapter(val viewModel: HomeViewModel) : BaseAdapter() {
     inner class HomePopularProfileViewHolder(private val binding: ItemHomePopularListBinding) : BaseViewHolder(binding.root) {
         override fun onBind(item: Any, pos: Int) {
             binding.apply {
-                val profileAdapter = HomePopularAdapter(viewModel, viewModel.homeData.value?.get(pos) as ArrayList<Profile>)
+                val data = item as ResponseHomePopularity
+                val profileAdapter = HomePopularAdapter(viewModel, data.profile)
                 adapter = profileAdapter
                 vm = viewModel
 
@@ -190,7 +219,8 @@ class HomeAdapter(val viewModel: HomeViewModel) : BaseAdapter() {
     inner class HomeNewFaceProfileViewHolder(private val binding: ItemHomeNewFaceListBinding) : BaseViewHolder(binding.root) {
         override fun onBind(item: Any, pos: Int) {
             binding.apply {
-                val profileAdapter = HomeNewFaceAdapter(viewModel, viewModel.homeData.value?.get(pos) as ArrayList<Profile>)
+                val data = item as ResponseHomeNewface
+                val profileAdapter = HomeNewFaceAdapter(viewModel, data.profile)
                 adapter = profileAdapter
                 vm = viewModel
 
@@ -201,7 +231,8 @@ class HomeAdapter(val viewModel: HomeViewModel) : BaseAdapter() {
     inner class HomeGroupProfileViewHolder(private val binding: ItemHomeGroupListBinding) : BaseViewHolder(binding.root) {
         override fun onBind(item: Any, pos: Int) {
             binding.apply {
-                val profileAdapter = HomeGroupAdapter(viewModel, viewModel.homeData.value?.get(pos) as ArrayList<Profile>)
+                val data = item as ResponseHomeTeamProfile
+                val profileAdapter = HomeGroupAdapter(viewModel, data.profile)
                 adapter = profileAdapter
                 vm = viewModel
 

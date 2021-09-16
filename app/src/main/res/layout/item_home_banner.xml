@@ -4,6 +4,9 @@
 
     <data>
         <variable
+            name="banner"
+            type="com.lakue.oburie.model.retrofit.home.ResponseHomeBanner" />
+        <variable
             name="position"
             type="Integer" />
 
@@ -20,7 +23,7 @@
         android:layout_height="wrap_content">
 
         <ImageView
-            lakue:image_url="@{vm.homeData[0].toString()}"
+            lakue:image_url="@{banner.image}"
             android:adjustViewBounds="true"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>

@@ -8,9 +8,10 @@ import com.lakue.oburie.base.BaseAdapter
 import com.lakue.oburie.base.BaseViewHolder
 import com.lakue.oburie.databinding.ItemHomeCategoryBinding
 import com.lakue.oburie.model.Category
+import com.lakue.oburie.model.retrofit.home.ResponseHomeCategory
 import com.lakue.oburie.ui.bottomnavigation.home.HomeViewModel
 
-class UploadCategoryAdapter(val viewModel: ResumeUploadNormalViewModel, cate: ArrayList<Category>) : BaseAdapter() {
+class UploadCategoryAdapter(val viewModel: ResumeUploadNormalViewModel, cate: ArrayList<ResponseHomeCategory>) : BaseAdapter() {
 
     val category = cate
 
@@ -37,7 +38,7 @@ class UploadCategoryAdapter(val viewModel: ResumeUploadNormalViewModel, cate: Ar
     inner class HomeCateGoryItemViewHolder(private val binding: ItemHomeCategoryBinding) : BaseViewHolder(binding.root) {
         override fun onBind(item: Any, pos: Int) {
             binding.apply {
-                this.cate = item as Category
+                this.cate = item as ResponseHomeCategory
                 this.position = pos
 //                this.vm = viewModel
             }

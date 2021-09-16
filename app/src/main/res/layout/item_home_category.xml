@@ -6,9 +6,10 @@
         <variable
             name="position"
             type="Integer" />
+
         <variable
             name="cate"
-            type="com.lakue.oburie.model.Category" />
+            type="com.lakue.oburie.model.retrofit.home.ResponseHomeCategory" />
 
         <variable
             name="vm"
@@ -36,13 +37,14 @@
 
 
             <ImageView
+                image_url="@{cate.image}"
                 android:padding="16dp"
-                image_icon="@{cate.icon}"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"/>
 
         </com.google.android.material.card.MaterialCardView>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

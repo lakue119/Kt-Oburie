@@ -5,6 +5,9 @@
         <variable
             name="vm"
             type="com.lakue.oburie.ui.bottomnavigation.home.HomeViewModel" />
+        <variable
+            name="fragment"
+            type="com.lakue.oburie.ui.bottomnavigation.home.FragmentHome" />
     </data>
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
@@ -28,7 +31,7 @@
             android:paddingTop="20dp"
             android:paddingBottom="20dp"
             android:clipToPadding="false"
-            app:setAdapter="@{vm.homeAdapter}"
+            app:setAdapter="@{fragment.homeAdapter}"
             android:layout_weight="1"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             android:layout_width="match_parent"
