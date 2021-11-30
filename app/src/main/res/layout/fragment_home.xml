@@ -31,7 +31,7 @@
             android:paddingTop="20dp"
             android:paddingBottom="20dp"
             android:clipToPadding="false"
-            app:setAdapter="@{fragment.homeAdapter}"
+            app:setAdapter="@{vm.homeAdapter}"
             android:layout_weight="1"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             android:layout_width="match_parent"

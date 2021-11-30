@@ -13,8 +13,11 @@ import com.bumptech.glide.Glide
 
 @BindingAdapter("image_url")
 fun ImageView.setImage(
-    url: String
+    url: String?
 ){
+    if(url == null){
+        return
+    }
     Glide.with(context).load(url).into(this)
 }
 

@@ -38,7 +38,7 @@ class UploadCategoryAdapter(val viewModel: ResumeUploadNormalViewModel, cate: Ar
     inner class HomeCateGoryItemViewHolder(private val binding: ItemHomeCategoryBinding) : BaseViewHolder(binding.root) {
         override fun onBind(item: Any, pos: Int) {
             binding.apply {
-                this.cate = item as ResponseHomeCategory
+//                this.cate = item as ResponseHomeCategory
                 this.position = pos
 //                this.vm = viewModel
             }

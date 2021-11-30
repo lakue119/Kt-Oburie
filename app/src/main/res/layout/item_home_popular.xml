@@ -7,7 +7,7 @@
 
         <variable
             name="profile"
-            type="com.lakue.oburie.model.retrofit.home.ResponseHomeProfile" />
+            type="com.lakue.oburie.model.Profile" />
 
         <variable
             name="vm"
@@ -28,7 +28,7 @@
             android:layout_height="wrap_content">
 
             <ImageView
-                image_url="@{profile.profileImage.get(0).image}"
+                image_url="@{profile.coverImgs.get(0)}"
                 android:layout_width="288dp"
                 android:layout_height="172dp"
                 android:scaleType="centerCrop"
@@ -46,7 +46,7 @@
                 android:paddingTop="20dp"
                 android:paddingRight="12dp"
                 android:paddingBottom="12dp"
-                android:text="@{profile.nickname}"
+                android:text="@{profile.userInfo.nickName}"
                 android:textColor="@color/white"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

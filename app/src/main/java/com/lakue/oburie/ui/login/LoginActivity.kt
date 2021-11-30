@@ -66,8 +66,8 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>(R.layou
 
     override fun setObserve() {
         viewModel.apply{
-            loginCheck.observe(this@LoginActivity, {
-                when(it.status){
+            loginCheck.observe(this@LoginActivity) {
+                when (it.status) {
                     Status.ERROR -> {
                         hideLoading()
                         showToast("${it.data.toString()}")
@@ -81,17 +81,17 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>(R.layou
                     }
                     Status.SUCCESS -> {
                         hideLoading()
-                        if(it.data!!.result){
-                                if(it.data!!.data.isJoin){
-                                    //기존 회원 로그인 성공 - 메인화면으로 이동
-                                    setPref(it.data.data)
-                                    val intent = Intent(this@LoginActivity, MainActivity::class.java)
-                                    startActivity(intent)
-                                    finish()
-                                } else{
-                                    //신규 회원 가입
-                                    onShowJoin()
-                                }
+                        if (it.data!!.result) {
+                            if (it.data!!.data.isJoin) {
+                                //기존 회원 로그인 성공 - 메인화면으로 이동
+                                setPref(it.data.data)
+                                val intent = Intent(this@LoginActivity, MainActivity::class.java)
+                                startActivity(intent)
+                                finish()
+                            } else {
+                                //신규 회원 가입
+                                onShowJoin()
+                            }
                         } else {
                             showToast("${it.data.fail.message}")
                         }
@@ -102,10 +102,10 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>(R.layou
                         showToast("TIMEOUT_ERROR")
                     }
                 }
-            })
+            }
 
-            join.observe(this@LoginActivity, {
-                when(it.status){
+            join.observe(this@LoginActivity) {
+                when (it.status) {
                     Status.ERROR -> {
                         onJoinClose()
                         hideLoading()
@@ -121,7 +121,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>(R.layou
                     }
                     Status.SUCCESS -> {
                         hideLoading()
-                        if(it.data!!.result){
+                        if (it.data!!.result) {
                             //TODO 기존 회원 로그인 성공 - 메인화면으로 이동
                             onJoinClose()
                             setPref(it.data.data)
@@ -140,7 +140,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>(R.layou
                         showToast("TIMEOUT_ERROR")
                     }
                 }
-            })
+            }
         }
     }
 
@@ -154,7 +154,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>(R.layou
                     } else {
                         LogUtil.d("LOGIN","facebook / ${user.toString()}")
                         val id = user.getString("id")
-                        viewModel.fetchLoginCheck(id, LoginType.LOGIN_FACEBOOK.type)
+//                        viewModel.fetchLoginCheck(id, LoginType.LOGIN_FACEBOOK.type)
 //                        viewModel.fetchLoginCheck(user.g)
                     }
                 }
@@ -188,7 +188,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>(R.layou
             override fun onSuccess(user: User) {
 //                viewModel.featureKakaoLogin(user)
                 LogUtil.d("LOGIN","kakao / ${user.toString()}")
-                viewModel.fetchLoginCheck(user.id.toString(), LoginType.LOGIN_KAKAO.type)
+//                viewModel.fetchLoginCheck(user.id.toString(), LoginType.LOGIN_KAKAO.type)
             }
 
             override fun onError(error: Throwable) {
@@ -216,7 +216,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>(R.layou
                         LogUtil.d("LOGIN","naver / ${response.toString()}")
 //
                         var id = response.getString("id")
-                        viewModel.fetchLoginCheck(id, LoginType.LOGIN_NAVER.type)
+//                        viewModel.fetchLoginCheck(id, LoginType.LOGIN_NAVER.type)
 
 //
 //                        Logger.i("alkwjrklwrl", "id : $id")
@@ -287,7 +287,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>(R.layou
         }
     }
 
-    fun onLogin(){
-        viewModel.fetchJoin()
-    }
+//    fun onLogin(){
+//        viewModel.fetchJoin()
+//    }
 }

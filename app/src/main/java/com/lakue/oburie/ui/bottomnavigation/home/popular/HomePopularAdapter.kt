@@ -8,19 +8,18 @@ import com.lakue.oburie.base.BaseAdapter
 import com.lakue.oburie.base.BaseViewHolder
 import com.lakue.oburie.databinding.ItemHomePopularBinding
 import com.lakue.oburie.model.Profile
-import com.lakue.oburie.model.retrofit.home.ResponseHomeProfile
 import com.lakue.oburie.ui.bottomnavigation.home.HomeViewModel
 
-class HomePopularAdapter(val viewModel: HomeViewModel, profile: List<ResponseHomeProfile>) : BaseAdapter() {
+class HomePopularAdapter(val viewModel: HomeViewModel, profile: ArrayList<Profile>) : BaseAdapter() {
 
     val profiles = profile
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder {
         DataBindingUtil.inflate<ItemHomePopularBinding>(
-                LayoutInflater.from(parent.context),
-                R.layout.item_home_popular,
-                parent,
-                false
+            LayoutInflater.from(parent.context),
+            R.layout.item_home_popular,
+            parent,
+            false
         ).let {
             return HomeProfileItemViewHolder(it)
         }
@@ -38,7 +37,7 @@ class HomePopularAdapter(val viewModel: HomeViewModel, profile: List<ResponseHom
     inner class HomeProfileItemViewHolder(private val binding: ItemHomePopularBinding) : BaseViewHolder(binding.root) {
         override fun onBind(item: Any, pos: Int) {
             binding.apply {
-                this.profile = item as ResponseHomeProfile
+                this.profile = item as Profile
                 this.vm = viewModel
             }
         }
