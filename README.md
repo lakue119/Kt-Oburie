@@ -2,7 +2,7 @@
 
 
 
-## <img width="3.5%" src="https://user-images.githubusercontent.com/31702431/150622201-292d1990-b10e-4483-a8f1-a6e9b6ef2514.png"> 동네잡일
+## <img width="3.5%" src="https://user-images.githubusercontent.com/31702431/150622201-292d1990-b10e-4483-a8f1-a6e9b6ef2514.png"> 오부리
 
 
 
@@ -30,7 +30,6 @@
 </div>
 <br>
 
-[구글플레이 링크]
 - 기간 : 2021.01 ~ 2021.06
 - 팀 구성 : android 1명
 - 역할 : 기획, 디자인, Android 앱 개발
