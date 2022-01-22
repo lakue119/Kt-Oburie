@@ -39,8 +39,11 @@ out/
 # release/
 
 # Gradle files
+.gradle
 .gradle/
 build/
+build.gradle
+google-services.json
 
 # Local configuration file (sdk path, etc)
 local.properties
@@ -248,3 +251,6 @@ fabric.properties
 !/gradle/wrapper/gradle-wrapper.jar
 
 # End of https://www.toptal.com/developers/gitignore/api/android,androidstudio,kotlin
+strings.xml
+network_security_config.xml
+filepaths.xml
