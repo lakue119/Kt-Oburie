@@ -83,20 +83,24 @@
 
 ## 그 외 앱 이미지
 
-### 스플레쉬 / 로그인
+### 로그인
 <br>
 <div>
-<img width="18%" src="https://user-images.githubusercontent.com/31702431/144237086-0af32b47-f4d9-4fec-91fb-e67daf4ed206.jpeg">
 <img width="18%" src="https://user-images.githubusercontent.com/31702431/144237222-9f6abf14-8163-4fb9-b903-166f60930ef1.jpeg">
 </div>
 <br>
 
-### 리스트 / 상세 
+
+### 홈, 구인 카테고리 리스트 / 구인 상세 / 상대페이지
 <br>
 <div>
-<img width="18%" src="https://user-images.githubusercontent.com/31702431/144237280-2d4ae2c3-0fba-4a86-917b-f122f5efa277.jpeg">
-<img width="18%" src="https://user-images.githubusercontent.com/31702431/144237247-160478cf-5235-447f-9d29-9e744fe72dc7.jpeg">
-<img width="18%" src="https://user-images.githubusercontent.com/31702431/144237252-0ab9ebfb-9b78-452e-834a-9d64e360485f.jpeg">
+<img width="18%" src="https://user-images.githubusercontent.com/31702431/150676650-ab547ae8-5265-4f5a-a255-44346fe4525e.jpg">
+<img width="18%" src="https://user-images.githubusercontent.com/31702431/150677527-c1bc3060-fa5e-44b3-9e15-04c99c01029a.jpg"> 
+<img width="18%" src="https://user-images.githubusercontent.com/31702431/150677322-34a137fb-b413-4fb1-9f93-03c54eabbe0f.jpg"> 
+<img width="18%" src="https://user-images.githubusercontent.com/31702431/150677355-4ef21b2f-d4c2-4e7e-9e8b-88b2e786f3d9.jpg"> 
+<img width="18%" src="https://user-images.githubusercontent.com/31702431/150677387-2d88f435-ba21-4d28-ae3c-16f12b8e4aa4.jpg"> 
+<img width="18%" src="https://user-images.githubusercontent.com/31702431/150677454-1c4bea30-77e1-49cc-a87d-7428c02dd60c.jpg"> 
+<img width="18%" src="https://user-images.githubusercontent.com/31702431/150677481-25457ce1-3a01-4fa7-a255-6cd617e0e919.jpg">
 </div>
 <br>
 
@@ -104,31 +108,47 @@
 <br>
 <br>
 <div>
-<img width="18%" src="https://user-images.githubusercontent.com/31702431/144237191-da5ebdd6-6939-4672-8b88-7ed482791704.jpeg">
-<img width="18%" src="https://user-images.githubusercontent.com/31702431/144237096-3bdd7547-3d6f-484d-81e7-7639db7b2322.jpeg">
-<img width="18%" src="https://user-images.githubusercontent.com/31702431/144237127-f50b41dd-b3c9-4f98-9948-d163996eed71.jpeg">
-<img width="18%" src="https://user-images.githubusercontent.com/31702431/144237107-92c1bdce-2de6-46b2-84e4-e37ea545a6fb.jpeg">
+<img width="18%" src="https://user-images.githubusercontent.com/31702431/150677551-c5ce2445-fd0f-4492-b85e-29bc73405788.jpg"> 
+<img width="18%" src="https://user-images.githubusercontent.com/31702431/150677585-c3ad0cd8-bbb4-44fe-962c-cec3ca6eb20c.jpg"> 
+<img width="18%" src="https://user-images.githubusercontent.com/31702431/150677717-e242bc0c-91b5-4022-82f8-56e75124d2a3.jpg"> 
 </div>
 <br>
 
-### 업로드
+### 구직 리스트 / 구직 상세
 <br>
 <div>
-<img width="18%" src="https://user-images.githubusercontent.com/31702431/144237269-bc72c43a-1dd8-4cab-988c-5e299b9b71b7.jpeg">
-<img width="18%" src="https://user-images.githubusercontent.com/31702431/144237274-48dec851-440d-46a4-8581-ab8962f24cc9.jpeg">
+<img width="18%" src="https://user-images.githubusercontent.com/31702431/150677622-50e0bc31-b682-4b73-a3bf-fe22f872028e.jpg"> 
+<img width="18%" src="https://user-images.githubusercontent.com/31702431/150677648-0147bddb-10ce-43aa-8bbc-1b23b95bab50.jpg"> 
+<img width="18%" src="https://user-images.githubusercontent.com/31702431/150680532-e40e3b4a-4792-49f5-b249-1fd59a02ad27.jpg"> 
 </div>
 
-### 알림 
+### 채팅
 <br>
 <div>
-<img width="18%" src="https://user-images.githubusercontent.com/31702431/144237195-08d1d61b-4814-4abc-9773-ba4ef3eb27f1.jpeg">
+<img width="18%" src="https://user-images.githubusercontent.com/31702431/150677742-b1bf7335-fee2-45ca-95d1-df6f5896cf9e.jpg"> 
+<img width="18%" src="https://user-images.githubusercontent.com/31702431/150677748-2713bdd6-414c-4ff5-8498-c9dcfb292487.jpg"> 
+<img width="18%" src="https://user-images.githubusercontent.com/31702431/150677999-da68d685-8db5-4287-ad84-dfc99d93585a.jpg"> 
+<img width="18%" src="https://user-images.githubusercontent.com/31702431/150678004-45087baf-9757-4515-bcdc-00e3131d7b22.jpg"> 
+<img width="18%" src="https://user-images.githubusercontent.com/31702431/150678062-b6da4cfd-d75f-40ee-87c8-81f669398669.jpg"> 
 </div>
 <br>
 
 ### 마이페이지
 <br>
 <div>
-<img width="18%" src="https://user-images.githubusercontent.com/31702431/144237202-4c311cf2-95cb-46d2-87a7-ee2cb39663bb.jpeg">
+<img width="18%" src="https://user-images.githubusercontent.com/31702431/150678081-4b64a726-644c-4111-902b-17d8ae1e0624.jpg"> 
+<img width="18%" src="https://user-images.githubusercontent.com/31702431/150678103-9ac91d6f-78b2-4d93-b3aa-d3fe0dedc19a.jpg"> 
+<img width="18%" src="https://user-images.githubusercontent.com/31702431/150678122-5ec3eae3-faa3-409f-8f61-51602aed1d77.jpg">
+<img width="18%" src="https://user-images.githubusercontent.com/31702431/150678156-69ffbf33-09e7-46ca-b1ae-b5fb5033109d.jpg"> 
+<img width="18%" src="https://user-images.githubusercontent.com/31702431/150678158-34e728c8-963e-4815-a191-9eb34c5f5e49.jpg"> 
+<img width="18%" src="https://user-images.githubusercontent.com/31702431/150678162-7a3da76a-0fad-47a4-b020-03b42a892a62.jpg"> 
+<img width="18%" src="https://user-images.githubusercontent.com/31702431/150678214-b6147fb5-ee5a-4d2d-947e-7f10de148dfd.jpg"> 
+<img width="18%" src="https://user-images.githubusercontent.com/31702431/150679813-17e304fc-5c3a-46c7-83ea-3dbdd23c521a.jpg"> 
+<img width="18%" src="https://user-images.githubusercontent.com/31702431/150679829-c2033c79-5ab3-4096-b981-c18c2358c92c.jpg"> 
+<img width="18%" src="https://user-images.githubusercontent.com/31702431/150679897-37da6f19-0354-4cbe-9a94-fbc0727e7218.jpg"> 
+<img width="18%" src="https://user-images.githubusercontent.com/31702431/150679911-1b4123c6-d14f-4f4a-a49f-b6c327e2ead6.jpg"> 
+<img width="18%" src="https://user-images.githubusercontent.com/31702431/150679935-5647623a-e469-44b0-90cf-84025faa88fa.jpg"> 
+<img width="18%" src="https://user-images.githubusercontent.com/31702431/150679938-fd4aaf46-99a0-4064-b096-5b5f37946d11.jpg"> 
 </div>
 
 
